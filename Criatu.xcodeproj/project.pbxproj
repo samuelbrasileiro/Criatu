@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08A98BE97C3F63783E897B5B /* Pods_CriatuTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC2471249044735CF8A7BDAA /* Pods_CriatuTests.framework */; };
 		356A45AF255D836E00F892A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356A45AE255D836E00F892A1 /* AppDelegate.swift */; };
 		356A45B1255D836E00F892A1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356A45B0255D836E00F892A1 /* SceneDelegate.swift */; };
 		356A45B3255D836E00F892A1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356A45B2255D836E00F892A1 /* ViewController.swift */; };
@@ -16,6 +17,8 @@
 		356A45BE255D837000F892A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 356A45BC255D837000F892A1 /* LaunchScreen.storyboard */; };
 		356A45C9255D837000F892A1 /* CriatuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356A45C8255D837000F892A1 /* CriatuTests.swift */; };
 		356A45D4255D837000F892A1 /* CriatuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356A45D3255D837000F892A1 /* CriatuUITests.swift */; };
+		998BA92C616F1A11E9D39B1C /* Pods_Criatu_CriatuUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F431E44D70780784862AA6E /* Pods_Criatu_CriatuUITests.framework */; };
+		F3033F59F2E58AB613F1C828 /* Pods_Criatu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56AC4C34B24D913FDC683DF9 /* Pods_Criatu.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1F59A9FE33A10336EB9C334C /* Pods-Criatu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Criatu.debug.xcconfig"; path = "Target Support Files/Pods-Criatu/Pods-Criatu.debug.xcconfig"; sourceTree = "<group>"; };
+		30D8DBB213DC6499EB92DA59 /* Pods-CriatuTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CriatuTests.debug.xcconfig"; path = "Target Support Files/Pods-CriatuTests/Pods-CriatuTests.debug.xcconfig"; sourceTree = "<group>"; };
 		356A45AB255D836E00F892A1 /* Criatu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Criatu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		356A45AE255D836E00F892A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		356A45B0255D836E00F892A1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +56,13 @@
 		356A45CF255D837000F892A1 /* CriatuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CriatuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		356A45D3255D837000F892A1 /* CriatuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriatuUITests.swift; sourceTree = "<group>"; };
 		356A45D5255D837000F892A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49859DDB0939B7597659474C /* Pods-CriatuTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CriatuTests.release.xcconfig"; path = "Target Support Files/Pods-CriatuTests/Pods-CriatuTests.release.xcconfig"; sourceTree = "<group>"; };
+		4F431E44D70780784862AA6E /* Pods_Criatu_CriatuUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Criatu_CriatuUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		56AC4C34B24D913FDC683DF9 /* Pods_Criatu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Criatu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		705336C5F351501ABA12A137 /* Pods-Criatu-CriatuUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Criatu-CriatuUITests.release.xcconfig"; path = "Target Support Files/Pods-Criatu-CriatuUITests/Pods-Criatu-CriatuUITests.release.xcconfig"; sourceTree = "<group>"; };
+		BA9153802C853D9D50AD1195 /* Pods-Criatu-CriatuUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Criatu-CriatuUITests.debug.xcconfig"; path = "Target Support Files/Pods-Criatu-CriatuUITests/Pods-Criatu-CriatuUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		CC2471249044735CF8A7BDAA /* Pods_CriatuTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CriatuTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3A03B9F0D4C52EFFA950B43 /* Pods-Criatu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Criatu.release.xcconfig"; path = "Target Support Files/Pods-Criatu/Pods-Criatu.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3033F59F2E58AB613F1C828 /* Pods_Criatu.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08A98BE97C3F63783E897B5B /* Pods_CriatuTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				998BA92C616F1A11E9D39B1C /* Pods_Criatu_CriatuUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +100,8 @@
 				356A45C7255D837000F892A1 /* CriatuTests */,
 				356A45D2255D837000F892A1 /* CriatuUITests */,
 				356A45AC255D836E00F892A1 /* Products */,
+				80CDC9A5D343203FC2109E08 /* Pods */,
+				A3FF226C9167910396FF0AC5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -131,6 +148,29 @@
 			path = CriatuUITests;
 			sourceTree = "<group>";
 		};
+		80CDC9A5D343203FC2109E08 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1F59A9FE33A10336EB9C334C /* Pods-Criatu.debug.xcconfig */,
+				E3A03B9F0D4C52EFFA950B43 /* Pods-Criatu.release.xcconfig */,
+				BA9153802C853D9D50AD1195 /* Pods-Criatu-CriatuUITests.debug.xcconfig */,
+				705336C5F351501ABA12A137 /* Pods-Criatu-CriatuUITests.release.xcconfig */,
+				30D8DBB213DC6499EB92DA59 /* Pods-CriatuTests.debug.xcconfig */,
+				49859DDB0939B7597659474C /* Pods-CriatuTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		A3FF226C9167910396FF0AC5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				56AC4C34B24D913FDC683DF9 /* Pods_Criatu.framework */,
+				4F431E44D70780784862AA6E /* Pods_Criatu_CriatuUITests.framework */,
+				CC2471249044735CF8A7BDAA /* Pods_CriatuTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,6 +178,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 356A45D8255D837000F892A1 /* Build configuration list for PBXNativeTarget "Criatu" */;
 			buildPhases = (
+				F4F8B22F167278D66091B921 /* [CP] Check Pods Manifest.lock */,
 				356A45A7255D836E00F892A1 /* Sources */,
 				356A45A8255D836E00F892A1 /* Frameworks */,
 				356A45A9255D836E00F892A1 /* Resources */,
@@ -155,6 +196,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 356A45DB255D837000F892A1 /* Build configuration list for PBXNativeTarget "CriatuTests" */;
 			buildPhases = (
+				0B4DD64910E8C2A41159BB51 /* [CP] Check Pods Manifest.lock */,
 				356A45C0255D837000F892A1 /* Sources */,
 				356A45C1255D837000F892A1 /* Frameworks */,
 				356A45C2255D837000F892A1 /* Resources */,
@@ -173,6 +215,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 356A45DE255D837000F892A1 /* Build configuration list for PBXNativeTarget "CriatuUITests" */;
 			buildPhases = (
+				73EC6E920CAF9EB2B498ADB7 /* [CP] Check Pods Manifest.lock */,
 				356A45CB255D837000F892A1 /* Sources */,
 				356A45CC255D837000F892A1 /* Frameworks */,
 				356A45CD255D837000F892A1 /* Resources */,
@@ -255,6 +298,75 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0B4DD64910E8C2A41159BB51 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CriatuTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		73EC6E920CAF9EB2B498ADB7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Criatu-CriatuUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F4F8B22F167278D66091B921 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Criatu-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		356A45A7255D836E00F892A1 /* Sources */ = {
@@ -437,6 +549,7 @@
 		};
 		356A45D9255D837000F892A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F59A9FE33A10336EB9C334C /* Pods-Criatu.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -456,6 +569,7 @@
 		};
 		356A45DA255D837000F892A1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E3A03B9F0D4C52EFFA950B43 /* Pods-Criatu.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -475,6 +589,7 @@
 		};
 		356A45DC255D837000F892A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 30D8DBB213DC6499EB92DA59 /* Pods-CriatuTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -497,6 +612,7 @@
 		};
 		356A45DD255D837000F892A1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49859DDB0939B7597659474C /* Pods-CriatuTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -519,6 +635,7 @@
 		};
 		356A45DF255D837000F892A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA9153802C853D9D50AD1195 /* Pods-Criatu-CriatuUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -539,6 +656,7 @@
 		};
 		356A45E0255D837000F892A1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 705336C5F351501ABA12A137 /* Pods-Criatu-CriatuUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
