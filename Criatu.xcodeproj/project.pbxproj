@@ -1,0 +1,615 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		356A45AF255D836E00F892A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356A45AE255D836E00F892A1 /* AppDelegate.swift */; };
+		356A45B1255D836E00F892A1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356A45B0255D836E00F892A1 /* SceneDelegate.swift */; };
+		356A45B3255D836E00F892A1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356A45B2255D836E00F892A1 /* ViewController.swift */; };
+		356A45B6255D836E00F892A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 356A45B4255D836E00F892A1 /* Main.storyboard */; };
+		356A45B9255D836E00F892A1 /* Criatu.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 356A45B7255D836E00F892A1 /* Criatu.xcdatamodeld */; };
+		356A45BB255D837000F892A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 356A45BA255D837000F892A1 /* Assets.xcassets */; };
+		356A45BE255D837000F892A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 356A45BC255D837000F892A1 /* LaunchScreen.storyboard */; };
+		356A45C9255D837000F892A1 /* CriatuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356A45C8255D837000F892A1 /* CriatuTests.swift */; };
+		356A45D4255D837000F892A1 /* CriatuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356A45D3255D837000F892A1 /* CriatuUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		356A45C5255D837000F892A1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 356A45A3255D836E00F892A1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 356A45AA255D836E00F892A1;
+			remoteInfo = Criatu;
+		};
+		356A45D0255D837000F892A1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 356A45A3255D836E00F892A1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 356A45AA255D836E00F892A1;
+			remoteInfo = Criatu;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		356A45AB255D836E00F892A1 /* Criatu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Criatu.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		356A45AE255D836E00F892A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		356A45B0255D836E00F892A1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		356A45B2255D836E00F892A1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		356A45B5255D836E00F892A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		356A45B8255D836E00F892A1 /* Criatu.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Criatu.xcdatamodel; sourceTree = "<group>"; };
+		356A45BA255D837000F892A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		356A45BD255D837000F892A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		356A45BF255D837000F892A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		356A45C4255D837000F892A1 /* CriatuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CriatuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		356A45C8255D837000F892A1 /* CriatuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriatuTests.swift; sourceTree = "<group>"; };
+		356A45CA255D837000F892A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		356A45CF255D837000F892A1 /* CriatuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CriatuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		356A45D3255D837000F892A1 /* CriatuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriatuUITests.swift; sourceTree = "<group>"; };
+		356A45D5255D837000F892A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		356A45A8255D836E00F892A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		356A45C1255D837000F892A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		356A45CC255D837000F892A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		356A45A2255D836E00F892A1 = {
+			isa = PBXGroup;
+			children = (
+				356A45AD255D836E00F892A1 /* Criatu */,
+				356A45C7255D837000F892A1 /* CriatuTests */,
+				356A45D2255D837000F892A1 /* CriatuUITests */,
+				356A45AC255D836E00F892A1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		356A45AC255D836E00F892A1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				356A45AB255D836E00F892A1 /* Criatu.app */,
+				356A45C4255D837000F892A1 /* CriatuTests.xctest */,
+				356A45CF255D837000F892A1 /* CriatuUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		356A45AD255D836E00F892A1 /* Criatu */ = {
+			isa = PBXGroup;
+			children = (
+				356A45AE255D836E00F892A1 /* AppDelegate.swift */,
+				356A45B0255D836E00F892A1 /* SceneDelegate.swift */,
+				356A45B2255D836E00F892A1 /* ViewController.swift */,
+				356A45B4255D836E00F892A1 /* Main.storyboard */,
+				356A45BA255D837000F892A1 /* Assets.xcassets */,
+				356A45BC255D837000F892A1 /* LaunchScreen.storyboard */,
+				356A45BF255D837000F892A1 /* Info.plist */,
+				356A45B7255D836E00F892A1 /* Criatu.xcdatamodeld */,
+			);
+			path = Criatu;
+			sourceTree = "<group>";
+		};
+		356A45C7255D837000F892A1 /* CriatuTests */ = {
+			isa = PBXGroup;
+			children = (
+				356A45C8255D837000F892A1 /* CriatuTests.swift */,
+				356A45CA255D837000F892A1 /* Info.plist */,
+			);
+			path = CriatuTests;
+			sourceTree = "<group>";
+		};
+		356A45D2255D837000F892A1 /* CriatuUITests */ = {
+			isa = PBXGroup;
+			children = (
+				356A45D3255D837000F892A1 /* CriatuUITests.swift */,
+				356A45D5255D837000F892A1 /* Info.plist */,
+			);
+			path = CriatuUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		356A45AA255D836E00F892A1 /* Criatu */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 356A45D8255D837000F892A1 /* Build configuration list for PBXNativeTarget "Criatu" */;
+			buildPhases = (
+				356A45A7255D836E00F892A1 /* Sources */,
+				356A45A8255D836E00F892A1 /* Frameworks */,
+				356A45A9255D836E00F892A1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Criatu;
+			productName = Criatu;
+			productReference = 356A45AB255D836E00F892A1 /* Criatu.app */;
+			productType = "com.apple.product-type.application";
+		};
+		356A45C3255D837000F892A1 /* CriatuTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 356A45DB255D837000F892A1 /* Build configuration list for PBXNativeTarget "CriatuTests" */;
+			buildPhases = (
+				356A45C0255D837000F892A1 /* Sources */,
+				356A45C1255D837000F892A1 /* Frameworks */,
+				356A45C2255D837000F892A1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				356A45C6255D837000F892A1 /* PBXTargetDependency */,
+			);
+			name = CriatuTests;
+			productName = CriatuTests;
+			productReference = 356A45C4255D837000F892A1 /* CriatuTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		356A45CE255D837000F892A1 /* CriatuUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 356A45DE255D837000F892A1 /* Build configuration list for PBXNativeTarget "CriatuUITests" */;
+			buildPhases = (
+				356A45CB255D837000F892A1 /* Sources */,
+				356A45CC255D837000F892A1 /* Frameworks */,
+				356A45CD255D837000F892A1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				356A45D1255D837000F892A1 /* PBXTargetDependency */,
+			);
+			name = CriatuUITests;
+			productName = CriatuUITests;
+			productReference = 356A45CF255D837000F892A1 /* CriatuUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		356A45A3255D836E00F892A1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1210;
+				LastUpgradeCheck = 1210;
+				TargetAttributes = {
+					356A45AA255D836E00F892A1 = {
+						CreatedOnToolsVersion = 12.1;
+					};
+					356A45C3255D837000F892A1 = {
+						CreatedOnToolsVersion = 12.1;
+						TestTargetID = 356A45AA255D836E00F892A1;
+					};
+					356A45CE255D837000F892A1 = {
+						CreatedOnToolsVersion = 12.1;
+						TestTargetID = 356A45AA255D836E00F892A1;
+					};
+				};
+			};
+			buildConfigurationList = 356A45A6255D836E00F892A1 /* Build configuration list for PBXProject "Criatu" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 356A45A2255D836E00F892A1;
+			productRefGroup = 356A45AC255D836E00F892A1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				356A45AA255D836E00F892A1 /* Criatu */,
+				356A45C3255D837000F892A1 /* CriatuTests */,
+				356A45CE255D837000F892A1 /* CriatuUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		356A45A9255D836E00F892A1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				356A45BE255D837000F892A1 /* LaunchScreen.storyboard in Resources */,
+				356A45BB255D837000F892A1 /* Assets.xcassets in Resources */,
+				356A45B6255D836E00F892A1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		356A45C2255D837000F892A1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		356A45CD255D837000F892A1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		356A45A7255D836E00F892A1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				356A45B3255D836E00F892A1 /* ViewController.swift in Sources */,
+				356A45AF255D836E00F892A1 /* AppDelegate.swift in Sources */,
+				356A45B1255D836E00F892A1 /* SceneDelegate.swift in Sources */,
+				356A45B9255D836E00F892A1 /* Criatu.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		356A45C0255D837000F892A1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				356A45C9255D837000F892A1 /* CriatuTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		356A45CB255D837000F892A1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				356A45D4255D837000F892A1 /* CriatuUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		356A45C6255D837000F892A1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 356A45AA255D836E00F892A1 /* Criatu */;
+			targetProxy = 356A45C5255D837000F892A1 /* PBXContainerItemProxy */;
+		};
+		356A45D1255D837000F892A1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 356A45AA255D836E00F892A1 /* Criatu */;
+			targetProxy = 356A45D0255D837000F892A1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		356A45B4255D836E00F892A1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				356A45B5255D836E00F892A1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		356A45BC255D837000F892A1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				356A45BD255D837000F892A1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		356A45D6255D837000F892A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		356A45D7255D837000F892A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		356A45D9255D837000F892A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P63952MS7L;
+				INFOPLIST_FILE = Criatu/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.ufpe.academy.Criatu;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		356A45DA255D837000F892A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P63952MS7L;
+				INFOPLIST_FILE = Criatu/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.ufpe.academy.Criatu;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		356A45DC255D837000F892A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P63952MS7L;
+				INFOPLIST_FILE = CriatuTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.ufpe.academy.CriatuTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Criatu.app/Criatu";
+			};
+			name = Debug;
+		};
+		356A45DD255D837000F892A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P63952MS7L;
+				INFOPLIST_FILE = CriatuTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.ufpe.academy.CriatuTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Criatu.app/Criatu";
+			};
+			name = Release;
+		};
+		356A45DF255D837000F892A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P63952MS7L;
+				INFOPLIST_FILE = CriatuUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.ufpe.academy.CriatuUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Criatu;
+			};
+			name = Debug;
+		};
+		356A45E0255D837000F892A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P63952MS7L;
+				INFOPLIST_FILE = CriatuUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.ufpe.academy.CriatuUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Criatu;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		356A45A6255D836E00F892A1 /* Build configuration list for PBXProject "Criatu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				356A45D6255D837000F892A1 /* Debug */,
+				356A45D7255D837000F892A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		356A45D8255D837000F892A1 /* Build configuration list for PBXNativeTarget "Criatu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				356A45D9255D837000F892A1 /* Debug */,
+				356A45DA255D837000F892A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		356A45DB255D837000F892A1 /* Build configuration list for PBXNativeTarget "CriatuTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				356A45DC255D837000F892A1 /* Debug */,
+				356A45DD255D837000F892A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		356A45DE255D837000F892A1 /* Build configuration list for PBXNativeTarget "CriatuUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				356A45DF255D837000F892A1 /* Debug */,
+				356A45E0255D837000F892A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		356A45B7255D836E00F892A1 /* Criatu.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				356A45B8255D836E00F892A1 /* Criatu.xcdatamodel */,
+			);
+			currentVersion = 356A45B8255D836E00F892A1 /* Criatu.xcdatamodel */;
+			path = Criatu.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 356A45A3255D836E00F892A1 /* Project object */;
+}
