@@ -11,8 +11,6 @@ class ViewController: UIViewController {
     let handler = FirebaseHandler()
     override func viewDidLoad() {
         super.viewDidLoad()
-        handler.testinho()
-        print("escrevendo FireBase")
         // Do any additional setup after loading the view.
     }
 

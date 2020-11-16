@@ -8,8 +8,8 @@
 import Foundation
 import FirebaseDatabase
 class FirebaseHandler {
-    func testinho() {
-        let ref = Database.database().reference()
-        ref.child("user").setValue("nina")
+    let ref = Database.database().reference()
+    func WritingDataBase(path:String, value:String) {
+        ref.child(path).setValue(value)
     }
 }
