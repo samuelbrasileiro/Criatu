@@ -19,6 +19,10 @@
 		356A45BE255D837000F892A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 356A45BC255D837000F892A1 /* LaunchScreen.storyboard */; };
 		356A45C9255D837000F892A1 /* CriatuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356A45C8255D837000F892A1 /* CriatuTests.swift */; };
 		356A45D4255D837000F892A1 /* CriatuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356A45D3255D837000F892A1 /* CriatuUITests.swift */; };
+		35FFE2D22563FBE300F3E8F0 /* Interest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FFE2D12563FBE300F3E8F0 /* Interest.swift */; };
+		35FFE2D72563FC1400F3E8F0 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FFE2D62563FC1400F3E8F0 /* Style.swift */; };
+		35FFE2DC2563FC3A00F3E8F0 /* LookItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FFE2DB2563FC3A00F3E8F0 /* LookItem.swift */; };
+		35FFE2E12563FC5800F3E8F0 /* InterestItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FFE2E02563FC5800F3E8F0 /* InterestItem.swift */; };
 		998BA92C616F1A11E9D39B1C /* Pods_Criatu_CriatuUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F431E44D70780784862AA6E /* Pods_Criatu_CriatuUITests.framework */; };
 		F3033F59F2E58AB613F1C828 /* Pods_Criatu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56AC4C34B24D913FDC683DF9 /* Pods_Criatu.framework */; };
 /* End PBXBuildFile section */
@@ -60,6 +64,10 @@
 		356A45CF255D837000F892A1 /* CriatuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CriatuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		356A45D3255D837000F892A1 /* CriatuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriatuUITests.swift; sourceTree = "<group>"; };
 		356A45D5255D837000F892A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		35FFE2D12563FBE300F3E8F0 /* Interest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interest.swift; sourceTree = "<group>"; };
+		35FFE2D62563FC1400F3E8F0 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
+		35FFE2DB2563FC3A00F3E8F0 /* LookItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookItem.swift; sourceTree = "<group>"; };
+		35FFE2E02563FC5800F3E8F0 /* InterestItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestItem.swift; sourceTree = "<group>"; };
 		49859DDB0939B7597659474C /* Pods-CriatuTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CriatuTests.release.xcconfig"; path = "Target Support Files/Pods-CriatuTests/Pods-CriatuTests.release.xcconfig"; sourceTree = "<group>"; };
 		4F431E44D70780784862AA6E /* Pods_Criatu_CriatuUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Criatu_CriatuUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		56AC4C34B24D913FDC683DF9 /* Pods_Criatu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Criatu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,6 +133,7 @@
 				0488FB6A2562B75200E537B2 /* GoogleService-Info.plist */,
 				356A45AE255D836E00F892A1 /* AppDelegate.swift */,
 				356A45B0255D836E00F892A1 /* SceneDelegate.swift */,
+				35FFE2CD2563FBCD00F3E8F0 /* Classes */,
 				356A45B2255D836E00F892A1 /* ViewController.swift */,
 				356A45B4255D836E00F892A1 /* Main.storyboard */,
 				356A45BA255D837000F892A1 /* Assets.xcassets */,
@@ -152,6 +161,17 @@
 				356A45D5255D837000F892A1 /* Info.plist */,
 			);
 			path = CriatuUITests;
+			sourceTree = "<group>";
+		};
+		35FFE2CD2563FBCD00F3E8F0 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				35FFE2D12563FBE300F3E8F0 /* Interest.swift */,
+				35FFE2D62563FC1400F3E8F0 /* Style.swift */,
+				35FFE2DB2563FC3A00F3E8F0 /* LookItem.swift */,
+				35FFE2E02563FC5800F3E8F0 /* InterestItem.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		80CDC9A5D343203FC2109E08 /* Pods */ = {
@@ -417,9 +437,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				0488FB732562BB4D00E537B2 /* FirebaseHandler.swift in Sources */,
+				35FFE2E12563FC5800F3E8F0 /* InterestItem.swift in Sources */,
 				356A45B3255D836E00F892A1 /* ViewController.swift in Sources */,
+				35FFE2DC2563FC3A00F3E8F0 /* LookItem.swift in Sources */,
 				356A45AF255D836E00F892A1 /* AppDelegate.swift in Sources */,
+				35FFE2D22563FBE300F3E8F0 /* Interest.swift in Sources */,
 				356A45B1255D836E00F892A1 /* SceneDelegate.swift in Sources */,
+				35FFE2D72563FC1400F3E8F0 /* Style.swift in Sources */,
 				356A45B9255D836E00F892A1 /* Criatu.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
