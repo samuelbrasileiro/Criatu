@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0488FB6B2562B75200E537B2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0488FB6A2562B75200E537B2 /* GoogleService-Info.plist */; };
 		0488FB732562BB4D00E537B2 /* FirebaseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0488FB722562BB4D00E537B2 /* FirebaseHandler.swift */; };
 		08A98BE97C3F63783E897B5B /* Pods_CriatuTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC2471249044735CF8A7BDAA /* Pods_CriatuTests.framework */; };
+		2897F9212564FF79001DB5EF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2897F9202564FF79001DB5EF /* GoogleService-Info.plist */; };
 		356A45AF255D836E00F892A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356A45AE255D836E00F892A1 /* AppDelegate.swift */; };
 		356A45B1255D836E00F892A1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356A45B0255D836E00F892A1 /* SceneDelegate.swift */; };
 		356A45B3255D836E00F892A1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356A45B2255D836E00F892A1 /* ViewController.swift */; };
@@ -46,9 +46,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0488FB6A2562B75200E537B2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0488FB722562BB4D00E537B2 /* FirebaseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseHandler.swift; sourceTree = "<group>"; };
 		1F59A9FE33A10336EB9C334C /* Pods-Criatu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Criatu.debug.xcconfig"; path = "Target Support Files/Pods-Criatu/Pods-Criatu.debug.xcconfig"; sourceTree = "<group>"; };
+		2897F9202564FF79001DB5EF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		30D8DBB213DC6499EB92DA59 /* Pods-CriatuTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CriatuTests.debug.xcconfig"; path = "Target Support Files/Pods-CriatuTests/Pods-CriatuTests.debug.xcconfig"; sourceTree = "<group>"; };
 		356A45AB255D836E00F892A1 /* Criatu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Criatu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		356A45AE255D836E00F892A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -134,7 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				35FFE3262564150800F3E8F0 /* Criatu.entitlements */,
-				0488FB6A2562B75200E537B2 /* GoogleService-Info.plist */,
+				2897F9202564FF79001DB5EF /* GoogleService-Info.plist */,
 				356A45AE255D836E00F892A1 /* AppDelegate.swift */,
 				356A45B0255D836E00F892A1 /* SceneDelegate.swift */,
 				35FFE2CD2563FBCD00F3E8F0 /* Classes */,
@@ -311,7 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				356A45BE255D837000F892A1 /* LaunchScreen.storyboard in Resources */,
-				0488FB6B2562B75200E537B2 /* GoogleService-Info.plist in Resources */,
+				2897F9212564FF79001DB5EF /* GoogleService-Info.plist in Resources */,
 				356A45BB255D837000F892A1 /* Assets.xcassets in Resources */,
 				356A45B6255D836E00F892A1 /* Main.storyboard in Resources */,
 			);
@@ -635,7 +635,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ufpe.academy.criatu;
+				PRODUCT_BUNDLE_IDENTIFIER = br.ufpe.academy.Criatu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -656,7 +656,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ufpe.academy.criatu;
+				PRODUCT_BUNDLE_IDENTIFIER = br.ufpe.academy.Criatu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

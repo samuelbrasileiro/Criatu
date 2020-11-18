@@ -22,7 +22,7 @@ class FirebaseHandler {
     var dataReady = false
     
     init() {
-
+    
     }
     
     func WritingDataBase(path:String, value:Any) {
