@@ -21,8 +21,8 @@ class FirebaseHandler {
     var tagsCreated = true, itensCreated = true, closetCreated = true
     var dataReady = false
     
-    init() {
     
+    init() {  
     }
     
     func WritingDataBase(path:String, value:Any) {
@@ -91,6 +91,13 @@ class FirebaseHandler {
     func isDataReady() -> Bool{
         return dataReady
     }
+    func UpdateOnceDatabase(path: String, value:Any, childID: String) {
+       
+        ref.child(path).updateChildValues([childID:value])
+    }
+    
+    func RemoveOnceDatabase(path: String){
+        ref.child(path).removeValue()
+    }
     
 }
-
