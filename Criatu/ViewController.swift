@@ -12,6 +12,18 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        let mjks = "900032829"
+        
+        
+        Song.fetch(songID: mjks){result in
+            if case .success(let song) = result {
+                print(song.data![0].attributes!.artistName!)
+            }
+            else if case .failure(let error) = result{
+                print(error.localizedDescription)
+            }
+            
+        }
     }
 
 
