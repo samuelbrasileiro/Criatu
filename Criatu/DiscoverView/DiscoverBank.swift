@@ -15,9 +15,9 @@ enum ItemType {
     case image
 }
 
-class DiscoverItem {
+class DiscoverItem: ObservableObject {
     var id: String
-    var url: String?
+    @Published var url: String?
     var type: ItemType
     
     init(id: String, type: ItemType) {
@@ -27,22 +27,36 @@ class DiscoverItem {
 }
 
 class MusicItem: DiscoverItem {
-    var title: String?
-    var artistName: String?
+    @Published var title: String?
+    @Published var artistName: String?
     
-    var imageAlbumURL: String?
-    var imageAlbum: UIImage?
+    @Published var imageAlbumURL: String?
+    @Published var imageAlbum: UIImage?
     
     override init(id: String, type: ItemType) {
         super.init(id: id, type: type)
     }
 }
 
-class ImageItem: DiscoverItem {
-    var image: UIImage?
+class ImageItem: DiscoverItem, ObservableObject {
+    @Published   var image: UIImage?
     
     override init(id: String, type: ItemType) {
         super.init(id: id, type: type)
+    }
+    
+    func getImage(){
+        let request = URLRequest(url: URL(string: url!)!)
+        URLRequest.shared.dataTask(with: request) {(data, response, error) in
+            DispacheQueue.main.async {
+                guard let data = data else{
+                    return
+                }
+                if let image = UIImage(data: data){
+                    self.image = image
+                }
+            }
+        } .resume()
     }
 }
 
