@@ -22,7 +22,9 @@ class FirebaseHandler {
     var dataReady = false
     
     
-    init() {  
+    init() {
+        //let dict = ["name":"seu pereira"]
+        //WritingDataBase(path: tagsPath + "testing", value: dict)
     }
     
     func WritingDataBase(path:String, value:Any) {

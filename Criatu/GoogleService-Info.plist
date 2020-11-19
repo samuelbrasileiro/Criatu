@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>334304275158-96uego4rs4utuunlo7omfmdq87vedllu.apps.googleusercontent.com</string>
+	<string>334304275158-re400ib6pq49cq9r3spuilm8bl6vkr3u.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.334304275158-96uego4rs4utuunlo7omfmdq87vedllu</string>
+	<string>com.googleusercontent.apps.334304275158-re400ib6pq49cq9r3spuilm8bl6vkr3u</string>
 	<key>API_KEY</key>
 	<string>AIzaSyDWoouL8O-HhCbkq6Ao3CQEYRxBdSgNR8o</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>br.ufpe.academy.Criatu</string>
+	<string>ufpe.academy.criatu</string>
 	<key>PROJECT_ID</key>
 	<string>fir-criatu</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,7 +29,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:334304275158:ios:7dc2fe92fffffb929a3777</string>
+	<string>1:334304275158:ios:ae5970e14fb4c1549a3777</string>
 	<key>DATABASE_URL</key>
 	<string>https://fir-criatu.firebaseio.com</string>
 </dict>

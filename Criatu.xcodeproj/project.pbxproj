@@ -12,7 +12,7 @@
 		105312D42565613500887B1E /* DiscoverBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105312D32565613500887B1E /* DiscoverBank.swift */; };
 		105312DA25656C6E00887B1E /* UIEditingExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105312D925656C6E00887B1E /* UIEditingExtensions.swift */; };
 		10BF032C25655DB0008F2BCC /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BF032B25655DB0008F2BCC /* SearchBarView.swift */; };
-		2897F9212564FF79001DB5EF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2897F9202564FF79001DB5EF /* GoogleService-Info.plist */; };
+		28D999F4256702150003DE45 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28D999F3256702150003DE45 /* GoogleService-Info.plist */; };
 		35091E0E25669A7500F94A4A /* LazyWaterfallGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35091E0D25669A7500F94A4A /* LazyWaterfallGrid.swift */; };
 		35091E282566C86D00F94A4A /* MusicItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35091E272566C86D00F94A4A /* MusicItem.swift */; };
 		35091E312566C91000F94A4A /* ImageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35091E302566C91000F94A4A /* ImageItem.swift */; };
@@ -62,7 +62,7 @@
 		105312D925656C6E00887B1E /* UIEditingExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIEditingExtensions.swift; sourceTree = "<group>"; };
 		10BF032B25655DB0008F2BCC /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		1F59A9FE33A10336EB9C334C /* Pods-Criatu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Criatu.debug.xcconfig"; path = "Target Support Files/Pods-Criatu/Pods-Criatu.debug.xcconfig"; sourceTree = "<group>"; };
-		2897F9202564FF79001DB5EF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		28D999F3256702150003DE45 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		30D8DBB213DC6499EB92DA59 /* Pods-CriatuTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CriatuTests.debug.xcconfig"; path = "Target Support Files/Pods-CriatuTests/Pods-CriatuTests.debug.xcconfig"; sourceTree = "<group>"; };
 		35091E0D25669A7500F94A4A /* LazyWaterfallGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LazyWaterfallGrid.swift; sourceTree = "<group>"; };
 		35091E272566C86D00F94A4A /* MusicItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicItem.swift; sourceTree = "<group>"; };
@@ -190,8 +190,8 @@
 			isa = PBXGroup;
 			children = (
 				35FFE3262564150800F3E8F0 /* Criatu.entitlements */,
-				2897F9202564FF79001DB5EF /* GoogleService-Info.plist */,
 				356A45AE255D836E00F892A1 /* AppDelegate.swift */,
+				28D999F3256702150003DE45 /* GoogleService-Info.plist */,
 				356A45B0255D836E00F892A1 /* SceneDelegate.swift */,
 				10BF032A25655D8D008F2BCC /* DiscoverView */,
 				35FFE2CD2563FBCD00F3E8F0 /* Classes */,
@@ -368,7 +368,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				356A45BE255D837000F892A1 /* LaunchScreen.storyboard in Resources */,
-				2897F9212564FF79001DB5EF /* GoogleService-Info.plist in Resources */,
+				28D999F4256702150003DE45 /* GoogleService-Info.plist in Resources */,
 				356A45BB255D837000F892A1 /* Assets.xcassets in Resources */,
 				356A45B6255D836E00F892A1 /* Main.storyboard in Resources */,
 			);
