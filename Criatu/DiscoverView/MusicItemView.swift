@@ -19,16 +19,7 @@ struct MusicItemView: View{
         if let name = item.title{
             Button(action: {
                 item.isSelected = !item.isSelected
-                if item.isSelected{
-                    stroke = Color(.systemPurple)
-                    foregroundColor = Color(.systemGray5)
-                    backgroundColor = Color(.systemPurple)
-                }
-                else{
-                    stroke = .clear
-                    foregroundColor = Color(.systemPurple)
-                    backgroundColor = Color(.systemGray5)
-                }
+                changeColors()
                 
             }){
                 
@@ -60,9 +51,23 @@ struct MusicItemView: View{
                 .foregroundColor(foregroundColor)
                 .cornerRadius(10)
                 
+            }.onAppear(){
+                changeColors()
             }
         }
-        
+    }
+    
+    func changeColors(){
+        if item.isSelected{
+            stroke = Color(.systemPurple)
+            foregroundColor = Color(.systemGray5)
+            backgroundColor = Color(.systemPurple)
+        }
+        else{
+            stroke = .clear
+            foregroundColor = Color(.systemPurple)
+            backgroundColor = Color(.systemGray5)
+        }
     }
 }
 

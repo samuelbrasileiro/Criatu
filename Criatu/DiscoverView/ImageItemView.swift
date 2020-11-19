@@ -21,16 +21,7 @@ struct ImageItemView: View {
         
         Button( action: {
             item.isSelected = !item.isSelected
-            if item.isSelected{
-                stroke = Color(.systemPurple)
-                foregroundColor = Color(.systemGray5)
-                backgroundColor = Color(.systemPurple)
-            }
-            else{
-                stroke = .clear
-                foregroundColor = Color(.systemPurple)
-                backgroundColor = Color(.systemGray5)
-            }
+            changeColors()
             
         }){
             
@@ -39,6 +30,22 @@ struct ImageItemView: View {
                 .aspectRatio(contentMode: .fit)
                 .overlay(RoundedRectangle(cornerRadius: 10).stroke(stroke, lineWidth: 5))
                 .cornerRadius(10)
+        }
+        .onAppear(){
+            changeColors()
+        }
+    }
+    
+    func changeColors(){
+        if item.isSelected{
+            stroke = Color(.systemPurple)
+            foregroundColor = Color(.systemGray5)
+            backgroundColor = Color(.systemPurple)
+        }
+        else{
+            stroke = .clear
+            foregroundColor = Color(.systemPurple)
+            backgroundColor = Color(.systemGray5)
         }
     }
 }

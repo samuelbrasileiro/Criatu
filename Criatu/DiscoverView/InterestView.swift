@@ -16,14 +16,7 @@ struct InterestView: View {
     var body: some View{
         Button(action: {
             item.isSelected = !item.isSelected
-            if item.isSelected{
-                foregroundColor = Color(.systemBackground)
-                backgroundColor = Color(.systemPurple)
-            }
-            else{
-                foregroundColor = Color(.systemGray)
-                backgroundColor = Color(.systemGray5)
-            }
+            changeColors()
         }){
            
         Text(item.name)
@@ -31,6 +24,20 @@ struct InterestView: View {
             .background(backgroundColor)
             .foregroundColor(foregroundColor)
             .cornerRadius(10)
+        }
+        .onAppear(){
+            changeColors()
+        }
+    }
+    
+    func changeColors(){
+        if item.isSelected{
+            foregroundColor = Color(.systemBackground)
+            backgroundColor = Color(.systemPurple)
+        }
+        else{
+            foregroundColor = Color(.systemGray)
+            backgroundColor = Color(.systemGray5)
         }
     }
 }
