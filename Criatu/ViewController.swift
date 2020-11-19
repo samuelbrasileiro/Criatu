@@ -16,7 +16,7 @@ class ViewController: UIViewController {
         let mjks = "900032829"
         
         
-        let artistsHost = UIHostingController(rootView: ImageItemView(imageItem: ImageItem(id: mjks, type: .image)))
+        let artistsHost = UIHostingController(rootView: DiscoverView(bank: DiscoverBank()))
         artistsHost.view.translatesAutoresizingMaskIntoConstraints = false
         
         self.view.addSubview(artistsHost.view)

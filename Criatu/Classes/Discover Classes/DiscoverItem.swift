@@ -15,8 +15,11 @@ enum ItemType {
 ///The basic structure for a discover item that will be displayed
 class DiscoverItem: ObservableObject {
     var id: String
-    @Published var url: String?
     var type: ItemType
+    
+    @Published var url: String?
+    
+    @Published var isSelected: Bool = false
     
     init(id: String, type: ItemType) {
         self.id = id

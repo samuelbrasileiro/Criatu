@@ -120,6 +120,32 @@ class Artwork: Codable {
         self.url = url
         self.width = width
     }
+    
+    /// From image URL this function downloads and saves the
+    /// image data in 'image' attribute
+    class func fetchImage(url: String, completion: @escaping (Result<UIImage, Error>) -> Void){
+
+        let imageURL = url.replacingOccurrences(of: "{w}x{h}bb", with: "200x200")
+
+        let request = URLRequest(url: URL(string: imageURL)!)
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            DispatchQueue.main.async {
+                if let error = error{
+                    completion(.failure(error))
+                }
+                guard let data = data else {
+                    print("Could not fetch data")
+                    return
+                }
+                
+                if let image = UIImage(data: data){
+                    completion(.success(image))
+                }
+                
+            }
+        }.resume()
+    }
+    
 }
 
 // MARK: - PlayParams

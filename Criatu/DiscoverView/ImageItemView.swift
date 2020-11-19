@@ -11,10 +11,8 @@ import SwiftUI
 
 struct ImageItemView: View {
     
-    @ObservedObject var imageItem: ImageItem
-    
-    @State var isSelected: Bool = false
-    
+    @ObservedObject var item: ImageItem
+        
     @State var stroke: Color = Color.clear
     @State var foregroundColor: Color = Color(.systemPurple)
     @State var backgroundColor: Color = Color(.systemGray5)
@@ -22,8 +20,8 @@ struct ImageItemView: View {
     var body: some View {
         
         Button( action: {
-            isSelected = !isSelected
-            if isSelected{
+            item.isSelected = !item.isSelected
+            if item.isSelected{
                 stroke = Color(.systemPurple)
                 foregroundColor = Color(.systemGray5)
                 backgroundColor = Color(.systemPurple)
@@ -36,7 +34,7 @@ struct ImageItemView: View {
             
         }){
             
-            (imageItem.image == nil ? Image(systemName: "person.circle.fill") : Image(uiImage: imageItem.image!))
+            (item.image == nil ? Image(systemName: "person.circle.fill") : Image(uiImage: item.image!))
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .overlay(RoundedRectangle(cornerRadius: 10).stroke(stroke, lineWidth: 5))
@@ -47,7 +45,7 @@ struct ImageItemView: View {
 
 struct ImageItemView_Previews: PreviewProvider {
     static var previews: some View {
-        ImageItemView(imageItem: ImageItem(id: "1500952424", type: .image))
+        ImageItemView(item: ImageItem(id: "1500952424", type: .image))
     }
 }
 

@@ -10,9 +10,7 @@ import SwiftUI
 struct MusicItemView: View{
     
     @ObservedObject var item: MusicItem
-    
-    @State var isSelected: Bool = false
-    
+        
     @State var stroke: Color = Color.clear
     @State var foregroundColor: Color = Color(.systemPurple)
     @State var backgroundColor: Color = Color(.systemGray5)
@@ -20,8 +18,8 @@ struct MusicItemView: View{
     var body: some View{
         if let name = item.title{
             Button(action: {
-                isSelected = !isSelected
-                if isSelected{
+                item.isSelected = !item.isSelected
+                if item.isSelected{
                     stroke = Color(.systemPurple)
                     foregroundColor = Color(.systemGray5)
                     backgroundColor = Color(.systemPurple)

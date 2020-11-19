@@ -8,9 +8,11 @@
 import Foundation
 
 
-class Interest {
+class Interest: ObservableObject {
     var id: String
     var name: String
+    
+    @Published var isSelected: Bool = false
     
     init(id: String, name: String){
         self.id = id

@@ -15,6 +15,7 @@ class ImageItem: DiscoverItem {
     
     override init(id: String, type: ItemType) {
         super.init(id: id, type: type)
+        
         //apagar//soprateste//usarfirebaseapartirdoidprapegarURL
         url = "https://is3-ssl.mzstatic.com/image/thumb/Music113/v4/fb/97/a0/fb97a00f-282c-5a31-eb62-80f3d69410b6/20UMGIM15390.rgb.jpg/200x200.jpeg"
         

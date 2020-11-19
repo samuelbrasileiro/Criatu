@@ -16,6 +16,9 @@
 		35091E0E25669A7500F94A4A /* LazyWaterfallGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35091E0D25669A7500F94A4A /* LazyWaterfallGrid.swift */; };
 		35091E282566C86D00F94A4A /* MusicItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35091E272566C86D00F94A4A /* MusicItem.swift */; };
 		35091E312566C91000F94A4A /* ImageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35091E302566C91000F94A4A /* ImageItem.swift */; };
+		356A01EA2566E2E600454AA1 /* DiscoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356A01E92566E2E600454AA1 /* DiscoverView.swift */; };
+		356A01EF2566E61F00454AA1 /* InterestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356A01EE2566E61F00454AA1 /* InterestView.swift */; };
+		356A01F72566E96B00454AA1 /* BasicItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356A01F62566E96B00454AA1 /* BasicItemView.swift */; };
 		356A45AF255D836E00F892A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356A45AE255D836E00F892A1 /* AppDelegate.swift */; };
 		356A45B1255D836E00F892A1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356A45B0255D836E00F892A1 /* SceneDelegate.swift */; };
 		356A45B3255D836E00F892A1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356A45B2255D836E00F892A1 /* ViewController.swift */; };
@@ -64,6 +67,9 @@
 		35091E0D25669A7500F94A4A /* LazyWaterfallGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LazyWaterfallGrid.swift; sourceTree = "<group>"; };
 		35091E272566C86D00F94A4A /* MusicItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicItem.swift; sourceTree = "<group>"; };
 		35091E302566C91000F94A4A /* ImageItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageItem.swift; sourceTree = "<group>"; };
+		356A01E92566E2E600454AA1 /* DiscoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverView.swift; sourceTree = "<group>"; };
+		356A01EE2566E61F00454AA1 /* InterestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestView.swift; sourceTree = "<group>"; };
+		356A01F62566E96B00454AA1 /* BasicItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicItemView.swift; sourceTree = "<group>"; };
 		356A45AB255D836E00F892A1 /* Criatu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Criatu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		356A45AE255D836E00F892A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		356A45B0255D836E00F892A1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -136,10 +142,13 @@
 		10BF032A25655D8D008F2BCC /* DiscoverView */ = {
 			isa = PBXGroup;
 			children = (
+				356A01E92566E2E600454AA1 /* DiscoverView.swift */,
 				10BF032B25655DB0008F2BCC /* SearchBarView.swift */,
 				35091E0D25669A7500F94A4A /* LazyWaterfallGrid.swift */,
+				356A01F62566E96B00454AA1 /* BasicItemView.swift */,
 				85C80A5A2566AB2600BBB230 /* ImageItemView.swift */,
 				85C80A6D2566B2A700BBB230 /* MusicItemView.swift */,
+				356A01EE2566E61F00454AA1 /* InterestView.swift */,
 			);
 			path = DiscoverView;
 			sourceTree = "<group>";
@@ -497,11 +506,14 @@
 				35091E282566C86D00F94A4A /* MusicItem.swift in Sources */,
 				35FFE2DC2563FC3A00F3E8F0 /* LookItem.swift in Sources */,
 				35FFE310256413CA00F3E8F0 /* APMSong.swift in Sources */,
+				356A01EA2566E2E600454AA1 /* DiscoverView.swift in Sources */,
+				356A01F72566E96B00454AA1 /* BasicItemView.swift in Sources */,
 				35091E0E25669A7500F94A4A /* LazyWaterfallGrid.swift in Sources */,
 				105312DA25656C6E00887B1E /* UIEditingExtensions.swift in Sources */,
 				356A45AF255D836E00F892A1 /* AppDelegate.swift in Sources */,
 				85C80A6E2566B2A700BBB230 /* MusicItemView.swift in Sources */,
 				85C80A5B2566AB2600BBB230 /* ImageItemView.swift in Sources */,
+				356A01EF2566E61F00454AA1 /* InterestView.swift in Sources */,
 				35FFE2D22563FBE300F3E8F0 /* Interest.swift in Sources */,
 				10BF032C25655DB0008F2BCC /* SearchBarView.swift in Sources */,
 				356A45B1255D836E00F892A1 /* SceneDelegate.swift in Sources */,
