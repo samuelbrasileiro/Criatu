@@ -13,6 +13,7 @@
 		105312DA25656C6E00887B1E /* UIEditingExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105312D925656C6E00887B1E /* UIEditingExtensions.swift */; };
 		10BF032C25655DB0008F2BCC /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BF032B25655DB0008F2BCC /* SearchBarView.swift */; };
 		2897F9212564FF79001DB5EF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2897F9202564FF79001DB5EF /* GoogleService-Info.plist */; };
+		35091E0E25669A7500F94A4A /* LazyWaterfallGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35091E0D25669A7500F94A4A /* LazyWaterfallGrid.swift */; };
 		356A45AF255D836E00F892A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356A45AE255D836E00F892A1 /* AppDelegate.swift */; };
 		356A45B1255D836E00F892A1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356A45B0255D836E00F892A1 /* SceneDelegate.swift */; };
 		356A45B3255D836E00F892A1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356A45B2255D836E00F892A1 /* ViewController.swift */; };
@@ -56,6 +57,7 @@
 		1F59A9FE33A10336EB9C334C /* Pods-Criatu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Criatu.debug.xcconfig"; path = "Target Support Files/Pods-Criatu/Pods-Criatu.debug.xcconfig"; sourceTree = "<group>"; };
 		2897F9202564FF79001DB5EF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		30D8DBB213DC6499EB92DA59 /* Pods-CriatuTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CriatuTests.debug.xcconfig"; path = "Target Support Files/Pods-CriatuTests/Pods-CriatuTests.debug.xcconfig"; sourceTree = "<group>"; };
+		35091E0D25669A7500F94A4A /* LazyWaterfallGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LazyWaterfallGrid.swift; sourceTree = "<group>"; };
 		356A45AB255D836E00F892A1 /* Criatu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Criatu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		356A45AE255D836E00F892A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		356A45B0255D836E00F892A1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				10BF032B25655DB0008F2BCC /* SearchBarView.swift */,
+				35091E0D25669A7500F94A4A /* LazyWaterfallGrid.swift */,
 			);
 			path = DiscoverView;
 			sourceTree = "<group>";
@@ -472,6 +475,7 @@
 				356A45B3255D836E00F892A1 /* ViewController.swift in Sources */,
 				35FFE2DC2563FC3A00F3E8F0 /* LookItem.swift in Sources */,
 				35FFE310256413CA00F3E8F0 /* Song.swift in Sources */,
+				35091E0E25669A7500F94A4A /* LazyWaterfallGrid.swift in Sources */,
 				105312DA25656C6E00887B1E /* UIEditingExtensions.swift in Sources */,
 				356A45AF255D836E00F892A1 /* AppDelegate.swift in Sources */,
 				35FFE2D22563FBE300F3E8F0 /* Interest.swift in Sources */,
