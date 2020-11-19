@@ -14,6 +14,8 @@
 		10BF032C25655DB0008F2BCC /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BF032B25655DB0008F2BCC /* SearchBarView.swift */; };
 		2897F9212564FF79001DB5EF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2897F9202564FF79001DB5EF /* GoogleService-Info.plist */; };
 		35091E0E25669A7500F94A4A /* LazyWaterfallGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35091E0D25669A7500F94A4A /* LazyWaterfallGrid.swift */; };
+		35091E282566C86D00F94A4A /* MusicItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35091E272566C86D00F94A4A /* MusicItem.swift */; };
+		35091E312566C91000F94A4A /* ImageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35091E302566C91000F94A4A /* ImageItem.swift */; };
 		356A45AF255D836E00F892A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356A45AE255D836E00F892A1 /* AppDelegate.swift */; };
 		356A45B1255D836E00F892A1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356A45B0255D836E00F892A1 /* SceneDelegate.swift */; };
 		356A45B3255D836E00F892A1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356A45B2255D836E00F892A1 /* ViewController.swift */; };
@@ -26,8 +28,8 @@
 		35FFE2D22563FBE300F3E8F0 /* Interest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FFE2D12563FBE300F3E8F0 /* Interest.swift */; };
 		35FFE2D72563FC1400F3E8F0 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FFE2D62563FC1400F3E8F0 /* Style.swift */; };
 		35FFE2DC2563FC3A00F3E8F0 /* LookItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FFE2DB2563FC3A00F3E8F0 /* LookItem.swift */; };
-		35FFE2E12563FC5800F3E8F0 /* InterestItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FFE2E02563FC5800F3E8F0 /* InterestItem.swift */; };
-		35FFE310256413CA00F3E8F0 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FFE30F256413CA00F3E8F0 /* Song.swift */; };
+		35FFE2E12563FC5800F3E8F0 /* DiscoverItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FFE2E02563FC5800F3E8F0 /* DiscoverItem.swift */; };
+		35FFE310256413CA00F3E8F0 /* APMSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FFE30F256413CA00F3E8F0 /* APMSong.swift */; };
 		85C80A5B2566AB2600BBB230 /* ImageItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C80A5A2566AB2600BBB230 /* ImageItemView.swift */; };
 		85C80A6E2566B2A700BBB230 /* MusicItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C80A6D2566B2A700BBB230 /* MusicItemView.swift */; };
 		998BA92C616F1A11E9D39B1C /* Pods_Criatu_CriatuUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F431E44D70780784862AA6E /* Pods_Criatu_CriatuUITests.framework */; };
@@ -60,6 +62,8 @@
 		2897F9202564FF79001DB5EF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		30D8DBB213DC6499EB92DA59 /* Pods-CriatuTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CriatuTests.debug.xcconfig"; path = "Target Support Files/Pods-CriatuTests/Pods-CriatuTests.debug.xcconfig"; sourceTree = "<group>"; };
 		35091E0D25669A7500F94A4A /* LazyWaterfallGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LazyWaterfallGrid.swift; sourceTree = "<group>"; };
+		35091E272566C86D00F94A4A /* MusicItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicItem.swift; sourceTree = "<group>"; };
+		35091E302566C91000F94A4A /* ImageItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageItem.swift; sourceTree = "<group>"; };
 		356A45AB255D836E00F892A1 /* Criatu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Criatu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		356A45AE255D836E00F892A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		356A45B0255D836E00F892A1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,8 +82,8 @@
 		35FFE2D12563FBE300F3E8F0 /* Interest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interest.swift; sourceTree = "<group>"; };
 		35FFE2D62563FC1400F3E8F0 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		35FFE2DB2563FC3A00F3E8F0 /* LookItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookItem.swift; sourceTree = "<group>"; };
-		35FFE2E02563FC5800F3E8F0 /* InterestItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestItem.swift; sourceTree = "<group>"; };
-		35FFE30F256413CA00F3E8F0 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
+		35FFE2E02563FC5800F3E8F0 /* DiscoverItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverItem.swift; sourceTree = "<group>"; };
+		35FFE30F256413CA00F3E8F0 /* APMSong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APMSong.swift; sourceTree = "<group>"; };
 		35FFE3262564150800F3E8F0 /* Criatu.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Criatu.entitlements; sourceTree = "<group>"; };
 		49859DDB0939B7597659474C /* Pods-CriatuTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CriatuTests.release.xcconfig"; path = "Target Support Files/Pods-CriatuTests/Pods-CriatuTests.release.xcconfig"; sourceTree = "<group>"; };
 		4F431E44D70780784862AA6E /* Pods_Criatu_CriatuUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Criatu_CriatuUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,6 +127,7 @@
 		105312D825656C5500887B1E /* Extra */ = {
 			isa = PBXGroup;
 			children = (
+				35FFE30F256413CA00F3E8F0 /* APMSong.swift */,
 				105312D925656C6E00887B1E /* UIEditingExtensions.swift */,
 			);
 			path = Extra;
@@ -134,10 +139,20 @@
 				10BF032B25655DB0008F2BCC /* SearchBarView.swift */,
 				35091E0D25669A7500F94A4A /* LazyWaterfallGrid.swift */,
 				85C80A5A2566AB2600BBB230 /* ImageItemView.swift */,
-				105312D32565613500887B1E /* DiscoverBank.swift */,
 				85C80A6D2566B2A700BBB230 /* MusicItemView.swift */,
 			);
 			path = DiscoverView;
+			sourceTree = "<group>";
+		};
+		35091E2C2566C89700F94A4A /* Discover Classes */ = {
+			isa = PBXGroup;
+			children = (
+				105312D32565613500887B1E /* DiscoverBank.swift */,
+				35FFE2E02563FC5800F3E8F0 /* DiscoverItem.swift */,
+				35091E272566C86D00F94A4A /* MusicItem.swift */,
+				35091E302566C91000F94A4A /* ImageItem.swift */,
+			);
+			path = "Discover Classes";
 			sourceTree = "<group>";
 		};
 		356A45A2255D836E00F892A1 = {
@@ -207,8 +222,7 @@
 				35FFE2D12563FBE300F3E8F0 /* Interest.swift */,
 				35FFE2D62563FC1400F3E8F0 /* Style.swift */,
 				35FFE2DB2563FC3A00F3E8F0 /* LookItem.swift */,
-				35FFE2E02563FC5800F3E8F0 /* InterestItem.swift */,
-				35FFE30F256413CA00F3E8F0 /* Song.swift */,
+				35091E2C2566C89700F94A4A /* Discover Classes */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -475,12 +489,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35091E312566C91000F94A4A /* ImageItem.swift in Sources */,
 				105312D42565613500887B1E /* DiscoverBank.swift in Sources */,
 				0488FB732562BB4D00E537B2 /* FirebaseHandler.swift in Sources */,
-				35FFE2E12563FC5800F3E8F0 /* InterestItem.swift in Sources */,
+				35FFE2E12563FC5800F3E8F0 /* DiscoverItem.swift in Sources */,
 				356A45B3255D836E00F892A1 /* ViewController.swift in Sources */,
+				35091E282566C86D00F94A4A /* MusicItem.swift in Sources */,
 				35FFE2DC2563FC3A00F3E8F0 /* LookItem.swift in Sources */,
-				35FFE310256413CA00F3E8F0 /* Song.swift in Sources */,
+				35FFE310256413CA00F3E8F0 /* APMSong.swift in Sources */,
 				35091E0E25669A7500F94A4A /* LazyWaterfallGrid.swift in Sources */,
 				105312DA25656C6E00887B1E /* UIEditingExtensions.swift in Sources */,
 				356A45AF255D836E00F892A1 /* AppDelegate.swift in Sources */,

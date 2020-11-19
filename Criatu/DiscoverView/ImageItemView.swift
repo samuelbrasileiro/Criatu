@@ -9,9 +9,10 @@ import SwiftUI
 
 ///The view containing the settings of the images that will appear in the feed
 
-struct ItemImageView: View {
+struct ImageItemView: View {
     
     @ObservedObject var imageItem: ImageItem
+    
     @State var isSelected: Bool = false
     
     @State var stroke: Color = Color.clear
@@ -41,6 +42,12 @@ struct ItemImageView: View {
                 .overlay(RoundedRectangle(cornerRadius: 10).stroke(stroke, lineWidth: 5))
                 .cornerRadius(10)
         }
+    }
+}
+
+struct ImageItemView_Previews: PreviewProvider {
+    static var previews: some View {
+        ImageItemView(imageItem: ImageItem(id: "1500952424", type: .image))
     }
 }
 

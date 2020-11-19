@@ -8,36 +8,36 @@
 import Foundation
 import StoreKit
 
-var musicAcessTokenKey = "MIGTAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBHkwdwIBAQQgbOMaeCKD0b+JlbCzkE0IKiY+Vr7sGZt2XoeGiU22qOmgCgYIKoZIzj0DAQehRANCAARsZco046SVjL2SXqEoeQHen/qrXZfrZH1fOt6tKFVfCX0zX6p4P/+hvwBRhMe0nC+xqi412/VM3f9r8QvZGoJv"
+var musicAcessTokenKey = "eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlNGUkM1TTQ3WjQifQ.eyJpYXQiOjE2MDU2MjcxNTQsImV4cCI6MTYyMTE3OTE1NCwiaXNzIjoiUDYzOTUyTVM3TCJ9.vnrDu0iFK8t7lU3T2ejCB7JCGm0cIFSf67bo8ld4Bp9wg12Wzap8somkPSrMx1Aw3GSW_CXR3t-l5m3WGLuTVg"
 
 
 // MARK: - Song
-class Song: Codable {
+class APMSong: Codable {
     let data: [SongDatum]?
 
     init(data: [SongDatum]?) {
         self.data = data
-
     }
     
-    class func fetch(songID: String, completion: @escaping (Result<Song,Error>) -> Void){
+    /// Description
+    /// From a Apple Music song ID it returns a result containing the Song data
+    /// - Parameters:
+    ///   - songID: The song ID
+    ///   - completion: Block of asyncronous code that is processed at the end of the fetch
+    class func fetch(songID: String, completion: @escaping (Result<APMSong,Error>) -> Void){
         
-        let url = URL(string: "https://api.music.apple.com/v1/catalog/us/songs/" + songID)!
+        let url = URL(string: "https://api.music.apple.com/v1/catalog/br/songs/" + songID)!
         var request = URLRequest(url: url)
         request.setValue("Bearer " + musicAcessTokenKey, forHTTPHeaderField: "Authorization")
         
-        SKCloudServiceController().requestUserToken(forDeveloperToken: musicAcessTokenKey){ (result, error) in
-            print(error!)
-        }
+        
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard let data = data else {
                 completion(.failure(error!))
                 return
             }
             do {
-                print(response.debugDescription)
-                print(data)
-                let song = try JSONDecoder().decode(Song.self, from: data)
+                let song = try JSONDecoder().decode(APMSong.self, from: data)
                 
                 DispatchQueue.main.async {
                     completion(.success(song))
