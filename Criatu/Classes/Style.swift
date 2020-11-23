@@ -21,5 +21,16 @@ class Style{
         self.description = description
         self.imageURL = imageURL
     }
-        
+    
+    var dictionary: [String:Any] {
+        return ["id": id,
+                "name": name,
+                "description": description,
+                "imageURL": imageURL]
+    }
+    var nsDictionary: NSDictionary {
+        return dictionary as NSDictionary
+    }
+    
+    
 }

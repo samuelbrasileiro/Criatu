@@ -18,4 +18,15 @@ class Interest: ObservableObject {
         self.id = id
         self.name = name
     }
+    
+    ///Returning a dictionary to classes
+    var dictionary: [String:Any] {
+        return ["id": id,
+                "name": name]
+    }
+    var nsDictionary: NSDictionary {
+        return dictionary as NSDictionary
+    }
+    
+    
 }

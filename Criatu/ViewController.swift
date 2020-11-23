@@ -9,8 +9,10 @@ import UIKit
 import SwiftUI
 
 class ViewController: UIViewController {
+        
     let handler = FirebaseHandler()
     override func viewDidLoad() {
+                
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         let mjks = "900032829"

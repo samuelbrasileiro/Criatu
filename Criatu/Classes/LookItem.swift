@@ -18,4 +18,12 @@ class LookItem{
         self.id = id
         self.imageURL = imageURL
     }
+    
+    var dictionary: [String:Any] {
+        return ["id": id,
+                "imageURL": imageURL]
+    }
+    var nsDictionary: NSDictionary {
+        return dictionary as NSDictionary
+    }
 }
