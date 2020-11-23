@@ -9,6 +9,7 @@ import SwiftUI
 
 class MusicItem: DiscoverItem {
     
+
     @Published var title: String?{
         willSet { self.objectWillChange.send() }
     }

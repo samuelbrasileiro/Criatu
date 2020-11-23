@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct DiscoverView: View {
+    
     @ObservedObject var bank: DiscoverBank
     
     var body: some View {
