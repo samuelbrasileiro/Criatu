@@ -8,12 +8,15 @@
 import Foundation
 import FirebaseDatabase
 
+enum DatabasePath: String {
+    case interests = "interests/"
+    case items = "items/"
+    case closets = "closets/"
+}
+
 class FirebaseHandler {
     
     let ref = Database.database().reference()
-    let tagsPath = "tags/"
-    let itensPath = "itens/"
-    let closetPath = "closet/"
     var stringResponse:NSString? = NSString()
     var dictionaryResponse:NSDictionary? = NSDictionary()
     var numberResponse:NSNumber? = NSNumber()
@@ -23,25 +26,31 @@ class FirebaseHandler {
     
     
     init() {
+        let dict = [
+            "name": "café"
+        ]
+        writingDataBase(path: .interests, value: dict)
         
     }
     
     
-    //The variable PATH is the path to the exact location where you want to write a VALUE of one of the types allowed (number, string, array or dictionary)
-    func WritingDataBase(path:String, value:Any) {
-        
-        ref.child(path).setValue(value)
+    ///The variable PATH is the path to the exact location where you want to write a VALUE of one of the types allowed (number, string, array or dictionary)
+    func writingDataBase(path: DatabasePath, value: Dictionary<String, Any>) {
+        var value = value
+        let childRef = self.ref.child(path.rawValue).childByAutoId()
+        value["id"] = childRef.key
+        childRef.setValue(value)
     }
     
     
-    //Tha PATH works equals to the write function. You need to know what type you are reading (number, string, array or dictionary). The read is async, the data resquested will be in the variables RESPONSE, depending of the type. If you are reading a number, the data will be in the numberResponde variable. Also, the dataReady variable will be true.
-    func ReadDatabase<T>(path:String, dataType: T.Type){
+    ///That PATH works equals to the write function. You need to know what type you are reading (number, string, array or dictionary). The read is async, the data resquested will be in the variables RESPONSE, depending of the type. If you are reading a number, the data will be in the numberResponde variable. Also, the dataReady variable will be true.
+    func readDatabase<T>(path:DatabasePath, dataType: T.Type){
         
         if dataReady{
             dataReady = false
         }
         
-        let pathReference = ref.child(path)
+        let pathReference = ref.child(path.rawValue)
         pathReference.observeSingleEvent(of: .value, with: {(snapshot) in
             
             let data = snapshot.value as? T
@@ -84,6 +93,9 @@ class FirebaseHandler {
         })
     }
     
+    /// This function is necessary for checking if the data is readable
+    /// - Parameter data: what is being checked
+    /// - Returns: data readability
     func isDataReadble (data:Any?) -> Bool{
         
         if data == nil{
@@ -98,16 +110,16 @@ class FirebaseHandler {
     }
     
     
-    //To update a child you must pass the path to the father in the PATH variable, and the child ID which will be updated.
-    func UpdateOnceDatabase(path: String, value:Any, childID: String) {
+    ///To update a child you must pass the path to the father in the PATH variable, and the child ID which will be updated.
+    func updateOnceDatabase(path: DatabasePath, value:Any, childID: String) {
        
-        ref.child(path).updateChildValues([childID:value])
+        ref.child(path.rawValue).updateChildValues([childID:value])
     }
     
     
-    //the path and all the data within will be deleted
-    func RemoveOnceDatabase(path: String){
-        ref.child(path).removeValue()
+    ///the path and all the data within will be deleted
+    func removeOnceDatabase(path: DatabasePath){
+        ref.child(path.rawValue).removeValue()
     }
     
 }
