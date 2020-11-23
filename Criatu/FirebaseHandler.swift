@@ -23,15 +23,18 @@ class FirebaseHandler {
     
     
     init() {
-        //let dict = ["name":"seu pereira"]
-        //WritingDataBase(path: tagsPath + "testing", value: dict)
+        
     }
     
+    
+    //The variable PATH is the path to the exact location where you want to write a VALUE of one of the types allowed (number, string, array or dictionary)
     func WritingDataBase(path:String, value:Any) {
         
         ref.child(path).setValue(value)
     }
     
+    
+    //Tha PATH works equals to the write function. You need to know what type you are reading (number, string, array or dictionary). The read is async, the data resquested will be in the variables RESPONSE, depending of the type. If you are reading a number, the data will be in the numberResponde variable. Also, the dataReady variable will be true.
     func ReadDatabase<T>(path:String, dataType: T.Type){
         
         if dataReady{
@@ -93,11 +96,16 @@ class FirebaseHandler {
     func isDataReady() -> Bool{
         return dataReady
     }
+    
+    
+    //To update a child you must pass the path to the father in the PATH variable, and the child ID which will be updated.
     func UpdateOnceDatabase(path: String, value:Any, childID: String) {
        
         ref.child(path).updateChildValues([childID:value])
     }
     
+    
+    //the path and all the data within will be deleted
     func RemoveOnceDatabase(path: String){
         ref.child(path).removeValue()
     }
