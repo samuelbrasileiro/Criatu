@@ -7,22 +7,34 @@
 
 import SwiftUI
 
-enum ItemType {
+enum ItemType: String, Codable {
     case music
     case image
 }
 
 ///The basic structure for a discover item that will be displayed
 class DiscoverItem: ObservableObject {
-    var id: String
-    var type: ItemType
-    
-    @Published var url: String?
+    var attributes: DiscoverItem.FDatabase
     
     @Published var isSelected: Bool = false
     
-    init(id: String, type: ItemType) {
-        self.id = id
-        self.type = type
+    @Published var url: String?
+    
+    init(id: String, type: ItemType){
+        self.attributes = FDatabase(id: id, type: type)
+    }
+    
+    init(attributes: FDatabase){
+        self.attributes = attributes
+    }
+    
+    class FDatabase: Codable{
+        var id: String
+        var type: ItemType
+        
+        init(id: String, type: ItemType){
+            self.id = id
+            self.type = type
+        }
     }
 }

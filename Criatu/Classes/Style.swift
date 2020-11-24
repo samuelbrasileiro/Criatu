@@ -8,29 +8,32 @@
 import Foundation
 import UIKit
 
-class Style{
-    var id: String
-    var name: String
-    var description: String
-    var imageURL: String
-    var image: UIImage?
+class Style: ObservableObject{
+    
+    var attributes: Style.FDatabase
+    
+    @Published var image: UIImage?
     
     init(id: String, name: String, description: String, imageURL: String){
-        self.id = id
-        self.name = name
-        self.description = description
-        self.imageURL = imageURL
+        attributes = FDatabase(id: id, name: name, description: description, imageURL: imageURL)
     }
     
-    var dictionary: [String:Any] {
-        return ["id": id,
-                "name": name,
-                "description": description,
-                "imageURL": imageURL]
-    }
-    var nsDictionary: NSDictionary {
-        return dictionary as NSDictionary
+    init(attributes: FDatabase){
+        self.attributes = attributes
     }
     
-    
+    class FDatabase: Codable{
+        var id: String
+        var name: String
+        var description: String
+        var imageURL: String
+        
+        init(id: String, name: String, description: String, imageURL: String){
+            self.id = id
+            self.name = name
+            self.description = description
+            self.imageURL = imageURL
+        }
+        
+    }
 }

@@ -9,24 +9,28 @@ import Foundation
 
 
 class Interest: ObservableObject {
-    var id: String
-    var name: String
+    var attributes: Interest.FDatabase
     
     @Published var isSelected: Bool = false
     
     init(id: String, name: String){
-        self.id = id
-        self.name = name
+        self.attributes = FDatabase(id: id, name: name)
     }
     
-    ///Returning a dictionary to classes
-    var dictionary: [String:Any] {
-        return ["id": id,
-                "name": name]
-    }
-    var nsDictionary: NSDictionary {
-        return dictionary as NSDictionary
+    init(attributes: FDatabase){
+        self.attributes = attributes
     }
     
-    
+    class FDatabase: Codable{
+        var id: String
+        var name: String
+
+        init(id: String, name: String){
+            self.id = id
+            self.name = name
+        }
+    }
 }
+    
+    
+
