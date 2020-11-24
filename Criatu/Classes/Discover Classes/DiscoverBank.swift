@@ -16,6 +16,8 @@ class DiscoverBank: ObservableObject, Identifiable {
     @Published var searchText: String = ""
     @Published var isSearching: Bool = false
     
+    @Published var allInterests: [Interest] = []
+    
     init() {
         self.clear()
         
@@ -27,19 +29,40 @@ class DiscoverBank: ObservableObject, Identifiable {
     /// This function clears all items in the array 'items'
     
     func clear(){
-        items = []
-        interests = []
+        items.removeAll()
+        interests.removeAll()
     }
     
     func addInterests(){
-        interests.append(Interest(id: "", name: "Woodstock"))
-        interests.append(Interest(id: "", name: "Sertanejo"))
-        interests.append(Interest(id: "", name: "Gatos"))
-        interests.append(Interest(id: "", name: "Ar Livre"))
+        if let interests = Interest.restore(){
+            self.interests = interests
+        }
     }
     
-    /// This function adds all items in the array 'items'
+    func getAllInterests(){
+        self.allInterests = []
+        FirebaseHandler.readAllCollection(.interests, dataType: [Interest.Database].self){ result in
+            if case .success(let attributes) = result{
+                for attribute in attributes{
+                    let interest = Interest(attributes: attribute)
+                    self.allInterests.append(interest)
+                }
+                self.objectWillChange.send()
+            }
+        }
+    }
     
+    func clearAllInterests(){
+        self.allInterests.removeAll()
+    }
+    
+    func addInterestToTop(interest: Interest){
+        if self.interests.filter({ $0.attributes.id == interest.attributes.id
+        }).count == 0{
+            self.interests.insert(interest, at: 0)
+        }
+    }
+    /// This function adds all items in the array 'items'
     func addItems(){
         items.append(MusicItem(id: "1500952424", type: .music))
         items.append(ImageItem(id: "900032829", type: .image))

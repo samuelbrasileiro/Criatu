@@ -10,10 +10,10 @@ import SwiftUI
 struct BasicItemView: View {
     @ObservedObject var item: DiscoverItem
     var body: some View{
-        if item.type == .music{
+        if item.attributes.type == .music{
             MusicItemView(item: item as! MusicItem)
         }
-        else if item.type == .image{
+        else if item.attributes.type == .image{
             ImageItemView(item: item as! ImageItem)
         }
     }

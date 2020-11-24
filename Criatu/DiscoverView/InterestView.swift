@@ -19,7 +19,7 @@ struct InterestView: View {
             changeColors()
         }){
            
-        Text(item.name)
+            Text(item.attributes.name)
             .padding()
             .background(backgroundColor)
             .foregroundColor(foregroundColor)
