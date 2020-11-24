@@ -31,8 +31,8 @@ class DiscoverItem: ObservableObject {
     class Database: Codable{
         var id: String
         var type: ItemType
-        var stylesIDs: [String]
-        init(id: String, type: ItemType, stylesID: [String]){
+        var stylesIDs: [String]?
+        init(id: String, type: ItemType, stylesID: [String]?){
             self.id = id
             self.type = type
             self.stylesIDs = stylesID

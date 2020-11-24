@@ -20,12 +20,16 @@ class FirebaseHandler {
     
     
     init() {
-        
+        FirebaseHandler.readCollection(.interests, id: "-MMuViU7-iXR50IJGTaC", dataType: Interest.Database.self){ result in
+            if case .success(let interest) = result{
+                print(interest.name)
+            }
+        }
         FirebaseHandler.readAllCollection(.interests, dataType: [Interest.Database].self){ result in
             if case .success(let interestsAttributes) = result{
                 let interests = interestsAttributes.map{Interest(attributes: $0)}
                 for interest in interests{
-                    print(interest.attributes.itemsIDs)
+                    print(interest.attributes.itemsIDs ?? "não tem")
                 }
             }
         }
@@ -65,10 +69,19 @@ class FirebaseHandler {
         pathReference.observeSingleEvent(of: .value, with: {(snapshot) in
             DispatchQueue.main.async {
                 
-                guard let data = snapshot.valueInExportFormat() else{
+                guard var data = snapshot.valueInExportFormat() as? [String: Any] else{
                     return
                 }
-                print(data)
+                
+                //Convert Dictionary Items to Array
+                var dict = data
+                for key in data.keys{
+                    if let data = data[key] as? [String: Any]{
+                        dict[key] = data.map{$0.value}
+                        
+                    }
+                }
+                data = dict
                 do{
                     
                     let decodedData = try Type(from: data)
@@ -100,15 +113,22 @@ class FirebaseHandler {
                 guard let dict = snapshot.valueInExportFormat() as? [String: Any] else{
                     return
                 }
+                
+                //Convert Dictionary to Array
                 var data = dict.map{$0.value}
                 data = data.map{ item -> Any? in
-                    if let dict = item as? [String: Any]{
-                        return dict.map{$0.value}
+                    if var dict = item as? [String: Any]{
+                        for key in dict.keys{
+                            if let data = dict[key] as? [String: Any]{
+                                dict[key] = data.map{$0.value}
+                                return dict
+                            }
+                        }
                     }
                     return item
                 }
+                
                 do{
-                    print(data)
                     let thing = try Type(from: data)
                     completion(.success(thing))
                 }
