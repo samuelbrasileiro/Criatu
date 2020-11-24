@@ -8,7 +8,7 @@
 import Foundation
 import FirebaseDatabase
 
-enum DatabasePath: String {
+enum Collection: String {
     case interests = "interests/"
     case items = "items/"
     case closets = "closets/"
@@ -16,110 +16,111 @@ enum DatabasePath: String {
 
 class FirebaseHandler {
     
-    let ref = Database.database().reference()
-    var stringResponse:NSString? = NSString()
-    var dictionaryResponse:NSDictionary? = NSDictionary()
-    var numberResponse:NSNumber? = NSNumber()
-    var arrayResponse:NSArray? = NSArray()
-    var tagsCreated = true, itensCreated = true, closetCreated = true
-    var dataReady = false
+    static var ref = Database.database().reference()
     
     
     init() {
-        let dict = [
-            "name": "café"
-        ]
-        writingDataBase(path: .interests, value: dict)
         
     }
-    
-    
-    ///The variable PATH is the path to the exact location where you want to write a VALUE of one of the types allowed (number, string, array or dictionary)
-    func writingDataBase(path: DatabasePath, value: Dictionary<String, Any>) {
-        var value = value
-        let childRef = self.ref.child(path.rawValue).childByAutoId()
-        value["id"] = childRef.key
-        childRef.setValue(value)
-    }
-    
-    
-    ///That PATH works equals to the write function. You need to know what type you are reading (number, string, array or dictionary). The read is async, the data resquested will be in the variables RESPONSE, depending of the type. If you are reading a number, the data will be in the numberResponde variable. Also, the dataReady variable will be true.
-    func readDatabase<T>(path:DatabasePath, dataType: T.Type){
+    /// Adding an object to a collection
+    /// - Parameters:
+    ///   - collection: Collections are the categories in which the objects are stored
+    ///   - value: The value of the objects
+    class func writeToCollection<Type>(_ collection: Collection, value: Type)
+    where Type: Codable{
+        let childRef = ref.child(collection.rawValue).childByAutoId()
         
-        if dataReady{
-            dataReady = false
+        do {
+            var dictionary = try value.asDictionary()
+            dictionary["id"] = childRef.key
+            
+            childRef.setValue(dictionary)
         }
+        catch{
+            print(error)
+        }
+    }
+    
+    
+    /// Reading the objects written in the previous operation
+    /// - Parameters:
+    ///   - collection: Collections are the categories in which the objects are stored
+    ///   - id: Is an identifier to the object. Each object has a unique id
+    ///   - dataType: Identifying the type of the collection where the objects are stored
+    ///   - completion: When the reading is over, this code is executed, it can be either successful or a failure
+    class func readCollection<Type>(_ collection: Collection, id: String, dataType: Type.Type, completion: @escaping (Result<Type,Error>) -> Void)
+    where Type: Codable{
         
-        let pathReference = ref.child(path.rawValue)
+        let pathReference = ref.child(collection.rawValue + id)
+        
         pathReference.observeSingleEvent(of: .value, with: {(snapshot) in
-            
-            let data = snapshot.value as? T
-            print(data!)
-            
             DispatchQueue.main.async {
                 
-                if T.self == NSNumber.self{
-                    
-                    self.numberResponse = (data as! NSNumber)
-                    self.stringResponse = nil
-                    self.dictionaryResponse = nil
-                    self.arrayResponse = nil
-                    
-                }else if T.self == NSString.self{
-                    
-                    self.stringResponse = (data as! NSString)
-                    self.numberResponse = nil
-                    self.dictionaryResponse = nil
-                    self.arrayResponse = nil
-                    
-                }else if T.self == NSDictionary.self{
-                    
-                    self.dictionaryResponse = (data as! NSDictionary)
-                    self.numberResponse = nil
-                    self.stringResponse = nil
-                    self.arrayResponse = nil
-                    
-                }else{
-                    
-                    self.arrayResponse = (data as! NSArray)
-                    self.numberResponse = nil
-                    self.stringResponse = nil
-                    self.dictionaryResponse = nil
+                guard let data = snapshot.valueInExportFormat() else{
+                    return
                 }
-                
-                self.dataReady = true
+                print(data)
+                do{
+                    
+                    let decodedData = try Type(from: data)
+                    completion(.success(decodedData))
+                }
+                catch{
+                    completion(.failure(error))
+                }
             }
             
         })
     }
     
-    /// This function is necessary for checking if the data is readable
-    /// - Parameter data: what is being checked
-    /// - Returns: data readability
-    func isDataReadble (data:Any?) -> Bool{
+    
+    /// Reading all the collections at the same time
+    /// - Parameters:
+    ///   - collection: Collections are the categories in which the objects are stored
+    ///   - dataType: Identifying the type of the collection where the objects are stored
+    ///   - completion: When the reading is over, this code is executed, it can be either successful or a failure
+    class func readAllCollection<Type>(_ collection: Collection, dataType: Type.Type, completion: @escaping (Result<Type,Error>) -> Void)
+    where Type: Codable{
         
-        if data == nil{
-            return false
-        }else{
-            return true
+        let collectionRef = ref.child(collection.rawValue)
+        
+        collectionRef.observeSingleEvent(of: .value, with: {(snapshot) in
+            
+            DispatchQueue.main.async {
+                
+                guard let dict = snapshot.valueInExportFormat() as? [String: Any] else{
+                    return
+                }
+                let data = dict.map{$0.value}
+                do{
+                    
+                    let thing = try Type(from: data)
+                    completion(.success(thing))
+                }
+                catch{
+                    print(error)
+                    completion(.failure(error))
+                }
+            }
+            
+        })
+    }
+    
+}
+extension Decodable {
+    init(from data: Any) throws {
+        let data = try JSONSerialization.data(withJSONObject: data, options: .prettyPrinted)
+        
+        self = try JSONDecoder().decode(Self.self, from: data)
+    }
+}
+
+extension Encodable {
+    func asDictionary() throws -> [String: Any] {
+        let data = try JSONEncoder().encode(self)
+        guard let dictionary = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any] else {
+            throw NSError()
         }
+        return dictionary
     }
-    
-    func isDataReady() -> Bool{
-        return dataReady
-    }
-    
-    
-    ///To update a child you must pass the path to the father in the PATH variable, and the child ID which will be updated.
-    func updateOnceDatabase(path: DatabasePath, value:Any, childID: String) {
-       
-        ref.child(path.rawValue).updateChildValues([childID:value])
-    }
-    
-    
-    ///the path and all the data within will be deleted
-    func removeOnceDatabase(path: DatabasePath){
-        ref.child(path.rawValue).removeValue()
-    }
-    
 }
