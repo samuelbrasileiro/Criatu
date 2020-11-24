@@ -32,10 +32,10 @@ class DiscoverBank: ObservableObject, Identifiable {
     }
     
     func addInterests(){
-        interests.append(Interest(id: "", name: "Woodstock"))
-        interests.append(Interest(id: "", name: "Sertanejo"))
-        interests.append(Interest(id: "", name: "Gatos"))
-        interests.append(Interest(id: "", name: "Ar Livre"))
+        interests.append(Interest(id: "", name: "Woodstock", itemsIDs: []))
+        interests.append(Interest(id: "", name: "Sertanejo", itemsIDs: []))
+        interests.append(Interest(id: "", name: "Gatos", itemsIDs: []))
+        interests.append(Interest(id: "", name: "Ar Livre", itemsIDs: []))
     }
     
     /// This function adds all items in the array 'items'

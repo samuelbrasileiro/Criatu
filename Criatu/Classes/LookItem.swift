@@ -10,20 +10,20 @@ import Foundation
 import UIKit
 
 class LookItem: ObservableObject{
-    var attributes: LookItem.FDatabase
+    var attributes: LookItem.Database
     var image: UIImage?
     
 
     
     init(id: String, imageURL: String){
-        self.attributes = FDatabase(id: id, imageURL: imageURL)
+        self.attributes = LookItem.Database(id: id, imageURL: imageURL)
     }
     
-    init(attributes: FDatabase){
+    init(attributes: LookItem.Database){
         self.attributes = attributes
     }
     
-    class FDatabase: Codable{
+    class Database: Codable{
         var id: String
         var imageURL: String
 

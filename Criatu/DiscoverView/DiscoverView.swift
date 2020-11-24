@@ -17,13 +17,13 @@ struct DiscoverView: View {
                 
                 List {
                     // Filtered list of ALL INTERESTS FROM FIREBASE
-                    ForEach((0..<bank.interests.count).filter{ bank.interests[$0].name.hasPrefix(bank.searchText) || bank.searchText == ""}, id:\.self) { index in
+                    ForEach((0..<bank.interests.count).filter{ bank.interests[$0].attributes.name.hasPrefix(bank.searchText) || bank.searchText == ""}, id:\.self) { index in
                         Button(action:{
                             UIApplication.shared.endEditing(true) // this must be placed before the other commands here
                             self.bank.searchText = ""
                             self.bank.isSearching = false
                         }){
-                        Text(bank.interests[index].name)
+                            Text(bank.interests[index].attributes.name)
                         }
                     }
                 }

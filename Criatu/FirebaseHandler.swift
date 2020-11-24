@@ -21,6 +21,15 @@ class FirebaseHandler {
     
     init() {
         
+        FirebaseHandler.readAllCollection(.interests, dataType: [Interest.Database].self){ result in
+            if case .success(let interestsAttributes) = result{
+                let interests = interestsAttributes.map{Interest(attributes: $0)}
+                for interest in interests{
+                    print(interest.attributes.itemsIDs)
+                }
+            }
+        }
+        
     }
     /// Adding an object to a collection
     /// - Parameters:
@@ -91,9 +100,15 @@ class FirebaseHandler {
                 guard let dict = snapshot.valueInExportFormat() as? [String: Any] else{
                     return
                 }
-                let data = dict.map{$0.value}
+                var data = dict.map{$0.value}
+                data = data.map{ item -> Any? in
+                    if let dict = item as? [String: Any]{
+                        return dict.map{$0.value}
+                    }
+                    return item
+                }
                 do{
-                    
+                    print(data)
                     let thing = try Type(from: data)
                     completion(.success(thing))
                 }

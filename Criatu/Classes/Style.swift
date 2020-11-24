@@ -10,19 +10,19 @@ import UIKit
 
 class Style: ObservableObject{
     
-    var attributes: Style.FDatabase
+    var attributes: Style.Database
     
     @Published var image: UIImage?
     
     init(id: String, name: String, description: String, imageURL: String){
-        attributes = FDatabase(id: id, name: name, description: description, imageURL: imageURL)
+        attributes = Style.Database(id: id, name: name, description: description, imageURL: imageURL)
     }
     
-    init(attributes: FDatabase){
+    init(attributes: Style.Database){
         self.attributes = attributes
     }
     
-    class FDatabase: Codable{
+    class Database: Codable{
         var id: String
         var name: String
         var description: String

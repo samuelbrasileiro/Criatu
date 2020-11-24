@@ -14,27 +14,28 @@ enum ItemType: String, Codable {
 
 ///The basic structure for a discover item that will be displayed
 class DiscoverItem: ObservableObject {
-    var attributes: DiscoverItem.FDatabase
+    var attributes: DiscoverItem.Database
     
     @Published var isSelected: Bool = false
     
     @Published var url: String?
     
     init(id: String, type: ItemType){
-        self.attributes = FDatabase(id: id, type: type)
+        self.attributes = DiscoverItem.Database(id: id, type: type, stylesID: [])
     }
     
-    init(attributes: FDatabase){
+    init(attributes: DiscoverItem.Database){
         self.attributes = attributes
     }
     
-    class FDatabase: Codable{
+    class Database: Codable{
         var id: String
         var type: ItemType
-        
-        init(id: String, type: ItemType){
+        var stylesIDs: [String]
+        init(id: String, type: ItemType, stylesID: [String]){
             self.id = id
             self.type = type
+            self.stylesIDs = stylesID
         }
     }
 }
