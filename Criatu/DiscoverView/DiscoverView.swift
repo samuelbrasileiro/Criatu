@@ -12,6 +12,7 @@ struct DiscoverView: View {
     @ObservedObject var bank: DiscoverBank
     
     var body: some View {
+                
         VStack{
             SearchBarView(bank: bank)
             if bank.isSearching {

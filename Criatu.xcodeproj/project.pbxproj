@@ -11,6 +11,7 @@
 		08A98BE97C3F63783E897B5B /* Pods_CriatuTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC2471249044735CF8A7BDAA /* Pods_CriatuTests.framework */; };
 		105312D42565613500887B1E /* DiscoverBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105312D32565613500887B1E /* DiscoverBank.swift */; };
 		105312DA25656C6E00887B1E /* UIEditingExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105312D925656C6E00887B1E /* UIEditingExtensions.swift */; };
+		106733EE256D2F0C00411F60 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106733ED256D2F0C00411F60 /* TabBarViewController.swift */; };
 		10BF032C25655DB0008F2BCC /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BF032B25655DB0008F2BCC /* SearchBarView.swift */; };
 		28D999F4256702150003DE45 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28D999F3256702150003DE45 /* GoogleService-Info.plist */; };
 		35091E0E25669A7500F94A4A /* LazyWaterfallGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35091E0D25669A7500F94A4A /* LazyWaterfallGrid.swift */; };
@@ -60,6 +61,7 @@
 		0488FB722562BB4D00E537B2 /* FirebaseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseHandler.swift; sourceTree = "<group>"; };
 		105312D32565613500887B1E /* DiscoverBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverBank.swift; sourceTree = "<group>"; };
 		105312D925656C6E00887B1E /* UIEditingExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIEditingExtensions.swift; sourceTree = "<group>"; };
+		106733ED256D2F0C00411F60 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		10BF032B25655DB0008F2BCC /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		1F59A9FE33A10336EB9C334C /* Pods-Criatu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Criatu.debug.xcconfig"; path = "Target Support Files/Pods-Criatu/Pods-Criatu.debug.xcconfig"; sourceTree = "<group>"; };
 		28D999F3256702150003DE45 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -193,9 +195,10 @@
 				356A45AE255D836E00F892A1 /* AppDelegate.swift */,
 				28D999F3256702150003DE45 /* GoogleService-Info.plist */,
 				356A45B0255D836E00F892A1 /* SceneDelegate.swift */,
+				106733ED256D2F0C00411F60 /* TabBarViewController.swift */,
+				356A45B2255D836E00F892A1 /* ViewController.swift */,
 				10BF032A25655D8D008F2BCC /* DiscoverView */,
 				35FFE2CD2563FBCD00F3E8F0 /* Classes */,
-				356A45B2255D836E00F892A1 /* ViewController.swift */,
 				105312D825656C5500887B1E /* Extra */,
 				356A45B4255D836E00F892A1 /* Main.storyboard */,
 				356A45BA255D837000F892A1 /* Assets.xcassets */,
@@ -500,6 +503,7 @@
 			files = (
 				35091E312566C91000F94A4A /* ImageItem.swift in Sources */,
 				105312D42565613500887B1E /* DiscoverBank.swift in Sources */,
+				106733EE256D2F0C00411F60 /* TabBarViewController.swift in Sources */,
 				0488FB732562BB4D00E537B2 /* FirebaseHandler.swift in Sources */,
 				35FFE2E12563FC5800F3E8F0 /* DiscoverItem.swift in Sources */,
 				356A45B3255D836E00F892A1 /* ViewController.swift in Sources */,
