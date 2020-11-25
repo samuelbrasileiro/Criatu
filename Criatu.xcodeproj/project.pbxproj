@@ -29,14 +29,13 @@
 		356A45C9255D837000F892A1 /* CriatuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356A45C8255D837000F892A1 /* CriatuTests.swift */; };
 		356A45D4255D837000F892A1 /* CriatuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356A45D3255D837000F892A1 /* CriatuUITests.swift */; };
 		35D0EB69256D669300CFBEB1 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D0EB68256D669300CFBEB1 /* Keys.swift */; };
+		35F82955256F00B90087DD22 /* WardrobeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F82954256F00B90087DD22 /* WardrobeView.swift */; };
+		35F8295E256F11980087DD22 /* ClosetsBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F8295D256F11980087DD22 /* ClosetsBank.swift */; };
 		35FFE2D22563FBE300F3E8F0 /* Interest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FFE2D12563FBE300F3E8F0 /* Interest.swift */; };
 		35FFE2D72563FC1400F3E8F0 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FFE2D62563FC1400F3E8F0 /* Style.swift */; };
 		35FFE2DC2563FC3A00F3E8F0 /* LookItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FFE2DB2563FC3A00F3E8F0 /* LookItem.swift */; };
 		35FFE2E12563FC5800F3E8F0 /* DiscoverItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FFE2E02563FC5800F3E8F0 /* DiscoverItem.swift */; };
 		35FFE310256413CA00F3E8F0 /* APMSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FFE30F256413CA00F3E8F0 /* APMSong.swift */; };
-		8545D7BF256D3CD600702C65 /* WardrobeView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8545D7BE256D3CD600702C65 /* WardrobeView1.swift */; };
-		85809AD2256BFE5C008244D9 /* ImageWardrobeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85809AD1256BFE5C008244D9 /* ImageWardrobeView.swift */; };
-		85809ADA256BFECC008244D9 /* TitleWardrobeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85809AD9256BFECC008244D9 /* TitleWardrobeView.swift */; };
 		85C80A5B2566AB2600BBB230 /* ImageItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C80A5A2566AB2600BBB230 /* ImageItemView.swift */; };
 		85C80A6E2566B2A700BBB230 /* MusicItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C80A6D2566B2A700BBB230 /* MusicItemView.swift */; };
 		85FAEB84256D581E00660648 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FAEB83256D581E00660648 /* View+Extensions.swift */; };
@@ -91,6 +90,8 @@
 		356A45D3255D837000F892A1 /* CriatuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriatuUITests.swift; sourceTree = "<group>"; };
 		356A45D5255D837000F892A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35D0EB68256D669300CFBEB1 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
+		35F82954256F00B90087DD22 /* WardrobeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeView.swift; sourceTree = "<group>"; };
+		35F8295D256F11980087DD22 /* ClosetsBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosetsBank.swift; sourceTree = "<group>"; };
 		35FFE2D12563FBE300F3E8F0 /* Interest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interest.swift; sourceTree = "<group>"; };
 		35FFE2D62563FC1400F3E8F0 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		35FFE2DB2563FC3A00F3E8F0 /* LookItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookItem.swift; sourceTree = "<group>"; };
@@ -101,9 +102,6 @@
 		4F431E44D70780784862AA6E /* Pods_Criatu_CriatuUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Criatu_CriatuUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		56AC4C34B24D913FDC683DF9 /* Pods_Criatu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Criatu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		705336C5F351501ABA12A137 /* Pods-Criatu-CriatuUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Criatu-CriatuUITests.release.xcconfig"; path = "Target Support Files/Pods-Criatu-CriatuUITests/Pods-Criatu-CriatuUITests.release.xcconfig"; sourceTree = "<group>"; };
-		8545D7BE256D3CD600702C65 /* WardrobeView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeView1.swift; sourceTree = "<group>"; };
-		85809AD1256BFE5C008244D9 /* ImageWardrobeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageWardrobeView.swift; sourceTree = "<group>"; };
-		85809AD9256BFECC008244D9 /* TitleWardrobeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleWardrobeView.swift; sourceTree = "<group>"; };
 		85C80A5A2566AB2600BBB230 /* ImageItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageItemView.swift; sourceTree = "<group>"; };
 		85C80A6D2566B2A700BBB230 /* MusicItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicItemView.swift; sourceTree = "<group>"; };
 		85FAEB83256D581E00660648 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
@@ -155,10 +153,10 @@
 			isa = PBXGroup;
 			children = (
 				356A01E92566E2E600454AA1 /* DiscoverView.swift */,
-				85C80A5A2566AB2600BBB230 /* ImageItemView.swift */,
 				10BF032B25655DB0008F2BCC /* SearchBarView.swift */,
 				35091E0D25669A7500F94A4A /* LazyWaterfallGrid.swift */,
 				356A01F62566E96B00454AA1 /* BasicItemView.swift */,
+				85C80A5A2566AB2600BBB230 /* ImageItemView.swift */,
 				85C80A6D2566B2A700BBB230 /* MusicItemView.swift */,
 				356A01EE2566E61F00454AA1 /* InterestView.swift */,
 			);
@@ -205,7 +203,7 @@
 				356A45AE255D836E00F892A1 /* AppDelegate.swift */,
 				28D999F3256702150003DE45 /* GoogleService-Info.plist */,
 				356A45B0255D836E00F892A1 /* SceneDelegate.swift */,
-				85809AC0256BF60D008244D9 /* WardrobeView */,
+				85809AC0256BF60D008244D9 /* WardrobeSelectionView */,
 				10BF032A25655D8D008F2BCC /* DiscoverView */,
 				35FFE2CD2563FBCD00F3E8F0 /* Classes */,
 				356A45B2255D836E00F892A1 /* ViewController.swift */,
@@ -238,6 +236,14 @@
 			path = CriatuUITests;
 			sourceTree = "<group>";
 		};
+		35F8295C256F116E0087DD22 /* WardrobeClasses */ = {
+			isa = PBXGroup;
+			children = (
+				35F8295D256F11980087DD22 /* ClosetsBank.swift */,
+			);
+			path = WardrobeClasses;
+			sourceTree = "<group>";
+		};
 		35FFE2CD2563FBCD00F3E8F0 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -245,6 +251,7 @@
 				35FFE2D62563FC1400F3E8F0 /* Style.swift */,
 				35FFE2DB2563FC3A00F3E8F0 /* LookItem.swift */,
 				35091E2C2566C89700F94A4A /* Discover Classes */,
+				35F8295C256F116E0087DD22 /* WardrobeClasses */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -262,14 +269,12 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		85809AC0256BF60D008244D9 /* WardrobeView */ = {
+		85809AC0256BF60D008244D9 /* WardrobeSelectionView */ = {
 			isa = PBXGroup;
 			children = (
-				85809AD9256BFECC008244D9 /* TitleWardrobeView.swift */,
-				85809AD1256BFE5C008244D9 /* ImageWardrobeView.swift */,
-				8545D7BE256D3CD600702C65 /* WardrobeView1.swift */,
+				35F82954256F00B90087DD22 /* WardrobeView.swift */,
 			);
-			path = WardrobeView;
+			path = WardrobeSelectionView;
 			sourceTree = "<group>";
 		};
 		A3FF226C9167910396FF0AC5 /* Frameworks */ = {
@@ -521,13 +526,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85809ADA256BFECC008244D9 /* TitleWardrobeView.swift in Sources */,
 				35091E312566C91000F94A4A /* ImageItem.swift in Sources */,
 				105312D42565613500887B1E /* DiscoverBank.swift in Sources */,
+				35F8295E256F11980087DD22 /* ClosetsBank.swift in Sources */,
 				0488FB732562BB4D00E537B2 /* FirebaseHandler.swift in Sources */,
 				35FFE2E12563FC5800F3E8F0 /* DiscoverItem.swift in Sources */,
 				356A45B3255D836E00F892A1 /* ViewController.swift in Sources */,
-				8545D7BF256D3CD600702C65 /* WardrobeView1.swift in Sources */,
 				35091E282566C86D00F94A4A /* MusicItem.swift in Sources */,
 				35FFE2DC2563FC3A00F3E8F0 /* LookItem.swift in Sources */,
 				35FFE310256413CA00F3E8F0 /* APMSong.swift in Sources */,
@@ -544,8 +548,8 @@
 				35FFE2D22563FBE300F3E8F0 /* Interest.swift in Sources */,
 				10BF032C25655DB0008F2BCC /* SearchBarView.swift in Sources */,
 				356A45B1255D836E00F892A1 /* SceneDelegate.swift in Sources */,
-				85809AD2256BFE5C008244D9 /* ImageWardrobeView.swift in Sources */,
 				35FFE2D72563FC1400F3E8F0 /* Style.swift in Sources */,
+				35F82955256F00B90087DD22 /* WardrobeView.swift in Sources */,
 				356A45B9255D836E00F892A1 /* Criatu.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
