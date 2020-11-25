@@ -8,15 +8,19 @@
 import SwiftUI
 import AVKit
 
+class Audio{
+    static var player: AVAudioPlayer?
+}
+
 struct MusicItemView: View{
     
     @ObservedObject var item: MusicItem
     
-    @State var player: AVAudioPlayer?
-    
     @State var stroke: Color = Color.clear
     @State var foregroundColor: Color = Color(.systemPurple)
     @State var backgroundColor: Color = Color(.systemGray5)
+    
+    @State var isPlaying: Bool = false
     
     var body: some View{
         if let name = item.title{
@@ -41,15 +45,25 @@ struct MusicItemView: View{
                     Spacer()
                     Button(action: {
                         
-                        
-                        let urlstring = item.url
-                        let url = URL(string: urlstring!)
-                        print("the url = \(url!)")
-                        downloadFileFromURL(url: url!)
+                        isPlaying = !isPlaying
+                        if isPlaying{
+                            let urlstring = item.url
+                            let url = URL(string: urlstring!)
+                            print("the url = \(url!)")
+                            downloadFileFromURL(url: url!)
+                        }
+                        else{
+                            Audio.player?.stop()
+                        }
                         
                         
                     }){
-                        Image(systemName: "play.fill")
+                        if !isPlaying{
+                            Image(systemName: "play.fill")
+                        }
+                        else{
+                            Image(systemName: "pause.fill")
+                        }
                     }
                     
                 }
@@ -84,10 +98,10 @@ struct MusicItemView: View{
                 
         do {
             
-            self.player = try AVAudioPlayer(contentsOf: url)
-            player!.prepareToPlay()
-            player!.volume = 1.0
-            player!.play()
+            Audio.player = try AVAudioPlayer(contentsOf: url)
+            Audio.player!.prepareToPlay()
+            Audio.player!.volume = 1.0
+            Audio.player!.play()
             
         } catch let error as NSError {
             //self.player = nil

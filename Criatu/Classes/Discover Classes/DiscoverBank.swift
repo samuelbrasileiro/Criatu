@@ -7,6 +7,7 @@
 
 import UIKit
 import SwiftUI
+import AVKit
 
 class DiscoverBank: ObservableObject, Identifiable {
     
@@ -18,6 +19,7 @@ class DiscoverBank: ObservableObject, Identifiable {
     
     @Published var allInterests: [Interest] = []
     
+
     init() {
         self.clear()
         
