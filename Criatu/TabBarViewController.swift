@@ -8,9 +8,12 @@
 import Foundation
 import SwiftUI
 
-struct ContentView: View {
-    @State var index = 0
+struct TabBarView: View {
     
+    @State var index = 0
+    @ObservedObject var bank: DiscoverBank
+
+
     var body: some View {
         
         VStack {
@@ -19,16 +22,17 @@ struct ContentView: View {
                 
                 if self.index == 0 {
                     
-                    Color.yellow.edgesIgnoringSafeArea(.top)
+                    DiscoverView(bank: bank)
+
                 }
                 
                 else if self.index == 1 {
                     
-                    Color.red.edgesIgnoringSafeArea(.top)
+                    Color.red.edgesIgnoringSafeArea(.all)
                     
                 } else {
                     
-                    Color.blue.edgesIgnoringSafeArea(.top)
+                    Color.blue.edgesIgnoringSafeArea(.all)
                 }
             }
             TabBarViewController(index: $index)
@@ -36,9 +40,9 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct TabBarView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        TabBarView(bank: DiscoverBank())
     }
 }
 
@@ -85,7 +89,7 @@ struct TabBarViewController: View {
             
         }.padding(8)
         .frame(width: UIScreen.main.bounds.width)
-        .background(Color.white)
+        .background(Color.white.opacity(0.86))
         .frame(minWidth: 375, idealWidth: 375, maxWidth: 375, minHeight: 60, idealHeight: 60, maxHeight: 60, alignment: .center)
         .animation(.default)
     }
