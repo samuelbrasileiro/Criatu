@@ -8,7 +8,7 @@
 import SwiftUI
 import AVKit
 
-class Audio{
+class AudioPreview{
     static var player: AVAudioPlayer?
 }
 
@@ -21,6 +21,9 @@ struct MusicItemView: View{
     @State var backgroundColor: Color = Color(.systemGray5)
     
     @State var isPlaying: Bool = false
+    
+    let isPlayingPub = NotificationCenter.default
+                .publisher(for: NSNotification.Name("isPlayingChangedInAMusicView"))
     
     var body: some View{
         if let name = item.title{
@@ -44,18 +47,19 @@ struct MusicItemView: View{
                     }
                     Spacer()
                     Button(action: {
-                        
-                        isPlaying = !isPlaying
-                        if isPlaying{
+
+                        if !isPlaying{
+                            //se o botão estiver no estado não tocando antes
                             let urlstring = item.url
                             let url = URL(string: urlstring!)
                             print("the url = \(url!)")
                             downloadFileFromURL(url: url!)
                         }
                         else{
-                            Audio.player?.stop()
+                            AudioPreview.player?.stop()
                         }
                         
+                        NotificationCenter.default.post(name: Notification.Name("isPlayingChangedInAMusicView"), object: self)
                         
                     }){
                         if !isPlaying{
@@ -64,7 +68,19 @@ struct MusicItemView: View{
                         else{
                             Image(systemName: "pause.fill")
                         }
-                    }
+                        
+                    }.onReceive(isPlayingPub, perform: { notification in
+                        if let object = notification.object as? MusicItemView{
+                            
+                            if self.item.url == object.item.url{
+                                
+                                isPlaying = !isPlaying
+                            }
+                            else{
+                                isPlaying = false
+                            }
+                        }
+                    })
                     
                 }
                 .padding()
@@ -98,10 +114,10 @@ struct MusicItemView: View{
                 
         do {
             
-            Audio.player = try AVAudioPlayer(contentsOf: url)
-            Audio.player!.prepareToPlay()
-            Audio.player!.volume = 1.0
-            Audio.player!.play()
+            AudioPreview.player = try AVAudioPlayer(contentsOf: url)
+            AudioPreview.player!.prepareToPlay()
+            AudioPreview.player!.volume = 1.0
+            AudioPreview.player!.play()
             
         } catch let error as NSError {
             //self.player = nil
