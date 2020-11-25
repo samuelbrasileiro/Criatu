@@ -18,7 +18,7 @@ class ViewController: UIViewController {
         let mjks = "900032829"
         
         
-        let artistsHost = UIHostingController(rootView: DiscoverView(bank: DiscoverBank()))
+        let artistsHost = UIHostingController(rootView: WardrobeView())//(bank: DiscoverBank()))
         artistsHost.view.translatesAutoresizingMaskIntoConstraints = false
         
         self.view.addSubview(artistsHost.view)
