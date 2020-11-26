@@ -11,6 +11,7 @@
 		08A98BE97C3F63783E897B5B /* Pods_CriatuTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC2471249044735CF8A7BDAA /* Pods_CriatuTests.framework */; };
 		105312D42565613500887B1E /* DiscoverBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105312D32565613500887B1E /* DiscoverBank.swift */; };
 		105312DA25656C6E00887B1E /* UIEditingExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105312D925656C6E00887B1E /* UIEditingExtensions.swift */; };
+		106733EE256D2F0C00411F60 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106733ED256D2F0C00411F60 /* MainTabView.swift */; };
 		10BF032C25655DB0008F2BCC /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BF032B25655DB0008F2BCC /* SearchBarView.swift */; };
 		28D999F4256702150003DE45 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28D999F3256702150003DE45 /* GoogleService-Info.plist */; };
 		35091E0E25669A7500F94A4A /* LazyWaterfallGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35091E0D25669A7500F94A4A /* LazyWaterfallGrid.swift */; };
@@ -21,13 +22,14 @@
 		356A01F72566E96B00454AA1 /* BasicItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356A01F62566E96B00454AA1 /* BasicItemView.swift */; };
 		356A45AF255D836E00F892A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356A45AE255D836E00F892A1 /* AppDelegate.swift */; };
 		356A45B1255D836E00F892A1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356A45B0255D836E00F892A1 /* SceneDelegate.swift */; };
-		356A45B3255D836E00F892A1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356A45B2255D836E00F892A1 /* ViewController.swift */; };
+		356A45B3255D836E00F892A1 /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356A45B2255D836E00F892A1 /* DiscoverViewController.swift */; };
 		356A45B6255D836E00F892A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 356A45B4255D836E00F892A1 /* Main.storyboard */; };
 		356A45B9255D836E00F892A1 /* Criatu.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 356A45B7255D836E00F892A1 /* Criatu.xcdatamodeld */; };
 		356A45BB255D837000F892A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 356A45BA255D837000F892A1 /* Assets.xcassets */; };
 		356A45BE255D837000F892A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 356A45BC255D837000F892A1 /* LaunchScreen.storyboard */; };
 		356A45C9255D837000F892A1 /* CriatuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356A45C8255D837000F892A1 /* CriatuTests.swift */; };
 		356A45D4255D837000F892A1 /* CriatuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356A45D3255D837000F892A1 /* CriatuUITests.swift */; };
+		359A7F36256EAD940006A368 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359A7F35256EAD940006A368 /* TabBarViewController.swift */; };
 		35D0EB69256D669300CFBEB1 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D0EB68256D669300CFBEB1 /* Keys.swift */; };
 		35FFE2D22563FBE300F3E8F0 /* Interest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FFE2D12563FBE300F3E8F0 /* Interest.swift */; };
 		35FFE2D72563FC1400F3E8F0 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FFE2D62563FC1400F3E8F0 /* Style.swift */; };
@@ -61,6 +63,7 @@
 		0488FB722562BB4D00E537B2 /* FirebaseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseHandler.swift; sourceTree = "<group>"; };
 		105312D32565613500887B1E /* DiscoverBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverBank.swift; sourceTree = "<group>"; };
 		105312D925656C6E00887B1E /* UIEditingExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIEditingExtensions.swift; sourceTree = "<group>"; };
+		106733ED256D2F0C00411F60 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		10BF032B25655DB0008F2BCC /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		1F59A9FE33A10336EB9C334C /* Pods-Criatu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Criatu.debug.xcconfig"; path = "Target Support Files/Pods-Criatu/Pods-Criatu.debug.xcconfig"; sourceTree = "<group>"; };
 		28D999F3256702150003DE45 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -74,7 +77,7 @@
 		356A45AB255D836E00F892A1 /* Criatu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Criatu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		356A45AE255D836E00F892A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		356A45B0255D836E00F892A1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		356A45B2255D836E00F892A1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		356A45B2255D836E00F892A1 /* DiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 		356A45B5255D836E00F892A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		356A45B8255D836E00F892A1 /* Criatu.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Criatu.xcdatamodel; sourceTree = "<group>"; };
 		356A45BA255D837000F892A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -86,6 +89,7 @@
 		356A45CF255D837000F892A1 /* CriatuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CriatuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		356A45D3255D837000F892A1 /* CriatuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriatuUITests.swift; sourceTree = "<group>"; };
 		356A45D5255D837000F892A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		359A7F35256EAD940006A368 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		35D0EB68256D669300CFBEB1 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		35FFE2D12563FBE300F3E8F0 /* Interest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interest.swift; sourceTree = "<group>"; };
 		35FFE2D62563FC1400F3E8F0 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
@@ -135,6 +139,7 @@
 		105312D825656C5500887B1E /* Extra */ = {
 			isa = PBXGroup;
 			children = (
+				356A45AE255D836E00F892A1 /* AppDelegate.swift */,
 				35FFE30F256413CA00F3E8F0 /* APMSong.swift */,
 				105312D925656C6E00887B1E /* UIEditingExtensions.swift */,
 				35D0EB68256D669300CFBEB1 /* Keys.swift */,
@@ -145,6 +150,7 @@
 		10BF032A25655D8D008F2BCC /* DiscoverView */ = {
 			isa = PBXGroup;
 			children = (
+				356A45B2255D836E00F892A1 /* DiscoverViewController.swift */,
 				356A01E92566E2E600454AA1 /* DiscoverView.swift */,
 				10BF032B25655DB0008F2BCC /* SearchBarView.swift */,
 				35091E0D25669A7500F94A4A /* LazyWaterfallGrid.swift */,
@@ -193,19 +199,18 @@
 			isa = PBXGroup;
 			children = (
 				35FFE3262564150800F3E8F0 /* Criatu.entitlements */,
-				356A45AE255D836E00F892A1 /* AppDelegate.swift */,
-				28D999F3256702150003DE45 /* GoogleService-Info.plist */,
 				356A45B0255D836E00F892A1 /* SceneDelegate.swift */,
+				0488FB722562BB4D00E537B2 /* FirebaseHandler.swift */,
+				35EBBC2B256EBF4200856EE5 /* TabBar */,
 				10BF032A25655D8D008F2BCC /* DiscoverView */,
 				35FFE2CD2563FBCD00F3E8F0 /* Classes */,
-				356A45B2255D836E00F892A1 /* ViewController.swift */,
 				105312D825656C5500887B1E /* Extra */,
 				356A45B4255D836E00F892A1 /* Main.storyboard */,
 				356A45BA255D837000F892A1 /* Assets.xcassets */,
 				356A45BC255D837000F892A1 /* LaunchScreen.storyboard */,
 				356A45BF255D837000F892A1 /* Info.plist */,
+				28D999F3256702150003DE45 /* GoogleService-Info.plist */,
 				356A45B7255D836E00F892A1 /* Criatu.xcdatamodeld */,
-				0488FB722562BB4D00E537B2 /* FirebaseHandler.swift */,
 			);
 			path = Criatu;
 			sourceTree = "<group>";
@@ -226,6 +231,15 @@
 				356A45D5255D837000F892A1 /* Info.plist */,
 			);
 			path = CriatuUITests;
+			sourceTree = "<group>";
+		};
+		35EBBC2B256EBF4200856EE5 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				106733ED256D2F0C00411F60 /* MainTabView.swift */,
+				359A7F35256EAD940006A368 /* TabBarViewController.swift */,
+			);
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 		35FFE2CD2563FBCD00F3E8F0 /* Classes */ = {
@@ -503,12 +517,14 @@
 			files = (
 				35091E312566C91000F94A4A /* ImageItem.swift in Sources */,
 				105312D42565613500887B1E /* DiscoverBank.swift in Sources */,
+				106733EE256D2F0C00411F60 /* MainTabView.swift in Sources */,
 				0488FB732562BB4D00E537B2 /* FirebaseHandler.swift in Sources */,
 				35FFE2E12563FC5800F3E8F0 /* DiscoverItem.swift in Sources */,
-				356A45B3255D836E00F892A1 /* ViewController.swift in Sources */,
+				356A45B3255D836E00F892A1 /* DiscoverViewController.swift in Sources */,
 				35091E282566C86D00F94A4A /* MusicItem.swift in Sources */,
 				35FFE2DC2563FC3A00F3E8F0 /* LookItem.swift in Sources */,
 				35FFE310256413CA00F3E8F0 /* APMSong.swift in Sources */,
+				359A7F36256EAD940006A368 /* TabBarViewController.swift in Sources */,
 				356A01EA2566E2E600454AA1 /* DiscoverView.swift in Sources */,
 				356A01F72566E96B00454AA1 /* BasicItemView.swift in Sources */,
 				35091E0E25669A7500F94A4A /* LazyWaterfallGrid.swift in Sources */,

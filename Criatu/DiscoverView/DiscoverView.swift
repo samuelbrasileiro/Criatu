@@ -10,9 +10,12 @@ import SwiftUI
 struct DiscoverView: View {
     
     @ObservedObject var bank: DiscoverBank
+    @State var index = 0
     
     var body: some View {
+                
         VStack{
+            
             SearchBarView(bank: bank)
             if bank.isSearching {
                 
@@ -44,14 +47,11 @@ struct DiscoverView: View {
                     }.frame(height: 50)
                     .padding(.leading)
                 }
-                
                 LazyWaterfallGrid(data: bank.items, numberOfColumns: 2, horizontalSpacing: 8, verticalSpacing: 8, edgeInsets: EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)){ item in
                     
                     BasicItemView(item: item)
                     
-                    
                 }.background(Color(.systemGray6))
-                
             }
         }
         
