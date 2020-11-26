@@ -13,9 +13,17 @@ struct InterestView: View {
     @State var foregroundColor: Color = Color(.systemGray)
     @State var backgroundColor: Color = Color(.systemGray5)
     
+    var delegate: DiscoverDelegate?
+    
     var body: some View{
         Button(action: {
             item.isSelected = !item.isSelected
+            if item.isSelected{
+                delegate?.didSelectInterest(item)
+            }
+            else{
+                delegate?.didDisselectInterest(item)
+            }
             changeColors()
         }){
            

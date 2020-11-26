@@ -42,7 +42,7 @@ struct DiscoverView: View {
                 ScrollView(.horizontal, showsIndicators: false){
                     LazyHStack{//list of USER'S INTERESTS
                         ForEach(0..<bank.interests.count, id: \.self){ index in
-                            InterestView(item: bank.interests[index])
+                            InterestView(item: bank.interests[index], delegate: bank)
                         }
                     }.frame(height: 50)
                     .padding(.leading)
