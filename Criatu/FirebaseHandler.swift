@@ -7,6 +7,7 @@
 
 import Foundation
 import FirebaseDatabase
+import FirebaseStorage
 
 enum Collection: String {
     case interests = "interests/"
@@ -18,19 +19,19 @@ class FirebaseHandler {
     
     static var ref = Database.database().reference()
     
-    
+    static var storage = Storage.storage().reference()
     init() {
         //LEMBRAR DE SUBTRAIR UM INDEX DO ITEM AO VER LA NO FIREBASE LEMBRE DISSO
         //73 DO NOTION == 72 DO FIREBASE
-        FirebaseHandler.addItemsIDsToInterests(interestID: "-MMuermw3UgUytvj0eab", itemsIDs: ["-MN3fNV5Bt3GALDkUIey"])
+        //FirebaseHandler.addItemsIDsToInterests(interestID: "-MMuermw3UgUytvj0eab", itemsIDs: ["-MN3fNV5Bt3GALDkUIey"])
         
         //LEMBRAR DE SUBTRAIR UM INDEX DO ITEM AO VER LA NO FIREBASE LEMBRE DISSO
         //73 DO NOTION == 72 DO FIREBASE
-        FirebaseHandler.addItemsIDsToInterests(interestID: "-MMuermw3UgUytvj0eab", itemsIDs: ["-MN3fNV5Bt3GALDkUIey"])
+        //FirebaseHandler.addItemsIDsToInterests(interestID: "-MMuermw3UgUytvj0eab", itemsIDs: ["-MN3fNV5Bt3GALDkUIey"])
         
         //LEMBRAR DE SUBTRAIR UM INDEX DO ITEM AO VER LA NO FIREBASE LEMBRE DISSO
         //73 DO NOTION == 72 DO FIREBASE
-        FirebaseHandler.addItemsIDsToInterests(interestID: "-MMuermw3UgUytvj0eab", itemsIDs: ["-MN3fNV5Bt3GALDkUIey"])
+        //FirebaseHandler.addItemsIDsToInterests(interestID: "-MMuermw3UgUytvj0eab", itemsIDs: ["-MN3fNV5Bt3GALDkUIey"])
 
         
     }
@@ -51,6 +52,25 @@ class FirebaseHandler {
         }
         catch{
             print(error)
+        }
+    }
+    
+    class func getItemImage(from id: String, completion: @escaping (Result<UIImage, Error>) -> Void){
+        let ref = storage.child("images")
+
+        let imageRef = ref.child(id)
+        
+        imageRef.getData(maxSize: 1 * 2048 * 2048){ data, error in
+            
+            if let error = error{
+                print(error.localizedDescription)
+                completion(.failure(error))
+            }
+            if let data = data{
+                if let image = UIImage(data: data){
+                    completion(.success(image))
+                }
+            }
         }
     }
     

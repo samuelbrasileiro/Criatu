@@ -18,6 +18,8 @@ class DiscoverItem: ObservableObject {
     
     @Published var isSelected: Bool = false
     
+    var interestAssociatedID: String?
+    
     init(id: String, url: String, type: ItemType){
         self.attributes = DiscoverItem.Database(id: id, url: url, type: type, stylesID: [])
     }

@@ -6,9 +6,9 @@ target 'Criatu' do
   use_frameworks!
 
   # Pods for Criatu
-	pod 'Firebase/Core'
+	#pod 'Firebase/Core'
 	pod 'Firebase/Database'
-  
+  pod 'Firebase/Storage'
   target 'CriatuTests' do
     inherit! :search_paths
     # Pods for testing

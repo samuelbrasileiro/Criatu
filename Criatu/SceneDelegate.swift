@@ -29,13 +29,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneDidBecomeActive(_ scene: UIScene) {
         // Called when the scene has moved from an inactive state to an active state.
         // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
-        let interest1 = Interest(id: "-MMuVH5MQM7Gq49566qK", name: "DIY", itemsIDs: ["111", "222"])
-        let interest2 = Interest(id: "-MMuWy3bg3vMXvU4WnL-", name: "Praia", itemsIDs: [])
-        let interest3 = Interest(id: "-MMuWb1h8FOufjWN3B3G", name: "Cristais", itemsIDs: [])
-        let interest4 = Interest(id: "-MMuXH8zDoOzVGV8BNZP", name: "Cachoeira", itemsIDs: [])
-        let interests = [interest1,interest2,interest3,interest4]
-        Interest.archive(interests: interests)
-        print("Archived Interests (Luis to do)")
+
     }
 
     func sceneWillResignActive(_ scene: UIScene) {

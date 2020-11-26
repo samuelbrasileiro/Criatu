@@ -34,7 +34,7 @@ class MusicItem: DiscoverItem {
                 if songs.data != nil{
                     
                     let song = songs.data![0].attributes!
-                    print("This is: " + song.name!)
+                    //print("This is: " + song.name!)
                     
                     self.title = song.name
                     self.artistName = song.artistName
