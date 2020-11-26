@@ -49,7 +49,7 @@ class TabBarViewController: UITabBarController, SelectedViewDelegate {
 
         self.loadTabBar()
         
-        self.viewControllers = [DiscoverViewController(), DiscoverViewController(), DiscoverViewController()]
+        self.viewControllers = selectedView.getViewControllers()
     }
     
     func loadTabBar() {
