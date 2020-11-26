@@ -38,9 +38,28 @@ class DiscoverBank: ObservableObject, Identifiable {
     func addInterests(){
         if let interests = Interest.restore(){
             self.interests = interests
+            
+            for interest in interests{
+                if let itemsIDs = interest.attributes.itemsIDs{
+                    for id in itemsIDs{
+                        getItem(from: id)
+                    }
+                }
+            }
         }
     }
-    
+    func getItem(from id: String){
+        FirebaseHandler.readCollection(.items, id: id, dataType: DiscoverItem.Database.self){ result in
+            if case .success(let attribute) = result{
+                if attribute.type == .image{
+                    self.items.append(ImageItem(attributes: attribute))
+                }
+                else if attribute.type == .music{
+                    self.items.append(MusicItem(attributes: attribute))
+                }
+            }
+        }
+    }
     func getAllInterests(){
         self.allInterests = []
         FirebaseHandler.readAllCollection(.interests, dataType: [Interest.Database].self){ result in
@@ -66,22 +85,22 @@ class DiscoverBank: ObservableObject, Identifiable {
     }
     /// This function adds all items in the array 'items'
     func addItems(){
-        items.append(MusicItem(id: "1500952424", type: .music))
-        items.append(ImageItem(id: "900032829", type: .image))
-        items.append(ImageItem(id: "1500952424", type: .image))
-        items.append(ImageItem(id: "900032829", type: .image))
-        items.append(MusicItem(id: "1500952424", type: .music))
-        items.append(MusicItem(id: "900032829", type: .music))
-        items.append(MusicItem(id: "900032829", type: .music))
-        items.append(ImageItem(id: "1500952424", type: .image))
-        items.append(MusicItem(id: "1500952424", type: .music))
-        items.append(ImageItem(id: "900032829", type: .image))
-        items.append(ImageItem(id: "1500952424", type: .image))
-        items.append(ImageItem(id: "900032829", type: .image))
-        items.append(MusicItem(id: "1500952424", type: .music))
-        items.append(MusicItem(id: "900032829", type: .music))
-        items.append(MusicItem(id: "900032829", type: .music))
-        items.append(ImageItem(id: "1500952424", type: .image))
+        items.append(MusicItem(id: "1500952424", url: "1500952424", type: .music))
+        items.append(ImageItem(id: "900032829", url: "900032829", type: .image))
+        items.append(ImageItem(id: "1500952424", url: "1500952424", type: .image))
+        items.append(ImageItem(id: "900032829", url: "900032829", type: .image))
+        items.append(MusicItem(id: "1500952424", url: "1500952424", type: .music))
+        items.append(MusicItem(id: "900032829", url: "900032829", type: .music))
+        items.append(MusicItem(id: "900032829", url: "900032829", type: .music))
+        items.append(ImageItem(id: "1500952424", url: "1500952424", type: .image))
+        items.append(MusicItem(id: "1500952424", url: "1500952424", type: .music))
+        items.append(ImageItem(id: "900032829", url: "900032829", type: .image))
+        items.append(ImageItem(id: "1500952424", url: "1500952424", type: .image))
+        items.append(ImageItem(id: "900032829", url: "900032829", type: .image))
+        items.append(MusicItem(id: "1500952424", url: "1500952424", type: .music))
+        items.append(MusicItem(id: "900032829", url: "900032829", type: .music))
+        items.append(MusicItem(id: "900032829", url: "900032829", type: .music))
+        items.append(ImageItem(id: "1500952424", url: "1500952424", type: .image))
     }
     
 }

@@ -16,13 +16,20 @@ class MusicItem: DiscoverItem {
         willSet { self.objectWillChange.send() }
     }
     
-    override init(id: String, type: ItemType) {
-        super.init(id: id, type: type)
+    var previewURL: String?
+    
+    override init(id: String, url: String, type: ItemType) {
+        super.init(id: id, url: url, type: type)
+        fetchSongData()
+    }
+    
+    override init(attributes: DiscoverItem.Database){
+        super.init(attributes: attributes)
         fetchSongData()
     }
     
     func fetchSongData(){
-        APMSong.fetch(songID: self.attributes.id){ result in
+        APMSong.fetch(songID: self.attributes.url){ result in
             if case .success(let songs) = result{
                 if songs.data != nil{
                     
@@ -31,7 +38,7 @@ class MusicItem: DiscoverItem {
                     
                     self.title = song.name
                     self.artistName = song.artistName
-                    self.url = song.previews?.first?.url
+                    self.previewURL = song.previews?.first?.url
 
                 }
             }

@@ -20,21 +20,21 @@ class FirebaseHandler {
     
     
     init() {
-        FirebaseHandler.readCollection(.interests, id: "-MMuViU7-iXR50IJGTaC", dataType: Interest.Database.self){ result in
-            if case .success(let interest) = result{
-                print(interest.name)
-            }
-        }
-        FirebaseHandler.readAllCollection(.interests, dataType: [Interest.Database].self){ result in
-            if case .success(let interestsAttributes) = result{
-                let interests = interestsAttributes.map{Interest(attributes: $0)}
-                for interest in interests{
-                    print(interest.attributes.itemsIDs ?? "não tem")
-                }
-            }
-        }
+        //LEMBRAR DE SUBTRAIR UM INDEX DO ITEM AO VER LA NO FIREBASE LEMBRE DISSO
+        //73 DO NOTION == 72 DO FIREBASE
+        FirebaseHandler.addItemsIDsToInterests(interestID: "-MMuermw3UgUytvj0eab", itemsIDs: ["-MN3fNV5Bt3GALDkUIey"])
+        
+        //LEMBRAR DE SUBTRAIR UM INDEX DO ITEM AO VER LA NO FIREBASE LEMBRE DISSO
+        //73 DO NOTION == 72 DO FIREBASE
+        FirebaseHandler.addItemsIDsToInterests(interestID: "-MMuermw3UgUytvj0eab", itemsIDs: ["-MN3fNV5Bt3GALDkUIey"])
+        
+        //LEMBRAR DE SUBTRAIR UM INDEX DO ITEM AO VER LA NO FIREBASE LEMBRE DISSO
+        //73 DO NOTION == 72 DO FIREBASE
+        FirebaseHandler.addItemsIDsToInterests(interestID: "-MMuermw3UgUytvj0eab", itemsIDs: ["-MN3fNV5Bt3GALDkUIey"])
+
         
     }
+    
     /// Adding an object to a collection
     /// - Parameters:
     ///   - collection: Collections are the categories in which the objects are stored
@@ -54,6 +54,13 @@ class FirebaseHandler {
         }
     }
     
+    
+    class func addItemsIDsToInterests(interestID: String, itemsIDs: [String]?){
+        let childRef = ref.child(Collection.interests.rawValue).child(interestID).child("items_ids")
+        
+        childRef.setValue(itemsIDs)
+
+    }
     
     /// Reading the objects written in the previous operation
     /// - Parameters:
