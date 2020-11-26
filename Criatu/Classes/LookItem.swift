@@ -9,21 +9,28 @@
 import Foundation
 import UIKit
 
-class LookItem{
-    var id: String
-    var imageURL: String
+class LookItem: ObservableObject{
+    var attributes: LookItem.Database
     var image: UIImage?
     
+
+    
     init(id: String, imageURL: String){
-        self.id = id
-        self.imageURL = imageURL
+        self.attributes = LookItem.Database(id: id, imageURL: imageURL)
     }
     
-    var dictionary: [String:Any] {
-        return ["id": id,
-                "imageURL": imageURL]
+    init(attributes: LookItem.Database){
+        self.attributes = attributes
     }
-    var nsDictionary: NSDictionary {
-        return dictionary as NSDictionary
+    
+    class Database: Codable{
+        var id: String
+        var imageURL: String
+
+        init(id: String, imageURL: String){
+            self.id = id
+            self.imageURL = imageURL
+        }
     }
+    
 }

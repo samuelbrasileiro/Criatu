@@ -6,9 +6,8 @@
 //
 
 import SwiftUI
-
+import AVKit
 class MusicItem: DiscoverItem {
-    
 
     @Published var title: String?{
         willSet { self.objectWillChange.send() }
@@ -19,8 +18,11 @@ class MusicItem: DiscoverItem {
     
     override init(id: String, type: ItemType) {
         super.init(id: id, type: type)
-        
-        APMSong.fetch(songID: id){ result in
+        fetchSongData()
+    }
+    
+    func fetchSongData(){
+        APMSong.fetch(songID: self.attributes.id){ result in
             if case .success(let songs) = result{
                 if songs.data != nil{
                     

@@ -8,8 +8,6 @@
 import Foundation
 import StoreKit
 
-var musicAcessTokenKey = "eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlNGUkM1TTQ3WjQifQ.eyJpYXQiOjE2MDU2MjcxNTQsImV4cCI6MTYyMTE3OTE1NCwiaXNzIjoiUDYzOTUyTVM3TCJ9.vnrDu0iFK8t7lU3T2ejCB7JCGm0cIFSf67bo8ld4Bp9wg12Wzap8somkPSrMx1Aw3GSW_CXR3t-l5m3WGLuTVg"
-
 
 // MARK: - Song
 class APMSong: Codable {
@@ -28,7 +26,7 @@ class APMSong: Codable {
         
         let url = URL(string: "https://api.music.apple.com/v1/catalog/br/songs/" + songID)!
         var request = URLRequest(url: url)
-        request.setValue("Bearer " + musicAcessTokenKey, forHTTPHeaderField: "Authorization")
+        request.setValue("Bearer " + Keys.kAPMAccessToken, forHTTPHeaderField: "Authorization")
         
         
         URLSession.shared.dataTask(with: request) { (data, response, error) in

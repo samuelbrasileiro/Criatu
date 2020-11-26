@@ -19,7 +19,12 @@ struct SearchBarView: View {
                 Image(systemName: "magnifyingglass")
                 TextField("Search", text: $bank.searchText, onEditingChanged: {
                     isEditing in
+                    if !self.bank.isSearching{
+                        self.bank.getAllInterests()
+                    }
                     self.bank.isSearching = true
+                    
+                    
                 }).foregroundColor(.primary)
                 
                 Button(action: {
@@ -38,7 +43,7 @@ struct SearchBarView: View {
                     UIApplication.shared.endEditing(true)
                     self.bank.searchText = ""
                     self.bank.isSearching = false
-                    
+                    self.bank.clearAllInterests()
                 }
                 .foregroundColor(Color(.systemBlue))
             }
