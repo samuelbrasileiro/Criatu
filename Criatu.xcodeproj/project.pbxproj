@@ -13,12 +13,9 @@
 		105312DA25656C6E00887B1E /* UIEditingExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105312D925656C6E00887B1E /* UIEditingExtensions.swift */; };
 		106733EE256D2F0C00411F60 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106733ED256D2F0C00411F60 /* MainTabView.swift */; };
 		10BF032C25655DB0008F2BCC /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BF032B25655DB0008F2BCC /* SearchBarView.swift */; };
-		283CFC7E256FE88600702DAE /* OnBoardingViewSecond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283CFC78256FE88600702DAE /* OnBoardingViewSecond.swift */; };
-		283CFC7F256FE88600702DAE /* OnBoardingViewThird.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283CFC79256FE88600702DAE /* OnBoardingViewThird.swift */; };
-		283CFC80256FE88600702DAE /* OnBoardingViewForth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283CFC7A256FE88600702DAE /* OnBoardingViewForth.swift */; };
-		283CFC81256FE88600702DAE /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283CFC7B256FE88600702DAE /* PageViewController.swift */; };
-		283CFC82256FE88600702DAE /* OnBoardingViewFirst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283CFC7C256FE88600702DAE /* OnBoardingViewFirst.swift */; };
-		283CFC83256FE88600702DAE /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283CFC7D256FE88600702DAE /* CardView.swift */; };
+		283CFC80256FE88600702DAE /* EndOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283CFC7A256FE88600702DAE /* EndOnboardingView.swift */; };
+		283CFC81256FE88600702DAE /* OnboardingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283CFC7B256FE88600702DAE /* OnboardingPageView.swift */; };
+		283CFC83256FE88600702DAE /* OnboardItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283CFC7D256FE88600702DAE /* OnboardItemView.swift */; };
 		28D999F4256702150003DE45 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28D999F3256702150003DE45 /* GoogleService-Info.plist */; };
 		35091E0E25669A7500F94A4A /* LazyWaterfallGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35091E0D25669A7500F94A4A /* LazyWaterfallGrid.swift */; };
 		35091E282566C86D00F94A4A /* MusicItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35091E272566C86D00F94A4A /* MusicItem.swift */; };
@@ -36,6 +33,9 @@
 		356A45C9255D837000F892A1 /* CriatuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356A45C8255D837000F892A1 /* CriatuTests.swift */; };
 		356A45D4255D837000F892A1 /* CriatuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356A45D3255D837000F892A1 /* CriatuUITests.swift */; };
 		359A7F36256EAD940006A368 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359A7F35256EAD940006A368 /* TabBarViewController.swift */; };
+		359D541125715FCE0033D5CE /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359D541025715FCE0033D5CE /* OnboardingViewController.swift */; };
+		359D541925716DB20033D5CE /* View+cornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359D541825716DB20033D5CE /* View+cornerRadius.swift */; };
+		359D542A257175180033D5CE /* Carousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359D5429257175180033D5CE /* Carousel.swift */; };
 		35D0EB69256D669300CFBEB1 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D0EB68256D669300CFBEB1 /* Keys.swift */; };
 		35F82A1525713BB00087DD22 /* WardrobeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F82A1425713BB00087DD22 /* WardrobeView.swift */; };
 		35F82A1A25713BCA0087DD22 /* ClosetsBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F82A1925713BCA0087DD22 /* ClosetsBank.swift */; };
@@ -75,12 +75,9 @@
 		106733ED256D2F0C00411F60 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		10BF032B25655DB0008F2BCC /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		1F59A9FE33A10336EB9C334C /* Pods-Criatu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Criatu.debug.xcconfig"; path = "Target Support Files/Pods-Criatu/Pods-Criatu.debug.xcconfig"; sourceTree = "<group>"; };
-		283CFC78256FE88600702DAE /* OnBoardingViewSecond.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnBoardingViewSecond.swift; sourceTree = "<group>"; };
-		283CFC79256FE88600702DAE /* OnBoardingViewThird.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnBoardingViewThird.swift; sourceTree = "<group>"; };
-		283CFC7A256FE88600702DAE /* OnBoardingViewForth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnBoardingViewForth.swift; sourceTree = "<group>"; };
-		283CFC7B256FE88600702DAE /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
-		283CFC7C256FE88600702DAE /* OnBoardingViewFirst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnBoardingViewFirst.swift; sourceTree = "<group>"; };
-		283CFC7D256FE88600702DAE /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		283CFC7A256FE88600702DAE /* EndOnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndOnboardingView.swift; sourceTree = "<group>"; };
+		283CFC7B256FE88600702DAE /* OnboardingPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPageView.swift; sourceTree = "<group>"; };
+		283CFC7D256FE88600702DAE /* OnboardItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardItemView.swift; sourceTree = "<group>"; };
 		28D999F3256702150003DE45 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		30D8DBB213DC6499EB92DA59 /* Pods-CriatuTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CriatuTests.debug.xcconfig"; path = "Target Support Files/Pods-CriatuTests/Pods-CriatuTests.debug.xcconfig"; sourceTree = "<group>"; };
 		35091E0D25669A7500F94A4A /* LazyWaterfallGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LazyWaterfallGrid.swift; sourceTree = "<group>"; };
@@ -105,9 +102,12 @@
 		356A45D3255D837000F892A1 /* CriatuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriatuUITests.swift; sourceTree = "<group>"; };
 		356A45D5255D837000F892A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		359A7F35256EAD940006A368 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		359D541025715FCE0033D5CE /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		359D541825716DB20033D5CE /* View+cornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+cornerRadius.swift"; sourceTree = "<group>"; };
+		359D5429257175180033D5CE /* Carousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carousel.swift; sourceTree = "<group>"; };
 		35D0EB68256D669300CFBEB1 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		35F82A1425713BB00087DD22 /* WardrobeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WardrobeView.swift; sourceTree = "<group>"; };
-		35F82A1925713BCA0087DD22 /* ClosetsBank.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClosetsBank.swift; path = WardrobeClasses/ClosetsBank.swift; sourceTree = "<group>"; };
+		35F82A1925713BCA0087DD22 /* ClosetsBank.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClosetsBank.swift; sourceTree = "<group>"; };
 		35F82A2225713C0C0087DD22 /* WardrobeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeViewController.swift; sourceTree = "<group>"; };
 		35FFE2D12563FBE300F3E8F0 /* Interest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interest.swift; sourceTree = "<group>"; };
 		35FFE2D62563FC1400F3E8F0 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
@@ -157,10 +157,13 @@
 		105312D825656C5500887B1E /* Extra */ = {
 			isa = PBXGroup;
 			children = (
-				356A45AE255D836E00F892A1 /* AppDelegate.swift */,
-				35FFE30F256413CA00F3E8F0 /* APMSong.swift */,
-				105312D925656C6E00887B1E /* UIEditingExtensions.swift */,
 				35D0EB68256D669300CFBEB1 /* Keys.swift */,
+				35FFE30F256413CA00F3E8F0 /* APMSong.swift */,
+				35091E0D25669A7500F94A4A /* LazyWaterfallGrid.swift */,
+				356A45AE255D836E00F892A1 /* AppDelegate.swift */,
+				359D5429257175180033D5CE /* Carousel.swift */,
+				105312D925656C6E00887B1E /* UIEditingExtensions.swift */,
+				359D541825716DB20033D5CE /* View+cornerRadius.swift */,
 			);
 			path = Extra;
 			sourceTree = "<group>";
@@ -171,7 +174,6 @@
 				356A45B2255D836E00F892A1 /* DiscoverViewController.swift */,
 				356A01E92566E2E600454AA1 /* DiscoverView.swift */,
 				10BF032B25655DB0008F2BCC /* SearchBarView.swift */,
-				35091E0D25669A7500F94A4A /* LazyWaterfallGrid.swift */,
 				356A01F62566E96B00454AA1 /* BasicItemView.swift */,
 				85C80A5A2566AB2600BBB230 /* ImageItemView.swift */,
 				85C80A6D2566B2A700BBB230 /* MusicItemView.swift */,
@@ -180,17 +182,15 @@
 			path = DiscoverView;
 			sourceTree = "<group>";
 		};
-		283CFC77256FE86700702DAE /* OnBoarding */ = {
+		283CFC77256FE86700702DAE /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				283CFC7D256FE88600702DAE /* CardView.swift */,
-				283CFC7C256FE88600702DAE /* OnBoardingViewFirst.swift */,
-				283CFC7A256FE88600702DAE /* OnBoardingViewForth.swift */,
-				283CFC78256FE88600702DAE /* OnBoardingViewSecond.swift */,
-				283CFC79256FE88600702DAE /* OnBoardingViewThird.swift */,
-				283CFC7B256FE88600702DAE /* PageViewController.swift */,
+				283CFC7D256FE88600702DAE /* OnboardItemView.swift */,
+				283CFC7A256FE88600702DAE /* EndOnboardingView.swift */,
+				283CFC7B256FE88600702DAE /* OnboardingPageView.swift */,
+				359D541025715FCE0033D5CE /* OnboardingViewController.swift */,
 			);
-			path = OnBoarding;
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 		35091E2C2566C89700F94A4A /* Discover Classes */ = {
@@ -232,10 +232,10 @@
 				35FFE3262564150800F3E8F0 /* Criatu.entitlements */,
 				356A45B0255D836E00F892A1 /* SceneDelegate.swift */,
 				0488FB722562BB4D00E537B2 /* FirebaseHandler.swift */,
-				35F82A1E25713C040087DD22 /* Wadrobes */,
-				283CFC77256FE86700702DAE /* OnBoarding */,
+				283CFC77256FE86700702DAE /* Onboarding */,
 				35EBBC2B256EBF4200856EE5 /* TabBar */,
 				10BF032A25655D8D008F2BCC /* DiscoverView */,
+				35F82A1E25713C040087DD22 /* Wadrobes */,
 				35FFE2CD2563FBCD00F3E8F0 /* Classes */,
 				105312D825656C5500887B1E /* Extra */,
 				356A45B4255D836E00F892A1 /* Main.storyboard */,
@@ -284,14 +284,22 @@
 			path = Wadrobes;
 			sourceTree = "<group>";
 		};
-		35FFE2CD2563FBCD00F3E8F0 /* Classes */ = {
+		35F82A98257152100087DD22 /* Closet Classes */ = {
 			isa = PBXGroup;
 			children = (
 				35F82A1925713BCA0087DD22 /* ClosetsBank.swift */,
+			);
+			path = "Closet Classes";
+			sourceTree = "<group>";
+		};
+		35FFE2CD2563FBCD00F3E8F0 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
 				35FFE2D12563FBE300F3E8F0 /* Interest.swift */,
 				35FFE2D62563FC1400F3E8F0 /* Style.swift */,
 				35FFE2DB2563FC3A00F3E8F0 /* LookItem.swift */,
 				35091E2C2566C89700F94A4A /* Discover Classes */,
+				35F82A98257152100087DD22 /* Closet Classes */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -559,34 +567,34 @@
 			buildActionMask = 2147483647;
 			files = (
 				35091E312566C91000F94A4A /* ImageItem.swift in Sources */,
-				283CFC7E256FE88600702DAE /* OnBoardingViewSecond.swift in Sources */,
 				105312D42565613500887B1E /* DiscoverBank.swift in Sources */,
 				106733EE256D2F0C00411F60 /* MainTabView.swift in Sources */,
 				35F82A1525713BB00087DD22 /* WardrobeView.swift in Sources */,
 				35F82A1A25713BCA0087DD22 /* ClosetsBank.swift in Sources */,
-				283CFC83256FE88600702DAE /* CardView.swift in Sources */,
+				283CFC83256FE88600702DAE /* OnboardItemView.swift in Sources */,
 				0488FB732562BB4D00E537B2 /* FirebaseHandler.swift in Sources */,
 				35FFE2E12563FC5800F3E8F0 /* DiscoverItem.swift in Sources */,
-				283CFC82256FE88600702DAE /* OnBoardingViewFirst.swift in Sources */,
 				356A45B3255D836E00F892A1 /* DiscoverViewController.swift in Sources */,
+				359D541925716DB20033D5CE /* View+cornerRadius.swift in Sources */,
 				35091E282566C86D00F94A4A /* MusicItem.swift in Sources */,
 				35FFE2DC2563FC3A00F3E8F0 /* LookItem.swift in Sources */,
 				35FFE310256413CA00F3E8F0 /* APMSong.swift in Sources */,
 				359A7F36256EAD940006A368 /* TabBarViewController.swift in Sources */,
-				283CFC7F256FE88600702DAE /* OnBoardingViewThird.swift in Sources */,
 				356A01EA2566E2E600454AA1 /* DiscoverView.swift in Sources */,
 				356A01F72566E96B00454AA1 /* BasicItemView.swift in Sources */,
 				35091E0E25669A7500F94A4A /* LazyWaterfallGrid.swift in Sources */,
-				283CFC81256FE88600702DAE /* PageViewController.swift in Sources */,
+				283CFC81256FE88600702DAE /* OnboardingPageView.swift in Sources */,
+				359D542A257175180033D5CE /* Carousel.swift in Sources */,
 				105312DA25656C6E00887B1E /* UIEditingExtensions.swift in Sources */,
 				356A45AF255D836E00F892A1 /* AppDelegate.swift in Sources */,
-				283CFC80256FE88600702DAE /* OnBoardingViewForth.swift in Sources */,
+				283CFC80256FE88600702DAE /* EndOnboardingView.swift in Sources */,
 				85C80A6E2566B2A700BBB230 /* MusicItemView.swift in Sources */,
 				85C80A5B2566AB2600BBB230 /* ImageItemView.swift in Sources */,
 				35D0EB69256D669300CFBEB1 /* Keys.swift in Sources */,
 				356A01EF2566E61F00454AA1 /* InterestView.swift in Sources */,
 				35FFE2D22563FBE300F3E8F0 /* Interest.swift in Sources */,
 				10BF032C25655DB0008F2BCC /* SearchBarView.swift in Sources */,
+				359D541125715FCE0033D5CE /* OnboardingViewController.swift in Sources */,
 				356A45B1255D836E00F892A1 /* SceneDelegate.swift in Sources */,
 				35F82A2325713C0C0087DD22 /* WardrobeViewController.swift in Sources */,
 				35FFE2D72563FC1400F3E8F0 /* Style.swift in Sources */,
@@ -769,7 +777,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Criatu/Criatu.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = P63952MS7L;
 				INFOPLIST_FILE = Criatu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -779,7 +787,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ufpe.academy.criatu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -791,7 +799,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Criatu/Criatu.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = P63952MS7L;
 				INFOPLIST_FILE = Criatu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -801,7 +809,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ufpe.academy.criatu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

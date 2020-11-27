@@ -38,7 +38,9 @@ struct WardrobeView: View{
                         Rectangle()
                             .frame(height: 68, alignment: .center)
                             
-                            .foregroundColor(Color(.systemBackground)).opacity(0.8)
+                            .foregroundColor(Color(.systemBackground))
+                            .opacity(0.7)
+                            .blur(radius: 7)
                         
                         Text(style.attributes.name)
                             .font(.largeTitle)
@@ -59,6 +61,7 @@ struct WardrobeView: View{
                     
                     Text(style.attributes.description)
                         .fontWeight(.regular)
+                        .font(.system(size: 20, weight: .regular, design: .rounded))
                         .foregroundColor(Color(.systemBackground))
                         .multilineTextAlignment(.center)
                         .padding(.horizontal, 30.0)
@@ -98,7 +101,7 @@ struct WardrobeView: View{
 struct WardrobesView: View {
     
 
-    @ObservedObject var closetsBank: ClosetsBank
+    @ObservedObject var bank: ClosetsBank
     
     var body: some View {
         
@@ -115,15 +118,15 @@ struct WardrobesView: View {
             
             ScrollView(.horizontal) {
                 LazyHStack(spacing: 55) {
-                    ForEach(0..<closetsBank.styles.count) { index in
-                        WardrobeView(style: ClosetsBank().styles[index])
+                    ForEach(0..<bank.styles.count) { index in
+                        WardrobeView(style: bank.styles[index])
                     }
                 }.padding(.leading, 70)
                 
             }
             Spacer()
             Spacer()
-        }
+        }.background(Color(.systemGray6))
         
     }
 }
@@ -132,7 +135,7 @@ struct WardrobesView: View {
 struct WardrobesView_PreviewProvider: PreviewProvider {
     static var previews: some View {
         
-        WardrobesView(closetsBank: ClosetsBank())
+        WardrobesView(bank: ClosetsBank())
         WardrobeView(style: ClosetsBank().styles[0])
         
     }

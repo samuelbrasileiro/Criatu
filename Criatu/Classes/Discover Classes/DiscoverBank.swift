@@ -105,12 +105,12 @@ class DiscoverBank: ObservableObject, Identifiable, DiscoverDelegate {
                         if attributes.type == .image{
                             let item = ImageItem(attributes: attributes)
                             item.interestAssociatedID = interest.attributes.id
-                            self.items.append(item)
+                            self.items.insert(item, at: 0)
                         }
                         else if attributes.type == .music{
                             let item = MusicItem(attributes: attributes)
                             item.interestAssociatedID = interest.attributes.id
-                            self.items.append(item)
+                            self.items.insert(item, at: 0)
                         }
                     }
                 }

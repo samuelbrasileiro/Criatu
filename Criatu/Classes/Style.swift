@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class Style: ObservableObject{
+class Style: ObservableObject, Identifiable{
     
     var attributes: Style.Database
     

@@ -21,6 +21,17 @@ class FirebaseHandler {
     
     static var storage = Storage.storage().reference()
     init() {
+        //LEMBRAR DE SUBTRAIR UM INDEX DO ITEM AO VER LA NO FIREBASE LEMBRE DISSO
+        //73 DO NOTION == 72 DO FIREBASE
+        //FirebaseHandler.addItemsIDsToInterests(interestID: "-MMuermw3UgUytvj0eab", itemsIDs: ["-MN3fNV5Bt3GALDkUIey"])
+        
+        //LEMBRAR DE SUBTRAIR UM INDEX DO ITEM AO VER LA NO FIREBASE LEMBRE DISSO
+        //73 DO NOTION == 72 DO FIREBASE
+        //FirebaseHandler.addItemsIDsToInterests(interestID: "-MMuermw3UgUytvj0eab", itemsIDs: ["-MN3fNV5Bt3GALDkUIey"])
+        
+        //LEMBRAR DE SUBTRAIR UM INDEX DO ITEM AO VER LA NO FIREBASE LEMBRE DISSO
+        //73 DO NOTION == 72 DO FIREBASE
+        //FirebaseHandler.addItemsIDsToInterests(interestID: "-MMuermw3UgUytvj0eab", itemsIDs: ["-MN3fNV5Bt3GALDkUIey"])
 
         
     }

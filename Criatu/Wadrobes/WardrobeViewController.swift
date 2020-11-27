@@ -10,13 +10,12 @@ import SwiftUI
 
 class WardrobesViewController: UIViewController {
         
-    let handler = FirebaseHandler()
     override func viewDidLoad() { 
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.view.backgroundColor = .systemBackground
         
-        let wardrobesView = UIHostingController(rootView: WardrobesView(closetsBank: ClosetsBank()))
+        let wardrobesView = UIHostingController(rootView: WardrobesView(bank: ClosetsBank()))
         self.addChild(wardrobesView)
         wardrobesView.view.translatesAutoresizingMaskIntoConstraints = false
         
