@@ -18,77 +18,77 @@ struct WardrobeView: View{
             
             if !showDetails{
                 
-                    ZStack(alignment: .bottom){
-                        GeometryReader{ geometry in
-                            if let image = style.image {
-                                
-                                Image(uiImage: image)
-                                    .resizable()
-                            //.aspectRatio(contentMode: .fill)
-                                    .edgesIgnoringSafeArea(.all)
-                                    .frame(maxWidth: geometry.size.width, maxHeight: geometry.size.height)
-                            }
-                            else{
-                                Rectangle()
-                                    .foregroundColor(Color(.systemGray6))
-                            }
+                ZStack(alignment: .bottom){
+                    GeometryReader{ geometry in
+                        if let image = style.image {
+                            
+                            Image(uiImage: image)
+                                .resizable()
+                                //.aspectRatio(contentMode: .fill)
+                                .edgesIgnoringSafeArea(.all)
+                                .frame(maxWidth: geometry.size.width, maxHeight: geometry.size.height)
                         }
-                        
-                        ZStack(alignment: .center){
+                        else{
                             Rectangle()
-                                .frame(height: 68, alignment: .center)
-                                
-                                .foregroundColor(Color(.systemBackground)).opacity(0.8)
-                            
-                            Text(style.attributes.name)
-                                .font(.largeTitle)
-                                .fontWeight(.semibold)
-                                .foregroundColor(Color(.systemPurple))
-                            
+                                .foregroundColor(Color(.systemGray6))
                         }
-
+                    }
+                    
+                    ZStack(alignment: .center){
+                        Rectangle()
+                            .frame(height: 68, alignment: .center)
+                            
+                            .foregroundColor(Color(.systemBackground)).opacity(0.8)
+                        
+                        Text(style.attributes.name)
+                            .font(.largeTitle)
+                            .fontWeight(.semibold)
+                            .foregroundColor(Color(.systemPurple))
+                        
+                    }
+                    
                 }
             }
+            
+            else {
                 
-                else {
+                ZStack{
+                    Rectangle()
+                        .cornerRadius(20)
+                        .foregroundColor(Color(.systemPurple))
                     
-                    ZStack{
-                        Rectangle()
-                            .cornerRadius(20)
-                            .foregroundColor(Color(.systemPurple))
-                        
-                        Text(style.attributes.description)
-                            .fontWeight(.regular)
-                            .foregroundColor(Color(.systemBackground))
-                            .multilineTextAlignment(.center)
-                            .padding(.horizontal, 30.0)
-                        
-                        
-                    }
+                    Text(style.attributes.description)
+                        .fontWeight(.regular)
+                        .foregroundColor(Color(.systemBackground))
+                        .multilineTextAlignment(.center)
+                        .padding(.horizontal, 30.0)
+                    
+                    
                 }
+            }
+            
+            Button(action: {
+                self.showDetails.toggle()
                 
-                Button(action: {
-                    self.showDetails.toggle()
-                    
-                }) {
-                    
-                    if showDetails{
-                        Image(systemName: "xmark.circle.fill")
-                            .resizable()
-                            .frame(width: 25, height: 25)
-                            .foregroundColor(Color(.systemBackground).opacity(0.7))
-                    }
-                    else{
-                        Image(systemName: "info.circle.fill")
-                            .resizable()
-                            .frame(width: 25, height: 25)
-                            .foregroundColor(Color(.systemPurple))
-                    }
+            }) {
+                
+                if showDetails{
+                    Image(systemName: "xmark.circle.fill")
+                        .resizable()
+                        .frame(width: 25, height: 25)
+                        .foregroundColor(Color(.systemBackground).opacity(0.7))
                 }
-                .padding([.top, .trailing])
-
+                else{
+                    Image(systemName: "info.circle.fill")
+                        .resizable()
+                        .frame(width: 25, height: 25)
+                        .foregroundColor(Color(.systemPurple))
+                }
+            }
+            .padding([.top, .trailing])
+            
         }
-        .frame(width: 280, height: 480)
+        .frame(width: 240, height: 420)
         .cornerRadius(20)
         .shadow(radius: 20)
     }
@@ -97,6 +97,7 @@ struct WardrobeView: View{
 
 struct WardrobesView: View {
     
+
     @ObservedObject var closetsBank: ClosetsBank
     
     var body: some View {
@@ -110,10 +111,17 @@ struct WardrobesView: View {
                 .padding(.top, 40)
             
             Spacer()
-            //ScrollViewHorizontal e dentro vai ter um LazyHStack com o foreach (traducao literal: pra cada item)
-            //por enquanto deixei so um item so pra ver como fica
-            WardrobeView(style: ClosetsBank().styles[0])
+
             
+            ScrollView(.horizontal) {
+                LazyHStack(spacing: 55) {
+                    ForEach(0..<closetsBank.styles.count) { index in
+                        WardrobeView(style: ClosetsBank().styles[index])
+                    }
+                }.padding(.leading, 70)
+                
+            }
+            Spacer()
             Spacer()
         }
         
@@ -123,6 +131,7 @@ struct WardrobesView: View {
 
 struct WardrobesView_PreviewProvider: PreviewProvider {
     static var previews: some View {
+        
         WardrobesView(closetsBank: ClosetsBank())
         WardrobeView(style: ClosetsBank().styles[0])
         

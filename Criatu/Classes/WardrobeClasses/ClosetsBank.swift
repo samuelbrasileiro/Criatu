@@ -20,7 +20,7 @@ class ClosetsBank: ObservableObject{
         
         styles.append(Style(id: "abranskepa", name: "Georgia", description: "Quem não tem pó cheira loló", imageURL: "https://is3-ssl.mzstatic.com/image/thumb/Music113/v4/fb/97/a0/fb97a00f-282c-5a31-eb62-80f3d69410b6/20UMGIM15390.rgb.jpg/200x200.jpeg"))
         
-        styles.append(Style(id: "aklslasaana", name: "Alanis Lima", description: "Eu sou uma egirl eu sou uma egirl eu sou uma egirl eu sou uma egirl eu sou uma egirl eu sou uma egirl eu sou uma egirl eu sou uma egirl eu sou uma egirl", imageURL: "https://is3-ssl.mzstatic.com/image/thumb/Music113/v4/fb/97/a0/fb97a00f-282c-5a31-eb62-80f3d69410b6/20UMGIM15390.rgb.jpg/200x200.jpeg"))
+        styles.append(Style(id: "aklslasaana", name: "Samuel", description: "Eu sou uma egirl eu sou uma egirl eu sou uma egirl eu sou uma egirl eu sou uma egirl eu sou uma egirl eu sou uma egirl eu sou uma egirl eu sou uma egirl", imageURL: "https://is3-ssl.mzstatic.com/image/thumb/Music113/v4/fb/97/a0/fb97a00f-282c-5a31-eb62-80f3d69410b6/20UMGIM15390.rgb.jpg/200x200.jpeg"))
     }
     
 }
