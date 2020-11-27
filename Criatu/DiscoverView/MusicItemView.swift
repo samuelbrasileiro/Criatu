@@ -50,10 +50,11 @@ struct MusicItemView: View{
 
                         if !isPlaying{
                             //se o botão estiver no estado não tocando antes
-                            let urlstring = item.url
-                            let url = URL(string: urlstring!)
-                            print("the url = \(url!)")
-                            downloadFileFromURL(url: url!)
+                            if let urlstring = item.previewURL{
+                                let url = URL(string: urlstring)
+                                print("the url = \(url!)")
+                                downloadFileFromURL(url: url!)
+                            }
                         }
                         else{
                             AudioPreview.player?.stop()
@@ -72,7 +73,7 @@ struct MusicItemView: View{
                     }.onReceive(isPlayingPub, perform: { notification in
                         if let object = notification.object as? MusicItemView{
                             
-                            if self.item.url == object.item.url{
+                            if self.item.attributes.url == object.item.attributes.url{
                                 
                                 isPlaying = !isPlaying
                             }
@@ -144,6 +145,6 @@ struct MusicItemView: View{
 
 struct MusicItemView_Previews: PreviewProvider {
     static var previews: some View {
-        MusicItemView(item: MusicItem(id: "1500952424", type: .music))
+        MusicItemView(item: MusicItem(id: "1500952424", url: "1500952424", type: .music))
     }
 }
