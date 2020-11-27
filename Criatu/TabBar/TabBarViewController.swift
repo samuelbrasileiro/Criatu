@@ -24,7 +24,7 @@ class SelectedView: ObservableObject{
     var items: [TabViewItem] = []
     init(){
         items.append(TabViewItem(DiscoverViewController(), name: "Descubra"))
-        items.append(TabViewItem(DiscoverViewController(), name: "Armário"))
+        items.append(TabViewItem(WardrobesViewController(), name: "Armário"))
         items.append(TabViewItem(DiscoverViewController(), name: "Perfil"))
     }
     

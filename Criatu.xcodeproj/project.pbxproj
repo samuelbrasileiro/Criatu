@@ -37,8 +37,9 @@
 		356A45D4255D837000F892A1 /* CriatuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356A45D3255D837000F892A1 /* CriatuUITests.swift */; };
 		359A7F36256EAD940006A368 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359A7F35256EAD940006A368 /* TabBarViewController.swift */; };
 		35D0EB69256D669300CFBEB1 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D0EB68256D669300CFBEB1 /* Keys.swift */; };
-		35F82955256F00B90087DD22 /* WardrobeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F82954256F00B90087DD22 /* WardrobeView.swift */; };
-		35F8295E256F11980087DD22 /* ClosetsBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F8295D256F11980087DD22 /* ClosetsBank.swift */; };
+		35F82A1525713BB00087DD22 /* WardrobeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F82A1425713BB00087DD22 /* WardrobeView.swift */; };
+		35F82A1A25713BCA0087DD22 /* ClosetsBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F82A1925713BCA0087DD22 /* ClosetsBank.swift */; };
+		35F82A2325713C0C0087DD22 /* WardrobeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F82A2225713C0C0087DD22 /* WardrobeViewController.swift */; };
 		35FFE2D22563FBE300F3E8F0 /* Interest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FFE2D12563FBE300F3E8F0 /* Interest.swift */; };
 		35FFE2D72563FC1400F3E8F0 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FFE2D62563FC1400F3E8F0 /* Style.swift */; };
 		35FFE2DC2563FC3A00F3E8F0 /* LookItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FFE2DB2563FC3A00F3E8F0 /* LookItem.swift */; };
@@ -46,7 +47,6 @@
 		35FFE310256413CA00F3E8F0 /* APMSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FFE30F256413CA00F3E8F0 /* APMSong.swift */; };
 		85C80A5B2566AB2600BBB230 /* ImageItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C80A5A2566AB2600BBB230 /* ImageItemView.swift */; };
 		85C80A6E2566B2A700BBB230 /* MusicItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C80A6D2566B2A700BBB230 /* MusicItemView.swift */; };
-		85FAEB84256D581E00660648 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FAEB83256D581E00660648 /* View+Extensions.swift */; };
 		998BA92C616F1A11E9D39B1C /* Pods_Criatu_CriatuUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F431E44D70780784862AA6E /* Pods_Criatu_CriatuUITests.framework */; };
 		F3033F59F2E58AB613F1C828 /* Pods_Criatu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56AC4C34B24D913FDC683DF9 /* Pods_Criatu.framework */; };
 /* End PBXBuildFile section */
@@ -106,8 +106,9 @@
 		356A45D5255D837000F892A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		359A7F35256EAD940006A368 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		35D0EB68256D669300CFBEB1 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
-		35F82954256F00B90087DD22 /* WardrobeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeView.swift; sourceTree = "<group>"; };
-		35F8295D256F11980087DD22 /* ClosetsBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosetsBank.swift; sourceTree = "<group>"; };
+		35F82A1425713BB00087DD22 /* WardrobeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WardrobeView.swift; sourceTree = "<group>"; };
+		35F82A1925713BCA0087DD22 /* ClosetsBank.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClosetsBank.swift; path = WardrobeClasses/ClosetsBank.swift; sourceTree = "<group>"; };
+		35F82A2225713C0C0087DD22 /* WardrobeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeViewController.swift; sourceTree = "<group>"; };
 		35FFE2D12563FBE300F3E8F0 /* Interest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interest.swift; sourceTree = "<group>"; };
 		35FFE2D62563FC1400F3E8F0 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		35FFE2DB2563FC3A00F3E8F0 /* LookItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookItem.swift; sourceTree = "<group>"; };
@@ -120,7 +121,6 @@
 		705336C5F351501ABA12A137 /* Pods-Criatu-CriatuUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Criatu-CriatuUITests.release.xcconfig"; path = "Target Support Files/Pods-Criatu-CriatuUITests/Pods-Criatu-CriatuUITests.release.xcconfig"; sourceTree = "<group>"; };
 		85C80A5A2566AB2600BBB230 /* ImageItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageItemView.swift; sourceTree = "<group>"; };
 		85C80A6D2566B2A700BBB230 /* MusicItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicItemView.swift; sourceTree = "<group>"; };
-		85FAEB83256D581E00660648 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		BA9153802C853D9D50AD1195 /* Pods-Criatu-CriatuUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Criatu-CriatuUITests.debug.xcconfig"; path = "Target Support Files/Pods-Criatu-CriatuUITests/Pods-Criatu-CriatuUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CC2471249044735CF8A7BDAA /* Pods_CriatuTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CriatuTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3A03B9F0D4C52EFFA950B43 /* Pods-Criatu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Criatu.release.xcconfig"; path = "Target Support Files/Pods-Criatu/Pods-Criatu.release.xcconfig"; sourceTree = "<group>"; };
@@ -157,7 +157,6 @@
 		105312D825656C5500887B1E /* Extra */ = {
 			isa = PBXGroup;
 			children = (
-				85FAEB83256D581E00660648 /* View+Extensions.swift */,
 				356A45AE255D836E00F892A1 /* AppDelegate.swift */,
 				35FFE30F256413CA00F3E8F0 /* APMSong.swift */,
 				105312D925656C6E00887B1E /* UIEditingExtensions.swift */,
@@ -232,8 +231,8 @@
 			children = (
 				35FFE3262564150800F3E8F0 /* Criatu.entitlements */,
 				356A45B0255D836E00F892A1 /* SceneDelegate.swift */,
-				85809AC0256BF60D008244D9 /* WardrobeSelectionView */,
 				0488FB722562BB4D00E537B2 /* FirebaseHandler.swift */,
+				35F82A1E25713C040087DD22 /* Wadrobes */,
 				283CFC77256FE86700702DAE /* OnBoarding */,
 				35EBBC2B256EBF4200856EE5 /* TabBar */,
 				10BF032A25655D8D008F2BCC /* DiscoverView */,
@@ -267,12 +266,6 @@
 			path = CriatuUITests;
 			sourceTree = "<group>";
 		};
-		35F8295C256F116E0087DD22 /* WardrobeClasses */ = {
-			isa = PBXGroup;
-			children = (
-				35F8295D256F11980087DD22 /* ClosetsBank.swift */,
-			);
-			path = WardrobeClasses;
 		35EBBC2B256EBF4200856EE5 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -282,14 +275,23 @@
 			path = TabBar;
 			sourceTree = "<group>";
 		};
+		35F82A1E25713C040087DD22 /* Wadrobes */ = {
+			isa = PBXGroup;
+			children = (
+				35F82A1425713BB00087DD22 /* WardrobeView.swift */,
+				35F82A2225713C0C0087DD22 /* WardrobeViewController.swift */,
+			);
+			path = Wadrobes;
+			sourceTree = "<group>";
+		};
 		35FFE2CD2563FBCD00F3E8F0 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				35F82A1925713BCA0087DD22 /* ClosetsBank.swift */,
 				35FFE2D12563FBE300F3E8F0 /* Interest.swift */,
 				35FFE2D62563FC1400F3E8F0 /* Style.swift */,
 				35FFE2DB2563FC3A00F3E8F0 /* LookItem.swift */,
 				35091E2C2566C89700F94A4A /* Discover Classes */,
-				35F8295C256F116E0087DD22 /* WardrobeClasses */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -305,14 +307,6 @@
 				49859DDB0939B7597659474C /* Pods-CriatuTests.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		85809AC0256BF60D008244D9 /* WardrobeSelectionView */ = {
-			isa = PBXGroup;
-			children = (
-				35F82954256F00B90087DD22 /* WardrobeView.swift */,
-			);
-			path = WardrobeSelectionView;
 			sourceTree = "<group>";
 		};
 		A3FF226C9167910396FF0AC5 /* Frameworks */ = {
@@ -567,8 +561,9 @@
 				35091E312566C91000F94A4A /* ImageItem.swift in Sources */,
 				283CFC7E256FE88600702DAE /* OnBoardingViewSecond.swift in Sources */,
 				105312D42565613500887B1E /* DiscoverBank.swift in Sources */,
-				35F8295E256F11980087DD22 /* ClosetsBank.swift in Sources */,
 				106733EE256D2F0C00411F60 /* MainTabView.swift in Sources */,
+				35F82A1525713BB00087DD22 /* WardrobeView.swift in Sources */,
+				35F82A1A25713BCA0087DD22 /* ClosetsBank.swift in Sources */,
 				283CFC83256FE88600702DAE /* CardView.swift in Sources */,
 				0488FB732562BB4D00E537B2 /* FirebaseHandler.swift in Sources */,
 				35FFE2E12563FC5800F3E8F0 /* DiscoverItem.swift in Sources */,
@@ -582,7 +577,6 @@
 				356A01EA2566E2E600454AA1 /* DiscoverView.swift in Sources */,
 				356A01F72566E96B00454AA1 /* BasicItemView.swift in Sources */,
 				35091E0E25669A7500F94A4A /* LazyWaterfallGrid.swift in Sources */,
-				85FAEB84256D581E00660648 /* View+Extensions.swift in Sources */,
 				283CFC81256FE88600702DAE /* PageViewController.swift in Sources */,
 				105312DA25656C6E00887B1E /* UIEditingExtensions.swift in Sources */,
 				356A45AF255D836E00F892A1 /* AppDelegate.swift in Sources */,
@@ -594,8 +588,8 @@
 				35FFE2D22563FBE300F3E8F0 /* Interest.swift in Sources */,
 				10BF032C25655DB0008F2BCC /* SearchBarView.swift in Sources */,
 				356A45B1255D836E00F892A1 /* SceneDelegate.swift in Sources */,
+				35F82A2325713C0C0087DD22 /* WardrobeViewController.swift in Sources */,
 				35FFE2D72563FC1400F3E8F0 /* Style.swift in Sources */,
-				35F82955256F00B90087DD22 /* WardrobeView.swift in Sources */,
 				356A45B9255D836E00F892A1 /* Criatu.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -690,7 +684,7 @@
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_NO_COMMON_BLOCKS = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -750,7 +744,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_NO_COMMON_BLOCKS = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
