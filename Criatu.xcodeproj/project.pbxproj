@@ -35,7 +35,8 @@
 		359A7F36256EAD940006A368 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359A7F35256EAD940006A368 /* TabBarViewController.swift */; };
 		359D541125715FCE0033D5CE /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359D541025715FCE0033D5CE /* OnboardingViewController.swift */; };
 		359D541925716DB20033D5CE /* View+cornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359D541825716DB20033D5CE /* View+cornerRadius.swift */; };
-		359D542A257175180033D5CE /* Carousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359D5429257175180033D5CE /* Carousel.swift */; };
+		359D542A257175180033D5CE /* LazySnapHStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359D5429257175180033D5CE /* LazySnapHStack.swift */; };
+		359D543525718D450033D5CE /* WardrobesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359D543425718D450033D5CE /* WardrobesView.swift */; };
 		35D0EB69256D669300CFBEB1 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D0EB68256D669300CFBEB1 /* Keys.swift */; };
 		35F82A1525713BB00087DD22 /* WardrobeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F82A1425713BB00087DD22 /* WardrobeView.swift */; };
 		35F82A1A25713BCA0087DD22 /* ClosetsBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F82A1925713BCA0087DD22 /* ClosetsBank.swift */; };
@@ -104,7 +105,8 @@
 		359A7F35256EAD940006A368 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		359D541025715FCE0033D5CE /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		359D541825716DB20033D5CE /* View+cornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+cornerRadius.swift"; sourceTree = "<group>"; };
-		359D5429257175180033D5CE /* Carousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carousel.swift; sourceTree = "<group>"; };
+		359D5429257175180033D5CE /* LazySnapHStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazySnapHStack.swift; sourceTree = "<group>"; };
+		359D543425718D450033D5CE /* WardrobesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobesView.swift; sourceTree = "<group>"; };
 		35D0EB68256D669300CFBEB1 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		35F82A1425713BB00087DD22 /* WardrobeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WardrobeView.swift; sourceTree = "<group>"; };
 		35F82A1925713BCA0087DD22 /* ClosetsBank.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClosetsBank.swift; sourceTree = "<group>"; };
@@ -161,7 +163,7 @@
 				35FFE30F256413CA00F3E8F0 /* APMSong.swift */,
 				35091E0D25669A7500F94A4A /* LazyWaterfallGrid.swift */,
 				356A45AE255D836E00F892A1 /* AppDelegate.swift */,
-				359D5429257175180033D5CE /* Carousel.swift */,
+				359D5429257175180033D5CE /* LazySnapHStack.swift */,
 				105312D925656C6E00887B1E /* UIEditingExtensions.swift */,
 				359D541825716DB20033D5CE /* View+cornerRadius.swift */,
 			);
@@ -235,7 +237,7 @@
 				283CFC77256FE86700702DAE /* Onboarding */,
 				35EBBC2B256EBF4200856EE5 /* TabBar */,
 				10BF032A25655D8D008F2BCC /* DiscoverView */,
-				35F82A1E25713C040087DD22 /* Wadrobes */,
+				35F82A1E25713C040087DD22 /* WadrobesView */,
 				35FFE2CD2563FBCD00F3E8F0 /* Classes */,
 				105312D825656C5500887B1E /* Extra */,
 				356A45B4255D836E00F892A1 /* Main.storyboard */,
@@ -275,13 +277,14 @@
 			path = TabBar;
 			sourceTree = "<group>";
 		};
-		35F82A1E25713C040087DD22 /* Wadrobes */ = {
+		35F82A1E25713C040087DD22 /* WadrobesView */ = {
 			isa = PBXGroup;
 			children = (
 				35F82A1425713BB00087DD22 /* WardrobeView.swift */,
+				359D543425718D450033D5CE /* WardrobesView.swift */,
 				35F82A2225713C0C0087DD22 /* WardrobeViewController.swift */,
 			);
-			path = Wadrobes;
+			path = WadrobesView;
 			sourceTree = "<group>";
 		};
 		35F82A98257152100087DD22 /* Closet Classes */ = {
@@ -338,7 +341,7 @@
 				356A45A7255D836E00F892A1 /* Sources */,
 				356A45A8255D836E00F892A1 /* Frameworks */,
 				356A45A9255D836E00F892A1 /* Resources */,
-				6F8DB18F81DDB644F7B444DD /* [CP] Embed Pods Frameworks */,
+				145599537E7A2B37ABD8BDD4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -376,7 +379,7 @@
 				356A45CB255D837000F892A1 /* Sources */,
 				356A45CC255D837000F892A1 /* Frameworks */,
 				356A45CD255D837000F892A1 /* Resources */,
-				185195563A1659981DCE4EE2 /* [CP] Embed Pods Frameworks */,
+				C1CAD8C5FC32B24678249E01 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -481,24 +484,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		185195563A1659981DCE4EE2 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Criatu-CriatuUITests/Pods-Criatu-CriatuUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Criatu-CriatuUITests/Pods-Criatu-CriatuUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Criatu-CriatuUITests/Pods-Criatu-CriatuUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6F8DB18F81DDB644F7B444DD /* [CP] Embed Pods Frameworks */ = {
+		145599537E7A2B37ABD8BDD4 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -537,6 +523,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C1CAD8C5FC32B24678249E01 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Criatu-CriatuUITests/Pods-Criatu-CriatuUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Criatu-CriatuUITests/Pods-Criatu-CriatuUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Criatu-CriatuUITests/Pods-Criatu-CriatuUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		F4F8B22F167278D66091B921 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -570,6 +573,7 @@
 				105312D42565613500887B1E /* DiscoverBank.swift in Sources */,
 				106733EE256D2F0C00411F60 /* MainTabView.swift in Sources */,
 				35F82A1525713BB00087DD22 /* WardrobeView.swift in Sources */,
+				359D543525718D450033D5CE /* WardrobesView.swift in Sources */,
 				35F82A1A25713BCA0087DD22 /* ClosetsBank.swift in Sources */,
 				283CFC83256FE88600702DAE /* OnboardItemView.swift in Sources */,
 				0488FB732562BB4D00E537B2 /* FirebaseHandler.swift in Sources */,
@@ -584,7 +588,7 @@
 				356A01F72566E96B00454AA1 /* BasicItemView.swift in Sources */,
 				35091E0E25669A7500F94A4A /* LazyWaterfallGrid.swift in Sources */,
 				283CFC81256FE88600702DAE /* OnboardingPageView.swift in Sources */,
-				359D542A257175180033D5CE /* Carousel.swift in Sources */,
+				359D542A257175180033D5CE /* LazySnapHStack.swift in Sources */,
 				105312DA25656C6E00887B1E /* UIEditingExtensions.swift in Sources */,
 				356A45AF255D836E00F892A1 /* AppDelegate.swift in Sources */,
 				283CFC80256FE88600702DAE /* EndOnboardingView.swift in Sources */,

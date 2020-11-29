@@ -8,26 +8,36 @@
 import UIKit
 import SwiftUI
 
-class DiscoverViewController: UIViewController {
-        
+protocol OnboardingDelegate{
+    func finishOnboarding()
+}
+class OnboardingViewController: UIViewController, OnboardingDelegate {
+    
+    func finishOnboarding() {
+        let vc = TabBarViewController()
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true)
+    }
+    
     let handler = FirebaseHandler()
-    override func viewDidLoad() { 
+    
+    override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
         self.view.backgroundColor = .systemBackground
         
-        let discoverHost = UIHostingController(rootView: OnboardingPageView())
-        self.addChild(discoverHost)
-        discoverHost.view.translatesAutoresizingMaskIntoConstraints = false
+        let onboardHost = UIHostingController(rootView: OnboardingPageView(delegate: self))
+        self.addChild(onboardHost)
+        onboardHost.view.translatesAutoresizingMaskIntoConstraints = false
         
-        self.view.addSubview(discoverHost.view)
+        self.view.addSubview(onboardHost.view)
         
         let constraints = [
-            discoverHost.view.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 0),
-            discoverHost.view.centerXAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerXAnchor, constant: 0),
-            discoverHost.view.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 0),
-            discoverHost.view.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: 0),
-            discoverHost.view.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -20)
+            onboardHost.view.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 0),
+            onboardHost.view.centerXAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerXAnchor, constant: 0),
+            onboardHost.view.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 0),
+            onboardHost.view.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: 0),
+            onboardHost.view.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0)
         ]
         NSLayoutConstraint.activate(constraints)
             

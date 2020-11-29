@@ -12,6 +12,8 @@ class Style: ObservableObject, Identifiable{
     
     var attributes: Style.Database
     
+    @Published var isDisplayed: Bool = false
+    
     @Published var image: UIImage?
     
     init(id: String, name: String, description: String, imageURL: String){

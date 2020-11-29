@@ -12,11 +12,11 @@ struct WardrobeView: View{
     @ObservedObject var style: Style
     
     @State var showDetails: Bool = false
-    
     var body: some View{
         ZStack(alignment: .topTrailing) {
             
             if !showDetails{
+                
                 
                 ZStack(alignment: .bottom){
                     GeometryReader{ geometry in
@@ -34,21 +34,20 @@ struct WardrobeView: View{
                         }
                     }
                     
-                    ZStack(alignment: .center){
+                    ZStack(alignment: .bottomLeading){
                         Rectangle()
                             .frame(height: 68, alignment: .center)
                             
                             .foregroundColor(Color(.systemBackground))
                             .opacity(0.7)
-                            .blur(radius: 7)
                         
                         Text(style.attributes.name)
                             .font(.largeTitle)
                             .fontWeight(.semibold)
                             .foregroundColor(Color(.systemPurple))
+                            .padding()
                         
                     }
-                    
                 }
             }
             
@@ -91,51 +90,17 @@ struct WardrobeView: View{
             .padding([.top, .trailing])
             
         }
-        .frame(width: 240, height: 420)
         .cornerRadius(20)
         .shadow(radius: 20)
-    }
-}
-
-
-struct WardrobesView: View {
-    
-
-    @ObservedObject var bank: ClosetsBank
-    
-    var body: some View {
-        
-        VStack {
-            
-            Text("Meus armários")
-                .font(.title)
-                .foregroundColor(Color(.systemPurple))
-                .fontWeight(.semibold)
-                .padding(.top, 40)
-            
-            Spacer()
-
-            
-            ScrollView(.horizontal) {
-                LazyHStack(spacing: 55) {
-                    ForEach(0..<bank.styles.count) { index in
-                        WardrobeView(style: bank.styles[index])
-                    }
-                }.padding(.leading, 70)
-                
-            }
-            Spacer()
-            Spacer()
-        }.background(Color(.systemGray6))
         
     }
 }
 
 
-struct WardrobesView_PreviewProvider: PreviewProvider {
+
+struct WardrobeView_PreviewProvider: PreviewProvider {
     static var previews: some View {
         
-        WardrobesView(bank: ClosetsBank())
         WardrobeView(style: ClosetsBank().styles[0])
         
     }
