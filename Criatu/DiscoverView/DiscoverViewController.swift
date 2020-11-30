@@ -10,7 +10,6 @@ import SwiftUI
 
 class DiscoverViewController: UIViewController {
         
-    let handler = FirebaseHandler()
     override func viewDidLoad() { 
         super.viewDidLoad()
         // Do any additional setup after loading the view.

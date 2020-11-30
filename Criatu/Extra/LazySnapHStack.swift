@@ -94,7 +94,9 @@ where Elements: RandomAccessCollection, Content: View {
             }
             self.op = ((self.width + 15) * CGFloat(self.data.count / 2)) - (self.data.count % 2 == 0 ? ((self.width + 15) / 2) : 0)
             
+            if !self.isDisplayed.isEmpty {
             self.isDisplayed[Int(floor(count))] = true
+            }
         }
     }
     

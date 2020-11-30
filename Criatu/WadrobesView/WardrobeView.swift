@@ -17,36 +17,39 @@ struct WardrobeView: View{
             
             if !showDetails{
                 
-                
-                ZStack(alignment: .bottom){
-                    GeometryReader{ geometry in
-                        if let image = style.image {
-                            
-                            Image(uiImage: image)
-                                .resizable()
-                                //.aspectRatio(contentMode: .fill)
-                                .edgesIgnoringSafeArea(.all)
-                                .frame(maxWidth: geometry.size.width, maxHeight: geometry.size.height)
-                        }
-                        else{
-                            Rectangle()
-                                .foregroundColor(Color(.systemGray6))
-                        }
-                    }
+                NavigationLink(destination: ClosetView(style: style)) {
                     
-                    ZStack(alignment: .bottomLeading){
-                        Rectangle()
-                            .frame(height: 68, alignment: .center)
+                    ZStack(alignment: .bottom){
+                        GeometryReader{ geometry in
+                            if let image = style.image {
+                                
+                                Image(uiImage: image)
+                                    .resizable()
+                                    //.aspectRatio(contentMode: .fill)
+                                    .edgesIgnoringSafeArea(.all)
+                                    .frame(maxWidth: geometry.size.width, maxHeight: geometry.size.height)
+                            }
+                            else{
+                                Rectangle()
+                                    .foregroundColor(Color(.systemGray6))
+                            }
+                        }
+                        
+                        
+                        ZStack(alignment: .bottomLeading){
+                            Rectangle()
+                                .frame(height: 68, alignment: .center)
+                                
+                                .foregroundColor(Color(.systemBackground))
+                                .opacity(0.7)
                             
-                            .foregroundColor(Color(.systemBackground))
-                            .opacity(0.7)
-                        
-                        Text(style.attributes.name)
-                            .font(.largeTitle)
-                            .fontWeight(.semibold)
-                            .foregroundColor(Color(.systemPurple))
-                            .padding()
-                        
+                            Text(style.attributes.name)
+                                .font(.largeTitle)
+                                .fontWeight(.semibold)
+                                .foregroundColor(Color(.systemPurple))
+                                .padding()
+                            
+                        }
                     }
                 }
             }

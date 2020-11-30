@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		0488FB732562BB4D00E537B2 /* FirebaseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0488FB722562BB4D00E537B2 /* FirebaseHandler.swift */; };
 		08A98BE97C3F63783E897B5B /* Pods_CriatuTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC2471249044735CF8A7BDAA /* Pods_CriatuTests.framework */; };
+		100CC76225751DB800A21A2C /* ClosetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100CC76125751DB800A21A2C /* ClosetView.swift */; };
+		100CC7672575258400A21A2C /* Drawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100CC7662575258400A21A2C /* Drawer.swift */; };
+		100CC773257529A400A21A2C /* DrawerLook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100CC772257529A400A21A2C /* DrawerLook.swift */; };
 		105312D42565613500887B1E /* DiscoverBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105312D32565613500887B1E /* DiscoverBank.swift */; };
 		105312DA25656C6E00887B1E /* UIEditingExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105312D925656C6E00887B1E /* UIEditingExtensions.swift */; };
 		106733EE256D2F0C00411F60 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106733ED256D2F0C00411F60 /* MainTabView.swift */; };
@@ -71,6 +74,9 @@
 
 /* Begin PBXFileReference section */
 		0488FB722562BB4D00E537B2 /* FirebaseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseHandler.swift; sourceTree = "<group>"; };
+		100CC76125751DB800A21A2C /* ClosetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosetView.swift; sourceTree = "<group>"; };
+		100CC7662575258400A21A2C /* Drawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drawer.swift; sourceTree = "<group>"; };
+		100CC772257529A400A21A2C /* DrawerLook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerLook.swift; sourceTree = "<group>"; };
 		105312D32565613500887B1E /* DiscoverBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverBank.swift; sourceTree = "<group>"; };
 		105312D925656C6E00887B1E /* UIEditingExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIEditingExtensions.swift; sourceTree = "<group>"; };
 		106733ED256D2F0C00411F60 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
@@ -156,6 +162,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		100CC76B2575259300A21A2C /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				100CC7662575258400A21A2C /* Drawer.swift */,
+				100CC772257529A400A21A2C /* DrawerLook.swift */,
+				356A45B7255D836E00F892A1 /* Criatu.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		105312D825656C5500887B1E /* Extra */ = {
 			isa = PBXGroup;
 			children = (
@@ -245,7 +261,7 @@
 				356A45BC255D837000F892A1 /* LaunchScreen.storyboard */,
 				356A45BF255D837000F892A1 /* Info.plist */,
 				28D999F3256702150003DE45 /* GoogleService-Info.plist */,
-				356A45B7255D836E00F892A1 /* Criatu.xcdatamodeld */,
+				100CC76B2575259300A21A2C /* CoreData */,
 			);
 			path = Criatu;
 			sourceTree = "<group>";
@@ -283,6 +299,7 @@
 				35F82A1425713BB00087DD22 /* WardrobeView.swift */,
 				359D543425718D450033D5CE /* WardrobesView.swift */,
 				35F82A2225713C0C0087DD22 /* WardrobeViewController.swift */,
+				100CC76125751DB800A21A2C /* ClosetView.swift */,
 			);
 			path = WadrobesView;
 			sourceTree = "<group>";
@@ -573,9 +590,12 @@
 				105312D42565613500887B1E /* DiscoverBank.swift in Sources */,
 				106733EE256D2F0C00411F60 /* MainTabView.swift in Sources */,
 				35F82A1525713BB00087DD22 /* WardrobeView.swift in Sources */,
+				100CC7672575258400A21A2C /* Drawer.swift in Sources */,
 				359D543525718D450033D5CE /* WardrobesView.swift in Sources */,
 				35F82A1A25713BCA0087DD22 /* ClosetsBank.swift in Sources */,
+				100CC76225751DB800A21A2C /* ClosetView.swift in Sources */,
 				283CFC83256FE88600702DAE /* OnboardItemView.swift in Sources */,
+				100CC773257529A400A21A2C /* DrawerLook.swift in Sources */,
 				0488FB732562BB4D00E537B2 /* FirebaseHandler.swift in Sources */,
 				35FFE2E12563FC5800F3E8F0 /* DiscoverItem.swift in Sources */,
 				356A45B3255D836E00F892A1 /* DiscoverViewController.swift in Sources */,

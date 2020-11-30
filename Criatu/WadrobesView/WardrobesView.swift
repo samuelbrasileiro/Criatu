@@ -14,13 +14,13 @@ struct WardrobesView: View {
     var body: some View {
         NavigationView{
             VStack {
-                
-                
-                LazySnapHStack(data: bank.styles){ item in
-                    
-                    WardrobeView(style: item)
-                        .navigationBarTitle("Meus Armários")
-                        .foregroundColor(.black)
+                if bank.styles.count > 0 {
+                    LazySnapHStack(data: bank.styles){ item in
+                        
+                        WardrobeView(style: item)
+                            .navigationBarTitle("Meus Armários")
+                            .foregroundColor(.black)
+                    }
                 }
                 
                 Spacer()
