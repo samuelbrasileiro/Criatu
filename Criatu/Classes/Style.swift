@@ -39,6 +39,14 @@ class Style: ObservableObject, Identifiable{
                 self.objectWillChange.send()
             }
         }
+        if let drawerList = closet.drawers{
+            for drawer in drawerList{
+                guard let drawer = drawer as? Drawer else {
+                    return
+                }
+                self.drawers.append(drawer)
+            }
+        }
     }
     
     struct Look {

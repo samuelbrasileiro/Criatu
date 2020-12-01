@@ -24,6 +24,10 @@ struct ClosetView: View {
                             .resizable()
                             .frame(idealWidth: 150, minHeight: 120)
                             .cornerRadius(20)
+                        
+            Text("Gavetas")
+                
+                        
                     }
                 }
                 .padding([.top, .leading])
@@ -41,6 +45,7 @@ struct ClosetView: View {
         }
     }
 }
+
 
 struct ClosetView_Previews: PreviewProvider {
     static var previews: some View {
