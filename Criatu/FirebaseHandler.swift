@@ -22,33 +22,7 @@ class FirebaseHandler {
     static var storage = Storage.storage().reference()
     init() {
         
-        let names = ["granola_01","granola_02", "granola_03", "granola_04", "granola_05","granola_06", "granola_07", "granola_08", "granola_09","granola_10"]
-                var count = 0
-                var urls: [String] = []
-                for name in names{
-                    FirebaseHandler.storage.child("looks").child(name + ".jpg").downloadURL{ url, error in
-                        if let url = url{
-                            urls.append(url.absoluteString)
-                        }
-                        count += 1
-                        if count == names.count{
-                            
-                            count = 0
-
-                            var style = Style.Database(id: "", name: "Granola", description: "Um armário para aqueles que amam estar em contato com a natureza e, quando puder, tenha a certeza que vai estar.  Sempre com a cabeça nas nuvens, os granolas visam um visual mais imaginativo e natural, normalmente ecológico e vegano.", imageURL: "https://is4-ssl.mzstatic.com/image/thumb/Music1/v4/4c/11/c3/4c11c35e-98ff-c7c5-59c3-7ed4fa50db2a/075679921338.jpg/400x400.jpeg", looksURL: urls)
-                            print("foi")
-                            
-                            FirebaseHandler.writeToCollection(.closets, value: style)
-                            
-
-                        }
-                    }
-                }
-        
     }
-    
-    
-    
     
     /// Adding an object to a collection
     /// - Parameters:

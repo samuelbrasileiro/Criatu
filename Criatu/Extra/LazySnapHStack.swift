@@ -34,7 +34,7 @@ where Elements: RandomAccessCollection, Content: View {
         
         LazyHStack(spacing: 15){
             
-            ForEach(0..<self.data.count){index in
+            ForEach(0..<self.data.count, id: \.self){index in
                 
                 content(data[index as! Elements.Index])
                     .frame(width: width, height: self.getIsDisplayed(of: index) ? height : 440)
@@ -102,11 +102,13 @@ where Elements: RandomAccessCollection, Content: View {
     
     func updateHeight(value : Int){
         
-        for i in 0..<data.count{
+        for i in 0..<isDisplayed.count{
             
             self.isDisplayed[i] = false
         }
-        self.isDisplayed[value] = true
+        if value < isDisplayed.count{
+            self.isDisplayed[value] = true
+        }
     }
 }
 

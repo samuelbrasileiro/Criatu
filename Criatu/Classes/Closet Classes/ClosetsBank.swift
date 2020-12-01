@@ -17,11 +17,30 @@ class ClosetsBank: ObservableObject{
     }
     
     func getStyles() {
+        
         FirebaseHandler.readCollection(.closets, id: "-MNOV-lGoNFf7Oa7WW1n", dataType: Style.Database.self) { result in
-            if case .success(let attributes) = result {
-                self.styles.append(Style(attributes: attributes))
+            if case .success(let attributes1) = result {
+
+                FirebaseHandler.readCollection(.closets, id: "-MNP6eErV2Or6qZsipfO", dataType: Style.Database.self) { result in
+                    if case .success(let attributes2) = result {
+                        
+                        FirebaseHandler.readCollection(.closets, id: "-MNP6eErV2Or6qZsipfO", dataType: Style.Database.self) { result in
+                            if case .success(let attributes3) = result {
+                                self.styles = [Style(attributes: attributes1), Style(attributes: attributes2), Style(attributes: attributes3)]
+                            }
+                        }
+                        
+                        
+                        
+                    }
+                }
+                
+                
             }
         }
+
+
+
     }
     
 }

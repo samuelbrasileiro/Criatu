@@ -17,7 +17,7 @@ struct ClosetView: View {
             Text("Sugestões para looks")
             
             ScrollView(.horizontal) {
-                LazyHStack {
+                LazyHStack(spacing: 20) {
                     ForEach(0..<style.suggestions.count, id: \.self) { index in
                         Image(uiImage: style.suggestions[index].image)
                             .resizable()
@@ -26,7 +26,13 @@ struct ClosetView: View {
                     }
                 }
             }
+            
+            Spacer()
+            Rectangle()
+                .fill(Color(.systemGray6))
+                .frame(height: 400)
         }
+        .navigationTitle(style.attributes.name)
         .onAppear {
             style.getSuggestions()
         }
