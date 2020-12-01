@@ -6,8 +6,11 @@
 //
 
 import Foundation
+import CoreData
 
 class ClosetsBank: ObservableObject{
+    
+    let content = AppDelegate.viewContext
     
     @Published var styles: [Style] = []
     
@@ -18,29 +21,17 @@ class ClosetsBank: ObservableObject{
     
     func getStyles() {
         
-        FirebaseHandler.readCollection(.closets, id: "-MNOV-lGoNFf7Oa7WW1n", dataType: Style.Database.self) { result in
-            if case .success(let attributes1) = result {
-
-                FirebaseHandler.readCollection(.closets, id: "-MNP6eErV2Or6qZsipfO", dataType: Style.Database.self) { result in
-                    if case .success(let attributes2) = result {
-                        
-                        FirebaseHandler.readCollection(.closets, id: "-MNP6eErV2Or6qZsipfO", dataType: Style.Database.self) { result in
-                            if case .success(let attributes3) = result {
-                                self.styles = [Style(attributes: attributes1), Style(attributes: attributes2), Style(attributes: attributes3)]
-                            }
-                        }
-                        
-                        
-                        
-                    }
-                }
-                
-                
+        let closetsRequest: NSFetchRequest<Closet> = Closet.fetchRequest()
+        
+        do {
+            for closet in try content.fetch(closetsRequest) {
+                self.styles.append(Style(closet: closet))
             }
+        } catch {
+            print(error)
         }
-
-
-
+        
+        
     }
     
 }

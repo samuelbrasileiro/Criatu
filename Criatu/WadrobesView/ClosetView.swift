@@ -15,22 +15,25 @@ struct ClosetView: View {
         
         VStack(alignment: .leading) {
             Text("Sugestões para looks")
+                .padding([.top, .leading])
             
             ScrollView(.horizontal) {
                 LazyHStack(spacing: 20) {
                     ForEach(0..<style.suggestions.count, id: \.self) { index in
                         Image(uiImage: style.suggestions[index].image)
                             .resizable()
-                            .frame(width: 150, height: 200)
+                            .frame(idealWidth: 150, minHeight: 120)
                             .cornerRadius(20)
                     }
                 }
+                .padding([.top, .leading])
             }
             
             Spacer()
             Rectangle()
                 .fill(Color(.systemGray6))
                 .frame(height: 400)
+                
         }
         .navigationTitle(style.attributes.name)
         .onAppear {

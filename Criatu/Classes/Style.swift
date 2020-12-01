@@ -29,6 +29,18 @@ class Style: ObservableObject, Identifiable{
         getImage()
     }
     
+    init(closet: Closet) {
+        self.attributes = Style.Database(id: closet.id!, name: closet.name!, description: closet.description_text!, imageURL: "", looksURL: [])
+        self.image = UIImage(data: closet.image!)
+        FirebaseHandler.readCollection(.closets, id: closet.id!, dataType: Style.Database.self) { result in
+            
+            if case .success(let style) = result {
+                self.attributes.looksURL = style.looksURL
+                self.objectWillChange.send()
+            }
+        }
+    }
+    
     struct Look {
         var image: UIImage
         var url: String
@@ -45,9 +57,28 @@ class Style: ObservableObject, Identifiable{
                 }
                 if let image = UIImage(data: data){
                     self.image = image
+//                    self.saveToCoreData()
                 }
             }
         } .resume()
+    }
+    
+    func saveToCoreData() {
+        let context = AppDelegate.viewContext
+        let closet = Closet(context: context)
+        
+        closet.id = attributes.id
+        closet.name = attributes.name
+        closet.description_text = attributes.description
+        closet.image = self.image?.pngData()
+        
+        do {
+            try context.save()
+        }
+        
+        catch {
+            print(error)
+        }
     }
     
     func getSuggestions() {
