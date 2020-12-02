@@ -46,7 +46,9 @@ struct ClosetView: View {
         }
         .navigationTitle(style.attributes.name)
         .onAppear {
-            style.getSuggestions()
+            if style.suggestions.isEmpty {
+                style.getSuggestions()
+            }
         }
     }
 }
