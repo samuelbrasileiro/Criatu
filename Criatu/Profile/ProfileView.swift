@@ -7,13 +7,21 @@
 
 import SwiftUI
 
+
+
 struct ProfileView: View {
+    
+    
+    let colors: [Color] = [Color(.systemPurple), Color(.systemBlue), Color(.systemRed), Color(.systemGreen)]
+    let descriptionText: [String] = ["Roxo Elétrico", "Ciano Sombrio","Vermelho Melancia","Verde Amoeba"]
+    
     
     var name: String
     var wardrobe: String
-    var descriptionText: String
     
-    @State private var showNotification = true
+    @State var selectedIndex = 0
+    @State var showNotification = true
+    @State var changeColors = true
     
     var body: some View {
         VStack{
@@ -23,7 +31,7 @@ struct ProfileView: View {
                 .fontWeight(.semibold)
                 .foregroundColor(Color.purple)
                 .padding(.bottom, 10.0)
-
+            
             
             Text("Até o momento você já descobriu ")
                 .padding(10.0)
@@ -52,50 +60,64 @@ struct ProfileView: View {
                         .font(.title3)
                         .fontWeight(.light)
                         .multilineTextAlignment(.leading)
+                        .padding()
                     //                        .position(x: 80, y: 55)
                     
                     HStack{
-                        
-                        // pesquisar como fazer com ForEach a partir da classe
-                        //criar uma classe das cores que aceite a selecao de cores, vai ter a cor e se ta selecionado
-                        Button(action: {
-                        }, label: {
-                            Circle()
-                                .foregroundColor(Color(.systemPurple))
-                                .frame(width: 40, height: 40, alignment: .center)
-                            // no lugar de position eh melhor
+                        ForEach(0..<colors.count, id: \.self) { index in
                             
-                        })
-                        
-                        Button(action: {
-                        }, label: {
-                            
-                            Circle()
-                                .foregroundColor(.blue)
-                                .frame(width: 40, height: 40, alignment: .center)
-                        })
-                        
-                        Button(action: {
-                        }, label: {
-                            Circle()
-                                .foregroundColor(.red)
-                                .frame(width: 40, height: 40, alignment: .center)
-                            
-                        })
-                        
-                        Button(action: {
-                        }, label: {
-                            Circle()
-                                .foregroundColor(.green)
-                                .frame(width: 40, height: 40, alignment: .center)
-                        })
+                            Button(action: {
+                                selectedIndex = index
+                            }, label: {
+                                if selectedIndex == index{
+                                    
+                                    
+                                    VStack(){
+                                        Circle()
+                                            .foregroundColor(colors[index])
+                                            //                                            .border(Color.black, width: 2)
+                                            .frame(width: 40, height: 40, alignment: .center)
+                                            .overlay(
+                                                RoundedRectangle(cornerRadius: 20)
+                                                    .stroke(colors[index], lineWidth: 5)
+                                            )
+                                            .overlay(
+                                                RoundedRectangle(cornerRadius: 20)
+                                                    .stroke(Color(.systemGray6), lineWidth: 1)
+                                            )
+                                        
+                                        
+                                        
+                                        
+                                    }
+                                    //                        ZStack{
+                                    //                            Circle().foregroundColor(.black)
+                                    //                                .frame(width: 50, height: 50, alignment: .center)
+                                    //                        }
+                                }
+                                else{
+                                    
+                                    
+                                    
+                                    VStack{
+                                        Circle().foregroundColor(colors[index])
+                                            .frame(width: 40, height: 40, alignment: .center)
+                                        
+                                    }
+                                }
+                            })
+                        }
                         
                     }.padding()
                     
-                    Text(descriptionText)
-                        .font(.callout)
+                    Text("\(descriptionText[selectedIndex])" + " é o seu tema no momento")
+                        .font(.footnote)
                         .fontWeight(.thin)
                         .italic()
+                        .padding(.leading)
+                        .foregroundColor(Color(.systemGray))
+                        .lineLimit(1)
+                    
                     
                     VStack {
                         Toggle(isOn: $showNotification) {
@@ -103,13 +125,16 @@ struct ProfileView: View {
                         }.padding()
                         
                         if showNotification {
-                            Text("Vou pesquisar como fazer o coisa ainda kk")
                         }
                     }
+                    
                     VStack() {
+                        
                         Text("Interesses")
                         //ver o navigationlink aqui
                     }.padding()
+                    
+                    
                     
                     
                     
@@ -121,6 +146,6 @@ struct ProfileView: View {
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView(name: "Salumalatrix", wardrobe: "4", descriptionText: "Bela cor escolhida")
+        ProfileView(name: "Salumalatrix", wardrobe: "4")
     }
 }

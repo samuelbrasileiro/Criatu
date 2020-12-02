@@ -47,6 +47,7 @@
 		35FFE2E12563FC5800F3E8F0 /* DiscoverItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FFE2E02563FC5800F3E8F0 /* DiscoverItem.swift */; };
 		35FFE310256413CA00F3E8F0 /* APMSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FFE30F256413CA00F3E8F0 /* APMSong.swift */; };
 		850B4A7B25751D9B00C7DFBB /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850B4A7A25751D9B00C7DFBB /* ProfileView.swift */; };
+		85C0773C25766A3B00839174 /* testeaq.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C0773B25766A3B00839174 /* testeaq.swift */; };
 		85C80A5B2566AB2600BBB230 /* ImageItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C80A5A2566AB2600BBB230 /* ImageItemView.swift */; };
 		85C80A6E2566B2A700BBB230 /* MusicItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C80A6D2566B2A700BBB230 /* MusicItemView.swift */; };
 		998BA92C616F1A11E9D39B1C /* Pods_Criatu_CriatuUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F431E44D70780784862AA6E /* Pods_Criatu_CriatuUITests.framework */; };
@@ -123,6 +124,7 @@
 		56AC4C34B24D913FDC683DF9 /* Pods_Criatu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Criatu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		705336C5F351501ABA12A137 /* Pods-Criatu-CriatuUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Criatu-CriatuUITests.release.xcconfig"; path = "Target Support Files/Pods-Criatu-CriatuUITests/Pods-Criatu-CriatuUITests.release.xcconfig"; sourceTree = "<group>"; };
 		850B4A7A25751D9B00C7DFBB /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		85C0773B25766A3B00839174 /* testeaq.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testeaq.swift; sourceTree = "<group>"; };
 		85C80A5A2566AB2600BBB230 /* ImageItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageItemView.swift; sourceTree = "<group>"; };
 		85C80A6D2566B2A700BBB230 /* MusicItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicItemView.swift; sourceTree = "<group>"; };
 		BA9153802C853D9D50AD1195 /* Pods-Criatu-CriatuUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Criatu-CriatuUITests.debug.xcconfig"; path = "Target Support Files/Pods-Criatu-CriatuUITests/Pods-Criatu-CriatuUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -327,6 +329,7 @@
 			isa = PBXGroup;
 			children = (
 				850B4A7A25751D9B00C7DFBB /* ProfileView.swift */,
+				85C0773B25766A3B00839174 /* testeaq.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -607,6 +610,7 @@
 				85C80A6E2566B2A700BBB230 /* MusicItemView.swift in Sources */,
 				85C80A5B2566AB2600BBB230 /* ImageItemView.swift in Sources */,
 				35D0EB69256D669300CFBEB1 /* Keys.swift in Sources */,
+				85C0773C25766A3B00839174 /* testeaq.swift in Sources */,
 				356A01EF2566E61F00454AA1 /* InterestView.swift in Sources */,
 				35FFE2D22563FBE300F3E8F0 /* Interest.swift in Sources */,
 				10BF032C25655DB0008F2BCC /* SearchBarView.swift in Sources */,
