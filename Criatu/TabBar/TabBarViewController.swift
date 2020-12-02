@@ -37,6 +37,8 @@ class SelectedView: ObservableObject{
 
 class TabBarViewController: UITabBarController, SelectedViewDelegate {
     
+    let handler = FirebaseHandler()
+    
     func changeSelectedIndex() {
         print("adobrbadoa")
         self.selectedIndex = selectedView.index

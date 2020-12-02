@@ -21,8 +21,13 @@ class FirebaseHandler {
     
     static var storage = Storage.storage().reference()
     init() {
+        let style = Style.Database(id: "", name: "Influencer", description: "Pessoas que são influencers", imageURL: "https://is2-ssl.mzstatic.com/image/thumb/Music118/v4/42/cd/b5/42cdb599-b5d3-5c48-7014-0d747070bb9d/00602517895584.rgb.jpg/400x400.jpeg", looksURL: [])
+        
+        FirebaseHandler.writeToCollection(.closets, value: style)
         
     }
+    
+    
     
     /// Adding an object to a collection
     /// - Parameters:
