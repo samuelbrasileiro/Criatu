@@ -41,7 +41,7 @@ struct SaveLooksView: View {
                             .resizable()
                             .frame(width: 70, height: 70)
                             .foregroundColor(Color(.systemPurple).opacity(0.8))
-                            .background(Circle().fill(Color(.white)))
+                            .background(Circle().fill(Color(.systemGray6)))
                         
                         
                     }
@@ -53,16 +53,18 @@ struct SaveLooksView: View {
                             .resizable()
                             .frame(width: 70, height: 70)
                             .foregroundColor(Color(.systemPurple))
-                            .background(Circle().fill(Color(.white)))
+                            .background(Circle().fill(Color(.systemGray6)))
                         
                         
                     }
                 }
             }
             .padding(.bottom, 60)
+            .blur(radius: isLiked ? 3.0 : 0)
+            SaveItemAlertView(isPresented: $isLiked, style: style, suggestionIndex: suggestionIndex)
         }
         
-        SaveItemAlertView(isPresented: $isLiked, style: style, suggestionIndex: suggestionIndex)
+        
         
         //        .navigationBarTitle("Sugestões")
     }
@@ -75,16 +77,35 @@ struct SaveItemAlertView: View {
     @State var suggestionIndex: Int
     
     var body: some View {
-        VStack {
-            Text("Em qual gaveta você quer guardar esse look?")
+        ZStack{
+            VStack{
+                HStack(alignment: .top){
+                    Text("Em qual gaveta você quer guardar esse look?")
+                        .bold()
+                        .foregroundColor(Color(.systemPurple))
+                        .padding(.top, 10)
+                    Spacer()
+                    Button(action:{
+                        isPresented = false
+                    }){
+                    Image(systemName: "xmark.circle.fill")
+                        .resizable()
+                        .frame(width: 20, height: 20)
+                        .foregroundColor(Color(.systemPurple))
+                    }
+                }
+                Spacer()
+            
+            }
             
         }
-        .padding()
+        .padding(10)
         .frame(width: UIScreen.main.bounds.width * 0.7, height: UIScreen.main.bounds.height * 0.3)
+        .background(Color(.systemGray6))
         .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
         .offset(y: isPresented ? 0 : UIScreen.main.bounds.height)
         .animation(.spring())
-        .shadow(color: Color(.systemGray6), radius: 6, x: -9, y: -9)
+        .shadow(color: Color(.systemGray6), radius: 6, x: -7, y: 7)
     }
 }
 
