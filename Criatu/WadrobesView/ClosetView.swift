@@ -20,7 +20,7 @@ struct ClosetView: View {
             
             ScrollView(.horizontal) {
                 LazyHStack(spacing: 20) {
-                    ForEach(0..<style.suggestions.count, id: \.self) { index in
+                    ForEach(0..<(style.suggestions.count < 5 ? style.suggestions.count : 5), id: \.self) { index in
                         
                         NavigationLink(destination: SaveLooksView(style: style,  suggestionIndex: index)) {
                             
@@ -36,11 +36,19 @@ struct ClosetView: View {
             }
             
             
-            Spacer()
-            Rectangle()
-                .fill(Color(.systemGray6))
-                .frame(height: 400)
             
+            ScrollView{
+                LazyVStack(alignment: .leading, spacing: 30){
+                    ForEach(0..<style.drawers.count, id: \.self){index in
+                        Button(style.drawers[index].name ?? ""){
+                            print("eita")
+                        }
+                        
+                    }
+                    Spacer()
+                }
+                
+            }.frame(height: 400)
             
             
         }

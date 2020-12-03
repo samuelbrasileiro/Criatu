@@ -88,6 +88,7 @@ struct WardrobeView: View{
                         .resizable()
                         .frame(width: 25, height: 25)
                         .foregroundColor(Color(.systemPurple))
+                        .background(Circle().fill(Color(.systemBackground)))
                 }
             }
             .padding([.top, .trailing])

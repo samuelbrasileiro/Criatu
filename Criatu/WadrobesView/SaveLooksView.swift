@@ -63,9 +63,6 @@ struct SaveLooksView: View {
             .blur(radius: isLiked ? 3.0 : 0)
             SaveItemAlertView(isPresented: $isLiked, style: style, suggestionIndex: suggestionIndex)
         }
-        
-        
-        
         //        .navigationBarTitle("Sugestões")
     }
 }
@@ -76,9 +73,12 @@ struct SaveItemAlertView: View {
     @ObservedObject var style: Style
     @State var suggestionIndex: Int
     
+    @State var newDrawerName: String = ""
+    
+    @State var isCreatingNewCloset: Bool = false
     var body: some View {
         ZStack{
-            VStack{
+            VStack(alignment: .leading){
                 HStack(alignment: .top){
                     Text("Em qual gaveta você quer guardar esse look?")
                         .bold()
@@ -94,6 +94,64 @@ struct SaveItemAlertView: View {
                         .foregroundColor(Color(.systemPurple))
                     }
                 }
+                if !isCreatingNewCloset{
+                    Button(action:{
+                        isCreatingNewCloset = true
+                    }){
+                        HStack{
+                            Text("Nova gaveta")
+                            
+                            Image(systemName: "plus")
+                                .resizable()
+                                .frame(width: 14, height: 14)
+                                .padding(.leading)
+                        }
+                        .padding(7)
+                        .background(Color(.systemPurple))
+                        .foregroundColor(Color(.systemGray6))
+                        .cornerRadius(10)
+                    }
+                    .padding(.bottom)
+                    
+                    ScrollView{
+                        LazyVStack(alignment: .leading, spacing: 10){
+                            ForEach(0..<style.drawers.count, id: \.self){index in
+                                Button(action:{
+                                    style.addLookToDrawer(drawerIndex: index, lookIndex: suggestionIndex)
+                                    isCreatingNewCloset = false
+                                    isPresented = false
+                                }){
+                                    Text(style.drawers[index].name ?? "")
+                                }
+                            }
+                        }
+                    }
+                }
+                else{
+                    VStack{
+                        TextField("Qual vai ser o nome?", text: $newDrawerName)
+                            .foregroundColor(.primary)
+                            .padding(7)
+                            .background(Color(.systemBackground))
+                            .cornerRadius(10)
+                        Spacer()
+                        Button(action:{
+                            if !newDrawerName.isEmpty{
+                                style.createDrawer(name: newDrawerName)
+                                isCreatingNewCloset = false
+                                newDrawerName = ""
+                            }
+                        }){
+                            Text("Criar gaveta")
+                                .padding(7)
+                                .background(Color(.systemPurple))
+                                .foregroundColor(Color(.systemGray6))
+                                .cornerRadius(10)
+                        }
+                        .padding(.bottom)
+                    }
+                }
+                
                 Spacer()
             
             }

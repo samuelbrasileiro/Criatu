@@ -18,6 +18,7 @@ class Style: ObservableObject, Identifiable{
     
     @Published var drawers: [Drawer] = []
     
+    var closet: Closet?
     init(id: String, name: String, description: String, imageURL: String){
         attributes = Style.Database(id: id, name: name, description: description, imageURL: imageURL, looksURL: [])
         
@@ -30,6 +31,7 @@ class Style: ObservableObject, Identifiable{
     }
     
     init(closet: Closet) {
+        self.closet = closet
         self.attributes = Style.Database(id: closet.id!, name: closet.name!, description: closet.description_text!, imageURL: "", looksURL: [])
         self.image = UIImage(data: closet.image!)
         FirebaseHandler.readCollection(.closets, id: closet.id!, dataType: Style.Database.self) { result in
@@ -39,11 +41,15 @@ class Style: ObservableObject, Identifiable{
                 self.objectWillChange.send()
             }
         }
+        print("here1")
         if let drawerList = closet.drawers{
+            print("here2")
             for drawer in drawerList{
+                print("here3")
                 guard let drawer = drawer as? Drawer else {
                     return
                 }
+                print("here4")
                 self.drawers.append(drawer)
             }
         }
@@ -52,6 +58,43 @@ class Style: ObservableObject, Identifiable{
     struct Look {
         var image: UIImage
         var url: String
+    }
+    
+    func createDrawer(name: String){
+        let context = AppDelegate.viewContext
+        let drawer = Drawer(context: context)
+        drawer.name = name
+        drawer.closet = self.closet
+        
+        closet?.addToDrawers(drawer)
+        
+        self.drawers.insert(drawer, at: 0)
+        do{
+            //salvamos o contexto
+            try context.save()
+        } catch{
+            print(error)
+        }
+    }
+    
+    func addLookToDrawer(drawerIndex: Int, lookIndex: Int){
+        let context = AppDelegate.viewContext
+        let look = DrawerLook(context: context)
+        look.isFavored = false
+        look.lookID = suggestions[lookIndex].url
+        
+        let drawer = drawers[drawerIndex]
+        
+        look.drawer = drawer
+        drawer.addToLooks(look)
+        do{
+            //salvamos o contexto
+            try context.save()
+            suggestions.remove(at: lookIndex)
+        } catch{
+            print(error)
+        }
+        
     }
     
     /// From image URL this function downloads and saves the
@@ -65,7 +108,7 @@ class Style: ObservableObject, Identifiable{
                 }
                 if let image = UIImage(data: data){
                     self.image = image
-//                    self.saveToCoreData()
+                    self.saveToCoreData()
                 }
             }
         } .resume()
@@ -91,8 +134,24 @@ class Style: ObservableObject, Identifiable{
     
     func getSuggestions() {
         
-        if let looks = attributes.looksURL {
-            for look in [String](looks.shuffled().prefix(4)) {
+        if var looksURL = attributes.looksURL {
+            //see if I already have some of these looks
+            for drawer in drawers{
+                guard let looks = drawer.looks else{
+                    return
+                }
+                for item in looks{
+                    guard let look = item as? DrawerLook else {
+                        return
+                    }
+                    
+                    looksURL = looksURL.filter{$0 != look.lookID}
+                    
+                }
+            }
+            
+            for look in [String](looksURL.shuffled()) {
+                
                 
                 let request = URLRequest(url: URL(string: look)!)
                 URLSession.shared.dataTask(with: request) {(data, response, error) in
