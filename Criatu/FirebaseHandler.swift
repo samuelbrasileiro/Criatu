@@ -47,7 +47,7 @@ class FirebaseHandler {
     
     class func getItemImage(from id: String, completion: @escaping (Result<UIImage, Error>) -> Void){
         let ref = storage.child("images")
-
+        
         let imageRef = ref.child(id)
         
         imageRef.getData(maxSize: 1 * 2048 * 2048){ data, error in
@@ -69,7 +69,13 @@ class FirebaseHandler {
         let childRef = ref.child(Collection.interests.rawValue).child(interestID).child("items_ids")
         
         childRef.setValue(itemsIDs)
-
+        
+    }
+    class func addStylesIDsToItem(itemID: String, stylesIDs: [String]?){
+        let childRef = ref.child(Collection.items.rawValue).child(itemID).child("styles_ids")
+        
+        childRef.setValue(stylesIDs)
+        
     }
     
     /// Reading the objects written in the previous operation

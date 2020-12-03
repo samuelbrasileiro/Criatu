@@ -33,6 +33,11 @@ class DiscoverItem: ObservableObject {
         var url: String
         var type: ItemType
         var stylesIDs: [String]?
+        private enum CodingKeys : String, CodingKey {
+            case id, url, type
+            case stylesIDs  = "styles_ids"
+            
+        }
         init(id: String, url: String, type: ItemType, stylesID: [String]?){
             self.id = id
             self.url = url

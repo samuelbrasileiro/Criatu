@@ -8,7 +8,7 @@ target 'Criatu' do
   # Pods for Criatu
 	pod 'Firebase/Core'
 	pod 'Firebase/Database'
-  pod 'Firebase/Storage'
+  	pod 'Firebase/Storage'
   
   target 'CriatuTests' do
     inherit! :search_paths
