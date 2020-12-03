@@ -90,18 +90,19 @@ class DiscoverBank: ObservableObject, Identifiable, DiscoverDelegate {
     }
     
     func didSelectInterest(_ interest: Interest){
-        print("Selected Interest: " + interest.attributes.name)
+        //print("Selected Interest: " + interest.attributes.name)
         if var ids = interest.attributes.itemsIDs{
             
             ids.shuffle()
             ids = [String](ids.prefix(4))
             for id in ids{
-                if items.map({$0.attributes.id}).contains(id){
-                    continue
-                }
+
                 FirebaseHandler.readCollection(.items, id: id, dataType: DiscoverItem.Database.self){ result in
                     if case .success(let attributes) = result{
-                        
+                        if self.items.map({$0.attributes.id}).contains(id){
+                            print("we have ", id)
+                            return
+                        }
                         if attributes.type == .image{
                             let item = ImageItem(attributes: attributes)
                             item.interestAssociatedID = interest.attributes.id

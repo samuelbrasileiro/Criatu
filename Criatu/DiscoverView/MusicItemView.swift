@@ -9,7 +9,13 @@ import SwiftUI
 import AVKit
 
 class AudioPreview{
-    static var player: AVAudioPlayer?
+    static var shared = AudioPreview()
+    
+    var player: AVAudioPlayer?
+    var songID: String
+    init(){
+        songID = ""
+    }
 }
 
 struct MusicItemView: View{
@@ -21,6 +27,8 @@ struct MusicItemView: View{
     @State var backgroundColor: Color = Color(.systemGray5)
     
     @State var isPlaying: Bool = false
+    
+    let preview = AudioPreview.shared
     
     let isPlayingPub = NotificationCenter.default
                 .publisher(for: NSNotification.Name("isPlayingChangedInAMusicView"))
@@ -52,12 +60,11 @@ struct MusicItemView: View{
                             //se o botão estiver no estado não tocando antes
                             if let urlstring = item.previewURL{
                                 let url = URL(string: urlstring)
-                                print("the url = \(url!)")
                                 downloadFileFromURL(url: url!)
                             }
                         }
                         else{
-                            AudioPreview.player?.stop()
+                            preview.player?.stop()
                         }
                         
                         NotificationCenter.default.post(name: Notification.Name("isPlayingChangedInAMusicView"), object: self)
@@ -73,7 +80,7 @@ struct MusicItemView: View{
                     }.onReceive(isPlayingPub, perform: { notification in
                         if let object = notification.object as? MusicItemView{
                             
-                            if self.item.attributes.url == object.item.attributes.url{
+                            if self.item.attributes.id == object.item.attributes.id{
                                 
                                 isPlaying = !isPlaying
                             }
@@ -115,13 +122,12 @@ struct MusicItemView: View{
                 
         do {
             
-            AudioPreview.player = try AVAudioPlayer(contentsOf: url)
-            AudioPreview.player!.prepareToPlay()
-            AudioPreview.player!.volume = 1.0
-            AudioPreview.player!.play()
+            preview.player = try AVAudioPlayer(contentsOf: url)
+            preview.player!.prepareToPlay()
+            preview.player!.volume = 1.0
+            preview.player!.play()
             
         } catch let error as NSError {
-            //self.player = nil
             print(error.localizedDescription)
         } catch {
             print("AVAudioPlayer init failed")

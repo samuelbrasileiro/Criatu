@@ -14,6 +14,8 @@ struct SaveLooksView: View {
     @State var isLiked: Bool = false
     @State var suggestionIndex: Int 
     
+    let screen = UIScreen.main.bounds
+    
     var body: some View {
         
         ZStack {
@@ -21,9 +23,12 @@ struct SaveLooksView: View {
                 
                 Image(uiImage: style.suggestions[suggestionIndex].image)
                     .resizable()
-                    //                .frame(width: 292, height: 486, alignment: .center)
+                    .scaledToFill()
+                    .frame(width: screen.width - 100, height: screen.height - 350, alignment: .center)
+                    
+                    .clipped()
                     .cornerRadius(20)
-                    .aspectRatio(CGSize(width: 3, height: 5.5), contentMode: .fill)
+                    
                     .padding(.horizontal, 60)
                     .padding(.bottom)
                 
@@ -61,8 +66,10 @@ struct SaveLooksView: View {
             }
             .padding(.bottom, 60)
             .blur(radius: isLiked ? 3.0 : 0)
+            .disabled(isLiked)
             SaveItemAlertView(isPresented: $isLiked, style: style, suggestionIndex: suggestionIndex)
         }
+        .resingKeyboardOnTapGesture()
         //        .navigationBarTitle("Sugestões")
     }
 }
@@ -92,6 +99,7 @@ struct SaveItemAlertView: View {
                         .resizable()
                         .frame(width: 20, height: 20)
                         .foregroundColor(Color(.systemPurple))
+                        
                     }
                 }
                 if !isCreatingNewCloset{

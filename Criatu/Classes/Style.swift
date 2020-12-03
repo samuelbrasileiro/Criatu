@@ -41,15 +41,12 @@ class Style: ObservableObject, Identifiable{
                 self.objectWillChange.send()
             }
         }
-        print("here1")
+        
         if let drawerList = closet.drawers{
-            print("here2")
             for drawer in drawerList{
-                print("here3")
                 guard let drawer = drawer as? Drawer else {
                     return
                 }
-                print("here4")
                 self.drawers.append(drawer)
             }
         }

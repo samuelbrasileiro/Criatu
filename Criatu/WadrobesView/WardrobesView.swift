@@ -28,7 +28,7 @@ struct WardrobesView: View {
             .background(Color(.systemGray6))
             
         }.accentColor(Color(.systemPurple))
-        
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
