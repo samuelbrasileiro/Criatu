@@ -13,6 +13,7 @@
 		105312DA25656C6E00887B1E /* UIEditingExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105312D925656C6E00887B1E /* UIEditingExtensions.swift */; };
 		106733EE256D2F0C00411F60 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106733ED256D2F0C00411F60 /* MainTabView.swift */; };
 		10BF032C25655DB0008F2BCC /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BF032B25655DB0008F2BCC /* SearchBarView.swift */; };
+		2828A1E2257525FE00D91A7B /* DynamicCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2828A1E1257525FE00D91A7B /* DynamicCircleView.swift */; };
 		283CFC80256FE88600702DAE /* EndOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283CFC7A256FE88600702DAE /* EndOnboardingView.swift */; };
 		283CFC81256FE88600702DAE /* OnboardingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283CFC7B256FE88600702DAE /* OnboardingPageView.swift */; };
 		283CFC83256FE88600702DAE /* OnboardItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283CFC7D256FE88600702DAE /* OnboardItemView.swift */; };
@@ -76,6 +77,7 @@
 		106733ED256D2F0C00411F60 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		10BF032B25655DB0008F2BCC /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		1F59A9FE33A10336EB9C334C /* Pods-Criatu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Criatu.debug.xcconfig"; path = "Target Support Files/Pods-Criatu/Pods-Criatu.debug.xcconfig"; sourceTree = "<group>"; };
+		2828A1E1257525FE00D91A7B /* DynamicCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicCircleView.swift; sourceTree = "<group>"; };
 		283CFC7A256FE88600702DAE /* EndOnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndOnboardingView.swift; sourceTree = "<group>"; };
 		283CFC7B256FE88600702DAE /* OnboardingPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPageView.swift; sourceTree = "<group>"; };
 		283CFC7D256FE88600702DAE /* OnboardItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardItemView.swift; sourceTree = "<group>"; };
@@ -184,6 +186,14 @@
 			path = DiscoverView;
 			sourceTree = "<group>";
 		};
+		2828A1E0257525C700D91A7B /* DynamicCircles */ = {
+			isa = PBXGroup;
+			children = (
+				2828A1E1257525FE00D91A7B /* DynamicCircleView.swift */,
+			);
+			path = DynamicCircles;
+			sourceTree = "<group>";
+		};
 		283CFC77256FE86700702DAE /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
@@ -231,6 +241,7 @@
 		356A45AD255D836E00F892A1 /* Criatu */ = {
 			isa = PBXGroup;
 			children = (
+				2828A1E0257525C700D91A7B /* DynamicCircles */,
 				35FFE3262564150800F3E8F0 /* Criatu.entitlements */,
 				356A45B0255D836E00F892A1 /* SceneDelegate.swift */,
 				0488FB722562BB4D00E537B2 /* FirebaseHandler.swift */,
@@ -595,6 +606,7 @@
 				85C80A6E2566B2A700BBB230 /* MusicItemView.swift in Sources */,
 				85C80A5B2566AB2600BBB230 /* ImageItemView.swift in Sources */,
 				35D0EB69256D669300CFBEB1 /* Keys.swift in Sources */,
+				2828A1E2257525FE00D91A7B /* DynamicCircleView.swift in Sources */,
 				356A01EF2566E61F00454AA1 /* InterestView.swift in Sources */,
 				35FFE2D22563FBE300F3E8F0 /* Interest.swift in Sources */,
 				10BF032C25655DB0008F2BCC /* SearchBarView.swift in Sources */,
