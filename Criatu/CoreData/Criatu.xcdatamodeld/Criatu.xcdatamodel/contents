@@ -14,13 +14,14 @@
         <relationship name="looks" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="DrawerLook" inverseName="drawer" inverseEntity="DrawerLook"/>
     </entity>
     <entity name="DrawerLook" representedClassName=".DrawerLook" syncable="YES" codeGenerationType="category">
+        <attribute name="image" optional="YES" attributeType="Binary"/>
         <attribute name="isFavored" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="lookID" optional="YES" attributeType="String"/>
         <relationship name="drawer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Drawer" inverseName="looks" inverseEntity="Drawer"/>
     </entity>
     <elements>
-        <element name="Drawer" positionX="-149.71484375" positionY="-24.359375" width="128" height="103"/>
-        <element name="DrawerLook" positionX="57.6328125" positionY="73.71875" width="128" height="88"/>
         <element name="Closet" positionX="-408.625" positionY="-102.390625" width="128" height="118"/>
+        <element name="Drawer" positionX="-149.71484375" positionY="-24.359375" width="128" height="103"/>
+        <element name="DrawerLook" positionX="57.6328125" positionY="73.71875" width="128" height="103"/>
     </elements>
 </model>

@@ -25,6 +25,8 @@
 		35091E0E25669A7500F94A4A /* LazyWaterfallGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35091E0D25669A7500F94A4A /* LazyWaterfallGrid.swift */; };
 		35091E282566C86D00F94A4A /* MusicItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35091E272566C86D00F94A4A /* MusicItem.swift */; };
 		35091E312566C91000F94A4A /* ImageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35091E302566C91000F94A4A /* ImageItem.swift */; };
+		353482D425799F1F000E7080 /* DrawerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353482D325799F1F000E7080 /* DrawerView.swift */; };
+		353482D92579A71F000E7080 /* LookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353482D82579A71F000E7080 /* LookView.swift */; };
 		356A01EA2566E2E600454AA1 /* DiscoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356A01E92566E2E600454AA1 /* DiscoverView.swift */; };
 		356A01EF2566E61F00454AA1 /* InterestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356A01EE2566E61F00454AA1 /* InterestView.swift */; };
 		356A01F72566E96B00454AA1 /* BasicItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356A01F62566E96B00454AA1 /* BasicItemView.swift */; };
@@ -94,6 +96,8 @@
 		35091E0D25669A7500F94A4A /* LazyWaterfallGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LazyWaterfallGrid.swift; sourceTree = "<group>"; };
 		35091E272566C86D00F94A4A /* MusicItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicItem.swift; sourceTree = "<group>"; };
 		35091E302566C91000F94A4A /* ImageItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageItem.swift; sourceTree = "<group>"; };
+		353482D325799F1F000E7080 /* DrawerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerView.swift; sourceTree = "<group>"; };
+		353482D82579A71F000E7080 /* LookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookView.swift; sourceTree = "<group>"; };
 		356A01E92566E2E600454AA1 /* DiscoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverView.swift; sourceTree = "<group>"; };
 		356A01EE2566E61F00454AA1 /* InterestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestView.swift; sourceTree = "<group>"; };
 		356A01F62566E96B00454AA1 /* BasicItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicItemView.swift; sourceTree = "<group>"; };
@@ -306,6 +310,8 @@
 				35F82A2225713C0C0087DD22 /* WardrobeViewController.swift */,
 				100CC76125751DB800A21A2C /* ClosetView.swift */,
 				108E86512576B5D100842084 /* SaveLooksView.swift */,
+				353482D325799F1F000E7080 /* DrawerView.swift */,
+				353482D82579A71F000E7080 /* LookView.swift */,
 			);
 			path = WadrobesView;
 			sourceTree = "<group>";
@@ -595,6 +601,7 @@
 				108E86522576B5D100842084 /* SaveLooksView.swift in Sources */,
 				35091E312566C91000F94A4A /* ImageItem.swift in Sources */,
 				105312D42565613500887B1E /* DiscoverBank.swift in Sources */,
+				353482D425799F1F000E7080 /* DrawerView.swift in Sources */,
 				106733EE256D2F0C00411F60 /* MainTabView.swift in Sources */,
 				35F82A1525713BB00087DD22 /* WardrobeView.swift in Sources */,
 				100CC7672575258400A21A2C /* Drawer.swift in Sources */,
@@ -614,6 +621,7 @@
 				356A01EA2566E2E600454AA1 /* DiscoverView.swift in Sources */,
 				356A01F72566E96B00454AA1 /* BasicItemView.swift in Sources */,
 				35091E0E25669A7500F94A4A /* LazyWaterfallGrid.swift in Sources */,
+				353482D92579A71F000E7080 /* LookView.swift in Sources */,
 				283CFC81256FE88600702DAE /* OnboardingPageView.swift in Sources */,
 				359D542A257175180033D5CE /* LazySnapHStack.swift in Sources */,
 				105312DA25656C6E00887B1E /* UIEditingExtensions.swift in Sources */,

@@ -79,6 +79,7 @@ class Style: ObservableObject, Identifiable{
         let look = DrawerLook(context: context)
         look.isFavored = false
         look.lookID = suggestions[lookIndex].url
+        look.image = suggestions[lookIndex].image.pngData()
         
         let drawer = drawers[drawerIndex]
         
