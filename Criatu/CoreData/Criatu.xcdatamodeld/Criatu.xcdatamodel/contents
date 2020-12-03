@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17511" systemVersion="19H2" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+    <entity name="Closet" representedClassName=".Closet" syncable="YES" codeGenerationType="category">
+        <attribute name="description_text" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="image" optional="YES" attributeType="Binary"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="drawers" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Drawer" inverseName="closet" inverseEntity="Drawer"/>
+    </entity>
+    <entity name="Drawer" representedClassName=".Drawer" syncable="YES" codeGenerationType="category">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="styleID" optional="YES" attributeType="String"/>
+        <relationship name="closet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Closet" inverseName="drawers" inverseEntity="Closet"/>
+        <relationship name="looks" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="DrawerLook" inverseName="drawer" inverseEntity="DrawerLook"/>
+    </entity>
+    <entity name="DrawerLook" representedClassName=".DrawerLook" syncable="YES" codeGenerationType="category">
+        <attribute name="image" optional="YES" attributeType="Binary"/>
+        <attribute name="isFavored" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="lookID" optional="YES" attributeType="String"/>
+        <relationship name="drawer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Drawer" inverseName="looks" inverseEntity="Drawer"/>
+    </entity>
+    <elements>
+        <element name="Closet" positionX="-408.625" positionY="-102.390625" width="128" height="118"/>
+        <element name="Drawer" positionX="-149.71484375" positionY="-24.359375" width="128" height="103"/>
+        <element name="DrawerLook" positionX="57.6328125" positionY="73.71875" width="128" height="103"/>
+    </elements>
+</model>

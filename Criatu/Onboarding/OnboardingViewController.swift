@@ -19,8 +19,6 @@ class OnboardingViewController: UIViewController, OnboardingDelegate {
         self.present(vc, animated: true)
     }
     
-    let handler = FirebaseHandler()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 

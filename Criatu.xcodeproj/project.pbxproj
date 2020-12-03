@@ -9,9 +9,14 @@
 /* Begin PBXBuildFile section */
 		0488FB732562BB4D00E537B2 /* FirebaseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0488FB722562BB4D00E537B2 /* FirebaseHandler.swift */; };
 		08A98BE97C3F63783E897B5B /* Pods_CriatuTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC2471249044735CF8A7BDAA /* Pods_CriatuTests.framework */; };
+		100CC76225751DB800A21A2C /* ClosetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100CC76125751DB800A21A2C /* ClosetView.swift */; };
+		100CC7672575258400A21A2C /* Drawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100CC7662575258400A21A2C /* Drawer.swift */; };
+		100CC773257529A400A21A2C /* DrawerLook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100CC772257529A400A21A2C /* DrawerLook.swift */; };
 		105312D42565613500887B1E /* DiscoverBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105312D32565613500887B1E /* DiscoverBank.swift */; };
 		105312DA25656C6E00887B1E /* UIEditingExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105312D925656C6E00887B1E /* UIEditingExtensions.swift */; };
 		106733EE256D2F0C00411F60 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106733ED256D2F0C00411F60 /* MainTabView.swift */; };
+		108E864525766A2200842084 /* Closet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108E864425766A2200842084 /* Closet.swift */; };
+		108E86522576B5D100842084 /* SaveLooksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108E86512576B5D100842084 /* SaveLooksView.swift */; };
 		10BF032C25655DB0008F2BCC /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BF032B25655DB0008F2BCC /* SearchBarView.swift */; };
 		2828A1E2257525FE00D91A7B /* DynamicCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2828A1E1257525FE00D91A7B /* DynamicCircleView.swift */; };
 		283CFC80256FE88600702DAE /* EndOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283CFC7A256FE88600702DAE /* EndOnboardingView.swift */; };
@@ -21,6 +26,8 @@
 		35091E0E25669A7500F94A4A /* LazyWaterfallGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35091E0D25669A7500F94A4A /* LazyWaterfallGrid.swift */; };
 		35091E282566C86D00F94A4A /* MusicItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35091E272566C86D00F94A4A /* MusicItem.swift */; };
 		35091E312566C91000F94A4A /* ImageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35091E302566C91000F94A4A /* ImageItem.swift */; };
+		353482D425799F1F000E7080 /* DrawerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353482D325799F1F000E7080 /* DrawerView.swift */; };
+		353482D92579A71F000E7080 /* LookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353482D82579A71F000E7080 /* LookView.swift */; };
 		356A01EA2566E2E600454AA1 /* DiscoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356A01E92566E2E600454AA1 /* DiscoverView.swift */; };
 		356A01EF2566E61F00454AA1 /* InterestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356A01EE2566E61F00454AA1 /* InterestView.swift */; };
 		356A01F72566E96B00454AA1 /* BasicItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356A01F62566E96B00454AA1 /* BasicItemView.swift */; };
@@ -72,9 +79,14 @@
 
 /* Begin PBXFileReference section */
 		0488FB722562BB4D00E537B2 /* FirebaseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseHandler.swift; sourceTree = "<group>"; };
+		100CC76125751DB800A21A2C /* ClosetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosetView.swift; sourceTree = "<group>"; };
+		100CC7662575258400A21A2C /* Drawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drawer.swift; sourceTree = "<group>"; };
+		100CC772257529A400A21A2C /* DrawerLook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerLook.swift; sourceTree = "<group>"; };
 		105312D32565613500887B1E /* DiscoverBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverBank.swift; sourceTree = "<group>"; };
 		105312D925656C6E00887B1E /* UIEditingExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIEditingExtensions.swift; sourceTree = "<group>"; };
 		106733ED256D2F0C00411F60 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		108E864425766A2200842084 /* Closet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Closet.swift; sourceTree = "<group>"; };
+		108E86512576B5D100842084 /* SaveLooksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveLooksView.swift; sourceTree = "<group>"; };
 		10BF032B25655DB0008F2BCC /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		1F59A9FE33A10336EB9C334C /* Pods-Criatu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Criatu.debug.xcconfig"; path = "Target Support Files/Pods-Criatu/Pods-Criatu.debug.xcconfig"; sourceTree = "<group>"; };
 		2828A1E1257525FE00D91A7B /* DynamicCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicCircleView.swift; sourceTree = "<group>"; };
@@ -86,6 +98,8 @@
 		35091E0D25669A7500F94A4A /* LazyWaterfallGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LazyWaterfallGrid.swift; sourceTree = "<group>"; };
 		35091E272566C86D00F94A4A /* MusicItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicItem.swift; sourceTree = "<group>"; };
 		35091E302566C91000F94A4A /* ImageItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageItem.swift; sourceTree = "<group>"; };
+		353482D325799F1F000E7080 /* DrawerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerView.swift; sourceTree = "<group>"; };
+		353482D82579A71F000E7080 /* LookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookView.swift; sourceTree = "<group>"; };
 		356A01E92566E2E600454AA1 /* DiscoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverView.swift; sourceTree = "<group>"; };
 		356A01EE2566E61F00454AA1 /* InterestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestView.swift; sourceTree = "<group>"; };
 		356A01F62566E96B00454AA1 /* BasicItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicItemView.swift; sourceTree = "<group>"; };
@@ -158,6 +172,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		100CC76B2575259300A21A2C /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				100CC7662575258400A21A2C /* Drawer.swift */,
+				100CC772257529A400A21A2C /* DrawerLook.swift */,
+				356A45B7255D836E00F892A1 /* Criatu.xcdatamodeld */,
+				108E864425766A2200842084 /* Closet.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		105312D825656C5500887B1E /* Extra */ = {
 			isa = PBXGroup;
 			children = (
@@ -256,7 +281,7 @@
 				356A45BC255D837000F892A1 /* LaunchScreen.storyboard */,
 				356A45BF255D837000F892A1 /* Info.plist */,
 				28D999F3256702150003DE45 /* GoogleService-Info.plist */,
-				356A45B7255D836E00F892A1 /* Criatu.xcdatamodeld */,
+				100CC76B2575259300A21A2C /* CoreData */,
 			);
 			path = Criatu;
 			sourceTree = "<group>";
@@ -294,6 +319,10 @@
 				35F82A1425713BB00087DD22 /* WardrobeView.swift */,
 				359D543425718D450033D5CE /* WardrobesView.swift */,
 				35F82A2225713C0C0087DD22 /* WardrobeViewController.swift */,
+				100CC76125751DB800A21A2C /* ClosetView.swift */,
+				108E86512576B5D100842084 /* SaveLooksView.swift */,
+				353482D325799F1F000E7080 /* DrawerView.swift */,
+				353482D82579A71F000E7080 /* LookView.swift */,
 			);
 			path = WadrobesView;
 			sourceTree = "<group>";
@@ -352,7 +381,7 @@
 				356A45A7255D836E00F892A1 /* Sources */,
 				356A45A8255D836E00F892A1 /* Frameworks */,
 				356A45A9255D836E00F892A1 /* Resources */,
-				145599537E7A2B37ABD8BDD4 /* [CP] Embed Pods Frameworks */,
+				BB66EC00EE2CA40CA4E14948 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -390,7 +419,7 @@
 				356A45CB255D837000F892A1 /* Sources */,
 				356A45CC255D837000F892A1 /* Frameworks */,
 				356A45CD255D837000F892A1 /* Resources */,
-				C1CAD8C5FC32B24678249E01 /* [CP] Embed Pods Frameworks */,
+				D39E9106D944AF7F1C55F10C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -495,23 +524,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		145599537E7A2B37ABD8BDD4 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Criatu/Pods-Criatu-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Criatu/Pods-Criatu-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Criatu/Pods-Criatu-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		73EC6E920CAF9EB2B498ADB7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -534,7 +546,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C1CAD8C5FC32B24678249E01 /* [CP] Embed Pods Frameworks */ = {
+		BB66EC00EE2CA40CA4E14948 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Criatu/Pods-Criatu-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Criatu/Pods-Criatu-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Criatu/Pods-Criatu-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D39E9106D944AF7F1C55F10C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -580,13 +609,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				108E86522576B5D100842084 /* SaveLooksView.swift in Sources */,
 				35091E312566C91000F94A4A /* ImageItem.swift in Sources */,
 				105312D42565613500887B1E /* DiscoverBank.swift in Sources */,
+				353482D425799F1F000E7080 /* DrawerView.swift in Sources */,
 				106733EE256D2F0C00411F60 /* MainTabView.swift in Sources */,
 				35F82A1525713BB00087DD22 /* WardrobeView.swift in Sources */,
+				100CC7672575258400A21A2C /* Drawer.swift in Sources */,
 				359D543525718D450033D5CE /* WardrobesView.swift in Sources */,
 				35F82A1A25713BCA0087DD22 /* ClosetsBank.swift in Sources */,
+				100CC76225751DB800A21A2C /* ClosetView.swift in Sources */,
 				283CFC83256FE88600702DAE /* OnboardItemView.swift in Sources */,
+				100CC773257529A400A21A2C /* DrawerLook.swift in Sources */,
 				0488FB732562BB4D00E537B2 /* FirebaseHandler.swift in Sources */,
 				35FFE2E12563FC5800F3E8F0 /* DiscoverItem.swift in Sources */,
 				356A45B3255D836E00F892A1 /* DiscoverViewController.swift in Sources */,
@@ -598,12 +632,14 @@
 				356A01EA2566E2E600454AA1 /* DiscoverView.swift in Sources */,
 				356A01F72566E96B00454AA1 /* BasicItemView.swift in Sources */,
 				35091E0E25669A7500F94A4A /* LazyWaterfallGrid.swift in Sources */,
+				353482D92579A71F000E7080 /* LookView.swift in Sources */,
 				283CFC81256FE88600702DAE /* OnboardingPageView.swift in Sources */,
 				359D542A257175180033D5CE /* LazySnapHStack.swift in Sources */,
 				105312DA25656C6E00887B1E /* UIEditingExtensions.swift in Sources */,
 				356A45AF255D836E00F892A1 /* AppDelegate.swift in Sources */,
 				283CFC80256FE88600702DAE /* EndOnboardingView.swift in Sources */,
 				85C80A6E2566B2A700BBB230 /* MusicItemView.swift in Sources */,
+				108E864525766A2200842084 /* Closet.swift in Sources */,
 				85C80A5B2566AB2600BBB230 /* ImageItemView.swift in Sources */,
 				35D0EB69256D669300CFBEB1 /* Keys.swift in Sources */,
 				2828A1E2257525FE00D91A7B /* DynamicCircleView.swift in Sources */,
@@ -793,7 +829,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Criatu/Criatu.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = P63952MS7L;
 				INFOPLIST_FILE = Criatu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -815,7 +851,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Criatu/Criatu.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = P63952MS7L;
 				INFOPLIST_FILE = Criatu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

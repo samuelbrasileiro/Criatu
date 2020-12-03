@@ -22,8 +22,9 @@ class FirebaseHandler {
     static var storage = Storage.storage().reference()
     init() {
         
-        
     }
+    
+    
     
     /// Adding an object to a collection
     /// - Parameters:
