@@ -105,8 +105,8 @@ struct ProfileView: View {
                 
                 Text(String(wardrobe))
                     .font(.system(size: 48, weight: .bold, design: .default))
-                    .foregroundColor(.white)
-                    .shadow(radius: 10)
+                    
+                    .shadow(radius: 7)
                     .padding(20.0)
                 
             } .frame(width: 80, height: 80, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)

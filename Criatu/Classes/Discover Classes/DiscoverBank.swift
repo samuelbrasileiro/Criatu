@@ -28,7 +28,7 @@ class DiscoverBank: ObservableObject, Identifiable, DiscoverDelegate {
     init() {
         self.clear()
         
-        self.addItems()
+        self.addInterests()
         
     }
     
@@ -42,6 +42,7 @@ class DiscoverBank: ObservableObject, Identifiable, DiscoverDelegate {
     func addInterests(){
         
         if var interests = Interest.restore(){
+            print(interests)
             interests.shuffle()
             print(interests.count)
             let count = interests.count < 3 ? interests.count : 3
