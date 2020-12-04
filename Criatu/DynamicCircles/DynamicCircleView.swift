@@ -8,23 +8,42 @@
 import SwiftUI
 import SpriteKit
 
+class InterestBank: ObservableObject {
+    
+    @Published var interests:[Interest] = []
+    
+    init(){
+        
+    }
+}
+
 class GameScene:SKScene{
     
+    @ObservedObject var bank:InterestBank = InterestBank()
     let circleRadius:CGFloat = 25
-    var tags = ["A", "B", "C", "D","E","F","G","H","I","J","K","L","M","N"]
+    //var tags = ["A", "B", "C", "D","E","F","G","H","I","J","K","L","M","N"]
     var circles:[SKShapeNode] = []
-    let bgColor = UIColor.systemPurple
-    let unSelectedColor = UIColor.blue
-    let selectedColor = UIColor.magenta
-    var selectedTags:[String] = []
+    let bgColor = UIColor.systemBackground
+    let unSelectedColor = UIColor.systemGray
+    let selectedColor = UIColor.systemPurple
+    public var selectedTags:[String] = []
     
     override func didMove(to view: SKView) {
         physicsBody = SKPhysicsBody(edgeLoopFrom: frame)
         physicsWorld.gravity = CGVector(dx: 0, dy: 0)
         physicsBody?.isDynamic = false
         backgroundColor = bgColor
-        addTags()
-        applyForces()
+        FirebaseHandler.readAllCollection(.interests, dataType: [Interest.Database].self) { result in
+            
+            if case .success(let interestDatabases) = result {
+                
+                self.bank.interests = interestDatabases.map{
+                    Interest(attributes: $0)
+                }
+                self.addTags()
+                self.applyForces()
+            }
+        }
         
     }
     
@@ -87,12 +106,12 @@ class GameScene:SKScene{
     }
     func addTags(){
         
-        for tag in tags{
+        for tag in bank.interests.prefix(15){
             
             let x = CGFloat.random(in: 0...self.frame.width - circleRadius)
             let y = CGFloat.random(in: 0...self.frame.height - circleRadius)
             let position = CGPoint(x: x, y: y)
-            circles.append(addCircle(tag: tag, position: position))
+            circles.append(addCircle(tag: tag.attributes.name, position: position))
         }
     }
     
@@ -115,7 +134,6 @@ class GameScene:SKScene{
         circle.physicsBody?.affectedByGravity = false
         circle.physicsBody?.restitution = 1
         circle.name = tag
-        
         let insideText = SKLabelNode(text: tag)
         insideText.fontColor = .black
         insideText.numberOfLines = 0
@@ -145,13 +163,28 @@ struct DynamicCircleView: View {
     var scene : SKScene {
         let scene = GameScene()
         scene.size = CGSize(width: 200, height: 400)
-        scene.scaleMode = .aspectFit
+        scene.scaleMode = .fill
         return scene
     }
     var body: some View {
         
         
-        SpriteView(scene: scene)
+        VStack {
+            
+            SpriteView(scene: scene)
+    
+            Button(action: {}, label: {
+                Text("Terminei")
+                    .multilineTextAlignment(.center)
+                    .foregroundColor(Color(.systemBackground))
+            })
+            .foregroundColor(Color.primary)
+            .padding(.vertical)
+            .padding(.horizontal,80)
+            .background(Color(.systemPurple))
+            .cornerRadius(10)
+            
+        }.ignoresSafeArea(.all, edges: .horizontal)
     }
 }
 
