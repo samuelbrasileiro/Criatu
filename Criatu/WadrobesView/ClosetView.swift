@@ -11,6 +11,8 @@ struct ClosetView: View {
     
     @ObservedObject var style: Style
     
+    @ObservedObject var palette = Palette.shared
+    
     @State var newDrawerName: String = ""
     var body: some View {
         
@@ -58,7 +60,7 @@ struct ClosetView: View {
                             }
                             
                             .background(Color(.systemGray4))
-                            .foregroundColor(Color(.systemPurple))
+                            .foregroundColor(palette.main)
                             
                             .cornerRadius(15)
                             .padding(.horizontal)
@@ -74,7 +76,7 @@ struct ClosetView: View {
                     })
                     .padding()
                     .background(Color(.systemGray5))
-                    .foregroundColor(Color(.systemPurple))
+                    .foregroundColor(palette.main)
                     .cornerRadius(15)
                     .overlay(
                         RoundedRectangle(cornerRadius: 15)
@@ -84,7 +86,7 @@ struct ClosetView: View {
                                     dash: [15]
                                 )
                             )
-                            .foregroundColor(Color(.systemPurple))
+                            .foregroundColor(palette.main)
                     )
                     .padding(.horizontal)
                     

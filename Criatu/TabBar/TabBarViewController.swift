@@ -25,7 +25,7 @@ class SelectedView: ObservableObject{
     init(){
         items.append(TabViewItem(DiscoverViewController(), name: "Descubra"))
         items.append(TabViewItem(WardrobesViewController(), name: "Armário"))
-        items.append(TabViewItem(DiscoverViewController(), name: "Perfil"))
+        items.append(TabViewItem(UIHostingController(rootView: ProfileView()), name: "Perfil"))
     }
     
     func getViewControllers() -> [UIViewController]{

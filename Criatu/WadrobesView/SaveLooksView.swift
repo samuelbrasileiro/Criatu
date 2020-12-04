@@ -16,6 +16,8 @@ struct SaveLooksView: View {
     
     let screen = UIScreen.main.bounds
     
+    @ObservedObject var palette = Palette.shared
+    
     var body: some View {
         
         ZStack {
@@ -45,7 +47,7 @@ struct SaveLooksView: View {
                         Image(systemName: "xmark.circle.fill")
                             .resizable()
                             .frame(width: 70, height: 70)
-                            .foregroundColor(Color(.systemPurple).opacity(0.8))
+                            .foregroundColor(palette.main.opacity(0.8))
                             .background(Circle().fill(Color(.systemGray6)))
                         
                         
@@ -57,7 +59,7 @@ struct SaveLooksView: View {
                         Image(systemName: "heart.circle.fill")
                             .resizable()
                             .frame(width: 70, height: 70)
-                            .foregroundColor(Color(.systemPurple))
+                            .foregroundColor(palette.main)
                             .background(Circle().fill(Color(.systemGray6)))
                         
                         
@@ -83,13 +85,14 @@ struct SaveItemAlertView: View {
     @State var newDrawerName: String = ""
     
     @State var isCreatingNewCloset: Bool = false
+    @ObservedObject var palette = Palette.shared
     var body: some View {
         ZStack{
             VStack(alignment: .leading){
                 HStack(alignment: .top){
                     Text("Em qual gaveta você quer guardar esse look?")
                         .bold()
-                        .foregroundColor(Color(.systemPurple))
+                        .foregroundColor(palette.main)
                         .padding(.top, 10)
                     Spacer()
                     Button(action:{
@@ -98,7 +101,7 @@ struct SaveItemAlertView: View {
                     Image(systemName: "xmark.circle.fill")
                         .resizable()
                         .frame(width: 20, height: 20)
-                        .foregroundColor(Color(.systemPurple))
+                        .foregroundColor(palette.main)
                         
                     }
                 }
@@ -115,7 +118,7 @@ struct SaveItemAlertView: View {
                                 .padding(.leading)
                         }
                         .padding(7)
-                        .background(Color(.systemPurple))
+                        .background(palette.main)
                         .foregroundColor(Color(.systemGray6))
                         .cornerRadius(10)
                     }
@@ -152,7 +155,7 @@ struct SaveItemAlertView: View {
                         }){
                             Text("Criar gaveta")
                                 .padding(7)
-                                .background(Color(.systemPurple))
+                                .background(palette.main)
                                 .foregroundColor(Color(.systemGray6))
                                 .cornerRadius(10)
                         }

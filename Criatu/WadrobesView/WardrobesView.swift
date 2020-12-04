@@ -11,6 +11,8 @@ struct WardrobesView: View {
     
     @ObservedObject var bank: ClosetsBank
     
+    @ObservedObject var palette = Palette.shared
+    
     var body: some View {
         NavigationView{
             VStack {
@@ -27,7 +29,7 @@ struct WardrobesView: View {
             }
             .background(Color(.systemGray6))
             
-        }.accentColor(Color(.systemPurple))
+        }.accentColor(palette.main)
         .navigationViewStyle(StackNavigationViewStyle())
     }
 }

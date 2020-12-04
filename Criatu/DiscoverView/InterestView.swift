@@ -13,6 +13,8 @@ struct InterestView: View {
     @State var foregroundColor: Color = Color(.systemGray)
     @State var backgroundColor: Color = Color(.systemGray5)
     
+    @ObservedObject var palette = Palette.shared
+    
     var delegate: DiscoverDelegate?
     
     var body: some View{
@@ -41,7 +43,7 @@ struct InterestView: View {
     func changeColors(){
         if item.isSelected{
             foregroundColor = Color(.systemBackground)
-            backgroundColor = Color(.systemPurple)
+            backgroundColor = palette.main
         }
         else{
             foregroundColor = Color(.systemGray)

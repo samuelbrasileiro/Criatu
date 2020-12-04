@@ -11,6 +11,8 @@ struct WardrobeView: View{
     
     @ObservedObject var style: Style
     
+    @ObservedObject var palette = Palette.shared
+    
     @State var showDetails: Bool = false
     var body: some View{
         ZStack(alignment: .topTrailing) {
@@ -41,12 +43,12 @@ struct WardrobeView: View{
                                 .frame(height: 68, alignment: .center)
                                 
                                 .foregroundColor(Color(.systemBackground))
-                                .opacity(0.7)
+                                
                             
                             Text(style.attributes.name)
                                 .font(.largeTitle)
                                 .fontWeight(.semibold)
-                                .foregroundColor(Color(.systemPurple))
+                                .foregroundColor(palette.main)
                                 .padding()
                             
                         }
@@ -59,7 +61,7 @@ struct WardrobeView: View{
                 ZStack{
                     Rectangle()
                         .cornerRadius(20)
-                        .foregroundColor(Color(.systemPurple))
+                        .foregroundColor(palette.main)
                     
                     Text(style.attributes.description)
                         .fontWeight(.regular)
@@ -87,7 +89,7 @@ struct WardrobeView: View{
                     Image(systemName: "info.circle.fill")
                         .resizable()
                         .frame(width: 25, height: 25)
-                        .foregroundColor(Color(.systemPurple))
+                        .foregroundColor(palette.main)
                         .background(Circle().fill(Color(.systemBackground)))
                 }
             }

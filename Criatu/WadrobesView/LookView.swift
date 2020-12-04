@@ -11,6 +11,8 @@ struct LookView: View {
     @ObservedObject var look: DrawerLook
     
     let screen = UIScreen.main.bounds
+    
+    @ObservedObject var palette = Palette.shared
     var body: some View {
         ZStack(alignment: .topTrailing) {
             if let data = look.image{
@@ -40,7 +42,7 @@ struct LookView: View {
                     Image(systemName: "star.circle.fill")
                         .resizable()
                         .frame(width: 70, height: 70)
-                        .foregroundColor(self.look.isFavored ? Color(.systemPurple) : Color(.systemGray4))
+                        .foregroundColor(self.look.isFavored ? palette.main : Color(.systemGray4))
                         .background(Circle().fill(Color(.systemGray6)))
                     
                     

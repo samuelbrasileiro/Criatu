@@ -13,6 +13,8 @@ struct MainTabView: View {
     
     @ObservedObject var selectedView: SelectedView
     
+    @ObservedObject var palette = Palette.shared
+    
     var delegate: SelectedViewDelegate?
     /// Array containing all tabs titles
     
@@ -31,8 +33,8 @@ struct MainTabView: View {
                         Text(selectedView.items[index].name)
                             .font(.system(size: 16, weight: .medium, design: .rounded))
                             .padding(15)
-                            .background(self.selectedView.index == index ? Color(.systemPurple).opacity(0.2) : Color.clear)
-                            .foregroundColor(self.selectedView.index == index ? Color(.systemPurple) : Color.secondary)
+                            .background(self.selectedView.index == index ? palette.main.opacity(0.2) : Color.clear)
+                            .foregroundColor(self.selectedView.index == index ? palette.main : Color.secondary)
                             .clipShape(Capsule())
                     }
                 }

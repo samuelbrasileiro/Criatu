@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct EndOnboardingView: View {
+    @ObservedObject var palette = Palette.shared
     var body: some View {
         
         ZStack {
@@ -16,7 +17,7 @@ struct EndOnboardingView: View {
             
             VStack {
                 Spacer()
-                Text("Agora é o momento de escolher seus interesses!!!").font(.largeTitle).fontWeight(.bold).multilineTextAlignment(.center).padding().foregroundColor(Color(.systemPurple))
+                Text("Agora é o momento de escolher seus interesses!!!").font(.largeTitle).fontWeight(.bold).multilineTextAlignment(.center).padding().foregroundColor(palette.main)
                 Spacer()
                 Image("image_3").frame(alignment: .bottom)
                     .scaledToFit()

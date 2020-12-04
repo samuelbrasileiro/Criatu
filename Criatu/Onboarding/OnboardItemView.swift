@@ -15,6 +15,8 @@ struct OnboardItemView: View {
     
     var delegate: OnboardingDelegate?
     
+    @ObservedObject var palette = Palette.shared
+    
     var body: some View {
         VStack {
             
@@ -32,14 +34,14 @@ struct OnboardItemView: View {
             
 
             Rectangle()
-                .fill(Color(.systemPurple).opacity(0.15))
+                .fill(palette.main.opacity(0.15))
                 .cornerRadius(40, corners: [.topLeft, .topRight])
                 .scaledToFill()
                 .shadow(radius: 50)
                 
             
             VStack {
-                Text(titleText).foregroundColor(Color(.systemPurple))
+                Text(titleText).foregroundColor(palette.main)
                     .font(.title)
                     .bold()
                     .padding(.top, -20)
@@ -60,7 +62,7 @@ struct OnboardItemView: View {
                 .foregroundColor(Color.primary)
                 .padding(.vertical)
                 .padding(.horizontal, 80)
-                .background(Color(.systemPurple))
+                .background(palette.main)
                 .cornerRadius(10)
                 .disabled(disabled)
                 .opacity(disabled ? 0 : 1)

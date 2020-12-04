@@ -14,9 +14,10 @@ struct ImageItemView: View {
     @ObservedObject var item: ImageItem
         
     @State var stroke: Color = Color.clear
-    @State var foregroundColor: Color = Color(.systemPurple)
+    @State var foregroundColor: Color = Palette.shared.main
     @State var backgroundColor: Color = Color(.systemGray5)
     
+    @ObservedObject var palette = Palette.shared
     @State private var progress = 0.5
     
     var body: some View {
@@ -49,13 +50,13 @@ struct ImageItemView: View {
     
     func changeColors(){
         if item.isSelected{
-            stroke = Color(.systemPurple)
+            stroke = palette.main
             foregroundColor = Color(.systemGray5)
-            backgroundColor = Color(.systemPurple)
+            backgroundColor = palette.main
         }
         else{
             stroke = .clear
-            foregroundColor = Color(.systemPurple)
+            foregroundColor = palette.main
             backgroundColor = Color(.systemGray5)
         }
     }

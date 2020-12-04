@@ -55,7 +55,7 @@ struct ProfileView: View {
     var name: String = "Salumalatrix"
     var wardrobe: Int = 4
     
-    @State var selectedIndex = 0
+    @State var selectedIndex = Palette.shared.selectedMainColor
     @State var showNotification = true
     @State var changeColors = true
     
@@ -206,9 +206,9 @@ struct ProfileView: View {
                     
                     Spacer()
                     
-                }.frame(minWidth: 200, idealWidth: 300, maxWidth: .infinity, minHeight: 250, idealHeight: 400, maxHeight: 500, alignment: .center)
+                }
             }
-            .padding()
+            
         }
         .animation(.spring())
     }

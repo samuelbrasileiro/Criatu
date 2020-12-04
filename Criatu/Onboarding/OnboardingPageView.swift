@@ -11,6 +11,8 @@ struct OnboardingPageView: View {
     
     var delegate: OnboardingDelegate?
     
+    @ObservedObject var palette = Palette.shared
+    
     var body: some View {
         
         ZStack(alignment: .topTrailing){
@@ -30,7 +32,7 @@ struct OnboardingPageView: View {
             }){
                 Text("Pular")
             }
-            .foregroundColor(Color(.systemPurple))
+            .foregroundColor(palette.main)
             .padding()
             
             
