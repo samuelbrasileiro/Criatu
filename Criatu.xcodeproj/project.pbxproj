@@ -54,6 +54,7 @@
 		35FFE2DC2563FC3A00F3E8F0 /* LookItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FFE2DB2563FC3A00F3E8F0 /* LookItem.swift */; };
 		35FFE2E12563FC5800F3E8F0 /* DiscoverItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FFE2E02563FC5800F3E8F0 /* DiscoverItem.swift */; };
 		35FFE310256413CA00F3E8F0 /* APMSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FFE30F256413CA00F3E8F0 /* APMSong.swift */; };
+		850B4A7B25751D9B00C7DFBB /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850B4A7A25751D9B00C7DFBB /* ProfileView.swift */; };
 		85C80A5B2566AB2600BBB230 /* ImageItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C80A5A2566AB2600BBB230 /* ImageItemView.swift */; };
 		85C80A6E2566B2A700BBB230 /* MusicItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C80A6D2566B2A700BBB230 /* MusicItemView.swift */; };
 		998BA92C616F1A11E9D39B1C /* Pods_Criatu_CriatuUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F431E44D70780784862AA6E /* Pods_Criatu_CriatuUITests.framework */; };
@@ -137,6 +138,7 @@
 		4F431E44D70780784862AA6E /* Pods_Criatu_CriatuUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Criatu_CriatuUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		56AC4C34B24D913FDC683DF9 /* Pods_Criatu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Criatu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		705336C5F351501ABA12A137 /* Pods-Criatu-CriatuUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Criatu-CriatuUITests.release.xcconfig"; path = "Target Support Files/Pods-Criatu-CriatuUITests/Pods-Criatu-CriatuUITests.release.xcconfig"; sourceTree = "<group>"; };
+		850B4A7A25751D9B00C7DFBB /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		85C80A5A2566AB2600BBB230 /* ImageItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageItemView.swift; sourceTree = "<group>"; };
 		85C80A6D2566B2A700BBB230 /* MusicItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicItemView.swift; sourceTree = "<group>"; };
 		BA9153802C853D9D50AD1195 /* Pods-Criatu-CriatuUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Criatu-CriatuUITests.debug.xcconfig"; path = "Target Support Files/Pods-Criatu-CriatuUITests/Pods-Criatu-CriatuUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -200,8 +202,8 @@
 		10BF032A25655D8D008F2BCC /* DiscoverView */ = {
 			isa = PBXGroup;
 			children = (
-				356A45B2255D836E00F892A1 /* DiscoverViewController.swift */,
 				356A01E92566E2E600454AA1 /* DiscoverView.swift */,
+				356A45B2255D836E00F892A1 /* DiscoverViewController.swift */,
 				10BF032B25655DB0008F2BCC /* SearchBarView.swift */,
 				356A01F62566E96B00454AA1 /* BasicItemView.swift */,
 				85C80A5A2566AB2600BBB230 /* ImageItemView.swift */,
@@ -270,6 +272,7 @@
 				35FFE3262564150800F3E8F0 /* Criatu.entitlements */,
 				356A45B0255D836E00F892A1 /* SceneDelegate.swift */,
 				0488FB722562BB4D00E537B2 /* FirebaseHandler.swift */,
+				850B4A7925751D0D00C7DFBB /* Profile */,
 				283CFC77256FE86700702DAE /* Onboarding */,
 				35EBBC2B256EBF4200856EE5 /* TabBar */,
 				10BF032A25655D8D008F2BCC /* DiscoverView */,
@@ -358,6 +361,14 @@
 				49859DDB0939B7597659474C /* Pods-CriatuTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		850B4A7925751D0D00C7DFBB /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				850B4A7A25751D9B00C7DFBB /* ProfileView.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		A3FF226C9167910396FF0AC5 /* Frameworks */ = {
@@ -626,6 +637,7 @@
 				356A45B3255D836E00F892A1 /* DiscoverViewController.swift in Sources */,
 				359D541925716DB20033D5CE /* View+cornerRadius.swift in Sources */,
 				35091E282566C86D00F94A4A /* MusicItem.swift in Sources */,
+				850B4A7B25751D9B00C7DFBB /* ProfileView.swift in Sources */,
 				35FFE2DC2563FC3A00F3E8F0 /* LookItem.swift in Sources */,
 				35FFE310256413CA00F3E8F0 /* APMSong.swift in Sources */,
 				359A7F36256EAD940006A368 /* TabBarViewController.swift in Sources */,
