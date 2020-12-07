@@ -21,58 +21,65 @@ struct SaveLooksView: View {
     var body: some View {
         
         ZStack {
+            if(suggestionIndex < style.suggestions.count){
             ZStack(alignment: .bottom) {
-                
-                Image(uiImage: style.suggestions[suggestionIndex].image)
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: screen.width - 100, height: screen.height - 350, alignment: .center)
-                    
-                    .clipped()
-                    .cornerRadius(20)
-                    
-                    .padding(.horizontal, 60)
-                    .padding(.bottom)
-                
-                
-                HStack(spacing: 70) {
-                    Button(action: {
+                    Image(uiImage: style.suggestions[suggestionIndex].image)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: screen.width - 100, height: screen.height - 350, alignment: .center)
                         
-                        if suggestionIndex < self.style.suggestions.count - 1 {
-                            self.style.suggestions.remove(at: suggestionIndex)
+                        .clipped()
+                        .cornerRadius(20)
+                        
+                        .padding(.horizontal, 60)
+                        .padding(.bottom)
+                    
+                    
+                    HStack(spacing: 70) {
+                        Button(action: {
+                            
+                            if suggestionIndex < self.style.suggestions.count - 1 {
+                                self.style.suggestions.remove(at: suggestionIndex)
+                            }
+                            
+                        }) {
+                            
+                            Image(systemName: "xmark.circle.fill")
+                                .resizable()
+                                .frame(width: 70, height: 70)
+                                .foregroundColor(palette.main.opacity(0.8))
+                                .background(Circle().fill(Color(.systemGray6)))
+                            
+                            
                         }
                         
-                    }) {
-                        
-                        Image(systemName: "xmark.circle.fill")
-                            .resizable()
-                            .frame(width: 70, height: 70)
-                            .foregroundColor(palette.main.opacity(0.8))
-                            .background(Circle().fill(Color(.systemGray6)))
-                        
-                        
-                    }
-                    
-                    Button(action: {
-                        isLiked = true
-                    }) {
-                        Image(systemName: "heart.circle.fill")
-                            .resizable()
-                            .frame(width: 70, height: 70)
-                            .foregroundColor(palette.main)
-                            .background(Circle().fill(Color(.systemGray6)))
-                        
-                        
+                        Button(action: {
+                            isLiked = true
+                        }) {
+                            Image(systemName: "heart.circle.fill")
+                                .resizable()
+                                .frame(width: 70, height: 70)
+                                .foregroundColor(palette.main)
+                                .background(Circle().fill(Color(.systemGray6)))
+                            
+                            
+                        }
                     }
                 }
+                .padding(.bottom, 60)
+                    .blur(radius: isLiked ? 3.0 : 0)
+                    .disabled(isLiked)
             }
-            .padding(.bottom, 60)
-            .blur(radius: isLiked ? 3.0 : 0)
-            .disabled(isLiked)
+            else{
+                Text("Acabaram as sugestões de estilo \(style.attributes.name.lowercased()) por hoje. Volte mais tarde para mais!")
+                    .foregroundColor(Color(.systemGray4))
+                .padding(100)
+            }
             SaveItemAlertView(isPresented: $isLiked, style: style, suggestionIndex: suggestionIndex)
         }
+        
         .resingKeyboardOnTapGesture()
-        //        .navigationBarTitle("Sugestões")
+        
     }
 }
 
@@ -98,10 +105,10 @@ struct SaveItemAlertView: View {
                     Button(action:{
                         isPresented = false
                     }){
-                    Image(systemName: "xmark.circle.fill")
-                        .resizable()
-                        .frame(width: 20, height: 20)
-                        .foregroundColor(palette.main)
+                        Image(systemName: "xmark.circle.fill")
+                            .resizable()
+                            .frame(width: 20, height: 20)
+                            .foregroundColor(palette.main)
                         
                     }
                 }
@@ -164,7 +171,7 @@ struct SaveItemAlertView: View {
                 }
                 
                 Spacer()
-            
+                
             }
             
         }
