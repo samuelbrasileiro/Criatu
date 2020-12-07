@@ -20,13 +20,20 @@ struct WardrobesView: View {
                     LazySnapHStack(data: bank.styles){ item in
                         
                         WardrobeView(style: item)
-                            .navigationBarTitle("Meus Armários")
-                            .foregroundColor(.black)
+                            
                     }
+                    Spacer()
+                }
+                else{
+                    Spacer()
+                    Text("Você ainda não descobriu nenhum armário... Quando você descobrir um, ele aparecerá aqui!")
+                        .foregroundColor(Color(.systemGray3))
+                    .padding(100)
+                    Spacer()
                 }
                 
-                Spacer()
             }
+            .navigationBarTitle("Meus Armários")
             .background(Color(.systemGray6))
             .onAppear{
                 bank.getStyles()

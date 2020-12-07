@@ -107,23 +107,23 @@ class DiscoverBank: ObservableObject, Identifiable, DiscoverDelegate {
             
             let reducedIDs = stylesIDs.reduce([String:Int]()) { dict, id in
                 var dict = dict
-                print(id, ": ", dict[id] ?? "nada ainda")
+                
                 dict[id] = (dict[id] ?? 0)
                 dict[id]! += 1
                 
                 return dict
             }.map{$0}
             
-            let sortedIDs = reducedIDs.sorted{ $0.0 > $1.0}
+            let sortedIDs = reducedIDs.sorted{ $0.value > $1.value}
             
             let closetsRequest: NSFetchRequest<Closet> = Closet.fetchRequest()
             
             do {
                 let closets = try context.fetch(closetsRequest)
                 
-                if !sortedIDs.contains(where: { id in !closets.contains(where: {$0.id == id.key})}){
+                if !sortedIDs.contains(where: { id in id.value >= 4 && !closets.contains(where: {$0.id == id.key})}){
                     self.didNotDiscoverStyle = true
-                    print("q porra ta acontecendo")
+                    print("You already have all suitable closets")
                     return
                 }
                 print("de boa")
@@ -145,11 +145,6 @@ class DiscoverBank: ObservableObject, Identifiable, DiscoverDelegate {
                             }
                             
                             break
-                        }
-                        else{
-                            print("eitahhhh")
-                            self.didNotDiscoverStyle = true
-                            return
                         }
                     }
                 }

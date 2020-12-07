@@ -102,10 +102,13 @@ struct DiscoverView: View {
             }
             
             .alert(isPresented: $bank.didNotDiscoverStyle, content: {
-                Alert(title: Text("Mistura mal feita"), message: Text("Você ou já fez essa mistura ou misturou muito mal...\n Tente de novo!"), dismissButton: .default(Text("Beleza")))
+                Alert(title: Text("Mistura mal feita"), message: Text("Você ou já fez essa mistura ou misturou muito mal...\n Tente de novo!"), dismissButton: .default(Text("Beleza"), action: {
+                    self.bank.clear()
+                    self.bank.addInterests()
+                }))
      
             })
-            
+            .animation(.spring())
         }.accentColor(palette.main)
         .navigationViewStyle(StackNavigationViewStyle())
     }

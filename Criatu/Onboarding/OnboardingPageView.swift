@@ -23,7 +23,6 @@ struct OnboardingPageView: View {
                 OnboardItemView(titleText: "Construa armários!", descriptionText:"Customize suas descobertas em armários que refletem sua personalidade", imageName: "image_1", disabled: true, delegate: delegate)
                 
                 OnboardItemView(titleText: "Organize os looks!", descriptionText: "A partir de sugestões, monte suas proprias gavetas!", imageName: "image_2", disabled: false, delegate: delegate)
-                DynamicCircleView()
                 
             }
             .tabViewStyle(PageTabViewStyle())

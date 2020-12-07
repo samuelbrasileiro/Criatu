@@ -40,6 +40,10 @@ class OnboardingViewController: UIViewController, OnboardingDelegate {
     }
     
     func endInterestSelection() {
+        //change launch key
+        UserDefaults.standard.set(true, forKey: Keys.kHasLaunchedOnce)
+        UserDefaults.standard.synchronize()
+        
         let vc = TabBarViewController()
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true)

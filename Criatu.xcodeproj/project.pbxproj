@@ -34,7 +34,6 @@
 		356A45AF255D836E00F892A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356A45AE255D836E00F892A1 /* AppDelegate.swift */; };
 		356A45B1255D836E00F892A1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356A45B0255D836E00F892A1 /* SceneDelegate.swift */; };
 		356A45B3255D836E00F892A1 /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356A45B2255D836E00F892A1 /* DiscoverViewController.swift */; };
-		356A45B6255D836E00F892A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 356A45B4255D836E00F892A1 /* Main.storyboard */; };
 		356A45B9255D836E00F892A1 /* Criatu.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 356A45B7255D836E00F892A1 /* Criatu.xcdatamodeld */; };
 		356A45BB255D837000F892A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 356A45BA255D837000F892A1 /* Assets.xcassets */; };
 		356A45BE255D837000F892A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 356A45BC255D837000F892A1 /* LaunchScreen.storyboard */; };
@@ -109,7 +108,6 @@
 		356A45AE255D836E00F892A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		356A45B0255D836E00F892A1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		356A45B2255D836E00F892A1 /* DiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
-		356A45B5255D836E00F892A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		356A45B8255D836E00F892A1 /* Criatu.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Criatu.xcdatamodel; sourceTree = "<group>"; };
 		356A45BA255D837000F892A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		356A45BD255D837000F892A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -275,19 +273,18 @@
 				35FFE3262564150800F3E8F0 /* Criatu.entitlements */,
 				356A45B0255D836E00F892A1 /* SceneDelegate.swift */,
 				0488FB722562BB4D00E537B2 /* FirebaseHandler.swift */,
-				850B4A7925751D0D00C7DFBB /* Profile */,
 				283CFC77256FE86700702DAE /* Onboarding */,
 				35EBBC2B256EBF4200856EE5 /* TabBar */,
 				10BF032A25655D8D008F2BCC /* DiscoverView */,
 				35F82A1E25713C040087DD22 /* WadrobesView */,
+				850B4A7925751D0D00C7DFBB /* Profile */,
 				35FFE2CD2563FBCD00F3E8F0 /* Classes */,
+				100CC76B2575259300A21A2C /* CoreData */,
 				105312D825656C5500887B1E /* Extra */,
-				356A45B4255D836E00F892A1 /* Main.storyboard */,
 				356A45BA255D837000F892A1 /* Assets.xcassets */,
 				356A45BC255D837000F892A1 /* LaunchScreen.storyboard */,
 				356A45BF255D837000F892A1 /* Info.plist */,
 				28D999F3256702150003DE45 /* GoogleService-Info.plist */,
-				100CC76B2575259300A21A2C /* CoreData */,
 			);
 			path = Criatu;
 			sourceTree = "<group>";
@@ -495,7 +492,6 @@
 				356A45BE255D837000F892A1 /* LaunchScreen.storyboard in Resources */,
 				28D999F4256702150003DE45 /* GoogleService-Info.plist in Resources */,
 				356A45BB255D837000F892A1 /* Assets.xcassets in Resources */,
-				356A45B6255D836E00F892A1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -702,14 +698,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		356A45B4255D836E00F892A1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				356A45B5255D836E00F892A1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		356A45BC255D837000F892A1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

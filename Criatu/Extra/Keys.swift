@@ -13,4 +13,6 @@ class Keys{
     static let kSelectedInterests = "selected-interests-key"
     
     static let kPaletteMainColor = "pallete-main-color-key"
+    
+    static let kHasLaunchedOnce = "has-lauched-once-key"
 }
