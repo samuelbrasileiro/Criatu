@@ -9,11 +9,12 @@ import SwiftUI
 
 struct DiscoverView: View {
     
+    @ObservedObject var palette = Palette.shared
     @ObservedObject var bank: DiscoverBank
     @State var index = 0
     
     var body: some View {
-                
+        
         VStack{
             
             SearchBarView(bank: bank)
@@ -39,22 +40,43 @@ struct DiscoverView: View {
             }
             else{
                 
-                ScrollView(.horizontal, showsIndicators: false){
-                    LazyHStack{//list of USER'S INTERESTS
-                        ForEach(0..<bank.interests.count, id: \.self){ index in
-                            InterestView(item: bank.interests[index], delegate: bank)
+                ZStack(alignment: .bottom) {
+                    VStack {
+           
+                        ScrollView(.horizontal, showsIndicators: false){
+                            LazyHStack{//list of USER'S INTERESTS
+                                ForEach(0..<bank.interests.count, id: \.self){ index in
+                                    InterestView(item: bank.interests[index], delegate: bank)
+                                }
+                            }.frame(height: 50)
+                            .padding(.leading)
                         }
-                    }.frame(height: 50)
-                    .padding(.leading)
+                        LazyWaterfallGrid(data: bank.items, numberOfColumns: 2, horizontalSpacing: 8, verticalSpacing: 8, edgeInsets: EdgeInsets(top: 10, leading: 10, bottom: 75, trailing: 10)){ item in
+                            
+                            BasicItemView(item: item)
+                            
+                            
+                        }.background(Color(.systemGray6))
+                    }
+                    Button(action:  {
+                        
+                        self.bank.discoverStyle()
+                        
+                    }) {
+                        Text("Misture")
+                            .padding()
+                            .padding(.horizontal, 80)
+                            .background(bank.items.filter({$0.isSelected}).count == 0 ? Color(.systemGray3) : palette.main)
+                            .foregroundColor(Color(.systemBackground))
+                            .cornerRadius(15)
+                            .disabled(bank.items.filter({$0.isSelected}).count == 0)
+                            .offset(y: bank.isDiscovering ? 300 : 0)
+
+                    }
+                    .padding(10)
                 }
-                LazyWaterfallGrid(data: bank.items, numberOfColumns: 2, horizontalSpacing: 8, verticalSpacing: 8, edgeInsets: EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)){ item in
-                    
-                    BasicItemView(item: item)
-                    
-                }.background(Color(.systemGray6))
             }
         }
-        
     }
 }
 

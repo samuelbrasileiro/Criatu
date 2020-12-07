@@ -7,7 +7,7 @@
 
 import UIKit
 import SwiftUI
-import AVKit
+import CoreData
 
 protocol DiscoverDelegate{
     func didSelectInterest(_ interest: Interest)
@@ -24,7 +24,10 @@ class DiscoverBank: ObservableObject, Identifiable, DiscoverDelegate {
     
     @Published var allInterests: [Interest] = []
     
+    @Published var discoveredStyle: Style?
 
+    @Published var isDiscovering: Bool = false
+    
     init() {
         self.clear()
         
@@ -77,6 +80,58 @@ class DiscoverBank: ObservableObject, Identifiable, DiscoverDelegate {
                 self.objectWillChange.send()
             }
         }
+    }
+    
+    func discoverStyle(){
+        isDiscovering = true
+        items = items.filter{
+            $0.isSelected
+        }
+        
+        Timer.scheduledTimer(withTimeInterval: 4, repeats: false){ _ in
+            let context = AppDelegate.viewContext
+            let reducedItems = self.items.reduce([String:Int]()) { dict, item in
+                var dict = dict
+                dict[item.attributes.id] = (dict[item.attributes.id] ?? 0)
+                dict[item.attributes.id]! += 1
+                
+                return dict
+            }.map{$0}
+            
+            let sortedItems = reducedItems.sorted{ $0.0 > $1.0}
+            
+            let closetsRequest: NSFetchRequest<Closet> = Closet.fetchRequest()
+            
+            do {
+                let closets = try context.fetch(closetsRequest)
+                
+                for item in sortedItems{
+                    print(item.key, ": ", item.value)
+                    if !closets.contains(where: {$0.id == item.key}){
+                        if item.value >= 4{
+                            
+                            FirebaseHandler.readCollection(.closets, id: item.key, dataType: Style.Database.self) { result in
+                                if case .success(let attributes) = result {
+                                    
+                                    self.discoveredStyle = Style(attributes: attributes)
+                                    
+                                    print(self.discoveredStyle?.attributes.name)
+
+                                    self.isDiscovering = false
+                                    
+                                }
+                            }
+                            
+                            break
+                        }
+                    }
+                }
+                
+            }catch{
+                print(error)
+            }
+        }
+        
     }
     
     func clearAllInterests(){
