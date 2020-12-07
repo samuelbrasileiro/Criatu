@@ -28,9 +28,12 @@ struct WardrobesView: View {
                 Spacer()
             }
             .background(Color(.systemGray6))
-            
+            .onAppear{
+                bank.getStyles()
+            }
         }.accentColor(palette.main)
         .navigationViewStyle(StackNavigationViewStyle())
+        
     }
 }
 

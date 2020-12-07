@@ -9,12 +9,15 @@ import SwiftUI
 
 struct BasicItemView: View {
     @ObservedObject var item: DiscoverItem
+    
+    var delegate: DiscoverDelegate?
+    
     var body: some View{
         if item.attributes.type == .music{
-            MusicItemView(item: item as! MusicItem)
+            MusicItemView(item: item as! MusicItem, delegate: delegate)
         }
         else if item.attributes.type == .image{
-            ImageItemView(item: item as! ImageItem)
+            ImageItemView(item: item as! ImageItem, delegate: delegate)
         }
     }
 }

@@ -20,11 +20,14 @@ struct ImageItemView: View {
     @ObservedObject var palette = Palette.shared
     @State private var progress = 0.5
     
+    var delegate: DiscoverDelegate?
+    
     var body: some View {
         
         Button( action: {
             item.isSelected = !item.isSelected
             changeColors()
+            delegate?.uploadView()
             
         }){
             if let image = item.image{
@@ -45,6 +48,7 @@ struct ImageItemView: View {
         }
         .onAppear(){
             changeColors()
+            delegate?.uploadView()
         }
     }
     

@@ -12,7 +12,9 @@ import CoreData
 protocol DiscoverDelegate{
     func didSelectInterest(_ interest: Interest)
     func didDisselectInterest(_ interest: Interest)
+    func uploadView()
 }
+
 
 class DiscoverBank: ObservableObject, Identifiable, DiscoverDelegate {
     
@@ -25,8 +27,11 @@ class DiscoverBank: ObservableObject, Identifiable, DiscoverDelegate {
     @Published var allInterests: [Interest] = []
     
     @Published var discoveredStyle: Style?
-
+    @Published var didDiscoverNewStyle = false
+    @Published var didNotDiscoverStyle = false
+    
     @Published var isDiscovering: Bool = false
+    
     
     init() {
         self.clear()
@@ -36,10 +41,16 @@ class DiscoverBank: ObservableObject, Identifiable, DiscoverDelegate {
     }
     
     /// This function clears all items in the array 'items'
-    
     func clear(){
         items.removeAll()
         interests.removeAll()
+        searchText = ""
+        isSearching = false
+        allInterests.removeAll()
+        discoveredStyle = nil
+        isDiscovering = false
+        didDiscoverNewStyle = false
+        didNotDiscoverStyle = false
     }
     
     func addInterests(){
@@ -89,40 +100,56 @@ class DiscoverBank: ObservableObject, Identifiable, DiscoverDelegate {
         }
         
         Timer.scheduledTimer(withTimeInterval: 4, repeats: false){ _ in
+            self.isDiscovering = false
             let context = AppDelegate.viewContext
-            let reducedItems = self.items.reduce([String:Int]()) { dict, item in
+            
+            let stylesIDs = [String](self.items.map({$0.attributes.stylesIDs ?? []}).joined())
+            
+            let reducedIDs = stylesIDs.reduce([String:Int]()) { dict, id in
                 var dict = dict
-                dict[item.attributes.id] = (dict[item.attributes.id] ?? 0)
-                dict[item.attributes.id]! += 1
+                print(id, ": ", dict[id] ?? "nada ainda")
+                dict[id] = (dict[id] ?? 0)
+                dict[id]! += 1
                 
                 return dict
             }.map{$0}
             
-            let sortedItems = reducedItems.sorted{ $0.0 > $1.0}
+            let sortedIDs = reducedIDs.sorted{ $0.0 > $1.0}
             
             let closetsRequest: NSFetchRequest<Closet> = Closet.fetchRequest()
             
             do {
                 let closets = try context.fetch(closetsRequest)
                 
-                for item in sortedItems{
-                    print(item.key, ": ", item.value)
-                    if !closets.contains(where: {$0.id == item.key}){
-                        if item.value >= 4{
+                if !sortedIDs.contains(where: { id in !closets.contains(where: {$0.id == id.key})}){
+                    self.didNotDiscoverStyle = true
+                    print("q porra ta acontecendo")
+                    return
+                }
+                print("de boa")
+                for id in sortedIDs{
+                    print(id.key, "!!! = ", id.value)
+                    if !closets.contains(where: {$0.id == id.key}){
+                        if id.value >= 4{
                             
-                            FirebaseHandler.readCollection(.closets, id: item.key, dataType: Style.Database.self) { result in
+                            FirebaseHandler.readCollection(.closets, id: id.key, dataType: Style.Database.self) { result in
                                 if case .success(let attributes) = result {
-                                    
+                                                                        
                                     self.discoveredStyle = Style(attributes: attributes)
                                     
-                                    print(self.discoveredStyle?.attributes.name)
-
-                                    self.isDiscovering = false
+                                    self.didDiscoverNewStyle = true
                                     
+                                    print(self.discoveredStyle!.attributes.name)
+
                                 }
                             }
                             
                             break
+                        }
+                        else{
+                            print("eitahhhh")
+                            self.didNotDiscoverStyle = true
+                            return
                         }
                     }
                 }
@@ -146,7 +173,7 @@ class DiscoverBank: ObservableObject, Identifiable, DiscoverDelegate {
     }
     
     func didSelectInterest(_ interest: Interest){
-        //print("Selected Interest: " + interest.attributes.name)
+
         if var ids = interest.attributes.itemsIDs{
             
             ids.shuffle()
@@ -182,6 +209,10 @@ class DiscoverBank: ObservableObject, Identifiable, DiscoverDelegate {
             return !(item.interestAssociatedID == interest.attributes.id)
         }
 
+    }
+    
+    func uploadView() {
+        self.objectWillChange.send()
     }
     
     /// This function adds all items in the array 'items'

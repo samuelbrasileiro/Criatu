@@ -46,6 +46,7 @@
 		359D542A257175180033D5CE /* LazySnapHStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359D5429257175180033D5CE /* LazySnapHStack.swift */; };
 		359D543525718D450033D5CE /* WardrobesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359D543425718D450033D5CE /* WardrobesView.swift */; };
 		35D0EB69256D669300CFBEB1 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D0EB68256D669300CFBEB1 /* Keys.swift */; };
+		35E4312F257E680E00102F7A /* DiscoveredStyleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E4312E257E680E00102F7A /* DiscoveredStyleView.swift */; };
 		35F82A1525713BB00087DD22 /* WardrobeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F82A1425713BB00087DD22 /* WardrobeView.swift */; };
 		35F82A1A25713BCA0087DD22 /* ClosetsBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F82A1925713BCA0087DD22 /* ClosetsBank.swift */; };
 		35F82A2325713C0C0087DD22 /* WardrobeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F82A2225713C0C0087DD22 /* WardrobeViewController.swift */; };
@@ -125,6 +126,7 @@
 		359D5429257175180033D5CE /* LazySnapHStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazySnapHStack.swift; sourceTree = "<group>"; };
 		359D543425718D450033D5CE /* WardrobesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobesView.swift; sourceTree = "<group>"; };
 		35D0EB68256D669300CFBEB1 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
+		35E4312E257E680E00102F7A /* DiscoveredStyleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveredStyleView.swift; sourceTree = "<group>"; };
 		35F82A1425713BB00087DD22 /* WardrobeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WardrobeView.swift; sourceTree = "<group>"; };
 		35F82A1925713BCA0087DD22 /* ClosetsBank.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClosetsBank.swift; sourceTree = "<group>"; };
 		35F82A2225713C0C0087DD22 /* WardrobeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeViewController.swift; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 				85C80A5A2566AB2600BBB230 /* ImageItemView.swift */,
 				85C80A6D2566B2A700BBB230 /* MusicItemView.swift */,
 				356A01EE2566E61F00454AA1 /* InterestView.swift */,
+				35E4312E257E680E00102F7A /* DiscoveredStyleView.swift */,
 			);
 			path = DiscoverView;
 			sourceTree = "<group>";
@@ -660,6 +663,7 @@
 				10BF032C25655DB0008F2BCC /* SearchBarView.swift in Sources */,
 				359D541125715FCE0033D5CE /* OnboardingViewController.swift in Sources */,
 				356A45B1255D836E00F892A1 /* SceneDelegate.swift in Sources */,
+				35E4312F257E680E00102F7A /* DiscoveredStyleView.swift in Sources */,
 				35F82A2325713C0C0087DD22 /* WardrobeViewController.swift in Sources */,
 				35FFE2D72563FC1400F3E8F0 /* Style.swift in Sources */,
 				356A45B9255D836E00F892A1 /* Criatu.xcdatamodeld in Sources */,

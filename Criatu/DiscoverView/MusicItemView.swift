@@ -35,12 +35,14 @@ struct MusicItemView: View{
     let isPlayingPub = NotificationCenter.default
                 .publisher(for: NSNotification.Name("isPlayingChangedInAMusicView"))
     
+    var delegate: DiscoverDelegate?
+    
     var body: some View{
         if let name = item.title{
             Button(action: {
                 item.isSelected = !item.isSelected
                 changeColors()
-                
+                delegate?.uploadView()
             }){
                 
                 HStack{
@@ -101,6 +103,7 @@ struct MusicItemView: View{
                 
             }.onAppear(){
                 changeColors()
+                delegate?.uploadView()
             }
             
         }
