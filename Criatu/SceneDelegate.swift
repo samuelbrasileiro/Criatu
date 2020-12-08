@@ -22,6 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
         
+        
         if UserDefaults.standard.bool(forKey: Keys.kHasLaunchedOnce){
             window?.rootViewController = TabBarViewController()
         }
@@ -32,6 +33,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
         window?.makeKeyAndVisible()
         
+        let pushManager = PushNotificationManager()
+            pushManager.registerForPushNotifications()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
