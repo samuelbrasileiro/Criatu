@@ -10,18 +10,18 @@ import SpriteKit
 
 class GameScene: SKScene{
     
-    let circleRadius:CGFloat = 25
+    let circleRadius:CGFloat = 30
     var circles:[SKShapeNode] = []
     let bgColor = UIColor.systemBackground
     let unSelectedColor = UIColor.systemGray
     let selectedColor = Palette.shared.main
     
-    static var interests:[Interest] = []
+    var interests:[Interest] = []
     
-    static var selectedInterests: [String] = []
+    var selectedInterests: [String] = []
     
     var palette = Palette.shared
-
+    
     var didCreate: Bool = false
     override func didMove(to view: SKView) {
         if !didCreate{
@@ -35,7 +35,7 @@ class GameScene: SKScene{
                 
                 if case .success(let interestDatabases) = result {
                     
-                    GameScene.interests = interestDatabases.map{
+                    self.interests = interestDatabases.map{
                         Interest(attributes: $0)
                     }
                     self.addTags()
@@ -43,6 +43,40 @@ class GameScene: SKScene{
                 }
             }
         }
+        
+    }
+    
+    func reloadData(){
+        
+        let filteredInterest = interests.filter({ item in
+            !selectedInterests.contains(where: {
+                item.attributes.id == $0
+            })
+        })
+        
+        circles.filter({ item in
+            !selectedInterests.contains(where: {
+                item.name == $0
+            })
+        }).forEach({circle in
+            circle.removeFromParent()
+        })
+        
+        circles = circles.filter({ item in
+            selectedInterests.contains(where: {
+                item.name == $0
+            })
+        })
+        
+        for interest in filteredInterest.shuffled().prefix(12 - circles.count){
+            
+            let x = CGFloat.random(in: 0...self.frame.width - circleRadius)
+            let y = CGFloat.random(in: 0...self.frame.height - circleRadius)
+            let position = CGPoint(x: x, y: y)
+            circles.append(addCircle(interest: interest, position: position))
+        }
+        
+        applyForces()
         
     }
     
@@ -61,15 +95,15 @@ class GameScene: SKScene{
                     circle.fillColor = UIColor(selectedColor)
                     circle.physicsBody?.isDynamic = false
                     waveEffect(centralCircle: circle)
-                    GameScene.selectedInterests.append(circle.name!)
-                    print(GameScene.selectedInterests.count)
+                    self.selectedInterests.append(circle.name!)
+                    print(self.selectedInterests.count)
                 }
                 
                 else {
                     circle.fillColor = unSelectedColor
                     circle.physicsBody?.isDynamic = true
-                    let index = GameScene.selectedInterests.firstIndex(of: circle.name!)
-                    GameScene.selectedInterests.remove(at: index!)
+                    let index = self.selectedInterests.firstIndex(of: circle.name!)
+                    self.selectedInterests.remove(at: index!)
                 }
                 
             }
@@ -105,7 +139,7 @@ class GameScene: SKScene{
     }
     func addTags(){
         
-        for interest in GameScene.interests.shuffled().prefix(15){
+        for interest in self.interests.shuffled().prefix(12){
             
             let x = CGFloat.random(in: 0...self.frame.width - circleRadius)
             let y = CGFloat.random(in: 0...self.frame.height - circleRadius)
@@ -117,7 +151,7 @@ class GameScene: SKScene{
     func applyForces(){
         
         for circle in circles{
-            circle.physicsBody?.applyImpulse(CGVector(dx: CGFloat.random(in: -10...10), dy: CGFloat.random(in: -10...10)))
+            circle.physicsBody?.applyImpulse(CGVector(dx: CGFloat.random(in: -7...7), dy: CGFloat.random(in: -7...7)))
         }
     }
     
@@ -136,12 +170,14 @@ class GameScene: SKScene{
         
         let insideText = SKLabelNode(text: interest.attributes.name)
         
-        insideText.numberOfLines = 2
+        insideText.numberOfLines = 0
         insideText.verticalAlignmentMode = .center
         insideText.horizontalAlignmentMode = .center
-        insideText.fontSize = 20
-        
+        insideText.fontSize = 32
         insideText.name = "text"
+        insideText.fontName = "system"
+        insideText.fontColor = .systemBackground
+        insideText.colorBlendFactor = 1.0
         
         calculateFontSize(labelNode: insideText, circle: circle)
         circle.addChild(insideText)
@@ -154,52 +190,82 @@ class GameScene: SKScene{
         
         
         let scalingFactor = min(circle.frame.width / labelNode.frame.width, circle.frame.height / labelNode.frame.height)
+        labelNode.fontSize *= (scalingFactor-0.01)
         
-        
-        if labelNode.text!.filter({$0 == " "}).count > 0{
-            labelNode.preferredMaxLayoutWidth = circle.frame.width
-            circle.setScale(0.5 / scalingFactor)
-            labelNode.fontSize *= 1.1 * scalingFactor
-        }
-        
-        
-        else if labelNode.text!.count < 6{
-            labelNode.fontSize *= scalingFactor
-        }
-        else{
-            labelNode.fontSize *= scalingFactor
-            circle.setScale(0.7 / scalingFactor)
-        }
+        /*if labelNode.text!.filter({$0 == " "}).count > 0{
+         labelNode.preferredMaxLayoutWidth = circle.frame.width
+         circle.setScale(0.5 / scalingFactor)
+         labelNode.fontSize *= 1.1 * scalingFactor
+         }
+         
+         
+         else if labelNode.text!.count < 6{
+         labelNode.fontSize *= scalingFactor
+         }
+         else{
+         labelNode.fontSize *= scalingFactor
+         circle.setScale(0.7 / scalingFactor)
+         }*/
         
     }
     
     
 }
 
+class GameSceneLoader: ObservableObject {
+    
+    @Published var scene : GameScene
+    
+    init(){
+        
+        let scene = GameScene()
+        scene.size = CGSize(width: 200, height: 400)
+        scene.scaleMode = .fill
+        self.scene = scene
+    }
+    
+    
+
+}
+
 struct DynamicCircleView: View {
     
     var selectedTags: [String] = []
-    var scene : GameScene {
-        let scene = GameScene()
-        scene.size = CGSize(width: 200, height: 400)
-        scene.scaleMode = .aspectFit
-        return scene
-    }
+    @ObservedObject var loader = GameSceneLoader()
     @ObservedObject var palette = Palette.shared
-
+    
     var delegate: OnboardingDelegate?
     var body: some View {
         
         
         VStack {
             
-            SpriteView(scene: scene)
+            ZStack(alignment: .topTrailing) {
+                
+                SpriteView(scene: loader.scene)
+                
+                Button(action: {
+                    print("memeeeeeee")
+                    loader.scene.reloadData()
+                    
+                }){
+                    
+                    Image(systemName: "arrow.clockwise")
+                        .foregroundColor(Color(.systemBackground))
+                        .font(.largeTitle)
+                        .padding()
+                        .background(palette.main)
+                        .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                }
+                
+                
+            }
             
             Button(action: {
                 var interests: [Interest] = []
-
-                for id in GameScene.selectedInterests{
-                    if let first = GameScene.interests.first(where: {$0.attributes.id == id}){
+                
+                for id in loader.scene.selectedInterests{
+                    if let first = loader.scene.interests.first(where: {$0.attributes.id == id}){
                         interests.append(first)
                     }
                 }
@@ -210,6 +276,7 @@ struct DynamicCircleView: View {
                 Text("Terminei")
                     .multilineTextAlignment(.center)
                     .foregroundColor(Color(.systemBackground))
+                    .font(.title2)
             })
             .foregroundColor(Color.primary)
             .padding(.vertical)
