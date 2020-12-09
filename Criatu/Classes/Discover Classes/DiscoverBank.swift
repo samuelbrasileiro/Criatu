@@ -56,9 +56,7 @@ class DiscoverBank: ObservableObject, Identifiable, DiscoverDelegate {
     func addInterests(){
         
         if var interests = Interest.restore(){
-            print(interests)
             interests.shuffle()
-            print(interests.count)
             let count = interests.count < 3 ? interests.count : 3
             for index in 0..<count{
                 interests[index].isSelected = true
@@ -126,9 +124,7 @@ class DiscoverBank: ObservableObject, Identifiable, DiscoverDelegate {
                     print("You already have all suitable closets")
                     return
                 }
-                print("de boa")
                 for id in sortedIDs{
-                    print(id.key, "!!! = ", id.value)
                     if !closets.contains(where: {$0.id == id.key}){
                         if id.value >= 4{
                             
@@ -139,8 +135,6 @@ class DiscoverBank: ObservableObject, Identifiable, DiscoverDelegate {
                                     
                                     self.didDiscoverNewStyle = true
                                     
-                                    print(self.discoveredStyle!.attributes.name)
-
                                 }
                             }
                             
@@ -178,7 +172,6 @@ class DiscoverBank: ObservableObject, Identifiable, DiscoverDelegate {
                 FirebaseHandler.readCollection(.items, id: id, dataType: DiscoverItem.Database.self){ result in
                     if case .success(let attributes) = result{
                         if self.items.map({$0.attributes.id}).contains(id){
-                            print("we have ", id)
                             return
                         }
                         if attributes.type == .image{
@@ -220,7 +213,6 @@ class DiscoverBank: ObservableObject, Identifiable, DiscoverDelegate {
             FirebaseHandler.readCollection(.interests, id: id, dataType: Interest.Database.self){ result in
                 
                 if case .success(let attributes) = result{
-                    print("fetch", attributes.name)
                     interests.append(Interest(attributes: attributes))
                     count += 1
                     if count == ids.count{
@@ -231,9 +223,6 @@ class DiscoverBank: ObservableObject, Identifiable, DiscoverDelegate {
                 
             }
         }
-        
-        
-        print("Archived Interests (Luis to do)")
         
     }
     

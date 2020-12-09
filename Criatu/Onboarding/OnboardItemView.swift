@@ -34,10 +34,12 @@ struct OnboardItemView: View {
             
 
             Rectangle()
-                .fill(palette.main.opacity(0.15))
+                .fill(Color(UIColor(palette.main).withAlphaComponent(0.15)))
                 .cornerRadius(40, corners: [.topLeft, .topRight])
+                //.shadow(radius: 7)
+                
                 .scaledToFill()
-                .shadow(radius: 50)
+                
                 
             
             VStack {

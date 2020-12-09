@@ -25,12 +25,17 @@ class ClosetsBank: ObservableObject{
         
         do {
             let closets = try context.fetch(closetsRequest)
+            self.styles = []
+            if closets.contains(where: { closet in !styles.contains(where: {$0.attributes.id == closet.id})}){
+                self.styles = []
+            }
             
             for closet in closets {
                 if !styles.contains(where: {$0.attributes.id == closet.id}){
                     self.styles.insert(Style(closet: closet), at: 0)
                 }
             }
+            
         } catch {
             print(error)
         }

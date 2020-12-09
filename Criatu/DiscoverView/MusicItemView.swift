@@ -122,9 +122,7 @@ struct MusicItemView: View{
         }.resume()
     }
     
-    func play(url:URL) {
-        print("playing \(url)")
-                
+    func play(url:URL) {                
         do {
             
             preview.player = try AVAudioPlayer(contentsOf: url)

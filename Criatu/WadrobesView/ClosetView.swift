@@ -108,6 +108,7 @@ struct ClosetView: View {
             if style.suggestions.isEmpty {
                 style.getSuggestions()
             }
+            
         }
     }
 }

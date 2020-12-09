@@ -10,7 +10,7 @@ import SpriteKit
 
 class GameScene: SKScene{
     
-    let circleRadius:CGFloat = 30
+    let circleRadius:CGFloat = 50
     var circles:[SKShapeNode] = []
     let bgColor = UIColor.systemBackground
     let unSelectedColor = UIColor.systemGray
@@ -96,7 +96,7 @@ class GameScene: SKScene{
                     circle.physicsBody?.isDynamic = false
                     waveEffect(centralCircle: circle)
                     self.selectedInterests.append(circle.name!)
-                    print(self.selectedInterests.count)
+                    
                 }
                 
                 else {
@@ -128,8 +128,8 @@ class GameScene: SKScene{
                 
                 normVector.dy = normVector.dy / dist
                 
-                let forceX = normVector.dx*300 / dist
-                let forceY = normVector.dy*300 / dist
+                let forceX = normVector.dx*2000 / dist
+                let forceY = normVector.dy*2000 / dist
                 
                 circle.physicsBody?.applyImpulse(CGVector(dx: forceX, dy: forceY))
                 
@@ -151,7 +151,7 @@ class GameScene: SKScene{
     func applyForces(){
         
         for circle in circles{
-            circle.physicsBody?.applyImpulse(CGVector(dx: CGFloat.random(in: -7...7), dy: CGFloat.random(in: -7...7)))
+            circle.physicsBody?.applyImpulse(CGVector(dx: CGFloat.random(in: -14...14), dy: CGFloat.random(in: -14...14)))
         }
     }
     
@@ -219,7 +219,11 @@ class GameSceneLoader: ObservableObject {
     init(){
         
         let scene = GameScene()
-        scene.size = CGSize(width: 200, height: 400)
+        let window = UIApplication.shared.windows[0]
+        let width = window.safeAreaLayoutGuide.layoutFrame.width
+        let height = window.safeAreaLayoutGuide.layoutFrame.height
+        
+        scene.size = CGSize(width: width, height: height)
         scene.scaleMode = .fill
         self.scene = scene
     }
@@ -238,24 +242,23 @@ struct DynamicCircleView: View {
     var body: some View {
         
         
-        VStack {
+        ZStack(alignment: .bottom) {
             
             ZStack(alignment: .topTrailing) {
                 
                 SpriteView(scene: loader.scene)
                 
                 Button(action: {
-                    print("memeeeeeee")
                     loader.scene.reloadData()
                     
                 }){
-                    
                     Image(systemName: "arrow.clockwise")
                         .foregroundColor(Color(.systemBackground))
                         .font(.largeTitle)
                         .padding()
                         .background(palette.main)
-                        .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                        .clipShape(Circle())
+                        .shadow(radius: 7)
                 }
                 
                 
@@ -286,7 +289,10 @@ struct DynamicCircleView: View {
             .padding(.bottom, 40)
             
         }
-        .ignoresSafeArea(.all, edges: .bottom)
+        
+        .navigationBarHidden(!(delegate == nil))
+        .navigationBarTitle("Selecione os novos interesses", displayMode: .inline)
+        
     }
 }
 

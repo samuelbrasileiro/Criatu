@@ -95,10 +95,11 @@ struct DiscoverView: View {
             .navigationBarTitle("Descubra")
             .navigationBarHidden(true)
             .onAppear{
-                if bank.didDiscoverNewStyle{
+                if bank.didDiscoverNewStyle || Interest.restore()!.contains(where: { cdInterest in !bank.interests.contains(where: {$0.attributes.id == cdInterest.attributes.id})}){
                     bank.clear()
                     bank.addInterests()
                 }
+                
             }
             
             .alert(isPresented: $bank.didNotDiscoverStyle, content: {

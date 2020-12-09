@@ -26,7 +26,7 @@ struct OnboardingPageView: View {
                 
             }
             .tabViewStyle(PageTabViewStyle())
-            
+            .padding(.bottom, 70)
             Button(action: {
                 delegate?.finishOnboarding()
             }){

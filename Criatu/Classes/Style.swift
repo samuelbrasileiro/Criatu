@@ -130,11 +130,15 @@ class Style: ObservableObject, Identifiable{
         }
     }
     
+    func updateClosets(){
+    
+    }
+    
     func getSuggestions() {
         
         if var looksURL = attributes.looksURL {
             //see if I already have some of these looks
-            for drawer in drawers{
+            for drawer in drawers.shuffled().prefix(12){
                 guard let looks = drawer.looks else{
                     return
                 }
