@@ -105,7 +105,7 @@ struct DiscoverView: View {
             }
             
             .alert(isPresented: $bank.didNotDiscoverStyle, content: {
-                Alert(title: Text("Mistura mal feita"), message: Text("Você ou já fez essa mistura ou misturou muito mal...\n Tente de novo!"), dismissButton: .default(Text("Beleza"), action: {
+                Alert(title: Text("Mistura mal feita"), message: Text("Você já fez essa mistura ou misturou muito mal...\n Tente de novo selecionando mais itens!"), dismissButton: .default(Text("Beleza"), action: {
                     self.bank.clear()
                     self.bank.addInterests()
                 }))
