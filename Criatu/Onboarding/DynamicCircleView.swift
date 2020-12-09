@@ -59,7 +59,8 @@ class GameScene: SKScene{
                 item.name == $0
             })
         }).forEach({circle in
-            circle.removeFromParent()
+            circle.run(SKAction.fadeOut(withDuration: 1))
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {circle.removeFromParent()})
         })
         
         circles = circles.filter({ item in
@@ -73,10 +74,14 @@ class GameScene: SKScene{
             let x = CGFloat.random(in: 0...self.frame.width - circleRadius)
             let y = CGFloat.random(in: 0...self.frame.height - circleRadius)
             let position = CGPoint(x: x, y: y)
-            circles.append(addCircle(interest: interest, position: position))
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.2, execute: {
+                let newCircle = self.addCircle(interest: interest, position: position)
+                newCircle.alpha = 0
+                newCircle.run(SKAction.fadeIn(withDuration: 1))
+                self.applyForces()
+                self.circles.append(newCircle)
+            })
         }
-        
-        applyForces()
         
     }
     
@@ -224,7 +229,7 @@ class GameSceneLoader: ObservableObject {
         let height = window.safeAreaLayoutGuide.layoutFrame.height
         
         scene.size = CGSize(width: width, height: height)
-        scene.scaleMode = .fill
+        scene.scaleMode = .aspectFill
         self.scene = scene
     }
     
