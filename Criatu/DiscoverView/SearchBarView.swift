@@ -13,6 +13,7 @@ struct SearchBarView: View {
     
     @ObservedObject var bank: DiscoverBank
     
+    @ObservedObject var palette = Palette.shared
     var body: some View {
         HStack {
             HStack {
@@ -45,7 +46,7 @@ struct SearchBarView: View {
                     self.bank.isSearching = false
                     self.bank.clearAllInterests()
                 }
-                .foregroundColor(Color(.systemBlue))
+                .foregroundColor(palette.main)
             }
         }
         .padding(.horizontal)

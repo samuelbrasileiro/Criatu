@@ -22,21 +22,24 @@ struct OnboardItemView: View {
             
             HStack(alignment:.center, spacing: nil){
                 Spacer()
-            }.frame(minWidth: 0, maxWidth: .infinity, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, maxHeight: 50, alignment: .center)
+            }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 50, alignment: .center)
             .disabled(!disabled)
             .opacity(disabled ? 1 : 0)
             
-            Image(imageName).scaledToFit()
+            Image(imageName)
+                .resizable()
+                
                 .frame(idealWidth: 100, idealHeight: 100, maxHeight: 400)
+                .scaledToFit()
+                .clipped()
             
             Spacer()
         ZStack{
             
 
             Rectangle()
-                .fill(Color(UIColor(palette.main).withAlphaComponent(0.15)))
+                .fill(Color(UIColor(palette.main).withAlphaComponent(0.3)))
                 .cornerRadius(40, corners: [.topLeft, .topRight])
-                //.shadow(radius: 7)
                 
                 .scaledToFill()
                 
