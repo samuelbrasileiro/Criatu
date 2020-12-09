@@ -57,13 +57,11 @@ struct OnboardItemView: View {
                     .multilineTextAlignment(.center)
                     .padding([.top, .leading, .trailing])
                 
-                Button(action: {
-                    delegate?.finishOnboarding()
-                }, label: {
+                NavigationLink(destination: EndOnboardingView(delegate: delegate)){
                     Text("Começar")
                         .multilineTextAlignment(.center)
                         .foregroundColor(Color(.systemBackground))
-                })
+                }
                 .foregroundColor(Color.primary)
                 .padding(.vertical)
                 .padding(.horizontal, 80)
@@ -79,6 +77,7 @@ struct OnboardItemView: View {
             
         }
         }
+        .background(Color(.systemGray6))
     }
 }
 

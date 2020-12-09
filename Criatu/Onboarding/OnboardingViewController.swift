@@ -29,11 +29,11 @@ class OnboardingViewController: UIViewController, OnboardingDelegate {
         self.view.addSubview(onboardHost!.view)
         
         let constraints = [
-            onboardHost!.view.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 0),
+            onboardHost!.view.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 0),
             onboardHost!.view.centerXAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerXAnchor, constant: 0),
             onboardHost!.view.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 0),
             onboardHost!.view.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: 0),
-            onboardHost!.view.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: 0)
+            onboardHost!.view.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0)
         ]
         NSLayoutConstraint.activate(constraints)
             

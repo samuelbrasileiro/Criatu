@@ -12,7 +12,7 @@ class GameScene: SKScene{
     
     let circleRadius:CGFloat = 50
     var circles:[SKShapeNode] = []
-    let bgColor = UIColor.systemBackground
+    let bgColor = UIColor.systemGray6
     let unSelectedColor = UIColor.systemGray
     let selectedColor = Palette.shared.main
     
@@ -197,21 +197,6 @@ class GameScene: SKScene{
         let scalingFactor = min(circle.frame.width / labelNode.frame.width, circle.frame.height / labelNode.frame.height)
         labelNode.fontSize *= (scalingFactor-0.01)
         
-        /*if labelNode.text!.filter({$0 == " "}).count > 0{
-         labelNode.preferredMaxLayoutWidth = circle.frame.width
-         circle.setScale(0.5 / scalingFactor)
-         labelNode.fontSize *= 1.1 * scalingFactor
-         }
-         
-         
-         else if labelNode.text!.count < 6{
-         labelNode.fontSize *= scalingFactor
-         }
-         else{
-         labelNode.fontSize *= scalingFactor
-         circle.setScale(0.7 / scalingFactor)
-         }*/
-        
     }
     
     
@@ -224,16 +209,34 @@ class GameSceneLoader: ObservableObject {
     init(){
         
         let scene = GameScene()
-        let window = UIApplication.shared.windows[0]
-        let width = window.safeAreaLayoutGuide.layoutFrame.width
-        let height = window.safeAreaLayoutGuide.layoutFrame.height
         
-        scene.size = CGSize(width: width, height: height)
+        if UserDefaults.standard.bool(forKey: Keys.kHasLaunchedOnce){
+            let window = UIApplication.shared.windows[0]
+            let width = window.safeAreaLayoutGuide.layoutFrame.width
+            let height = window.safeAreaLayoutGuide.layoutFrame.height - 200
+            print("socorro", width, height)
+            scene.size = CGSize(width: width, height: height)
+            scene.position = CGPoint(x: scene.position.x, y: scene.position.y - 100)
+        }
+        else{
+            let window = UIApplication.shared.windows[0]
+            let width = window.safeAreaLayoutGuide.layoutFrame.width
+            let height = window.safeAreaLayoutGuide.layoutFrame.height - 106.5
+            print(width, height)
+            scene.size = CGSize(width: width, height: height)
+        }
+        
+        
         scene.scaleMode = .aspectFill
         self.scene = scene
     }
     
-    
+    func changeSize(size: CGSize){
+        print("chatisse")
+        scene.size = size
+        print(size)
+        scene.scaleMode = .aspectFill
+    }
 
 }
 
@@ -247,7 +250,7 @@ struct DynamicCircleView: View {
     var body: some View {
         
         
-        ZStack(alignment: .bottom) {
+        VStack {
             
             ZStack(alignment: .topTrailing) {
                 
@@ -264,6 +267,8 @@ struct DynamicCircleView: View {
                         .background(palette.main)
                         .clipShape(Circle())
                         .shadow(radius: 7)
+                        .padding()
+                    
                 }
                 
                 
@@ -292,9 +297,9 @@ struct DynamicCircleView: View {
             .background(palette.main)
             .cornerRadius(10)
             .padding(.bottom, 40)
-            
+            .background(Color.clear)
         }
-        
+        .background(Color(.systemGray6))
         .navigationBarHidden(!(delegate == nil))
         .navigationBarTitle("Selecione os novos interesses", displayMode: .inline)
         

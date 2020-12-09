@@ -9,20 +9,36 @@ import SwiftUI
 
 struct EndOnboardingView: View {
     @ObservedObject var palette = Palette.shared
+    var delegate: OnboardingDelegate?
+    
     var body: some View {
         
         ZStack {
             
-            Color(.systemBackground).ignoresSafeArea(.all, edges: .all)
+            Color(.systemGray6).ignoresSafeArea(.all, edges: .all)
             
             VStack {
                 Spacer()
-                Text("Agora é o momento de escolher seus interesses!!!").font(.largeTitle).fontWeight(.bold).multilineTextAlignment(.center).padding().foregroundColor(palette.main)
+                Text("Agora é o momento de escolher os seus interesses!")
+                    .font(.system(size: 30, weight: .bold, design: .rounded))
+                    .fontWeight(.bold)
+                    .multilineTextAlignment(.center)
+                    .padding(40)
+                    .foregroundColor(palette.main)
                 Spacer()
-                Image("image_3").frame(alignment: .bottom)
+                Image("logo")
+                    .resizable()
                     .scaledToFit()
+                    .frame(height: 100)
+                    
                 
             }.frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, maxWidth: .infinity, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, maxHeight: .infinity, alignment: .center)
+        }
+        .navigationBarHidden(true)
+        .onAppear{
+            Timer.scheduledTimer(withTimeInterval: 4, repeats: false){_ in
+                delegate?.finishOnboarding()
+            }
         }
 
     }
