@@ -133,7 +133,6 @@ struct ProfileView: View {
                         .fill(Color(.systemGray6).opacity(0.9))
                         .cornerRadius(40, corners: [.topLeft, .topRight])
                         .shadow(radius: 15).opacity(0.9)
-                    
                     VStack(alignment: .leading, spacing: 5){
                         Text("Cor do tema")
                             .font(.title3)
@@ -210,10 +209,13 @@ struct ProfileView: View {
                         
                         Divider()
                         
-                        Spacer()
                         
+                        
+                        Spacer()
                     }
-                }
+
+                    }
+                
                 
             }
             .animation(.spring())
@@ -222,7 +224,7 @@ struct ProfileView: View {
                 self.updateView.toggle()
             }
         }.accentColor(palette.main)
-        
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

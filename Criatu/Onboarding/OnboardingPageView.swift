@@ -27,27 +27,28 @@ struct OnboardingPageView: View {
                     
                 }
                 .tabViewStyle(PageTabViewStyle())
-                .padding(.bottom, 70)
-                .navigationBarHidden(true)
+                .padding(.bottom, 110)
                 
                 NavigationLink(destination: EndOnboardingView(delegate: delegate)){
                     Text("Pular")
+                        .bold()
                         .padding()
                         .padding(.top)
                         
                 }
                 .foregroundColor(palette.main)
                 .padding()
-                .navigationBarHidden(true)
+                
                 
             }
             .background(Color(.systemGray6))
             .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
+            .navigationBarHidden(true)
             
         }
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
         .ignoresSafeArea(.all, edges: .top)
-        
+        .navigationViewStyle(StackNavigationViewStyle())
         
     }
     

@@ -18,7 +18,7 @@ struct SearchBarView: View {
         HStack {
             HStack {
                 Image(systemName: "magnifyingglass")
-                TextField("Search", text: $bank.searchText, onEditingChanged: {
+                TextField("Como está sua vibe?", text: $bank.searchText, onEditingChanged: {
                     isEditing in
                     if !self.bank.isSearching{
                         self.bank.getAllInterests()
@@ -40,7 +40,7 @@ struct SearchBarView: View {
             .cornerRadius(10.0)
             
             if bank.isSearching {
-                Button("Cancel") {
+                Button("Cancelar") {
                     UIApplication.shared.endEditing(true)
                     self.bank.searchText = ""
                     self.bank.isSearching = false

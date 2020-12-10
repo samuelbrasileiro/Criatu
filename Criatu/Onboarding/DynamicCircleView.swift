@@ -8,6 +8,9 @@
 import SwiftUI
 import SpriteKit
 
+protocol LoaderDelegate{
+    func updateFinishButton(hide: Bool)
+}
 class GameScene: SKScene{
     
     let circleRadius:CGFloat = 50
@@ -16,9 +19,16 @@ class GameScene: SKScene{
     let unSelectedColor = UIColor.systemGray
     let selectedColor = Palette.shared.main
     
+    var loaderDelegate: LoaderDelegate?
     var interests:[Interest] = []
     
-    var selectedInterests: [String] = []
+    var selectedInterests: [String] = []{
+        didSet{
+            
+            loaderDelegate?.updateFinishButton(hide: selectedInterests.isEmpty)
+            
+        }
+    }
     
     var palette = Palette.shared
     
@@ -202,19 +212,25 @@ class GameScene: SKScene{
     
 }
 
-class GameSceneLoader: ObservableObject {
+class GameSceneLoader: ObservableObject, LoaderDelegate {
+    func updateFinishButton(hide: Bool) {
+        buttonIsDisabled = hide
+    }
+    
     
     @Published var scene : GameScene
     
+    @Published var buttonIsDisabled = true
     init(){
         
         let scene = GameScene()
+        
         
         if UserDefaults.standard.bool(forKey: Keys.kHasLaunchedOnce){
             let window = UIApplication.shared.windows[0]
             let width = window.safeAreaLayoutGuide.layoutFrame.width
             let height = window.safeAreaLayoutGuide.layoutFrame.height - 200
-            print("socorro", width, height)
+
             scene.size = CGSize(width: width, height: height)
             scene.position = CGPoint(x: scene.position.x, y: scene.position.y - 100)
         }
@@ -229,10 +245,10 @@ class GameSceneLoader: ObservableObject {
         
         scene.scaleMode = .aspectFill
         self.scene = scene
+        self.scene.loaderDelegate = self
     }
     
     func changeSize(size: CGSize){
-        print("chatisse")
         scene.size = size
         print(size)
         scene.scaleMode = .aspectFill
@@ -291,10 +307,11 @@ struct DynamicCircleView: View {
                     .foregroundColor(Color(.systemBackground))
                     .font(.title2)
             })
+            .disabled(loader.buttonIsDisabled)
             .foregroundColor(Color.primary)
             .padding(.vertical)
             .padding(.horizontal,80)
-            .background(palette.main)
+            .background(loader.buttonIsDisabled ? Color(.systemGray3) : palette.main)
             .cornerRadius(10)
             .padding(.bottom, 40)
             .background(Color.clear)

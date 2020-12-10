@@ -34,48 +34,50 @@ struct OnboardItemView: View {
                 .clipped()
             
             Spacer()
-        ZStack{
-            
-
-            Rectangle()
-                .fill(Color(UIColor(palette.main).withAlphaComponent(0.3)))
-                .cornerRadius(40, corners: [.topLeft, .topRight])
-                
-                .scaledToFill()
+            ZStack{
                 
                 
-            
-            VStack {
-                Text(titleText).foregroundColor(palette.main)
-                    .font(.title)
-                    .bold()
-                    .padding(.top, -20)
-                    .padding(.bottom, 20)
+                Rectangle()
+                    .fill(Color(UIColor(palette.main).withAlphaComponent(0.3)))
+                    .cornerRadius(40, corners: [.topLeft, .topRight])
+                    
+                    .scaledToFill()
                 
-                Text(descriptionText)
-                    .font(.title2)
-                    .multilineTextAlignment(.center)
-                    .padding([.top, .leading, .trailing])
                 
-                NavigationLink(destination: EndOnboardingView(delegate: delegate)){
-                    Text("Começar")
+                
+                VStack {
+                    Text(titleText).foregroundColor(palette.main)
+                        .font(.title)
+                        .bold()
+                        .padding(.top, -20)
+                        .padding(.bottom, 20)
+                    
+                    Text(descriptionText)
+                        .font(.title2)
                         .multilineTextAlignment(.center)
-                        .foregroundColor(Color(.systemBackground))
-                }
-                .foregroundColor(Color.primary)
-                .padding(.vertical)
-                .padding(.horizontal, 80)
-                .background(palette.main)
-                .cornerRadius(10)
-                .disabled(disabled)
-                .opacity(disabled ? 0 : 1)
-                .padding(.top, 40)
+                        .padding([.top, .leading, .trailing])
+                    
+                    NavigationLink(destination: EndOnboardingView(delegate: delegate)){
+                        Text("Começar")
+                            .multilineTextAlignment(.center)
+                            .foregroundColor(Color(.systemBackground))
+                            .padding(.vertical)
+                            .padding(.horizontal, 80)
+                            .background(palette.main)
+                            .cornerRadius(10)
+                            .disabled(disabled)
+                            .opacity(disabled ? 0 : 1)
+                            .padding(.top, 40)
+                    }
+                    .foregroundColor(Color.primary)
+                    
+                    
+                    
+                    Spacer()
+                    
+                }.frame(minWidth: 200, idealWidth: 300, maxWidth: .infinity, minHeight: 150, idealHeight: 200, maxHeight: 250, alignment: .center)
                 
-                Spacer()
-                
-            }.frame(minWidth: 200, idealWidth: 300, maxWidth: .infinity, minHeight: 150, idealHeight: 200, maxHeight: 250, alignment: .center)
-            
-        }
+            }
         }
         .background(Color(.systemGray6))
     }
