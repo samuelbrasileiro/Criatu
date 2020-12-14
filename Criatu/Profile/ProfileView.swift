@@ -7,6 +7,8 @@
 
 import SwiftUI
 import CoreData
+import UserNotifications
+
 class Palette: ObservableObject{
     static var shared: Palette = Palette()
     
@@ -66,6 +68,25 @@ struct ProfileView: View {
     
     @State var selectedIndex = Palette.shared.selectedMainColor
     @State var showNotification = true
+    //    {
+    //        didSet{
+    //            if showNotification{
+    //                let center = UNUserNotificationCenter.current()
+    //                center.requestAuthorization(options: [.alert, .sound, .badge]){ granted, error in
+    //                    if let error = error {
+    //                        print(error)
+    //                    }
+    //                    if !granted{
+    //                        showNotification = false
+    //                    }
+    //                }
+    //            }
+    //            else{
+    //                let center = UNUserNotificationCenter.current()
+    //                center.
+    //            }
+    //        }
+    //    }
     @State var changeColors = true
     @State var updateView = true
     @ObservedObject var palette = Palette.shared
@@ -191,7 +212,7 @@ struct ProfileView: View {
                                 Text("Notificações")
                             }
                             .toggleStyle(SwitchToggleStyle(tint: palette.main))
-                            
+                            .disabled(true)
                             .padding()
                             
                         }
@@ -213,8 +234,8 @@ struct ProfileView: View {
                         
                         Spacer()
                     }
-
-                    }
+                    
+                }
                 
                 
             }
@@ -222,9 +243,20 @@ struct ProfileView: View {
             .navigationBarHidden(true)
             .onAppear{
                 self.updateView.toggle()
+                let center = UNUserNotificationCenter.current()
+                
+                center.getNotificationSettings{settings in
+                    if settings .authorizationStatus == .authorized{
+                        showNotification = true
+                    }
+                    else{
+                        showNotification = false
+                    }
+                }
             }
         }.accentColor(palette.main)
         .navigationViewStyle(StackNavigationViewStyle())
+        
     }
 }
 
