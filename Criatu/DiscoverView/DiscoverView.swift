@@ -71,6 +71,7 @@ struct DiscoverView: View {
                                     .background(bank.items.filter({$0.isSelected}).count == 0 ? Color(.systemGray3) : palette.main)
                                     .foregroundColor(Color(.systemBackground))
                                     .cornerRadius(15)
+                                    .shadow(radius: 7)
                                     .disabled(bank.items.filter({$0.isSelected}).count == 0)
                                     .offset(y: bank.isDiscovering ? 300 : 0)
                                 
@@ -105,7 +106,7 @@ struct DiscoverView: View {
             }
             
             .alert(isPresented: $bank.didNotDiscoverStyle, content: {
-                Alert(title: Text("Mistura mal feita"), message: Text("Você já fez essa mistura ou misturou muito mal...\n Tente de novo selecionando mais itens!"), dismissButton: .default(Text("Beleza"), action: {
+                Alert(title: Text("Algo deu errado..."), message: Text("Tente de novo adicionando mais itens!"), dismissButton: .default(Text("Beleza"), action: {
                     self.bank.clear()
                     self.bank.addInterests()
                 }))

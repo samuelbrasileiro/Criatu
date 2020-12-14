@@ -229,15 +229,15 @@ class GameSceneLoader: ObservableObject, LoaderDelegate {
         if UserDefaults.standard.bool(forKey: Keys.kHasLaunchedOnce){
             let window = UIApplication.shared.windows[0]
             let width = window.safeAreaLayoutGuide.layoutFrame.width
-            let height = window.safeAreaLayoutGuide.layoutFrame.height - 200
-
+            let height = window.safeAreaLayoutGuide.layoutFrame.height - 312
+            
             scene.size = CGSize(width: width, height: height)
             scene.position = CGPoint(x: scene.position.x, y: scene.position.y - 100)
         }
         else{
             let window = UIApplication.shared.windows[0]
             let width = window.safeAreaLayoutGuide.layoutFrame.width
-            let height = window.safeAreaLayoutGuide.layoutFrame.height - 106.5
+            let height = window.safeAreaLayoutGuide.layoutFrame.height - 216
             print(width, height)
             scene.size = CGSize(width: width, height: height)
         }
@@ -253,7 +253,7 @@ class GameSceneLoader: ObservableObject, LoaderDelegate {
         print(size)
         scene.scaleMode = .aspectFill
     }
-
+    
 }
 
 struct DynamicCircleView: View {
@@ -268,9 +268,20 @@ struct DynamicCircleView: View {
         
         VStack {
             
-            ZStack(alignment: .topTrailing) {
+            HStack(alignment: .center) {
                 
-                SpriteView(scene: loader.scene)
+                VStack(alignment: .leading) {
+                    
+                    Text("Agora é o momento de escolher seus interesses!")
+                        .font(.system(size: 20, weight: .bold, design: .rounded))
+                        .multilineTextAlignment(.leading)
+                    
+                    Text("Use o botão de recarregar para descobrir novos interesses.")
+                        .font(.system(size: 13, weight: .regular, design: .rounded))
+                        .multilineTextAlignment(.leading)
+                    
+                }
+                .padding(.horizontal)
                 
                 Button(action: {
                     loader.scene.reloadData()
@@ -283,12 +294,15 @@ struct DynamicCircleView: View {
                         .background(palette.main)
                         .clipShape(Circle())
                         .shadow(radius: 7)
-                        .padding()
+                        .padding(.trailing, 30)
                     
                 }
                 
-                
             }
+            .padding(.bottom)
+            
+            SpriteView(scene: loader.scene)
+            
             
             Button(action: {
                 var interests: [Interest] = []
@@ -314,11 +328,10 @@ struct DynamicCircleView: View {
             .background(loader.buttonIsDisabled ? Color(.systemGray3) : palette.main)
             .cornerRadius(10)
             .padding(.bottom, 40)
-            .background(Color.clear)
         }
         .background(Color(.systemGray6))
         .navigationBarHidden(!(delegate == nil))
-        .navigationBarTitle("Selecione os novos interesses", displayMode: .inline)
+        .navigationBarTitle("", displayMode: .inline)
         
     }
 }

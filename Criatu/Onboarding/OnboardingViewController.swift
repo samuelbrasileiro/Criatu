@@ -55,6 +55,7 @@ class OnboardingViewController: UIViewController, OnboardingDelegate {
         self.addChild(selectionHost)
         selectionHost.view.translatesAutoresizingMaskIntoConstraints = false
         
+        self.view.backgroundColor = .systemGray6
         self.view.addSubview(selectionHost.view)
         
         let constraints = [
@@ -62,7 +63,7 @@ class OnboardingViewController: UIViewController, OnboardingDelegate {
             selectionHost.view.centerXAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerXAnchor, constant: 0),
             selectionHost.view.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 0),
             selectionHost.view.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: 0),
-            selectionHost.view.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0)
+            selectionHost.view.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: 0)
         ]
         NSLayoutConstraint.activate(constraints)
     }

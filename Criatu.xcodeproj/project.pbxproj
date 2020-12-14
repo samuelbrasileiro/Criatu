@@ -387,7 +387,7 @@
 				356A45A7255D836E00F892A1 /* Sources */,
 				356A45A8255D836E00F892A1 /* Frameworks */,
 				356A45A9255D836E00F892A1 /* Resources */,
-				38AA78C9A2E45AAF7EC23F98 /* [CP] Embed Pods Frameworks */,
+				0F806F3F1631B6ADA9788F4F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -425,7 +425,7 @@
 				356A45CB255D837000F892A1 /* Sources */,
 				356A45CC255D837000F892A1 /* Frameworks */,
 				356A45CD255D837000F892A1 /* Resources */,
-				EF8604BF9483DF1F3DD45943 /* [CP] Embed Pods Frameworks */,
+				7B89635A7ACCD63B1F6A8FAB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -529,7 +529,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		38AA78C9A2E45AAF7EC23F98 /* [CP] Embed Pods Frameworks */ = {
+		0F806F3F1631B6ADA9788F4F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -568,7 +568,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EF8604BF9483DF1F3DD45943 /* [CP] Embed Pods Frameworks */ = {
+		7B89635A7ACCD63B1F6A8FAB /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
