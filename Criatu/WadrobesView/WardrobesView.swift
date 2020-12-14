@@ -13,11 +13,16 @@ struct WardrobesView: View {
     
     @ObservedObject var palette = Palette.shared
     
+    @State var width = UIScreen.main.bounds.width - 50
+    @State var height = UIScreen.main.bounds.height - 200
+    
+    @State var info = SnapInfo()
     var body: some View {
         NavigationView{
             VStack {
                 if bank.styles.count > 0 {
-                    LazySnapHStack(data: bank.styles){ item in
+                    
+                    LazySnapHStack(data: bank.styles, info: info){ item in
                         
                         WardrobeView(style: item)
                             
@@ -37,6 +42,9 @@ struct WardrobesView: View {
             .background(Color(.systemGray6))
             .onAppear{
                 bank.getStyles()
+                
+                info.updateStartPoint(count: bank.styles.count)
+
             }
         }.accentColor(palette.main)
         .navigationViewStyle(StackNavigationViewStyle())
