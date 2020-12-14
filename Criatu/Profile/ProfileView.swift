@@ -12,9 +12,9 @@ import UserNotifications
 class Palette: ObservableObject{
     static var shared: Palette = Palette()
     
-    let colors: [Color] = [.systemPurple, .systemBlue, .systemRed, .systemGreen, .systemPink, .systemTeal, .systemOrange, .systemIndigo, .systemYellow].map{Color($0)}
+    let colors: [Color] = [.systemPurple, .systemBlue, .systemRed, .systemGreen, .systemPink, .systemTeal, .systemOrange, .systemIndigo].map{Color($0)}
     
-    let descriptions: [String] = ["Roxo Elétrico", "Azul Pacífico","Vermelho Melancia", "Verde Amoeba", "Rosa Choque", "Ciano Tiffany", "Laranja Laranja", "Roxo Duquesa", "Amarelo Night"]
+    let descriptions: [String] = ["Roxo Elétrico", "Azul Pacífico","Vermelho Melancia", "Verde Amoeba", "Rosa Choque", "Ciano Tiffany", "Laranja Laranja", "Roxo Duquesa"]
     
     var selectedMainColor: Int = 0{
         didSet{
@@ -28,7 +28,9 @@ class Palette: ObservableObject{
     private init(){
         
         selectedMainColor = Palette.restore(for: Keys.kPaletteMainColor)
-        
+        if selectedMainColor >= colors.count{
+            selectedMainColor -= 1
+        }
         self.main = colors[selectedMainColor]
     }
     
@@ -50,8 +52,21 @@ class Palette: ObservableObject{
 }
 
 
-struct ProfileView: View {
+struct ProfileView: View, OnboardingDelegate {
+    func isOnboarding() -> Bool {
+        return false
+    }
     
+    
+    func finishOnboarding() {
+        
+    }
+    
+    func endInterestSelection() {
+        isSelectingInterest = false
+    }
+    
+    @State var isSelectingInterest = false
     
     var name: String = "E aí, beleza?"
     var wardrobe: Int{
@@ -68,25 +83,7 @@ struct ProfileView: View {
     
     @State var selectedIndex = Palette.shared.selectedMainColor
     @State var showNotification = true
-    //    {
-    //        didSet{
-    //            if showNotification{
-    //                let center = UNUserNotificationCenter.current()
-    //                center.requestAuthorization(options: [.alert, .sound, .badge]){ granted, error in
-    //                    if let error = error {
-    //                        print(error)
-    //                    }
-    //                    if !granted{
-    //                        showNotification = false
-    //                    }
-    //                }
-    //            }
-    //            else{
-    //                let center = UNUserNotificationCenter.current()
-    //                center.
-    //            }
-    //        }
-    //    }
+
     @State var changeColors = true
     @State var updateView = true
     @ObservedObject var palette = Palette.shared
@@ -106,28 +103,28 @@ struct ProfileView: View {
                 
                 ZStack{
                     Circle()
-                        .frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        .frame(width: 40, height: 40, alignment: .center)
                         .foregroundColor(palette.main)
                         .opacity(0.6)
                         .position(x: 70, y: 60)
                     Circle()
-                        .frame(width: 50, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        .frame(width: 50, height: 50, alignment: .center)
                         .foregroundColor(palette.main)
                         .opacity(0.8)
                         .position(x: 20, y: 30)
                     Circle()
-                        .frame(width: 30, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        .frame(width: 30, height: 30, alignment: .center)
                         .foregroundColor(palette.main)
                         .opacity(0.8)
                         .position(x: 70, y: 20)
                     
                     Circle()
-                        .frame(width: 30, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        .frame(width: 30, height: 30, alignment: .center)
                         .foregroundColor(palette.main)
                         .opacity(0.8)
                         .position(x: 15, y: 80)
                     Circle()
-                        .frame(width: 20, height: 20, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        .frame(width: 20, height: 20, alignment: .center)
                         .foregroundColor(palette.main)
                         .opacity(0.4)
                         .position(x: 47, y: 85)
@@ -138,7 +135,7 @@ struct ProfileView: View {
                         .shadow(radius: 7)
                         .padding(20.0)
                     
-                } .frame(width: 80, height: 80, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                } .frame(width: 80, height: 80, alignment: .center)
                 
                 
                 Text("Armários")
@@ -218,7 +215,12 @@ struct ProfileView: View {
                         }
                         Divider()
                         
-                        NavigationLink(destination: DynamicCircleView()){
+                        NavigationLink(destination: DynamicCircleView(delegate: self), isActive: $isSelectingInterest){
+                            EmptyView()
+                        }
+                        Button(action: {
+                            isSelectingInterest = true
+                        }){
                             HStack{
                                 Text("Interesses")
                                     .foregroundColor(.primary)
@@ -254,6 +256,7 @@ struct ProfileView: View {
                     }
                 }
             }
+            .navigationTitle("Perfil")
         }.accentColor(palette.main)
         .navigationViewStyle(StackNavigationViewStyle())
         

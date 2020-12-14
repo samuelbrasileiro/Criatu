@@ -11,9 +11,12 @@ import SwiftUI
 protocol OnboardingDelegate{
     func finishOnboarding()
     func endInterestSelection()
+    func isOnboarding() -> Bool
 }
 class OnboardingViewController: UIViewController, OnboardingDelegate {
-    
+    func isOnboarding() -> Bool {
+        true
+    }
     
     var onboardHost:UIHostingController<OnboardingPageView>?
     

@@ -19,7 +19,7 @@ struct OnboardingPageView: View {
                 
                 TabView {
                     
-                    OnboardItemView(titleText: "Descubra estilos!", descriptionText: "Por meio de cheiros, sons gostos e muitas outras coisas", imageName: "image_0", disabled: true, delegate: delegate)
+                    OnboardItemView(titleText: "Descubra estilos!", descriptionText: "Por meio da combinação de fotos, músicas, lembranças e muito mais", imageName: "image_0", disabled: true, delegate: delegate)
                     
                     OnboardItemView(titleText: "Construa armários!", descriptionText:"Customize suas descobertas em armários que refletem sua personalidade", imageName: "image_1", disabled: true, delegate: delegate)
                     

@@ -9,8 +9,8 @@ import SwiftUI
 
 class SnapInfo: ObservableObject{
     @Published var offset : CGFloat = 0
-    @Published var width = UIScreen.main.bounds.width - 50
-    @Published var height: CGFloat = UIScreen.main.bounds.height - 220
+    @Published var width = UIApplication.shared.windows[0].safeAreaLayoutGuide.layoutFrame.width - 50
+    @Published var height: CGFloat = UIApplication.shared.windows[0].safeAreaLayoutGuide.layoutFrame.height - 220
     @Published var op : CGFloat = 0
     
     @Published var count : CGFloat = 0

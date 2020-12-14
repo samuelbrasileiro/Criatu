@@ -267,7 +267,7 @@ class GameSceneLoader: ObservableObject, LoaderDelegate {
         if UserDefaults.standard.bool(forKey: Keys.kHasLaunchedOnce){
             let window = UIApplication.shared.windows[0]
             let width = window.safeAreaLayoutGuide.layoutFrame.width
-            let height = window.safeAreaLayoutGuide.layoutFrame.height - 312
+            let height = window.safeAreaLayoutGuide.layoutFrame.height - 320
             
             scene.size = CGSize(width: width, height: height)
             scene.position = CGPoint(x: scene.position.x, y: scene.position.y - 100)
@@ -275,7 +275,7 @@ class GameSceneLoader: ObservableObject, LoaderDelegate {
         else{
             let window = UIApplication.shared.windows[0]
             let width = window.safeAreaLayoutGuide.layoutFrame.width
-            let height = window.safeAreaLayoutGuide.layoutFrame.height - 216
+            let height = window.safeAreaLayoutGuide.layoutFrame.height - 230
             print(width, height)
             scene.size = CGSize(width: width, height: height)
         }
@@ -320,7 +320,7 @@ struct DynamicCircleView: View {
                     
                 }
                 .padding(.horizontal)
-                
+                Spacer()
                 Button(action: {
                     loader.scene.reloadData()
                     
@@ -332,12 +332,12 @@ struct DynamicCircleView: View {
                         .background(palette.main)
                         .clipShape(Circle())
                         .shadow(radius: 7)
-                        .padding(.trailing, 30)
+                        .padding(.trailing, 20)
                     
                 }
                 
             }
-            .padding(.bottom)
+            .padding(.vertical)
             
             SpriteView(scene: loader.scene)
             
@@ -358,17 +358,18 @@ struct DynamicCircleView: View {
                     .multilineTextAlignment(.center)
                     .foregroundColor(Color(.systemBackground))
                     .font(.title2)
+                    .foregroundColor(Color.primary)
+                    .padding(.vertical)
+                    .padding(.horizontal,80)
+                    .background(loader.buttonIsDisabled ? Color(.systemGray3) : palette.main)
+                    .cornerRadius(10)
             })
             .disabled(loader.buttonIsDisabled)
-            .foregroundColor(Color.primary)
-            .padding(.vertical)
-            .padding(.horizontal,80)
-            .background(loader.buttonIsDisabled ? Color(.systemGray3) : palette.main)
-            .cornerRadius(10)
+            
             .padding(.bottom, 40)
         }
         .background(Color(.systemGray6))
-        .navigationBarHidden(!(delegate == nil))
+        .navigationBarHidden((delegate!.isOnboarding()))
         .navigationBarTitle("", displayMode: .inline)
         
     }
