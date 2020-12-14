@@ -65,7 +65,7 @@ struct DiscoverView: View {
                                 self.bank.discoverStyle()
                                 
                             }) {
-                                Text("Misture")
+                                Text("Combinar")
                                     .padding()
                                     .padding(.horizontal, 80)
                                     .background(bank.items.filter({$0.isSelected}).count == 0 ? Color(.systemGray3) : palette.main)
