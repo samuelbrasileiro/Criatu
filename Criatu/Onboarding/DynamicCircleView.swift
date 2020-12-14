@@ -79,7 +79,7 @@ class GameScene: SKScene{
             })
         })
         
-        for interest in filteredInterest.shuffled().prefix(12 - circles.count){
+        for interest in filteredInterest.shuffled().prefix(9 - circles.count){
             
             let x = CGFloat.random(in: 0...self.frame.width - circleRadius)
             let y = CGFloat.random(in: 0...self.frame.height - circleRadius)
@@ -102,7 +102,8 @@ class GameScene: SKScene{
         
         for node in nodes{
             
-            if node.name != "text"{
+            if node.name != "text" && node.name != "node"{
+                
                 let circle = node as! SKShapeNode
                 
                 if circle.physicsBody?.isDynamic == true{
@@ -154,7 +155,7 @@ class GameScene: SKScene{
     }
     func addTags(){
         
-        for interest in self.interests.shuffled().prefix(12){
+        for interest in self.interests.shuffled().prefix(9){
             
             let x = CGFloat.random(in: 0...self.frame.width - circleRadius)
             let y = CGFloat.random(in: 0...self.frame.height - circleRadius)
@@ -182,31 +183,68 @@ class GameScene: SKScene{
         circle.physicsBody?.affectedByGravity = false
         circle.physicsBody?.restitution = 1
         circle.name = interest.attributes.id
-        
-        let insideText = SKLabelNode(text: interest.attributes.name)
-        
-        insideText.numberOfLines = 0
-        insideText.verticalAlignmentMode = .center
-        insideText.horizontalAlignmentMode = .center
-        insideText.fontSize = 32
-        insideText.name = "text"
-        insideText.fontName = "system"
-        insideText.fontColor = .systemBackground
-        insideText.colorBlendFactor = 1.0
-        
-        calculateFontSize(labelNode: insideText, circle: circle)
-        circle.addChild(insideText)
+        circle.addChild(textNode(text: interest.attributes.name, circle: circle))
         
         self.addChild(circle)
         return circle
     }
     
-    func calculateFontSize(labelNode:SKLabelNode, circle: SKShapeNode){
+    func textNode(text:String,circle:SKShapeNode)->SKNode{
+        
+        let words = text.components(separatedBy: " ")
+        let node = SKNode()
+        node.name = "node"
+        
+        if words.count > 0{
+            
+            let insideText = SKLabelNode(text:text)
+            insideText.numberOfLines = 1
+            insideText.verticalAlignmentMode = .center
+            insideText.horizontalAlignmentMode = .center
+            insideText.fontSize = 32
+            insideText.name = "text"
+            insideText.fontName = "system"
+            insideText.fontColor = .systemBackground
+            insideText.colorBlendFactor = 1.0
+            let _ = calculateFontSize(labelNode: insideText, circle: circle)
+            node.addChild(insideText)
+        }
+        
+        return node
+        
+    }
+    
+    func fixString(text:String) -> String{
+        var newString = ""
+        let words = text.components(separatedBy: " ")
+        var index = 0
+        
+        for word in words{
+            
+            if index < words.count-1{
+                
+                newString = newString + word + "\n"
+            }
+            else{
+                newString = newString + word
+            }
+            index = index + 1
+        }
+        return newString
+    }
+    
+    func calculateFontSize(labelNode:SKLabelNode, circle: SKShapeNode) -> CGFloat{
         
         
-        let scalingFactor = min(circle.frame.width / labelNode.frame.width, circle.frame.height / labelNode.frame.height)
-        labelNode.fontSize *= (scalingFactor-0.01)
+        let scalingFactor = min(circle.frame.width / labelNode.frame.width, (circle.frame.height - 10) / labelNode.frame.height)
         
+        let words = labelNode.text!.components(separatedBy: "\n ")
+        
+        if words.count == 1{
+            labelNode.fontSize *= (scalingFactor - CGFloat(1.0/Double(labelNode.text!.count)))
+        }
+     
+        return labelNode.fontSize
     }
     
     
