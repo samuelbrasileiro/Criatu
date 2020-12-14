@@ -124,6 +124,7 @@ struct MusicItemView: View{
     
     func play(url:URL) {                
         do {
+            try AVAudioSession.sharedInstance().setCategory(.playback)
             
             preview.player = try AVAudioPlayer(contentsOf: url)
             preview.player!.prepareToPlay()

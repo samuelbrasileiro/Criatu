@@ -6,8 +6,8 @@ target 'Criatu' do
   use_frameworks!
 
   # Pods for Criatu
-	pod 'Firebase/Core'
-	pod 'Firebase/Database'
+  pod 'Firebase/Core'
+  pod 'Firebase/Database'
   pod 'Firebase/Storage'
   pod 'Firebase/Messaging'
   
