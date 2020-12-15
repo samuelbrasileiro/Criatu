@@ -72,10 +72,11 @@ struct DiscoverView: View {
                                     .foregroundColor(Color(.systemBackground))
                                     .cornerRadius(15)
                                     .shadow(radius: 7)
-                                    .disabled(bank.items.filter({$0.isSelected}).count == 0)
-                                    .offset(y: bank.isDiscovering ? 300 : 0)
+                                    
                                 
                             }
+                            .disabled(bank.items.filter({$0.isSelected}).count == 0)
+                            .offset(y: bank.isDiscovering ? 300 : 0)
                             .padding(10)
                         }
                         
