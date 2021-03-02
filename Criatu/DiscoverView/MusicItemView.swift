@@ -44,7 +44,6 @@ struct MusicItemView: View{
                 changeColors()
                 delegate?.uploadView()
             }){
-                
                 HStack{
                     
                     VStack(alignment: .leading, spacing: 4){
@@ -95,6 +94,7 @@ struct MusicItemView: View{
                     })
                     
                 }
+                .accessibilityIdentifier("MusicButton")
                 .padding()
                 .frame(minHeight: 0, maxHeight: 100, alignment: .center)
                 .background(backgroundColor)

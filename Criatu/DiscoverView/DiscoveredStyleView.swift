@@ -16,6 +16,7 @@ struct DiscoveredStyleView: View {
             HStack{
                 Spacer()
                 WardrobeView(style: style)
+                    .accessibilityIdentifier("WardrobeView")
                     .frame(width: UIScreen.main.bounds.width - 50, height: 500)
                 Spacer()
             }

@@ -23,12 +23,37 @@ class CriatuUITests: XCTestCase {
     }
 
     func testExample() throws {
-        // UI tests must launch the application that they test.
         let app = XCUIApplication()
         app.launch()
+        
+        sleep(4)
+        
+        let buttonsQuery = app.buttons.matching(identifier: "ImageButton")
+        
+        
+        buttonsQuery.element(boundBy: 0).tap()
+        buttonsQuery.element(boundBy: 1).tap()
+        buttonsQuery.element(boundBy: 2).tap()
+        buttonsQuery.element(boundBy: 3).tap()
+        
+        let musicsQuery = app.buttons.matching(identifier: "MusicButton-MusicButton-MusicButton")
+        
+        musicsQuery.element(boundBy: 0).tap()
+        musicsQuery.element(boundBy: 1).tap()
+        
+        app.buttons["Combinar"].tap()
+        
+        sleep(5)
+        
+        app.buttons["WardrobeView"].tap()
+        
+        let clothingQuery = app.buttons.matching(identifier: "ClothingButton")
+        clothingQuery.element(boundBy: 0).tap()
+        
+        
+//        XCTAssert(app.buttons["WardrobeView"].exists, "O botão 'Adicionar à Siri' está funcionando.")
 
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
     }
 
     func testLaunchPerformance() throws {
