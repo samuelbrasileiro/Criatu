@@ -2,11 +2,10 @@
 //  CriatuUITests.swift
 //  CriatuUITests
 //
-//  Created by Samuel Brasileiro on 12/11/20.
+//  Created by Danilo Araújo on 02/03/21.
 //
 
 import XCTest
-@testable import Criatu
 
 class CriatuUITests: XCTestCase {
 
