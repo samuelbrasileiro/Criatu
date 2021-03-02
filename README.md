@@ -9,9 +9,11 @@
 1. Create your Feature or Fix Branch
   * `git checkout -b feature/AmazingFeature`
   * `git checkout -b fix/AmazingFix`
+  * `git checkout -b test/AmazingTest`
 2. Commit your Changes
   * `git commit -m 'Feature(AmazingFeature): Add some AmazingFeature`
   * `git commit -m 'Fix(AmazingFix): Fixes a bug`
+  * `git commit -m 'Test(AmazingFeature): UI Button Test
 3. Push to the Branch
   * `git push origin feature/AmazingFeature`
   * `git push origin fix/AmazingFix`
