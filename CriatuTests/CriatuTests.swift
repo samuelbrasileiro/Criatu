@@ -19,7 +19,6 @@ class CriatuTests: XCTestCase {
     }
 
     func testRedirectButton() throws {
-        
         if let url = URL(string: "https://www.hackingwithswift.com") {
             UIApplication.shared.open(url)
         }

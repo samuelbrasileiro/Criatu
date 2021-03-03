@@ -32,6 +32,7 @@ class DiscoverBank: ObservableObject, Identifiable, DiscoverDelegate {
     
     @Published var isDiscovering: Bool = false
     
+    var minimumSelectedItens: Int = 0
     
     init() {
         self.clear()
@@ -97,7 +98,7 @@ class DiscoverBank: ObservableObject, Identifiable, DiscoverDelegate {
             $0.isSelected
         }
         
-        Timer.scheduledTimer(withTimeInterval: 4, repeats: false){ _ in
+        Timer.scheduledTimer(withTimeInterval: 2, repeats: false){ _ in
             self.isDiscovering = false
             let context = AppDelegate.viewContext
             
@@ -119,14 +120,14 @@ class DiscoverBank: ObservableObject, Identifiable, DiscoverDelegate {
             do {
                 let closets = try context.fetch(closetsRequest)
                 
-                if !sortedIDs.contains(where: { id in id.value >= 3 && !closets.contains(where: {$0.id == id.key})}){
+                if !sortedIDs.contains(where: { id in id.value >= self.minimumSelectedItens && !closets.contains(where: {$0.id == id.key})}){
                     self.didNotDiscoverStyle = true
                     print("You already have all suitable closets")
                     return
                 }
                 for id in sortedIDs{
                     if !closets.contains(where: {$0.id == id.key}){
-                        if id.value >= 3{
+                        if id.value >= self.minimumSelectedItens{
                             
                             FirebaseHandler.readCollection(.closets, id: id.key, dataType: Style.Database.self) { result in
                                 if case .success(let attributes) = result {
