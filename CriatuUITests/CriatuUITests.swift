@@ -33,10 +33,8 @@ class CriatuUITests: XCTestCase {
         
         buttonsQuery.element(boundBy: 0).tap()
         buttonsQuery.element(boundBy: 1).tap()
-        buttonsQuery.element(boundBy: 2).tap()
         
         let musicsQuery = app.buttons.matching(identifier: "MusicButton-MusicButton-MusicButton")
-        
         musicsQuery.element(boundBy: 0).tap()
         
         app.buttons["Combinar"].tap()
@@ -57,12 +55,4 @@ class CriatuUITests: XCTestCase {
         XCTAssert(app.buttons["redirectToStore"].exists, "O botão de redirecionar a loja foi encontrado!")
     }
 
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTApplicationLaunchMetric()]) {
-                XCUIApplication().launch()
-            }
-        }
-    }
 }

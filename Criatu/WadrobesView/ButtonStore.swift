@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct ButtonStore: View {
-    @State private var didTap:Bool = false
+    @State var didTap:Bool = false
     @Environment(\.openURL) var openURL
-
+    internal var didAppear: ((Self) -> Void)? // 1.
+    
     var body: some View {
         
         Button(action: {
@@ -42,9 +43,7 @@ struct ButtonStore: View {
                        
                       
                 )
-            
-                
-        })
+        }).onAppear { self.didAppear?(self) } // 2.
       
         
     }

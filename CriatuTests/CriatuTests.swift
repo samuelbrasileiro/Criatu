@@ -22,10 +22,14 @@ final class CriatuTests: XCTestCase {
     }
 
     func testRedirectButton() throws {
-        let view = ButtonStore()
-        let text = try view.inspect().button().text()
+        var view = ButtonStore()
         
-        XCTAssert(text, "Visitar Loja", "Botão visitar a loja funcionando")
+        view.on(\.didAppear) { view in
+                XCTAssertFalse(try view.actualView().didTap, "Botão da loja não clickado")
+                try view.find(button: "Visitar Loja").tap()
+            XCTAssertTrue(try view.actualView().didTap, "Botão da loja clickado!")
+            
+        }
     }
 
     func testPerformanceExample() throws {
