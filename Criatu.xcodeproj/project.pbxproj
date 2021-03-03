@@ -23,6 +23,7 @@
 		283CFC81256FE88600702DAE /* OnboardingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283CFC7B256FE88600702DAE /* OnboardingPageView.swift */; };
 		283CFC83256FE88600702DAE /* OnboardItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283CFC7D256FE88600702DAE /* OnboardItemView.swift */; };
 		28D999F4256702150003DE45 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28D999F3256702150003DE45 /* GoogleService-Info.plist */; };
+		2CB3178D25ED11DB005BB5B5 /* ButtonStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB3178C25ED11DB005BB5B5 /* ButtonStore.swift */; };
 		35091E0E25669A7500F94A4A /* LazyWaterfallGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35091E0D25669A7500F94A4A /* LazyWaterfallGrid.swift */; };
 		35091E282566C86D00F94A4A /* MusicItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35091E272566C86D00F94A4A /* MusicItem.swift */; };
 		35091E312566C91000F94A4A /* ImageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35091E302566C91000F94A4A /* ImageItem.swift */; };
@@ -97,6 +98,7 @@
 		283CFC7B256FE88600702DAE /* OnboardingPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPageView.swift; sourceTree = "<group>"; };
 		283CFC7D256FE88600702DAE /* OnboardItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardItemView.swift; sourceTree = "<group>"; };
 		28D999F3256702150003DE45 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2CB3178C25ED11DB005BB5B5 /* ButtonStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStore.swift; sourceTree = "<group>"; };
 		30D8DBB213DC6499EB92DA59 /* Pods-CriatuTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CriatuTests.debug.xcconfig"; path = "Target Support Files/Pods-CriatuTests/Pods-CriatuTests.debug.xcconfig"; sourceTree = "<group>"; };
 		35091E0D25669A7500F94A4A /* LazyWaterfallGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LazyWaterfallGrid.swift; sourceTree = "<group>"; };
 		35091E272566C86D00F94A4A /* MusicItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicItem.swift; sourceTree = "<group>"; };
@@ -341,6 +343,7 @@
 				35FFE2D12563FBE300F3E8F0 /* Interest.swift */,
 				35FFE2D62563FC1400F3E8F0 /* Style.swift */,
 				35FFE2DB2563FC3A00F3E8F0 /* LookItem.swift */,
+				2CB3178C25ED11DB005BB5B5 /* ButtonStore.swift */,
 				35091E2C2566C89700F94A4A /* Discover Classes */,
 				35F82A98257152100087DD22 /* Closet Classes */,
 			);
@@ -644,6 +647,7 @@
 				353482D92579A71F000E7080 /* LookView.swift in Sources */,
 				283CFC81256FE88600702DAE /* OnboardingPageView.swift in Sources */,
 				359D542A257175180033D5CE /* LazySnapHStack.swift in Sources */,
+				2CB3178D25ED11DB005BB5B5 /* ButtonStore.swift in Sources */,
 				105312DA25656C6E00887B1E /* UIEditingExtensions.swift in Sources */,
 				356A45AF255D836E00F892A1 /* AppDelegate.swift in Sources */,
 				283CFC80256FE88600702DAE /* EndOnboardingView.swift in Sources */,
@@ -835,14 +839,14 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
-				DEVELOPMENT_TEAM = P63952MS7L;
+				DEVELOPMENT_TEAM = 4A49P664P7;
 				INFOPLIST_FILE = Criatu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = ufpe.academy.criatu;
+				PRODUCT_BUNDLE_IDENTIFIER = ufpe.academy.criatu3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Criatu/Onboarding/Criatu-Bridging-Header.h";
@@ -863,14 +867,14 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
-				DEVELOPMENT_TEAM = P63952MS7L;
+				DEVELOPMENT_TEAM = 4A49P664P7;
 				INFOPLIST_FILE = Criatu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = ufpe.academy.criatu;
+				PRODUCT_BUNDLE_IDENTIFIER = ufpe.academy.criatu3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Criatu/Onboarding/Criatu-Bridging-Header.h";
@@ -886,7 +890,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = P63952MS7L;
+				DEVELOPMENT_TEAM = 4A49P664P7;
 				INFOPLIST_FILE = CriatuTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -909,7 +913,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = P63952MS7L;
+				DEVELOPMENT_TEAM = 4A49P664P7;
 				INFOPLIST_FILE = CriatuTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -931,7 +935,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = P63952MS7L;
+				DEVELOPMENT_TEAM = 4A49P664P7;
 				INFOPLIST_FILE = CriatuUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -952,7 +956,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = P63952MS7L;
+				DEVELOPMENT_TEAM = 4A49P664P7;
 				INFOPLIST_FILE = CriatuUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
