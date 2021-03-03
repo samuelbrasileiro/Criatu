@@ -28,7 +28,6 @@ struct ImageItemView: View {
             item.isSelected = !item.isSelected
             changeColors()
             delegate?.uploadView()
-            
         }){
             if let image = item.image{
                 Image(uiImage: image)
@@ -45,7 +44,7 @@ struct ImageItemView: View {
                                 .progressViewStyle(CircularProgressViewStyle()))
                     .cornerRadius(10)
             }
-        }
+        }.accessibilityIdentifier("ImageButton")
         .onAppear(){
             changeColors()
             delegate?.uploadView()

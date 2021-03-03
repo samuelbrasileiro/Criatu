@@ -2,11 +2,10 @@
 //  CriatuUITests.swift
 //  CriatuUITests
 //
-//  Created by Samuel Brasileiro on 12/11/20.
+//  Created by Danilo Araújo on 02/03/21.
 //
 
 import XCTest
-@testable import Criatu
 
 class CriatuUITests: XCTestCase {
 
@@ -23,13 +22,39 @@ class CriatuUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // UI tests must launch the application that they test.
+    func testRedirectButtonExists() throws {
         let app = XCUIApplication()
         app.launch()
-
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        //Soma dos itens escolhidos = 6
+        sleep(4)
+        
+        let buttonsQuery = app.buttons.matching(identifier: "ImageButton")
+        
+        
+        buttonsQuery.element(boundBy: 0).tap()
+        buttonsQuery.element(boundBy: 1).tap()
+        buttonsQuery.element(boundBy: 2).tap()
+        
+        let musicsQuery = app.buttons.matching(identifier: "MusicButton-MusicButton-MusicButton")
+        
+        musicsQuery.element(boundBy: 0).tap()
+        
+        app.buttons["Combinar"].tap()
+        
+        sleep(5)
+        
+        let wardrobeQuery = app.buttons.matching(identifier: "WardrobeView")
+        wardrobeQuery.element(boundBy: 0).tap()
+        
+        app/*@START_MENU_TOKEN@*/.scrollViews.containing(.other, identifier:"Vertical scroll bar, 2 pages")/*[[".scrollViews.containing(.other, identifier:\"Horizontal scroll bar, 2 pages\")",".scrollViews.containing(.other, identifier:\"Vertical scroll bar, 2 pages\")"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+            .children(matching: .other)
+            .element(boundBy: 0)
+            .children(matching: .other)
+            .element.children(matching: .button)
+            .element(boundBy: 0).tap()
+        
+        
+        XCTAssert(app.buttons["redirectToStore"].exists, "O botão de redirecionar a loja foi encontrado!")
     }
 
     func testLaunchPerformance() throws {

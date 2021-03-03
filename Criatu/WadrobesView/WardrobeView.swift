@@ -93,6 +93,7 @@ struct WardrobeView: View{
                         .background(Circle().fill(Color(.systemBackground)))
                 }
             }
+            .accessibilityIdentifier("ClothingButton")
             .padding([.top, .trailing])
             
         }
