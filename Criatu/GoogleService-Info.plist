@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>334304275158-re400ib6pq49cq9r3spuilm8bl6vkr3u.apps.googleusercontent.com</string>
+	<string>431800838142-imn6atg0c9640shii3h5uo5h31588mns.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.334304275158-re400ib6pq49cq9r3spuilm8bl6vkr3u</string>
+	<string>com.googleusercontent.apps.431800838142-imn6atg0c9640shii3h5uo5h31588mns</string>
 	<key>API_KEY</key>
-	<string>AIzaSyDWoouL8O-HhCbkq6Ao3CQEYRxBdSgNR8o</string>
+	<string>AIzaSyCP6uvAb8p3mdA7pgpQDJY_-Jmn2mGN8fo</string>
 	<key>GCM_SENDER_ID</key>
-	<string>334304275158</string>
+	<string>431800838142</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>ufpe.academy.criatu</string>
+	<string>ufpe.academy.criatu2</string>
 	<key>PROJECT_ID</key>
-	<string>fir-criatu</string>
+	<string>criavoce-b94a0</string>
 	<key>STORAGE_BUCKET</key>
-	<string>fir-criatu.appspot.com</string>
+	<string>criavoce-b94a0.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,8 +29,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:334304275158:ios:ae5970e14fb4c1549a3777</string>
+	<string>1:431800838142:ios:6d99a2d8a6ca029f5182af</string>
 	<key>DATABASE_URL</key>
-	<string>https://fir-criatu.firebaseio.com</string>
+	<string>https://criavoce-b94a0-default-rtdb.firebaseio.com</string>
 </dict>
 </plist>

@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		0488FB732562BB4D00E537B2 /* FirebaseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0488FB722562BB4D00E537B2 /* FirebaseHandler.swift */; };
 		08A98BE97C3F63783E897B5B /* Pods_CriatuTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC2471249044735CF8A7BDAA /* Pods_CriatuTests.framework */; };
+		0CE14FE725E9247F002E2E6E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0CE14FE625E9247F002E2E6E /* GoogleService-Info.plist */; };
+		0CE14FE825E9247F002E2E6E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0CE14FE625E9247F002E2E6E /* GoogleService-Info.plist */; };
+		0CE14FE925E9247F002E2E6E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0CE14FE625E9247F002E2E6E /* GoogleService-Info.plist */; };
 		100CC76225751DB800A21A2C /* ClosetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100CC76125751DB800A21A2C /* ClosetView.swift */; };
 		100CC7672575258400A21A2C /* Drawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100CC7662575258400A21A2C /* Drawer.swift */; };
 		100CC773257529A400A21A2C /* DrawerLook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100CC772257529A400A21A2C /* DrawerLook.swift */; };
@@ -82,6 +85,7 @@
 
 /* Begin PBXFileReference section */
 		0488FB722562BB4D00E537B2 /* FirebaseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseHandler.swift; sourceTree = "<group>"; };
+		0CE14FE625E9247F002E2E6E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		100CC76125751DB800A21A2C /* ClosetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosetView.swift; sourceTree = "<group>"; };
 		100CC7662575258400A21A2C /* Drawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drawer.swift; sourceTree = "<group>"; };
 		100CC772257529A400A21A2C /* DrawerLook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerLook.swift; sourceTree = "<group>"; };
@@ -282,8 +286,8 @@
 				105312D825656C5500887B1E /* Extra */,
 				356A45BA255D837000F892A1 /* Assets.xcassets */,
 				356A45BC255D837000F892A1 /* LaunchScreen.storyboard */,
+				0CE14FE625E9247F002E2E6E /* GoogleService-Info.plist */,
 				356A45BF255D837000F892A1 /* Info.plist */,
-				28D999F3256702150003DE45 /* GoogleService-Info.plist */,
 			);
 			path = Criatu;
 			sourceTree = "<group>";
@@ -491,8 +495,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				356A45BE255D837000F892A1 /* LaunchScreen.storyboard in Resources */,
-				28D999F4256702150003DE45 /* GoogleService-Info.plist in Resources */,
 				356A45BB255D837000F892A1 /* Assets.xcassets in Resources */,
+				0CE14FE725E9247F002E2E6E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,6 +504,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CE14FE825E9247F002E2E6E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,6 +512,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CE14FE925E9247F002E2E6E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -839,14 +845,14 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
-				DEVELOPMENT_TEAM = 4A49P664P7;
+				DEVELOPMENT_TEAM = KBDYNQ5FQB;
 				INFOPLIST_FILE = Criatu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = ufpe.academy.criatu3;
+				PRODUCT_BUNDLE_IDENTIFIER = ufpe.academy.criatu2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Criatu/Onboarding/Criatu-Bridging-Header.h";
@@ -867,14 +873,14 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
-				DEVELOPMENT_TEAM = 4A49P664P7;
+				DEVELOPMENT_TEAM = KBDYNQ5FQB;
 				INFOPLIST_FILE = Criatu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = ufpe.academy.criatu3;
+				PRODUCT_BUNDLE_IDENTIFIER = ufpe.academy.criatu2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Criatu/Onboarding/Criatu-Bridging-Header.h";
@@ -890,7 +896,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4A49P664P7;
+				DEVELOPMENT_TEAM = KBDYNQ5FQB;
 				INFOPLIST_FILE = CriatuTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -913,7 +919,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4A49P664P7;
+				DEVELOPMENT_TEAM = KBDYNQ5FQB;
 				INFOPLIST_FILE = CriatuTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -935,7 +941,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4A49P664P7;
+				DEVELOPMENT_TEAM = KBDYNQ5FQB;
 				INFOPLIST_FILE = CriatuUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -956,7 +962,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4A49P664P7;
+				DEVELOPMENT_TEAM = KBDYNQ5FQB;
 				INFOPLIST_FILE = CriatuUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
