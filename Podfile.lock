@@ -89,12 +89,14 @@ PODS:
   - nanopb/decode (2.30906.0)
   - nanopb/encode (2.30906.0)
   - PromisesObjC (1.2.11)
+  - ViewInspector (0.6.3)
 
 DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
   - Firebase/Messaging
   - Firebase/Storage
+  - ViewInspector
 
 SPEC REPOS:
   trunk:
@@ -114,6 +116,7 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - PromisesObjC
+    - ViewInspector
 
 SPEC CHECKSUMS:
   Firebase: 26223c695fe322633274198cb19dca8cb7e54416
@@ -132,7 +135,8 @@ SPEC CHECKSUMS:
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 1bf24dd71191072e120b83dd02d08f3da0d65e53
   PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
+  ViewInspector: 8917a1624002e865e13d6c4f30f7d6d60e7cfa7c
 
-PODFILE CHECKSUM: 9109d2ee9c6b7c2c8ea4ccf4679e33d866a3248e
+PODFILE CHECKSUM: 9659c5fd862139c2ad14c8fb4a245c3b701203c8
 
 COCOAPODS: 1.10.1

@@ -6,9 +6,12 @@
 //
 
 import XCTest
+import ViewInspector
 @testable import Criatu
 
-class CriatuTests: XCTestCase {
+extension ButtonStore: Inspectable {}
+
+final class CriatuTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -19,9 +22,10 @@ class CriatuTests: XCTestCase {
     }
 
     func testRedirectButton() throws {
-        if let url = URL(string: "https://www.hackingwithswift.com") {
-            UIApplication.shared.open(url)
-        }
+        let view = ButtonStore()
+        let text = try view.inspect().button().text()
+        
+        XCTAssert(text, "Visitar Loja", "Botão visitar a loja funcionando")
     }
 
     func testPerformanceExample() throws {
