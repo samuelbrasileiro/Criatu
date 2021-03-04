@@ -38,8 +38,7 @@ class DiscoverBank: ObservableObject, Identifiable, DiscoverDelegate {
     
     /// This function clears all items in the array 'items'
     func clear(){
-        print("Itens na view: \(items.count)")
-        //items.removeAll()
+        items.removeAll()
         interests.removeAll()
         searchText = ""
         isSearching = false
@@ -159,11 +158,6 @@ class DiscoverBank: ObservableObject, Identifiable, DiscoverDelegate {
                         if self.items.map({$0.attributes.id}).contains(id){
                             return
                         }
-//                        if attributes.type == .image{
-//                            let item = ImageItem(attributes: attributes)
-//                            item.interestAssociatedID = interest.attributes.id
-//                            self.items.insert(item, at: 0)
-//                        }
                         if attributes.type == .music{
                             let item = MusicItem(attributes: attributes)
                             item.interestAssociatedID = interest.attributes.id
