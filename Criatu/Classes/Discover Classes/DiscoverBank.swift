@@ -81,7 +81,6 @@ class DiscoverBank: ObservableObject, Identifiable, DiscoverDelegate {
         var userSet: [String] = []
         var similarityResults: [String : Float] = [:]
         
-        
         let closets: [ClosetInterface] = [
             ClosetInterface(id: "-MNOV-lGoNFf7Oa7WW1n", tags: ["pizza", "pug", "mulher"]),
             ClosetInterface(id: "-MNP6eErV2Or6qZsipfO", tags: ["paris", "fantasia", "compondo"]),
@@ -165,8 +164,6 @@ class DiscoverBank: ObservableObject, Identifiable, DiscoverDelegate {
         
         //New PixaBay itens filter
         items = items.filter { item in
-            print("Interest name: \(interest.attributes.name)")
-            print("Tags array: \(item.tagsArray)")
             return !item.tagsArray.contains(interest.attributes.name.lowercased())
         }
 
@@ -176,29 +173,6 @@ class DiscoverBank: ObservableObject, Identifiable, DiscoverDelegate {
         self.objectWillChange.send()
     }
     
-    /// This function adds all items in the array 'items'
-//    func addItems(){
-//        let ids = ["-MMuZ1PpDQGOXWzAdjN4", "-MMuWsbBuTkOGLIrBjX-", "-MMuWy3bg3vMXvU4WnL-", "-MMuZRYLUaAn_RBJcdj8", "-MMuZf-rEs2la53EAZMX"]
-//        var interests: [Interest] = []
-//        var count = 0
-//        for id in ids{
-//
-//            FirebaseHandler.readCollection(.interests, id: id, dataType: Interest.Database.self){ result in
-//
-//                if case .success(let attributes) = result{
-//                    interests.append(Interest(attributes: attributes))
-//                    count += 1
-//                    if count == ids.count{
-//                        Interest.archive(interests: interests)
-//                        self.addInterests()
-//                    }
-//                }
-//
-//            }
-//        }
-//
-//    }
- 
     func getItem(from id: String){
         FirebaseHandler.readCollection(.items, id: id, dataType: DiscoverItem.Database.self){ result in
             if case .success(let attribute) = result{
