@@ -14,10 +14,9 @@ enum ItemType: String, Codable {
 
 ///The basic structure for a discover item that will be displayed
 class DiscoverItem: ObservableObject {
-    var attributes: DiscoverItem.Database
-    
     @Published var isSelected: Bool = false
-    
+    var tagsArray: [String] = []
+    var attributes: DiscoverItem.Database
     var interestAssociatedID: String?
     
     init(id: String, url: String, type: ItemType){

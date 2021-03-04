@@ -76,62 +76,49 @@ class DiscoverBank: ObservableObject, Identifiable, DiscoverDelegate {
     }
     
     func discoverStyle(){
-        isDiscovering = true
-        items = items.filter{
-            $0.isSelected
+        //Armário precia possuir uma lista de tags ideias.
+        //Cada item tem suas tags
+        self.isDiscovering = true
+        let selectedItems = items.filter{ $0.isSelected }
+        var userSet: [String] = []
+        var similarityResults: [String : Float] = [:]
+        
+        
+        let closets: [ClosetInterface] = [
+            ClosetInterface(id: "-MNOV-lGoNFf7Oa7WW1n", tags: ["pizza", "pug", "mulher"]),
+            ClosetInterface(id: "-MNP6eErV2Or6qZsipfO", tags: ["paris", "fantasia", "compondo"]),
+            ClosetInterface(id: "-MNYbEkkQHkxRK0YMVJo", tags: ["gato", "pedra", "alta", "cavalo"]),
+            ClosetInterface(id: "-MNYbNl7yyEmDZ9hdZPK", tags: ["frutas", "halteres", "fitness"]),
+            ClosetInterface(id: "-MNYbT6ljnhwJcLHv2Xn", tags: ["frança", "cor", "frança", "égua"]),
+        ]
+        
+        for item in selectedItems {
+            userSet.append(contentsOf: item.tagsArray.map{ $0 })
+        }
+        
+        for closet in closets {
+            similarityResults[closet.id] = SetSimilarity.jaccardSimilarity(firstSet: userSet, secondSet: closet.tags)
+        }
+        
+        let sortedDictionary = similarityResults.sorted {
+            (first: (key: String, value: Float), second: (key: String, value: Float)) -> Bool in
+            return first.value > second.value
         }
         
         Timer.scheduledTimer(withTimeInterval: 4, repeats: false){ _ in
             self.isDiscovering = false
-            let context = AppDelegate.viewContext
             
-            let stylesIDs = [String](self.items.map({$0.attributes.stylesIDs ?? []}).joined())
             
-            let reducedIDs = stylesIDs.reduce([String:Int]()) { dict, id in
-                var dict = dict
-                
-                dict[id] = (dict[id] ?? 0)
-                dict[id]! += 1
-                
-                return dict
-            }.map{$0}
-            
-            let sortedIDs = reducedIDs.sorted{ $0.value > $1.value}
-            
-            let closetsRequest: NSFetchRequest<Closet> = Closet.fetchRequest()
-            
-            do {
-                let closets = try context.fetch(closetsRequest)
-                
-                if !sortedIDs.contains(where: { id in id.value >= 3 && !closets.contains(where: {$0.id == id.key})}){
+            FirebaseHandler.readCollection(.closets, id: sortedDictionary[0].key, dataType: Style.Database.self) { result in
+                if case .success(let attributes) = result {
+                    self.discoveredStyle = Style(attributes: attributes)
+                    self.didDiscoverNewStyle = true
+                } else {
                     self.didNotDiscoverStyle = true
-                    print("You already have all suitable closets")
-                    return
                 }
-                for id in sortedIDs{
-                    if !closets.contains(where: {$0.id == id.key}){
-                        if id.value >= 3{
-                            
-                            FirebaseHandler.readCollection(.closets, id: id.key, dataType: Style.Database.self) { result in
-                                if case .success(let attributes) = result {
-                                                                        
-                                    self.discoveredStyle = Style(attributes: attributes)
-                                    
-                                    self.didDiscoverNewStyle = true
-                                    
-                                }
-                            }
-                            
-                            break
-                        }
-                    }
-                }
-                
-            }catch{
-                print(error)
             }
+            
         }
-        
     }
     
     func clearAllInterests(){

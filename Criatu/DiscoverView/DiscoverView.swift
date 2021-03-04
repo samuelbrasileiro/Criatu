@@ -60,11 +60,9 @@ struct DiscoverView: View {
                                     
                                 }.background(Color(.systemGray6))
                             }
-                            Button(action:  {
-                                
+                            Button(action: {
                                 self.bank.discoverStyle()
-                                
-                            }) {
+                            }){
                                 Text("Combinar")
                                     .padding()
                                     .padding(.horizontal, 80)

@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		0488FB732562BB4D00E537B2 /* FirebaseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0488FB722562BB4D00E537B2 /* FirebaseHandler.swift */; };
 		08A98BE97C3F63783E897B5B /* Pods_CriatuTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC2471249044735CF8A7BDAA /* Pods_CriatuTests.framework */; };
+		0C6A858D25F14AEF006776B0 /* ClosetInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6A858C25F14AEF006776B0 /* ClosetInterface.swift */; };
+		0C6A858E25F14AEF006776B0 /* ClosetInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6A858C25F14AEF006776B0 /* ClosetInterface.swift */; };
+		0C6A858F25F14AEF006776B0 /* ClosetInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6A858C25F14AEF006776B0 /* ClosetInterface.swift */; };
 		0CE14FE725E9247F002E2E6E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0CE14FE625E9247F002E2E6E /* GoogleService-Info.plist */; };
 		0CE14FE825E9247F002E2E6E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0CE14FE625E9247F002E2E6E /* GoogleService-Info.plist */; };
 		0CE14FE925E9247F002E2E6E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0CE14FE625E9247F002E2E6E /* GoogleService-Info.plist */; };
@@ -85,6 +88,7 @@
 
 /* Begin PBXFileReference section */
 		0488FB722562BB4D00E537B2 /* FirebaseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseHandler.swift; sourceTree = "<group>"; };
+		0C6A858C25F14AEF006776B0 /* ClosetInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosetInterface.swift; sourceTree = "<group>"; };
 		0CE14FE625E9247F002E2E6E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		100CC76125751DB800A21A2C /* ClosetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosetView.swift; sourceTree = "<group>"; };
 		100CC7662575258400A21A2C /* Drawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drawer.swift; sourceTree = "<group>"; };
@@ -187,9 +191,9 @@
 			isa = PBXGroup;
 			children = (
 				100CC7662575258400A21A2C /* Drawer.swift */,
+				108E864425766A2200842084 /* Closet.swift */,
 				100CC772257529A400A21A2C /* DrawerLook.swift */,
 				356A45B7255D836E00F892A1 /* Criatu.xcdatamodeld */,
-				108E864425766A2200842084 /* Closet.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -339,6 +343,7 @@
 			isa = PBXGroup;
 			children = (
 				35F82A1925713BCA0087DD22 /* ClosetsBank.swift */,
+				0C6A858C25F14AEF006776B0 /* ClosetInterface.swift */,
 			);
 			path = "Closet Classes";
 			sourceTree = "<group>";
@@ -638,6 +643,7 @@
 				35F82A1A25713BCA0087DD22 /* ClosetsBank.swift in Sources */,
 				100CC76225751DB800A21A2C /* ClosetView.swift in Sources */,
 				283CFC83256FE88600702DAE /* OnboardItemView.swift in Sources */,
+				0C6A858D25F14AEF006776B0 /* ClosetInterface.swift in Sources */,
 				100CC773257529A400A21A2C /* DrawerLook.swift in Sources */,
 				0488FB732562BB4D00E537B2 /* FirebaseHandler.swift in Sources */,
 				35FFE2E12563FC5800F3E8F0 /* DiscoverItem.swift in Sources */,
@@ -682,6 +688,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				356A45C9255D837000F892A1 /* CriatuTests.swift in Sources */,
+				0C6A858E25F14AEF006776B0 /* ClosetInterface.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -690,6 +697,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				356A45D4255D837000F892A1 /* CriatuUITests.swift in Sources */,
+				0C6A858F25F14AEF006776B0 /* ClosetInterface.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,7 +16,6 @@ class ClosetsBank: ObservableObject{
     
     init(){
         getStyles()
-        
     }
     
     func getStyles() {

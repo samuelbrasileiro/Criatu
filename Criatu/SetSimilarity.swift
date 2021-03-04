@@ -10,11 +10,11 @@ import Foundation
 
 class SetSimilarity{
     
-    func setMagnitude(set:[String]) -> Int{
+    static func setMagnitude(set:[String]) -> Int{
         return set.count
     }
     
-    func setIntersectionMagnutude(firstSet:[String],secondSet:[String]) -> Int{
+    static func setIntersectionMagnutude(firstSet:[String],secondSet:[String]) -> Int{
         
         var magnutde:Int = 0
         for element in firstSet{
@@ -29,7 +29,7 @@ class SetSimilarity{
         return magnutde
     }
     
-    func JaccardSimilarity(firstSet:[String],secondSet:[String]) -> Float{
+    static func jaccardSimilarity(firstSet:[String],secondSet:[String]) -> Float{
         
         let firstSetMag = Float(setMagnitude(set: firstSet))
         let secondSetMag = Float(setMagnitude(set: secondSet))
@@ -37,7 +37,7 @@ class SetSimilarity{
         return intersec/(firstSetMag+secondSetMag-intersec)
     }
     
-    func SorensenCoefficient(firstSet:[String],secondSet:[String]) -> Float{
+    static func sorensenCoefficient(firstSet:[String],secondSet:[String]) -> Float{
         
         let firstSetMag = Float(setMagnitude(set: firstSet))
         let secondSetMag = Float(setMagnitude(set: secondSet))
@@ -46,7 +46,7 @@ class SetSimilarity{
         return 2*intersec/(firstSetMag+secondSetMag)
     }
     
-    func OverlapCoefficient(firstSet:[String],secondSet:[String]) -> Float{
+    static func overlapCoefficient(firstSet:[String],secondSet:[String]) -> Float{
         
         let firstSetMag = Float(setMagnitude(set: firstSet))
         let secondSetMag = Float(setMagnitude(set: secondSet))
