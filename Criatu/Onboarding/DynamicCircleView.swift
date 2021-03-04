@@ -112,7 +112,6 @@ class GameScene: SKScene{
                     circle.physicsBody?.isDynamic = false
                     waveEffect(centralCircle: circle)
                     self.selectedInterests.append(circle.name!)
-                    print("Cirlce name: \(circle.name!)")
                 }
                 
                 else {
@@ -353,7 +352,7 @@ struct DynamicCircleView: View {
                         
                     })
                     
-                    if let first = loader.scene.interests.first(where: {$0.attributes.id == tag}){
+                    if let first = loader.scene.interests.first(where: {$0.attributes.name == tag}){
                         interests.append(first)
                     }
                 }

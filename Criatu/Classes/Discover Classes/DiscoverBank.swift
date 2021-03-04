@@ -152,7 +152,6 @@ class DiscoverBank: ObservableObject, Identifiable, DiscoverDelegate {
             ids.shuffle()
             ids = [String](ids.prefix(4))
             for id in ids{
-
                 FirebaseHandler.readCollection(.items, id: id, dataType: DiscoverItem.Database.self){ result in
                     if case .success(let attributes) = result{
                         if self.items.map({$0.attributes.id}).contains(id){
@@ -165,8 +164,6 @@ class DiscoverBank: ObservableObject, Identifiable, DiscoverDelegate {
                         }
                     }
                 }
-                
-                
             }
             
         }
@@ -205,17 +202,14 @@ class DiscoverBank: ObservableObject, Identifiable, DiscoverDelegate {
 //
 //    }
  
-    //    func getItem(from id: String){
-    ////        FirebaseHandler.readCollection(.items, id: id, dataType: DiscoverItem.Database.self){ result in
-    ////            if case .success(let attribute) = result{
-    ////                if attribute.type == .image{
-    ////                    //self.items.append(ImageItem(attributes: attribute))
-    ////                }
-    ////                else if attribute.type == .music{
-    ////                    self.items.append(MusicItem(attributes: attribute))
-    ////                }
-    ////            }
-    ////        }
-    //    }
+    func getItem(from id: String){
+        FirebaseHandler.readCollection(.items, id: id, dataType: DiscoverItem.Database.self){ result in
+            if case .success(let attribute) = result{
+                if attribute.type == .music{
+                    self.items.append(MusicItem(attributes: attribute))
+                }
+            }
+        }
+    }
     
 }

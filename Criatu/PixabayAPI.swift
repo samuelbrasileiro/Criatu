@@ -14,7 +14,7 @@ class PixabayAPI{
     var imageInfoArr:[Hit] = []
     
     func GetData(tagsSearched:String,completionHandler: @escaping (Response) -> Void){
-        
+        //TODO: Adicionar tratamento de string para a URL. Atualmente não funciona acentos, espaços e cacteres especiasi
         let urlString = baseURL + "q=" + tagsSearched
         let url = URL(string: urlString)
         var request = URLRequest(url: url!)

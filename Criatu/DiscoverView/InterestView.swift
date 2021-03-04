@@ -52,6 +52,6 @@ struct InterestView: View {
 
 struct InterestView_Previews: PreviewProvider {
     static var previews: some View {
-        InterestView(item: DiscoverBank().interests[0])
+        InterestView(item: DiscoverBank.shared.interests[0])
     }
 }
