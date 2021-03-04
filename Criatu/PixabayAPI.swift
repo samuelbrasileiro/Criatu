@@ -40,8 +40,12 @@ class PixabayAPI{
                     print("CONVERSION SUCEDED")
                     self.imageInfoArr = searchResponse.hits
                     for imageInfo in self.imageInfoArr{
-                        let tags = self.getSplitedImageTags(id: imageInfo.id)!
+                        var tags = self.getSplitedImageTags(id: imageInfo.id)!
                         let id = imageInfo.id
+                        
+                        //Need to add searched tag because not always the tags comming from
+                        //Image contains the searched tag
+                        tags.append(tagsSearched.lowercased())
                         
                         self.getImage(id: imageInfo.id, completionHandler: {image in
                             let imageItem = ImageItem(imageID: id, tagsArray: tags, image: image)

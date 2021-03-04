@@ -26,8 +26,8 @@ class DiscoverBank: ObservableObject, Identifiable, DiscoverDelegate {
     @Published var isSearching: Bool = false
     @Published var allInterests: [Interest] = []
     @Published var discoveredStyle: Style?
-    @Published var didDiscoverNewStyle = false
-    @Published var didNotDiscoverStyle = false
+    @Published var didDiscoverNewStyle: Bool = false
+    @Published var didNotDiscoverStyle: Bool = false
     @Published var isDiscovering: Bool = false
     
     
@@ -76,8 +76,6 @@ class DiscoverBank: ObservableObject, Identifiable, DiscoverDelegate {
     }
     
     func discoverStyle(){
-        //Armário precia possuir uma lista de tags ideias.
-        //Cada item tem suas tags
         self.isDiscovering = true
         let selectedItems = items.filter{ $0.isSelected }
         var userSet: [String] = []
