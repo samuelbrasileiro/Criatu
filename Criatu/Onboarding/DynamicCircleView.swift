@@ -343,19 +343,13 @@ struct DynamicCircleView: View {
             
             Button(action: {
                 var interests: [Interest] = []
-                let apiHandler = PixabayAPI()
                 
                 for tag in loader.scene.selectedInterests{
-                    apiHandler.GetData(tagsSearched: tag, completionHandler: {response in
-                        print("Tag: \(tag)")
-                        print("Images: \(DiscoverBank.shared.$items.count)")
-                        
-                    })
-                    
                     if let first = loader.scene.interests.first(where: {$0.attributes.name == tag}){
                         interests.append(first)
                     }
                 }
+                
                 Interest.archive(interests: interests)
                 delegate?.endInterestSelection()
             }, label: {

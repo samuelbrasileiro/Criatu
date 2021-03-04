@@ -13,9 +13,9 @@ class PixabayAPI{
     var baseURL =  "https://pixabay.com/api/?key=20490794-452a82acc640fcfc4130d0bb8&per_page=3&lang=pt&"
     var imageInfoArr:[Hit] = []
     
-    func GetData(tagsSearched:String,completionHandler: @escaping (Response) -> Void){
-        //TODO: Adicionar tratamento de string para a URL. Atualmente não funciona acentos, espaços e cacteres especiasi
-        let urlString = baseURL + "q=" + tagsSearched
+    func getData(tagsSearched:String,completionHandler: @escaping (Response) -> Void){
+        let formattedTag = tagsSearched.lowercased().replacingOccurrences(of: " ", with: "+")
+        let urlString = baseURL + "q=" + formattedTag
         let url = URL(string: urlString)
         var request = URLRequest(url: url!)
         request.httpMethod = "GET"
@@ -40,10 +40,10 @@ class PixabayAPI{
                     print("CONVERSION SUCEDED")
                     self.imageInfoArr = searchResponse.hits
                     for imageInfo in self.imageInfoArr{
-                        let tags = self.GetSplitedImageTags(id: imageInfo.id)!
+                        let tags = self.getSplitedImageTags(id: imageInfo.id)!
                         let id = imageInfo.id
                         
-                        self.GetImage(id: imageInfo.id, completionHandler: {image in
+                        self.getImage(id: imageInfo.id, completionHandler: {image in
                             let imageItem = ImageItem(imageID: id, tagsArray: tags, image: image)
                             DispatchQueue.main.async {
                                 DiscoverBank.shared.items.append(imageItem)
@@ -62,7 +62,7 @@ class PixabayAPI{
         task.resume()
     }
     
-    func GetImageTags(id:Int) -> String?{
+    func getImageTags(id:Int) -> String?{
         var imageTags = String()
         for image in imageInfoArr{
             
@@ -74,9 +74,9 @@ class PixabayAPI{
         return nil
     }
     
-    func GetSplitedImageTags(id:Int)->[String]?{
+    func getSplitedImageTags(id:Int)->[String]?{
         
-        let imageTags = GetImageTags(id: id)
+        let imageTags = getImageTags(id: id)
         if imageTags == nil{
             return nil
         }else{
@@ -85,7 +85,7 @@ class PixabayAPI{
         }
     }
     
-    func GetImage(id:Int, completionHandler: @escaping (UIImage?)->Void){
+    func getImage(id:Int, completionHandler: @escaping (UIImage?)->Void){
         
         if imageInfoArr.count == 0{
             completionHandler(nil)
@@ -99,7 +99,7 @@ class PixabayAPI{
                     let task = URLSession.shared.dataTask(with: url!, completionHandler: {
                         data, response, error in
                         
-                        if let error = error {
+                        if error != nil {
                             print("Error accessing swapi.co: /(error)")
                             completionHandler(nil)
                         }

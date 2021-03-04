@@ -126,14 +126,18 @@ class DiscoverBank: ObservableObject, Identifiable, DiscoverDelegate {
     }
     
     func addInterestToTop(interest: Interest){
-        if self.interests.filter({ $0.attributes.id == interest.attributes.id
-        }).count == 0{
+        if self.interests.filter({ $0.attributes.id == interest.attributes.id}).count == 0{
             self.interests.insert(interest, at: 0)
         }
     }
     
     func didSelectInterest(_ interest: Interest){
-
+        
+        let api = PixabayAPI()
+        api.getData(tagsSearched: interest.attributes.name, completionHandler: {_ in
+            print("Did select Interest")
+        })
+        
         if var ids = interest.attributes.itemsIDs{
             
             ids.shuffle()
@@ -156,8 +160,16 @@ class DiscoverBank: ObservableObject, Identifiable, DiscoverDelegate {
         }
     }
     func didDisselectInterest(_ interest: Interest){
+        //Old itens filter
         items = items.filter{ item in
             return !(item.interestAssociatedID == interest.attributes.id)
+        }
+        
+        //New PixaBay itens filter
+        items = items.filter { item in
+            print("Interest name: \(interest.attributes.name)")
+            print("Tags array: \(item.tagsArray)")
+            return !item.tagsArray.contains(interest.attributes.name.lowercased())
         }
 
     }
