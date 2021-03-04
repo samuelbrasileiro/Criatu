@@ -17,6 +17,7 @@
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 import SwiftUI
+import FirebaseAnalytics
 
 struct ButtonStore<WhateverYouWant: View>: View {
     let action: () -> Void
@@ -33,6 +34,7 @@ struct ButtonStore<WhateverYouWant: View>: View {
     var body: some View {
         
         Button(action: action){
+            
             content
                 .padding(10)
                 .overlay(
