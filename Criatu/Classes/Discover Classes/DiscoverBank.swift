@@ -70,7 +70,7 @@ class DiscoverBank: ObservableObject, Identifiable, DiscoverDelegate {
         FirebaseHandler.readCollection(.items, id: id, dataType: DiscoverItem.Database.self){ result in
             if case .success(let attribute) = result{
                 if attribute.type == .image{
-                    self.items.append(ImageItem(attributes: attribute))
+                    //self.items.append(ImageItem(attributes: attribute))
                 }
                 else if attribute.type == .music{
                     self.items.append(MusicItem(attributes: attribute))
@@ -174,12 +174,12 @@ class DiscoverBank: ObservableObject, Identifiable, DiscoverDelegate {
                         if self.items.map({$0.attributes.id}).contains(id){
                             return
                         }
-                        if attributes.type == .image{
-                            let item = ImageItem(attributes: attributes)
-                            item.interestAssociatedID = interest.attributes.id
-                            self.items.insert(item, at: 0)
-                        }
-                        else if attributes.type == .music{
+//                        if attributes.type == .image{
+//                            let item = ImageItem(attributes: attributes)
+//                            item.interestAssociatedID = interest.attributes.id
+//                            self.items.insert(item, at: 0)
+//                        }
+                        if attributes.type == .music{
                             let item = MusicItem(attributes: attributes)
                             item.interestAssociatedID = interest.attributes.id
                             self.items.insert(item, at: 0)

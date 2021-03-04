@@ -10,7 +10,7 @@ import UIKit
 
 class PixabayAPI{
     
-    var baseURL =  "https://pixabay.com/api/?key=20490794-452a82acc640fcfc4130d0bb8&"
+    var baseURL =  "https://pixabay.com/api/?key=20490794-452a82acc640fcfc4130d0bb8&per_page=3&lang=pt&"
     var imageInfoArr:[Hit] = []
     var idTags:[Int:[String]] = [:]
     var idURL:[Int:String] = [:]
@@ -47,9 +47,9 @@ class PixabayAPI{
                         self.idURL[imageInfo.id] = imageInfo.largeImageURL
                         self.GetImage(id: imageInfo.id, completionHandler: {image in
                             self.idUIimage[imageInfo.id] = image
+                            completionHandler(searchResponse)
                         })
                     }
-                    completionHandler(searchResponse)
                 }catch{
                     print(error.localizedDescription)
                 }

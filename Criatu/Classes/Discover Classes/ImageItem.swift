@@ -13,15 +13,14 @@ class ImageItem: DiscoverItem {
         willSet { self.objectWillChange.send() }
     }
     
-    override init(id: String, url: String, type: ItemType) {
-        super.init(id: id, url: url, type: type)
-                
-        getImage()
-    }
+    var imageID:Int
+    var tagsArray:[String]
     
-    override init(attributes: DiscoverItem.Database){
-        super.init(attributes: attributes)
-        
+    init(imageID: Int, tagsArray: [String],image: UIImage?) {
+        self.imageID = imageID
+        self.tagsArray = tagsArray
+        self.image = image
+        super.init(id: "", url: "", type: .image)
         getImage()
     }
     
@@ -37,4 +36,9 @@ class ImageItem: DiscoverItem {
         }
         
     }
+}
+
+class ImageItens{
+    static var shared:ImageItens = ImageItens()
+    var images:[ImageItem] = []
 }

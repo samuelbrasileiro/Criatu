@@ -243,7 +243,7 @@ class GameScene: SKScene{
         if words.count == 1{
             labelNode.fontSize *= (scalingFactor - CGFloat(1.0/Double(labelNode.text!.count)))
         }
-     
+        
         return labelNode.fontSize
     }
     
@@ -344,14 +344,23 @@ struct DynamicCircleView: View {
             
             Button(action: {
                 var interests: [Interest] = []
-                
-                for id in loader.scene.selectedInterests{
-                    if let first = loader.scene.interests.first(where: {$0.attributes.id == id}){
+                for tag in loader.scene.selectedInterests{
+                    let apiHandler = PixabayAPI()
+                    apiHandler.GetData(tagsSearched: tag, completionHandler: {response in
+                        for imageID in apiHandler.idUIimage.keys{
+                            
+                            DispatchQueue.main.async {
+                                ImageItens.shared.images.append(ImageItem(imageID: imageID, tagsArray: apiHandler.idTags[imageID]!, image: apiHandler.idUIimage[imageID]!))
+                            }
+                        }
+                        
+                        print(ImageItens.shared.images.count)
+                    })
+                    if let first = loader.scene.interests.first(where: {$0.attributes.id == tag}){
                         interests.append(first)
                     }
                 }
                 Interest.archive(interests: interests)
-                
                 delegate?.endInterestSelection()
             }, label: {
                 Text("Terminei")

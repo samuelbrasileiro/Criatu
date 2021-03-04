@@ -24,7 +24,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         
         if UserDefaults.standard.bool(forKey: Keys.kHasLaunchedOnce){
-            window?.rootViewController = TabBarViewController()
+            //window?.rootViewController = TabBarViewController()
+            window?.rootViewController = OnboardingViewController()
         }
         else{
             //First time ever in app

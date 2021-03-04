@@ -68,10 +68,10 @@ struct ImageItemView: View {
     }
 }
 
-struct ImageItemView_Previews: PreviewProvider {
-    static var previews: some View {
-        ImageItemView(item: ImageItem(id: "1500952424", url: "1500952424", type: .image))
-    }
-}
+//struct ImageItemView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ImageItemView(item: ImageItem(id: "1500952424", url: "1500952424", type: .image))
+//    }
+//}
 
 
