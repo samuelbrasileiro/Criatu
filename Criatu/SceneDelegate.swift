@@ -30,6 +30,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             //First time ever in app
             
             window?.rootViewController = OnboardingViewController()
+            
         }
         window?.makeKeyAndVisible()
         

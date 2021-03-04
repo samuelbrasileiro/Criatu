@@ -28,6 +28,8 @@ class ImageItem: DiscoverItem {
     /// From image URL this function downloads and saves the
     /// image data in 'image' attribute
     func getImage(){
+        
+    
         FirebaseHandler.getItemImage(from: self.attributes.url){ result in
             if case .success(let image) = result{
                 self.image = image

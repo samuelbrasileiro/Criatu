@@ -9,6 +9,8 @@ import SwiftUI
 
 ///The view containing the settings of the images that will appear in the feed
 
+
+
 struct ImageItemView: View {
     
     @ObservedObject var item: ImageItem
