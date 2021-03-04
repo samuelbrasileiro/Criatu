@@ -12,9 +12,6 @@ class PixabayAPI{
     
     var baseURL =  "https://pixabay.com/api/?key=20490794-452a82acc640fcfc4130d0bb8&per_page=3&lang=pt&"
     var imageInfoArr:[Hit] = []
-    var idTags:[Int:[String]] = [:]
-    var idURL:[Int:String] = [:]
-    var idUIimage:[Int:UIImage?] = [:]
     
     func GetData(tagsSearched:String,completionHandler: @escaping (Response) -> Void){
         
@@ -25,7 +22,7 @@ class PixabayAPI{
         let task = URLSession.shared.dataTask(with: url!, completionHandler: { (data, response, error) in
             
             
-            if let error = error {
+            if let _ = error {
                 print("Error accessing swapi.co: /(error)")
                 return
             }
@@ -43,10 +40,14 @@ class PixabayAPI{
                     print("CONVERSION SUCEDED")
                     self.imageInfoArr = searchResponse.hits
                     for imageInfo in self.imageInfoArr{
-                        self.idTags[imageInfo.id] = self.GetSplitedImageTags(id: imageInfo.id)
-                        self.idURL[imageInfo.id] = imageInfo.largeImageURL
+                        let tags = self.GetSplitedImageTags(id: imageInfo.id)!
+                        let id = imageInfo.id
+                        
                         self.GetImage(id: imageInfo.id, completionHandler: {image in
-                            self.idUIimage[imageInfo.id] = image
+                            let imageItem = ImageItem(imageID: id, tagsArray: tags, image: image)
+                            DispatchQueue.main.async {
+                                DiscoverBank.shared.items.append(imageItem)
+                            }
                             completionHandler(searchResponse)
                         })
                     }

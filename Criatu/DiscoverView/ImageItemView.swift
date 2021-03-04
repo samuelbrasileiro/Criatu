@@ -14,7 +14,7 @@ import SwiftUI
 struct ImageItemView: View {
     
     @ObservedObject var item: ImageItem
-        
+    
     @State var stroke: Color = Color.clear
     @State var foregroundColor: Color = Palette.shared.main
     @State var backgroundColor: Color = Color(.systemGray5)

@@ -112,7 +112,7 @@ class GameScene: SKScene{
                     circle.physicsBody?.isDynamic = false
                     waveEffect(centralCircle: circle)
                     self.selectedInterests.append(circle.name!)
-                    
+                    print("Cirlce name: \(circle.name!)")
                 }
                 
                 else {
@@ -182,7 +182,7 @@ class GameScene: SKScene{
         circle.physicsBody?.allowsRotation = false
         circle.physicsBody?.affectedByGravity = false
         circle.physicsBody?.restitution = 1
-        circle.name = interest.attributes.id
+        circle.name = interest.attributes.name
         circle.addChild(textNode(text: interest.attributes.name, circle: circle))
         
         self.addChild(circle)
@@ -344,18 +344,15 @@ struct DynamicCircleView: View {
             
             Button(action: {
                 var interests: [Interest] = []
+                let apiHandler = PixabayAPI()
+                
                 for tag in loader.scene.selectedInterests{
-                    let apiHandler = PixabayAPI()
                     apiHandler.GetData(tagsSearched: tag, completionHandler: {response in
-                        for imageID in apiHandler.idUIimage.keys{
-                            
-                            DispatchQueue.main.async {
-                                ImageItens.shared.images.append(ImageItem(imageID: imageID, tagsArray: apiHandler.idTags[imageID]!, image: apiHandler.idUIimage[imageID]!))
-                            }
-                        }
+                        print("Tag: \(tag)")
+                        print("Images: \(DiscoverBank.shared.$items.count)")
                         
-                        print(ImageItens.shared.images.count)
                     })
+                    
                     if let first = loader.scene.interests.first(where: {$0.attributes.id == tag}){
                         interests.append(first)
                     }

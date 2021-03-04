@@ -18,31 +18,28 @@ protocol DiscoverDelegate{
 
 class DiscoverBank: ObservableObject, Identifiable, DiscoverDelegate {
     
-    @Published var items: [DiscoverItem] = []
+    static let shared = DiscoverBank()
     
+    @Published var items: [DiscoverItem] = []
     @Published var interests: [Interest] = []
     @Published var searchText: String = ""
     @Published var isSearching: Bool = false
-    
     @Published var allInterests: [Interest] = []
-    
     @Published var discoveredStyle: Style?
     @Published var didDiscoverNewStyle = false
     @Published var didNotDiscoverStyle = false
-    
     @Published var isDiscovering: Bool = false
     
     
     init() {
         self.clear()
-        
         self.addInterests()
-        
     }
     
     /// This function clears all items in the array 'items'
     func clear(){
-        items.removeAll()
+        print("Itens na view: \(items.count)")
+        //items.removeAll()
         interests.removeAll()
         searchText = ""
         isSearching = false
@@ -54,7 +51,6 @@ class DiscoverBank: ObservableObject, Identifiable, DiscoverDelegate {
     }
     
     func addInterests(){
-        
         if var interests = Interest.restore(){
             interests.shuffle()
             let count = interests.count < 3 ? interests.count : 3
@@ -66,18 +62,7 @@ class DiscoverBank: ObservableObject, Identifiable, DiscoverDelegate {
 
         }
     }
-    func getItem(from id: String){
-        FirebaseHandler.readCollection(.items, id: id, dataType: DiscoverItem.Database.self){ result in
-            if case .success(let attribute) = result{
-                if attribute.type == .image{
-                    //self.items.append(ImageItem(attributes: attribute))
-                }
-                else if attribute.type == .music{
-                    self.items.append(MusicItem(attributes: attribute))
-                }
-            }
-        }
-    }
+
     func getAllInterests(){
         self.allInterests = []
         FirebaseHandler.readAllCollection(.interests, dataType: [Interest.Database].self){ result in
@@ -204,26 +189,39 @@ class DiscoverBank: ObservableObject, Identifiable, DiscoverDelegate {
     }
     
     /// This function adds all items in the array 'items'
-    func addItems(){
-        let ids = ["-MMuZ1PpDQGOXWzAdjN4", "-MMuWsbBuTkOGLIrBjX-", "-MMuWy3bg3vMXvU4WnL-", "-MMuZRYLUaAn_RBJcdj8", "-MMuZf-rEs2la53EAZMX"]
-        var interests: [Interest] = []
-        var count = 0
-        for id in ids{
-            
-            FirebaseHandler.readCollection(.interests, id: id, dataType: Interest.Database.self){ result in
-                
-                if case .success(let attributes) = result{
-                    interests.append(Interest(attributes: attributes))
-                    count += 1
-                    if count == ids.count{
-                        Interest.archive(interests: interests)
-                        self.addInterests()
-                    }
-                }
-                
-            }
-        }
-        
-    }
+//    func addItems(){
+//        let ids = ["-MMuZ1PpDQGOXWzAdjN4", "-MMuWsbBuTkOGLIrBjX-", "-MMuWy3bg3vMXvU4WnL-", "-MMuZRYLUaAn_RBJcdj8", "-MMuZf-rEs2la53EAZMX"]
+//        var interests: [Interest] = []
+//        var count = 0
+//        for id in ids{
+//
+//            FirebaseHandler.readCollection(.interests, id: id, dataType: Interest.Database.self){ result in
+//
+//                if case .success(let attributes) = result{
+//                    interests.append(Interest(attributes: attributes))
+//                    count += 1
+//                    if count == ids.count{
+//                        Interest.archive(interests: interests)
+//                        self.addInterests()
+//                    }
+//                }
+//
+//            }
+//        }
+//
+//    }
+ 
+    //    func getItem(from id: String){
+    ////        FirebaseHandler.readCollection(.items, id: id, dataType: DiscoverItem.Database.self){ result in
+    ////            if case .success(let attribute) = result{
+    ////                if attribute.type == .image{
+    ////                    //self.items.append(ImageItem(attributes: attribute))
+    ////                }
+    ////                else if attribute.type == .music{
+    ////                    self.items.append(MusicItem(attributes: attribute))
+    ////                }
+    ////            }
+    ////        }
+    //    }
     
 }
