@@ -16,7 +16,6 @@ struct WardrobeView: View{
     @State var showDetails: Bool = false
     var body: some View{
         ZStack(alignment: .topTrailing) {
-            
             if !showDetails{
                 
                 NavigationLink(destination: ClosetView(style: style)) {
@@ -93,6 +92,7 @@ struct WardrobeView: View{
                         .background(Circle().fill(Color(.systemBackground)))
                 }
             }
+            .accessibilityIdentifier("ClothingButton")
             .padding([.top, .trailing])
             
         }

@@ -13,11 +13,19 @@ target 'Criatu' do
   
   target 'CriatuTests' do
     inherit! :search_paths
-    # Pods for testing
+     pod 'Firebase/Core'
+     pod 'Firebase/Database'
+     pod 'Firebase/Storage'
+     pod 'Firebase/Messaging'
+     pod 'ViewInspector'
   end
 
   target 'CriatuUITests' do
-    # Pods for testing
+    inherit! :search_paths
+     pod 'Firebase/Core'
+     pod 'Firebase/Database'
+     pod 'Firebase/Storage'
+     pod 'Firebase/Messaging'
   end
 
 end

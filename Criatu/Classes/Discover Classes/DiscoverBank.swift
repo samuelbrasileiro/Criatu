@@ -30,6 +30,7 @@ class DiscoverBank: ObservableObject, Identifiable, DiscoverDelegate {
     @Published var didNotDiscoverStyle: Bool = false
     @Published var isDiscovering: Bool = false
     
+    var minimumSelectedItens: Int = 0
     
     init() {
         self.clear()
@@ -102,9 +103,8 @@ class DiscoverBank: ObservableObject, Identifiable, DiscoverDelegate {
             return first.value > second.value
         }
         
-        Timer.scheduledTimer(withTimeInterval: 4, repeats: false){ _ in
+        Timer.scheduledTimer(withTimeInterval: 2, repeats: false){ _ in
             self.isDiscovering = false
-            
             
             FirebaseHandler.readCollection(.closets, id: sortedDictionary[0].key, dataType: Style.Database.self) { result in
                 if case .success(let attributes) = result {
