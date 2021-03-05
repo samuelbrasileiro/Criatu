@@ -9,11 +9,9 @@ import SwiftUI
 
 struct InterestView: View {
     @ObservedObject var item: Interest
-    
+    @ObservedObject var palette = Palette.shared
     @State var foregroundColor: Color = Color(.systemGray)
     @State var backgroundColor: Color = Color(.systemGray5)
-    
-    @ObservedObject var palette = Palette.shared
     
     var delegate: DiscoverDelegate?
     
@@ -54,6 +52,6 @@ struct InterestView: View {
 
 struct InterestView_Previews: PreviewProvider {
     static var previews: some View {
-        InterestView(item: DiscoverBank().interests[0])
+        InterestView(item: DiscoverBank.shared.interests[0])
     }
 }

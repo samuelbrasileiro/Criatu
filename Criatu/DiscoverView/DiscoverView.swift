@@ -60,11 +60,9 @@ struct DiscoverView: View {
                                     
                                 }.background(Color(.systemGray6))
                             }
-                            Button(action:  {
-                                
+                            Button(action: {
                                 self.bank.discoverStyle()
-                                
-                            }) {
+                            }){
                                 Text("Combinar")
                                     .padding()
                                     .padding(.horizontal, 80)
@@ -122,6 +120,6 @@ struct DiscoverView: View {
 
 struct DiscoverView_Previews: PreviewProvider {
     static var previews: some View {
-        DiscoverView(bank: DiscoverBank())
+        DiscoverView(bank: DiscoverBank.shared)
     }
 }

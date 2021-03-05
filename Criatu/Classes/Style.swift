@@ -14,9 +14,7 @@ class Style: ObservableObject, Identifiable{
     var attributes: Style.Database
     
     @Published var image: UIImage?
-    
     @Published var suggestions: [Look] = []
-    
     @Published var drawers: [Drawer] = []
     
     var closet: Closet?

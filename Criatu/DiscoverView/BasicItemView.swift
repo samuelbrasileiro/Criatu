@@ -24,6 +24,6 @@ struct BasicItemView: View {
 
 struct BasicItemView_Previews: PreviewProvider {
     static var previews: some View {
-        BasicItemView(item: DiscoverBank().items[0])
+        BasicItemView(item: DiscoverBank.shared.items[0])
     }
 }

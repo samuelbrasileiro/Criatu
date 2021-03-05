@@ -9,10 +9,12 @@ import SwiftUI
 
 ///The view containing the settings of the images that will appear in the feed
 
+
+
 struct ImageItemView: View {
     
     @ObservedObject var item: ImageItem
-        
+    
     @State var stroke: Color = Color.clear
     @State var foregroundColor: Color = Palette.shared.main
     @State var backgroundColor: Color = Color(.systemGray5)
@@ -65,10 +67,10 @@ struct ImageItemView: View {
     }
 }
 
-struct ImageItemView_Previews: PreviewProvider {
-    static var previews: some View {
-        ImageItemView(item: ImageItem(id: "1500952424", url: "1500952424", type: .image))
-    }
-}
+//struct ImageItemView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ImageItemView(item: ImageItem(id: "1500952424", url: "1500952424", type: .image))
+//    }
+//}
 
 

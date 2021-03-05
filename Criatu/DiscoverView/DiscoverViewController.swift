@@ -15,7 +15,7 @@ class DiscoverViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.view.backgroundColor = .systemBackground
         
-        let discoverHost = UIHostingController(rootView: DiscoverView(bank: DiscoverBank()))
+        let discoverHost = UIHostingController(rootView: DiscoverView(bank: DiscoverBank.shared))
         self.addChild(discoverHost)
         discoverHost.view.translatesAutoresizingMaskIntoConstraints = false
         
