@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "356A45C3255D837000F892A1"
+               BlueprintIdentifier = "0CD6D80E25EE707500164C17"
                BuildableName = "CriatuTests.xctest"
                BlueprintName = "CriatuTests"
                ReferencedContainer = "container:Criatu.xcodeproj">
@@ -42,7 +42,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "356A45CE255D837000F892A1"
+               BlueprintIdentifier = "0CD6D83225EE751D00164C17"
                BuildableName = "CriatuUITests.xctest"
                BlueprintName = "CriatuUITests"
                ReferencedContainer = "container:Criatu.xcodeproj">

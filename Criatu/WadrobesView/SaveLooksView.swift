@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct SaveLooksView: View {
     
@@ -39,7 +40,7 @@ struct SaveLooksView: View {
                     
                     VStack(){
                         
-                        ButtonStore(action: { print("pegou"); openURL(URL(string: "https://www.instagram.com/vila.morato/")!)}) {
+                        ButtonStore(action: { Analytics.logEvent("Redirecionou_para_loja", parameters: nil); openURL(URL(string: "https://www.instagram.com/vila.morato/")!)}) {
                             Text("Visitar Loja")
                                 .fontWeight(.none)
                                 //.foregroundColor(Color.purple)
