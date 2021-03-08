@@ -19,10 +19,11 @@
 import SwiftUI
 import Firebase
 
+
 struct ButtonStore<WhateverYouWant: View>: View {
     let action: () -> Void
     let content: WhateverYouWant
-    
+    @ObservedObject var palette = Palette.shared
     init(action: @escaping () -> Void, @ViewBuilder content: () -> WhateverYouWant){
         
         self.action = action
@@ -39,7 +40,8 @@ struct ButtonStore<WhateverYouWant: View>: View {
                 .padding(10)
                 .overlay(
                     RoundedRectangle(cornerRadius: 10)
-                        .stroke(Color.purple, lineWidth: 3))
+                        //.stroke(Color.purple, lineWidth: 3))
+                        .stroke(palette.main, lineWidth: 3))
         }
     }
     
@@ -47,10 +49,14 @@ struct ButtonStore<WhateverYouWant: View>: View {
 
 struct PrimaryButtonStyle: ButtonStyle {
     
+    @ObservedObject var palette = Palette.shared
+    
     func makeBody(configuration: Self.Configuration) ->  some View {
         
         configuration.label
-            .background(configuration.isPressed ? Color.purple : Color.white)
+            //.background(configuration.isPressed ? Color.purple : Color.white)
+            //.foregroundColor(palette.main)
+            .background(configuration.isPressed ? palette.main : Color.white)
             .cornerRadius(10)
             .padding()
             .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, maxWidth: .infinity)
