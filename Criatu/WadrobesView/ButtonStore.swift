@@ -7,8 +7,8 @@
 
 
 // - - - - - - - - - - - - - - - -Add this code in anyview to add this kind of button- - - - - - - - - - - - - - -
-//  @Environment(\.openURL) var openURL - you need to create this var too.
-//ButtonStore(action: { print("pegou"); openURL(URL(string: "https://www.instagram.com/vila.morato/")!)}) {
+//  @Environment(\.openURL) var openURL - you need to create this var too and import Firebase in the top of page.
+//ButtonStore(action: { Analytics.logEvent("Redirecionou_para_loja", parameters: nil); openURL(URL(string: "https://www.instagram.com/vila.morato/")!)}) {
 //    Text("Visitar Loja")
 //        .fontWeight(.none)
 //        .foregroundColor(Color.purple)
@@ -17,6 +17,7 @@
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 import SwiftUI
+import Firebase
 
 
 struct ButtonStore<WhateverYouWant: View>: View {
@@ -34,6 +35,7 @@ struct ButtonStore<WhateverYouWant: View>: View {
     var body: some View {
         
         Button(action: action){
+            
             content
                 .padding(10)
                 .overlay(

@@ -8,6 +8,7 @@
 import SwiftUI
 import CoreData
 import UserNotifications
+import FirebaseAnalytics
 
 class Palette: ObservableObject{
     static var shared: Palette = Palette()
@@ -164,6 +165,7 @@ struct ProfileView: View, OnboardingDelegate {
                                     Button(action: {
                                         selectedIndex = index
                                         palette.selectedMainColor = selectedIndex
+                                        Analytics.logEvent("Trocou_de_cor", parameters: ["Cor_selecionada": palette.descriptions[selectedIndex]])
                                     }, label: {
                                         if selectedIndex == index{
                                             VStack(){

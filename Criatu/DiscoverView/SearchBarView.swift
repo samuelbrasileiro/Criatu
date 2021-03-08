@@ -56,6 +56,6 @@ struct SearchBarView: View {
 struct SearchBarView_Previews: PreviewProvider {
     
     static var previews: some View {
-        SearchBarView(bank: DiscoverBank())
+        SearchBarView(bank: DiscoverBank.shared)
     }
 }
