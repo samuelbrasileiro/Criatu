@@ -10,9 +10,9 @@ import SwiftUI
 struct SaveLooksView: View {
     
     @ObservedObject var style: Style
-    
+    @Environment(\.openURL) var openURL
     @State var isLiked: Bool = false
-    @State var suggestionIndex: Int 
+    @State var suggestionIndex: Int
     
     let screen = UIScreen.main.bounds
     
@@ -23,6 +23,9 @@ struct SaveLooksView: View {
         ZStack {
             if(suggestionIndex < style.suggestions.count){
             ZStack(alignment: .bottom) {
+                
+
+                    
                     Image(uiImage: style.suggestions[suggestionIndex].image)
                         .resizable()
                         .scaledToFill()
@@ -34,7 +37,19 @@ struct SaveLooksView: View {
                         .padding(.horizontal, 60)
                         .padding(.bottom)
                     
-                    
+                    VStack(){
+                        
+                        ButtonStore(action: { print("pegou"); openURL(URL(string: "https://www.instagram.com/vila.morato/")!)}) {
+                            Text("Visitar Loja")
+                                .fontWeight(.none)
+                                //.foregroundColor(Color.purple)
+                                .foregroundColor(palette.main)
+                        }
+                        .buttonStyle(PrimaryButtonStyle())
+                    }
+                    .padding(.bottom, 480)
+                    .padding(.leading, -160)
+                
                     HStack(spacing: 70) {
                         Button(action: {
                             
@@ -65,6 +80,7 @@ struct SaveLooksView: View {
                             
                         }
                     }
+               
                 }
                 .padding(.bottom, 60)
                     .blur(radius: isLiked ? 3.0 : 0)
