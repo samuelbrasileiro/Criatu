@@ -8,31 +8,13 @@
 import SwiftUI
 
 class ImageItem: DiscoverItem {
+    var image: UIImage?
+    var imageID: Int
     
-    @Published var image: UIImage?{
-        willSet { self.objectWillChange.send() }
-    }
-    
-    override init(id: String, url: String, type: ItemType) {
-        super.init(id: id, url: url, type: type)
-                
-        getImage()
-    }
-    
-    override init(attributes: DiscoverItem.Database){
-        super.init(attributes: attributes)
-        
-        getImage()
-    }
-    
-    /// From image URL this function downloads and saves the
-    /// image data in 'image' attribute
-    func getImage(){
-        FirebaseHandler.getItemImage(from: self.attributes.url){ result in
-            if case .success(let image) = result{
-                self.image = image
-            }
-        }
-        
+    init(imageID: Int, tagsArray: [String],image: UIImage?) {
+        self.imageID = imageID
+        self.image = image
+        super.init(id: "", url: "", type: .image)
+        self.tagsArray = tagsArray
     }
 }

@@ -16,7 +16,6 @@ struct WardrobeView: View{
     @State var showDetails: Bool = false
     var body: some View{
         ZStack(alignment: .topTrailing) {
-            
             if !showDetails{
                 
                 NavigationLink(destination: ClosetView(style: style)) {

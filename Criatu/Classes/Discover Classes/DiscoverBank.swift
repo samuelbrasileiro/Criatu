@@ -18,27 +18,23 @@ protocol DiscoverDelegate{
 
 class DiscoverBank: ObservableObject, Identifiable, DiscoverDelegate {
     
-    @Published var items: [DiscoverItem] = []
+    static let shared = DiscoverBank()
     
+    @Published var items: [DiscoverItem] = []
     @Published var interests: [Interest] = []
     @Published var searchText: String = ""
     @Published var isSearching: Bool = false
-    
     @Published var allInterests: [Interest] = []
-    
     @Published var discoveredStyle: Style?
-    @Published var didDiscoverNewStyle = false
-    @Published var didNotDiscoverStyle = false
-    
+    @Published var didDiscoverNewStyle: Bool = false
+    @Published var didNotDiscoverStyle: Bool = false
     @Published var isDiscovering: Bool = false
     
     var minimumSelectedItens: Int = 0
     
     init() {
         self.clear()
-        
         self.addInterests()
-        
     }
     
     /// This function clears all items in the array 'items'
@@ -55,7 +51,6 @@ class DiscoverBank: ObservableObject, Identifiable, DiscoverDelegate {
     }
     
     func addInterests(){
-        
         if var interests = Interest.restore(){
             interests.shuffle()
             let count = interests.count < 3 ? interests.count : 3
@@ -67,18 +62,7 @@ class DiscoverBank: ObservableObject, Identifiable, DiscoverDelegate {
 
         }
     }
-    func getItem(from id: String){
-        FirebaseHandler.readCollection(.items, id: id, dataType: DiscoverItem.Database.self){ result in
-            if case .success(let attribute) = result{
-                if attribute.type == .image{
-                    self.items.append(ImageItem(attributes: attribute))
-                }
-                else if attribute.type == .music{
-                    self.items.append(MusicItem(attributes: attribute))
-                }
-            }
-        }
-    }
+
     func getAllInterests(){
         self.allInterests = []
         FirebaseHandler.readAllCollection(.interests, dataType: [Interest.Database].self){ result in
@@ -93,62 +77,45 @@ class DiscoverBank: ObservableObject, Identifiable, DiscoverDelegate {
     }
     
     func discoverStyle(){
-        isDiscovering = true
-        items = items.filter{
-            $0.isSelected
+        self.isDiscovering = true
+        let selectedItems = items.filter{ $0.isSelected }
+        var userSet: [String] = []
+        var similarityResults: [String : Float] = [:]
+        
+        let closets: [ClosetInterface] = [
+            ClosetInterface(id: "-MNOV-lGoNFf7Oa7WW1n", tags: ["pizza", "pug", "mulher"]),
+            ClosetInterface(id: "-MNP6eErV2Or6qZsipfO", tags: ["paris", "fantasia", "compondo"]),
+            ClosetInterface(id: "-MNYbEkkQHkxRK0YMVJo", tags: ["gato", "pedra", "alta", "cavalo"]),
+            ClosetInterface(id: "-MNYbNl7yyEmDZ9hdZPK", tags: ["frutas", "halteres", "fitness"]),
+            ClosetInterface(id: "-MNYbT6ljnhwJcLHv2Xn", tags: ["frança", "cor", "frança", "égua"]),
+        ]
+        
+        for item in selectedItems {
+            userSet.append(contentsOf: item.tagsArray.map{ $0 })
+        }
+        
+        for closet in closets {
+            similarityResults[closet.id] = SetSimilarity.jaccardSimilarity(firstSet: userSet, secondSet: closet.tags)
+        }
+        
+        let sortedDictionary = similarityResults.sorted {
+            (first: (key: String, value: Float), second: (key: String, value: Float)) -> Bool in
+            return first.value > second.value
         }
         
         Timer.scheduledTimer(withTimeInterval: 2, repeats: false){ _ in
             self.isDiscovering = false
-            let context = AppDelegate.viewContext
             
-            let stylesIDs = [String](self.items.map({$0.attributes.stylesIDs ?? []}).joined())
-            
-            let reducedIDs = stylesIDs.reduce([String:Int]()) { dict, id in
-                var dict = dict
-                
-                dict[id] = (dict[id] ?? 0)
-                dict[id]! += 1
-                
-                return dict
-            }.map{$0}
-            
-            let sortedIDs = reducedIDs.sorted{ $0.value > $1.value}
-            
-            let closetsRequest: NSFetchRequest<Closet> = Closet.fetchRequest()
-            
-            do {
-                let closets = try context.fetch(closetsRequest)
-                
-                if !sortedIDs.contains(where: { id in id.value >= self.minimumSelectedItens && !closets.contains(where: {$0.id == id.key})}){
+            FirebaseHandler.readCollection(.closets, id: sortedDictionary[0].key, dataType: Style.Database.self) { result in
+                if case .success(let attributes) = result {
+                    self.discoveredStyle = Style(attributes: attributes)
+                    self.didDiscoverNewStyle = true
+                } else {
                     self.didNotDiscoverStyle = true
-                    print("You already have all suitable closets")
-                    return
                 }
-                for id in sortedIDs{
-                    if !closets.contains(where: {$0.id == id.key}){
-                        if id.value >= self.minimumSelectedItens{
-                            
-                            FirebaseHandler.readCollection(.closets, id: id.key, dataType: Style.Database.self) { result in
-                                if case .success(let attributes) = result {
-                                                                        
-                                    self.discoveredStyle = Style(attributes: attributes)
-                                    
-                                    self.didDiscoverNewStyle = true
-                                    
-                                }
-                            }
-                            
-                            break
-                        }
-                    }
-                }
-                
-            }catch{
-                print(error)
             }
+            
         }
-        
     }
     
     func clearAllInterests(){
@@ -156,46 +123,48 @@ class DiscoverBank: ObservableObject, Identifiable, DiscoverDelegate {
     }
     
     func addInterestToTop(interest: Interest){
-        if self.interests.filter({ $0.attributes.id == interest.attributes.id
-        }).count == 0{
+        if self.interests.filter({ $0.attributes.id == interest.attributes.id}).count == 0{
             self.interests.insert(interest, at: 0)
         }
     }
     
     func didSelectInterest(_ interest: Interest){
-
+        
+        let api = PixabayAPI()
+        api.getData(tagsSearched: interest.attributes.name, completionHandler: {_ in
+            print("Did select Interest")
+        })
+        
         if var ids = interest.attributes.itemsIDs{
             
             ids.shuffle()
             ids = [String](ids.prefix(4))
             for id in ids{
-
                 FirebaseHandler.readCollection(.items, id: id, dataType: DiscoverItem.Database.self){ result in
                     if case .success(let attributes) = result{
                         if self.items.map({$0.attributes.id}).contains(id){
                             return
                         }
-                        if attributes.type == .image{
-                            let item = ImageItem(attributes: attributes)
-                            item.interestAssociatedID = interest.attributes.id
-                            self.items.insert(item, at: 0)
-                        }
-                        else if attributes.type == .music{
+                        if attributes.type == .music{
                             let item = MusicItem(attributes: attributes)
                             item.interestAssociatedID = interest.attributes.id
                             self.items.insert(item, at: 0)
                         }
                     }
                 }
-                
-                
             }
             
         }
     }
     func didDisselectInterest(_ interest: Interest){
+        //Old itens filter
         items = items.filter{ item in
             return !(item.interestAssociatedID == interest.attributes.id)
+        }
+        
+        //New PixaBay itens filter
+        items = items.filter { item in
+            return !item.tagsArray.contains(interest.attributes.name.lowercased())
         }
 
     }
@@ -204,27 +173,14 @@ class DiscoverBank: ObservableObject, Identifiable, DiscoverDelegate {
         self.objectWillChange.send()
     }
     
-    /// This function adds all items in the array 'items'
-    func addItems(){
-        let ids = ["-MMuZ1PpDQGOXWzAdjN4", "-MMuWsbBuTkOGLIrBjX-", "-MMuWy3bg3vMXvU4WnL-", "-MMuZRYLUaAn_RBJcdj8", "-MMuZf-rEs2la53EAZMX"]
-        var interests: [Interest] = []
-        var count = 0
-        for id in ids{
-            
-            FirebaseHandler.readCollection(.interests, id: id, dataType: Interest.Database.self){ result in
-                
-                if case .success(let attributes) = result{
-                    interests.append(Interest(attributes: attributes))
-                    count += 1
-                    if count == ids.count{
-                        Interest.archive(interests: interests)
-                        self.addInterests()
-                    }
+    func getItem(from id: String){
+        FirebaseHandler.readCollection(.items, id: id, dataType: DiscoverItem.Database.self){ result in
+            if case .success(let attribute) = result{
+                if attribute.type == .music{
+                    self.items.append(MusicItem(attributes: attribute))
                 }
-                
             }
         }
-        
     }
     
 }

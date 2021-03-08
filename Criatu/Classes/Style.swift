@@ -7,15 +7,14 @@
 
 import Foundation
 import UIKit
+import FirebaseAnalytics
 
 class Style: ObservableObject, Identifiable{
     
     var attributes: Style.Database
     
     @Published var image: UIImage?
-    
     @Published var suggestions: [Look] = []
-    
     @Published var drawers: [Drawer] = []
     
     var closet: Closet?
@@ -58,6 +57,7 @@ class Style: ObservableObject, Identifiable{
     }
     
     func createDrawer(name: String){
+        Analytics.logEvent("Criou_Nova_Gaveta", parameters: nil)
         let context = AppDelegate.viewContext
         let drawer = Drawer(context: context)
         drawer.name = name

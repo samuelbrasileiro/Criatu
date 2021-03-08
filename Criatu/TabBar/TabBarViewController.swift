@@ -7,6 +7,7 @@
 
 import UIKit
 import SwiftUI
+import FirebaseAnalytics
 protocol SelectedViewDelegate{
     func changeSelectedIndex()
 }
@@ -40,7 +41,9 @@ class TabBarViewController: UITabBarController, SelectedViewDelegate {
     let handler = FirebaseHandler()
     
     func changeSelectedIndex() {
+        let abas: [String] = ["Descubra", "Armário", "Perfil"]
         self.selectedIndex = selectedView.index
+        Analytics.logEvent("Trocou_de_aba", parameters: ["Aba_Selecionada": abas[selectedView.index]])
     }
         
     var selectedView = SelectedView()

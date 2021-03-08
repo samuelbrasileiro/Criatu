@@ -112,7 +112,6 @@ class GameScene: SKScene{
                     circle.physicsBody?.isDynamic = false
                     waveEffect(centralCircle: circle)
                     self.selectedInterests.append(circle.name!)
-                    
                 }
                 
                 else {
@@ -182,7 +181,7 @@ class GameScene: SKScene{
         circle.physicsBody?.allowsRotation = false
         circle.physicsBody?.affectedByGravity = false
         circle.physicsBody?.restitution = 1
-        circle.name = interest.attributes.id
+        circle.name = interest.attributes.name
         circle.addChild(textNode(text: interest.attributes.name, circle: circle))
         
         self.addChild(circle)
@@ -243,7 +242,7 @@ class GameScene: SKScene{
         if words.count == 1{
             labelNode.fontSize *= (scalingFactor - CGFloat(1.0/Double(labelNode.text!.count)))
         }
-     
+        
         return labelNode.fontSize
     }
     
@@ -345,13 +344,13 @@ struct DynamicCircleView: View {
             Button(action: {
                 var interests: [Interest] = []
                 
-                for id in loader.scene.selectedInterests{
-                    if let first = loader.scene.interests.first(where: {$0.attributes.id == id}){
+                for tag in loader.scene.selectedInterests{
+                    if let first = loader.scene.interests.first(where: {$0.attributes.name == tag}){
                         interests.append(first)
                     }
                 }
-                Interest.archive(interests: interests)
                 
+                Interest.archive(interests: interests)
                 delegate?.endInterestSelection()
             }, label: {
                 Text("Terminei")
