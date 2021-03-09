@@ -10,51 +10,43 @@ import UIKit
 
 class PixabayAPI{
     
-    var baseURL =  "https://pixabay.com/api/?key=20490794-452a82acc640fcfc4130d0bb8&per_page=3&lang=pt&"
-    var imageInfoArr:[Hit] = []
+    var baseURL = "https://pixabay.com/api/?key=20490794-452a82acc640fcfc4130d0bb8&per_page=3&lang=pt&"
+    var imagesData: [Hit] = []
     
     func getData(tagsSearched:String,completionHandler: @escaping (Response) -> Void){
         let formattedTag = tagsSearched.lowercased().replacingOccurrences(of: " ", with: "+")
-        let urlString = baseURL + "q=" + formattedTag
-        let url = URL(string: urlString)
+        let url = URL(string: baseURL + "q=" + formattedTag)
         var request = URLRequest(url: url!)
         request.httpMethod = "GET"
+        
         let task = URLSession.shared.dataTask(with: url!, completionHandler: { (data, response, error) in
-            
-            
             if let _ = error {
                 print("Error accessing swapi.co: /(error)")
                 return
             }
             
             guard let httpResponse = response as? HTTPURLResponse,
-                  (200...299).contains(httpResponse.statusCode) else {
-                print("Error with the response, unexpected status code: \(response)")
+                (200...299).contains(httpResponse.statusCode) else {
+                print("Error with the response, unexpected status code: ??? ")
                 return
             }
             
             if let data = data{
-                
                 do{
                     let searchResponse = try JSONDecoder().decode(Response.self, from: data)
-                    print("CONVERSION SUCEDED")
-                    self.imageInfoArr = searchResponse.hits
-                    for imageInfo in self.imageInfoArr{
-                        var tags = self.getSplitedImageTags(id: imageInfo.id)!
-                        let id = imageInfo.id
+                    self.imagesData = searchResponse.hits
+                    
+                    for image in self.imagesData {
+                        image.tags += ", \(tagsSearched)"
                         
-                        //Need to add searched tag because not always the tags comming from
-                        //Image contains the searched tag
-                        tags.append(tagsSearched.lowercased())
-                        
-                        self.getImage(id: imageInfo.id, completionHandler: {image in
-                            let imageItem = ImageItem(imageID: id, tagsArray: tags, image: image)
-                            DispatchQueue.main.async {
-                                DiscoverBank.shared.items.append(imageItem)
-                            }
-                            completionHandler(searchResponse)
-                        })
+                        if let tags = self.getImageTags(id: image.id) {
+                            image.tagsArray = tags
+                        } else {
+                            print("Something went wrong")
+                        }
                     }
+                    
+                    completionHandler(searchResponse)
                 }catch{
                     print(error.localizedDescription)
                 }
@@ -66,36 +58,40 @@ class PixabayAPI{
         task.resume()
     }
     
-    func getImageTags(id:Int) -> String?{
-        var imageTags = String()
-        for image in imageInfoArr{
-            
-            if image.id == id{
-                imageTags = image.tags
-                return imageTags
-            }
+    func getImageTags(id:Int)->[String]?{
+        let optionalImage: Hit? = imagesData.first(where: {
+            $0.id == id
+        })
+        
+        if let image = optionalImage{
+            return image.tags.components(separatedBy: ", ")
         }
+        
         return nil
     }
     
-    func getSplitedImageTags(id:Int)->[String]?{
-        
-        let imageTags = getImageTags(id: id)
-        if imageTags == nil{
-            return nil
-        }else{
-            let tagsComponents = imageTags!.components(separatedBy: ", ")
-            return tagsComponents
+    
+    func downloadImages() {
+        for imageInfo in imagesData {
+            let id = imageInfo.id
+            let tags = self.getImageTags(id: imageInfo.id)!
+            
+            self.getImage(id: imageInfo.id, completionHandler: {image in
+                let imageItem = ImageItem(imageID: id, tagsArray: tags, image: image)
+                DispatchQueue.main.async {
+                    DiscoverBank.shared.items.append(imageItem)
+                }
+            })
         }
     }
     
     func getImage(id:Int, completionHandler: @escaping (UIImage?)->Void){
         
-        if imageInfoArr.count == 0{
+        if imagesData.count == 0{
             completionHandler(nil)
             print("IMAGE COUNT EQUAL ZERO")
         }else{
-            for image in imageInfoArr{
+            for image in imagesData{
                 if image.id == id{
                     let url = URL(string: image.largeImageURL)
                     var request = URLRequest(url: url!)
@@ -115,16 +111,11 @@ class PixabayAPI{
                         }
                         
                         if let data = data{
-                            
                             let image = UIImage(data: data)
-                            print("IMAGE CONVERSION SUCEDED")
                             completionHandler(image)
                         }else{
-                            print("IMAGE CONVERSION FAILED")
                             completionHandler(nil)
                         }
-                        
-                        
                     })
                  
                     task.resume()
@@ -151,7 +142,8 @@ class Hit: Codable {
     let id: Int
     let pageURL: String
     let type: String
-    let tags: String
+    var tags: String
+    var tagsArray: [String] = []
     let previewURL: String
     let previewWidth, previewHeight: Int
     let webformatURL: String

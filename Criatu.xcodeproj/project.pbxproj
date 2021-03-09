@@ -8,15 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		0488FB732562BB4D00E537B2 /* FirebaseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0488FB722562BB4D00E537B2 /* FirebaseHandler.swift */; };
-
-		08A98BE97C3F63783E897B5B /* Pods_CriatuTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC2471249044735CF8A7BDAA /* Pods_CriatuTests.framework */; };
 		0C6A858D25F14AEF006776B0 /* ClosetInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6A858C25F14AEF006776B0 /* ClosetInterface.swift */; };
-		0C6A858E25F14AEF006776B0 /* ClosetInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6A858C25F14AEF006776B0 /* ClosetInterface.swift */; };
-		0C6A858F25F14AEF006776B0 /* ClosetInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6A858C25F14AEF006776B0 /* ClosetInterface.swift */; };
-
+		0C99385625F80EAD004F0A73 /* CriatuAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C99385525F80EAD004F0A73 /* CriatuAPITests.swift */; };
 		0CD6D81225EE707500164C17 /* CriatuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD6D81125EE707500164C17 /* CriatuTests.swift */; };
 		0CD6D83625EE751D00164C17 /* CriatuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD6D83525EE751D00164C17 /* CriatuUITests.swift */; };
-
 		0CE14FE725E9247F002E2E6E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0CE14FE625E9247F002E2E6E /* GoogleService-Info.plist */; };
 		100CC76225751DB800A21A2C /* ClosetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100CC76125751DB800A21A2C /* ClosetView.swift */; };
 		100CC7672575258400A21A2C /* Drawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100CC7662575258400A21A2C /* Drawer.swift */; };
@@ -32,11 +27,9 @@
 		283CFC80256FE88600702DAE /* EndOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283CFC7A256FE88600702DAE /* EndOnboardingView.swift */; };
 		283CFC81256FE88600702DAE /* OnboardingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283CFC7B256FE88600702DAE /* OnboardingPageView.swift */; };
 		283CFC83256FE88600702DAE /* OnboardItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283CFC7D256FE88600702DAE /* OnboardItemView.swift */; };
-
 		289EF09A25EE6D080057002C /* PixabayAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289EF09925EE6D080057002C /* PixabayAPI.swift */; };
 		2ACBBC04A1F27BFA79EABF06 /* Pods_CriatuTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC2471249044735CF8A7BDAA /* Pods_CriatuTests.framework */; };
 		2CB3178D25ED11DB005BB5B5 /* ButtonStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB3178C25ED11DB005BB5B5 /* ButtonStore.swift */; };
-
 		35091E0E25669A7500F94A4A /* LazyWaterfallGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35091E0D25669A7500F94A4A /* LazyWaterfallGrid.swift */; };
 		35091E282566C86D00F94A4A /* MusicItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35091E272566C86D00F94A4A /* MusicItem.swift */; };
 		35091E312566C91000F94A4A /* ImageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35091E302566C91000F94A4A /* ImageItem.swift */; };
@@ -93,16 +86,14 @@
 
 /* Begin PBXFileReference section */
 		0488FB722562BB4D00E537B2 /* FirebaseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseHandler.swift; sourceTree = "<group>"; };
-
 		0C6A858C25F14AEF006776B0 /* ClosetInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosetInterface.swift; sourceTree = "<group>"; };
-
+		0C99385525F80EAD004F0A73 /* CriatuAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriatuAPITests.swift; sourceTree = "<group>"; };
 		0CD6D80F25EE707500164C17 /* CriatuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CriatuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CD6D81125EE707500164C17 /* CriatuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriatuTests.swift; sourceTree = "<group>"; };
 		0CD6D81325EE707500164C17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0CD6D83325EE751D00164C17 /* CriatuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CriatuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CD6D83525EE751D00164C17 /* CriatuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriatuUITests.swift; sourceTree = "<group>"; };
 		0CD6D83725EE751D00164C17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-
 		0CE14FE625E9247F002E2E6E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		100CC76125751DB800A21A2C /* ClosetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosetView.swift; sourceTree = "<group>"; };
 		100CC7662575258400A21A2C /* Drawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drawer.swift; sourceTree = "<group>"; };
@@ -120,11 +111,8 @@
 		283CFC7A256FE88600702DAE /* EndOnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndOnboardingView.swift; sourceTree = "<group>"; };
 		283CFC7B256FE88600702DAE /* OnboardingPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPageView.swift; sourceTree = "<group>"; };
 		283CFC7D256FE88600702DAE /* OnboardItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardItemView.swift; sourceTree = "<group>"; };
-
 		289EF09925EE6D080057002C /* PixabayAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixabayAPI.swift; sourceTree = "<group>"; };
-
 		2CB3178C25ED11DB005BB5B5 /* ButtonStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStore.swift; sourceTree = "<group>"; };
-
 		30D8DBB213DC6499EB92DA59 /* Pods-CriatuTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CriatuTests.debug.xcconfig"; path = "Target Support Files/Pods-CriatuTests/Pods-CriatuTests.debug.xcconfig"; sourceTree = "<group>"; };
 		35091E0D25669A7500F94A4A /* LazyWaterfallGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LazyWaterfallGrid.swift; sourceTree = "<group>"; };
 		35091E272566C86D00F94A4A /* MusicItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicItem.swift; sourceTree = "<group>"; };
@@ -341,6 +329,7 @@
 			children = (
 				356A45C8255D837000F892A1 /* CriatuTests.swift */,
 				356A45CA255D837000F892A1 /* Info.plist */,
+				0C99385525F80EAD004F0A73 /* CriatuAPITests.swift */,
 			);
 			path = CriatuTests;
 			sourceTree = "<group>";
@@ -689,6 +678,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C99385625F80EAD004F0A73 /* CriatuAPITests.swift in Sources */,
 				0CD6D81225EE707500164C17 /* CriatuTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -757,26 +747,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-    
-		356A45C0255D837000F892A1 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				356A45C9255D837000F892A1 /* CriatuTests.swift in Sources */,
-				0C6A858E25F14AEF006776B0 /* ClosetInterface.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		356A45CB255D837000F892A1 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				356A45D4255D837000F892A1 /* CriatuUITests.swift in Sources */,
-				0C6A858F25F14AEF006776B0 /* ClosetInterface.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */

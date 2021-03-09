@@ -132,7 +132,7 @@ class DiscoverBank: ObservableObject, Identifiable, DiscoverDelegate {
         
         let api = PixabayAPI()
         api.getData(tagsSearched: interest.attributes.name, completionHandler: {_ in
-            print("Did select Interest")
+            api.downloadImages()
         })
         
         if var ids = interest.attributes.itemsIDs{
