@@ -7,6 +7,7 @@
 
 import XCTest
 import ViewInspector
+import SwiftUI
 @testable import Criatu
 
 extension ButtonStore: Inspectable {}
@@ -22,21 +23,15 @@ final class CriatuTests: XCTestCase {
     }
 
     func testRedirectButton() throws {
-//        var view = ButtonStore()
-//        
-//        view.on(\.didAppear) { view in
+//        var view = ButtonStore(action: {}, content: {
+//            Text("Text")
+//        })
+//
+//        view.body.on(\.didAppear) { view in
 //                XCTAssertFalse(try view.actualView().didTap, "Botão da loja não clickado")
 //                try view.find(button: "Visitar Loja").tap()
 //            XCTAssertTrue(try view.actualView().didTap, "Botão da loja clickado!")
-//            
+//
 //        }
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }

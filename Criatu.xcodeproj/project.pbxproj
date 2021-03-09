@@ -10,6 +10,7 @@
 		0488FB732562BB4D00E537B2 /* FirebaseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0488FB722562BB4D00E537B2 /* FirebaseHandler.swift */; };
 		0C6A858D25F14AEF006776B0 /* ClosetInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6A858C25F14AEF006776B0 /* ClosetInterface.swift */; };
 		0C99385625F80EAD004F0A73 /* CriatuAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C99385525F80EAD004F0A73 /* CriatuAPITests.swift */; };
+		0C99387225F82D97004F0A73 /* Hit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C99387125F82D97004F0A73 /* Hit.swift */; };
 		0CD6D81225EE707500164C17 /* CriatuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD6D81125EE707500164C17 /* CriatuTests.swift */; };
 		0CD6D83625EE751D00164C17 /* CriatuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD6D83525EE751D00164C17 /* CriatuUITests.swift */; };
 		0CE14FE725E9247F002E2E6E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0CE14FE625E9247F002E2E6E /* GoogleService-Info.plist */; };
@@ -88,6 +89,7 @@
 		0488FB722562BB4D00E537B2 /* FirebaseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseHandler.swift; sourceTree = "<group>"; };
 		0C6A858C25F14AEF006776B0 /* ClosetInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosetInterface.swift; sourceTree = "<group>"; };
 		0C99385525F80EAD004F0A73 /* CriatuAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriatuAPITests.swift; sourceTree = "<group>"; };
+		0C99387125F82D97004F0A73 /* Hit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hit.swift; sourceTree = "<group>"; };
 		0CD6D80F25EE707500164C17 /* CriatuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CriatuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CD6D81125EE707500164C17 /* CriatuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriatuTests.swift; sourceTree = "<group>"; };
 		0CD6D81325EE707500164C17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -306,7 +308,6 @@
 				35FFE3262564150800F3E8F0 /* Criatu.entitlements */,
 				356A45B0255D836E00F892A1 /* SceneDelegate.swift */,
 				0488FB722562BB4D00E537B2 /* FirebaseHandler.swift */,
-				289EF09925EE6D080057002C /* PixabayAPI.swift */,
 				283CFC77256FE86700702DAE /* Onboarding */,
 				35EBBC2B256EBF4200856EE5 /* TabBar */,
 				10BF032A25655D8D008F2BCC /* DiscoverView */,
@@ -379,6 +380,8 @@
 		35FFE2CD2563FBCD00F3E8F0 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				289EF09925EE6D080057002C /* PixabayAPI.swift */,
+				0C99387125F82D97004F0A73 /* Hit.swift */,
 				35FFE2D12563FBE300F3E8F0 /* Interest.swift */,
 				35FFE2D62563FC1400F3E8F0 /* Style.swift */,
 				35FFE2DB2563FC3A00F3E8F0 /* LookItem.swift */,
@@ -730,6 +733,7 @@
 				85C80A6E2566B2A700BBB230 /* MusicItemView.swift in Sources */,
 				2814058825F0A6710049C764 /* SetSimilarity.swift in Sources */,
 				108E864525766A2200842084 /* Closet.swift in Sources */,
+				0C99387225F82D97004F0A73 /* Hit.swift in Sources */,
 				85C80A5B2566AB2600BBB230 /* ImageItemView.swift in Sources */,
 				35D0EB69256D669300CFBEB1 /* Keys.swift in Sources */,
 				2828A1E2257525FE00D91A7B /* DynamicCircleView.swift in Sources */,

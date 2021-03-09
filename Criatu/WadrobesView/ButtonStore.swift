@@ -19,23 +19,19 @@
 import SwiftUI
 import Firebase
 
-
 struct ButtonStore<WhateverYouWant: View>: View {
+    @ObservedObject var palette = Palette.shared
+    @Environment(\.openURL) var openURL
     let action: () -> Void
     let content: WhateverYouWant
-    @ObservedObject var palette = Palette.shared
+    
     init(action: @escaping () -> Void, @ViewBuilder content: () -> WhateverYouWant){
-        
         self.action = action
         self.content = content()
     }
-
-    @Environment(\.openURL) var openURL
     
     var body: some View {
-        
         Button(action: action){
-            
             content
                 .padding(10)
                 .overlay(
@@ -44,18 +40,13 @@ struct ButtonStore<WhateverYouWant: View>: View {
                         .stroke(palette.main, lineWidth: 3))
         }
     }
-    
 }
 
 struct PrimaryButtonStyle: ButtonStyle {
-    
     @ObservedObject var palette = Palette.shared
     
     func makeBody(configuration: Self.Configuration) ->  some View {
-        
         configuration.label
-            //.background(configuration.isPressed ? Color.purple : Color.white)
-            //.foregroundColor(palette.main)
             .background(configuration.isPressed ? palette.main : Color.white)
             .cornerRadius(10)
             .padding()
