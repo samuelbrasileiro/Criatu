@@ -11,6 +11,7 @@
 		0C6A858D25F14AEF006776B0 /* ClosetInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6A858C25F14AEF006776B0 /* ClosetInterface.swift */; };
 		0C99385625F80EAD004F0A73 /* CriatuAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C99385525F80EAD004F0A73 /* CriatuAPITests.swift */; };
 		0C99387225F82D97004F0A73 /* Hit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C99387125F82D97004F0A73 /* Hit.swift */; };
+		0C99388325F83391004F0A73 /* CriatuSetsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C99388225F83391004F0A73 /* CriatuSetsTests.swift */; };
 		0CD6D81225EE707500164C17 /* CriatuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD6D81125EE707500164C17 /* CriatuTests.swift */; };
 		0CD6D83625EE751D00164C17 /* CriatuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD6D83525EE751D00164C17 /* CriatuUITests.swift */; };
 		0CE14FE725E9247F002E2E6E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0CE14FE625E9247F002E2E6E /* GoogleService-Info.plist */; };
@@ -23,7 +24,7 @@
 		108E864525766A2200842084 /* Closet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108E864425766A2200842084 /* Closet.swift */; };
 		108E86522576B5D100842084 /* SaveLooksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108E86512576B5D100842084 /* SaveLooksView.swift */; };
 		10BF032C25655DB0008F2BCC /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BF032B25655DB0008F2BCC /* SearchBarView.swift */; };
-		2814058825F0A6710049C764 /* SetSimilarity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2814058725F0A6710049C764 /* SetSimilarity.swift */; };
+		2814058825F0A6710049C764 /* TagsSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2814058725F0A6710049C764 /* TagsSet.swift */; };
 		2828A1E2257525FE00D91A7B /* DynamicCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2828A1E1257525FE00D91A7B /* DynamicCircleView.swift */; };
 		283CFC80256FE88600702DAE /* EndOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283CFC7A256FE88600702DAE /* EndOnboardingView.swift */; };
 		283CFC81256FE88600702DAE /* OnboardingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283CFC7B256FE88600702DAE /* OnboardingPageView.swift */; };
@@ -90,6 +91,7 @@
 		0C6A858C25F14AEF006776B0 /* ClosetInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosetInterface.swift; sourceTree = "<group>"; };
 		0C99385525F80EAD004F0A73 /* CriatuAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriatuAPITests.swift; sourceTree = "<group>"; };
 		0C99387125F82D97004F0A73 /* Hit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hit.swift; sourceTree = "<group>"; };
+		0C99388225F83391004F0A73 /* CriatuSetsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriatuSetsTests.swift; sourceTree = "<group>"; };
 		0CD6D80F25EE707500164C17 /* CriatuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CriatuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CD6D81125EE707500164C17 /* CriatuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriatuTests.swift; sourceTree = "<group>"; };
 		0CD6D81325EE707500164C17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -108,7 +110,7 @@
 		10BF032B25655DB0008F2BCC /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		1F59A9FE33A10336EB9C334C /* Pods-Criatu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Criatu.debug.xcconfig"; path = "Target Support Files/Pods-Criatu/Pods-Criatu.debug.xcconfig"; sourceTree = "<group>"; };
 		2810E6712587F22700F2429E /* Criatu-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Criatu-Bridging-Header.h"; sourceTree = "<group>"; };
-		2814058725F0A6710049C764 /* SetSimilarity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetSimilarity.swift; sourceTree = "<group>"; };
+		2814058725F0A6710049C764 /* TagsSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsSet.swift; sourceTree = "<group>"; };
 		2828A1E1257525FE00D91A7B /* DynamicCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicCircleView.swift; sourceTree = "<group>"; };
 		283CFC7A256FE88600702DAE /* EndOnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndOnboardingView.swift; sourceTree = "<group>"; };
 		283CFC7B256FE88600702DAE /* OnboardingPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPageView.swift; sourceTree = "<group>"; };
@@ -309,10 +311,10 @@
 				356A45B0255D836E00F892A1 /* SceneDelegate.swift */,
 				0488FB722562BB4D00E537B2 /* FirebaseHandler.swift */,
 				283CFC77256FE86700702DAE /* Onboarding */,
-				35EBBC2B256EBF4200856EE5 /* TabBar */,
+				35EBBC2B256EBF4200856EE5 /* TabBarView */,
 				10BF032A25655D8D008F2BCC /* DiscoverView */,
 				35F82A1E25713C040087DD22 /* WadrobesView */,
-				850B4A7925751D0D00C7DFBB /* Profile */,
+				850B4A7925751D0D00C7DFBB /* ProfileView */,
 				35FFE2CD2563FBCD00F3E8F0 /* Classes */,
 				100CC76B2575259300A21A2C /* CoreData */,
 				105312D825656C5500887B1E /* Extra */,
@@ -320,7 +322,7 @@
 				356A45BC255D837000F892A1 /* LaunchScreen.storyboard */,
 				0CE14FE625E9247F002E2E6E /* GoogleService-Info.plist */,
 				356A45BF255D837000F892A1 /* Info.plist */,
-				2814058725F0A6710049C764 /* SetSimilarity.swift */,
+				2814058725F0A6710049C764 /* TagsSet.swift */,
 			);
 			path = Criatu;
 			sourceTree = "<group>";
@@ -331,6 +333,7 @@
 				356A45C8255D837000F892A1 /* CriatuTests.swift */,
 				356A45CA255D837000F892A1 /* Info.plist */,
 				0C99385525F80EAD004F0A73 /* CriatuAPITests.swift */,
+				0C99388225F83391004F0A73 /* CriatuSetsTests.swift */,
 			);
 			path = CriatuTests;
 			sourceTree = "<group>";
@@ -344,13 +347,13 @@
 			path = CriatuUITests;
 			sourceTree = "<group>";
 		};
-		35EBBC2B256EBF4200856EE5 /* TabBar */ = {
+		35EBBC2B256EBF4200856EE5 /* TabBarView */ = {
 			isa = PBXGroup;
 			children = (
 				106733ED256D2F0C00411F60 /* MainTabView.swift */,
 				359A7F35256EAD940006A368 /* TabBarViewController.swift */,
 			);
-			path = TabBar;
+			path = TabBarView;
 			sourceTree = "<group>";
 		};
 		35F82A1E25713C040087DD22 /* WadrobesView */ = {
@@ -406,12 +409,12 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		850B4A7925751D0D00C7DFBB /* Profile */ = {
+		850B4A7925751D0D00C7DFBB /* ProfileView */ = {
 			isa = PBXGroup;
 			children = (
 				850B4A7A25751D9B00C7DFBB /* ProfileView.swift */,
 			);
-			path = Profile;
+			path = ProfileView;
 			sourceTree = "<group>";
 		};
 		A3FF226C9167910396FF0AC5 /* Frameworks */ = {
@@ -683,6 +686,7 @@
 			files = (
 				0C99385625F80EAD004F0A73 /* CriatuAPITests.swift in Sources */,
 				0CD6D81225EE707500164C17 /* CriatuTests.swift in Sources */,
+				0C99388325F83391004F0A73 /* CriatuSetsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -731,7 +735,7 @@
 				356A45AF255D836E00F892A1 /* AppDelegate.swift in Sources */,
 				283CFC80256FE88600702DAE /* EndOnboardingView.swift in Sources */,
 				85C80A6E2566B2A700BBB230 /* MusicItemView.swift in Sources */,
-				2814058825F0A6710049C764 /* SetSimilarity.swift in Sources */,
+				2814058825F0A6710049C764 /* TagsSet.swift in Sources */,
 				108E864525766A2200842084 /* Closet.swift in Sources */,
 				0C99387225F82D97004F0A73 /* Hit.swift in Sources */,
 				85C80A5B2566AB2600BBB230 /* ImageItemView.swift in Sources */,

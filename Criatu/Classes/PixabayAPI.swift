@@ -83,7 +83,7 @@ class PixabayAPI {
         }
     }
     
-    private func getImage(id:Int, completionHandler: @escaping (UIImage?)->Void){
+    func getImage(id:Int, completionHandler: @escaping (UIImage?)->Void){
         
         if imagesData.count == 0{
             completionHandler(nil)

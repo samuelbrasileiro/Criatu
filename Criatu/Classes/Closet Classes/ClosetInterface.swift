@@ -9,5 +9,5 @@ import Foundation
 
 struct ClosetInterface {
     var id: String
-    var tags: [String]
+    var tags: TagsSet<String>
 }

@@ -79,23 +79,23 @@ class DiscoverBank: ObservableObject, Identifiable, DiscoverDelegate {
     func discoverStyle(){
         self.isDiscovering = true
         let selectedItems = items.filter{ $0.isSelected }
-        var userSet: [String] = []
+        let userSet: TagsSet = TagsSet<String>()
         var similarityResults: [String : Float] = [:]
         
         let closets: [ClosetInterface] = [
-            ClosetInterface(id: "-MNOV-lGoNFf7Oa7WW1n", tags: ["pizza", "pug", "mulher"]),
-            ClosetInterface(id: "-MNP6eErV2Or6qZsipfO", tags: ["paris", "fantasia", "compondo"]),
-            ClosetInterface(id: "-MNYbEkkQHkxRK0YMVJo", tags: ["gato", "pedra", "alta", "cavalo"]),
-            ClosetInterface(id: "-MNYbNl7yyEmDZ9hdZPK", tags: ["frutas", "halteres", "fitness"]),
-            ClosetInterface(id: "-MNYbT6ljnhwJcLHv2Xn", tags: ["frança", "cor", "frança", "égua"]),
+            ClosetInterface(id: "-MNOV-lGoNFf7Oa7WW1n", tags: TagsSet(["pizza", "pug", "mulher"])),
+            ClosetInterface(id: "-MNP6eErV2Or6qZsipfO", tags: TagsSet(["paris", "fantasia", "compondo"])),
+            ClosetInterface(id: "-MNYbEkkQHkxRK0YMVJo", tags: TagsSet(["gato", "pedra", "alta", "cavalo"])),
+            ClosetInterface(id: "-MNYbNl7yyEmDZ9hdZPK", tags: TagsSet(["frutas", "halteres", "fitness"])),
+            ClosetInterface(id: "-MNYbT6ljnhwJcLHv2Xn", tags: TagsSet(["frança", "cor", "frança", "égua"])),
         ]
         
         for item in selectedItems {
-            userSet.append(contentsOf: item.tagsArray.map{ $0 })
+            userSet.data.append(contentsOf: item.tagsArray.map{ $0 })
         }
         
         for closet in closets {
-            similarityResults[closet.id] = SetSimilarity.jaccardSimilarity(firstSet: userSet, secondSet: closet.tags)
+            similarityResults[closet.id] = userSet.jaccardSimilarity(to: closet.tags)
         }
         
         let sortedDictionary = similarityResults.sorted {
