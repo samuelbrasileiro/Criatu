@@ -12,7 +12,8 @@ class PixabayAPI {
     var imagesData: [Hit] = []
     
     func getData(tagsSearched:String,completionHandler: @escaping (Response) -> Void){
-        let formattedTag = tagsSearched.lowercased().replacingOccurrences(of: " ", with: "+")
+        let withoutAccentTag = tagsSearched.folding(options: .diacriticInsensitive, locale: .current)
+        let formattedTag = withoutAccentTag.lowercased().replacingOccurrences(of: " ", with: "+")
         let url = URL(string: baseURL + "q=" + formattedTag)
         var request = URLRequest(url: url!)
         request.httpMethod = "GET"
