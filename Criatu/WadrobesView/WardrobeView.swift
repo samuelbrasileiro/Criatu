@@ -85,11 +85,16 @@ struct WardrobeView: View{
                         .foregroundColor(Color(.systemBackground).opacity(0.7))
                 }
                 else{
+                    
                     Image(systemName: "info.circle.fill")
                         .resizable()
-                        .frame(width: 25, height: 25)
+                        .frame(width: 28, height: 28)
+                    
+                        .cornerRadius(15)
                         .foregroundColor(palette.main)
                         .background(Circle().fill(Color(.systemBackground)))
+                        .shadow(color: .white, radius: 1)
+
                 }
             }
             .accessibilityIdentifier("ClothingButton")
