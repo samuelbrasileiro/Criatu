@@ -153,8 +153,9 @@ class DiscoverBank: ObservableObject, Identifiable, DiscoverDelegate {
                     }
                 }
             }
-            
         }
+        
+        self.items.shuffle()
     }
     func didDisselectInterest(_ interest: Interest){
         //Old itens filter
@@ -166,7 +167,8 @@ class DiscoverBank: ObservableObject, Identifiable, DiscoverDelegate {
         items = items.filter { item in
             return !item.tagsArray.contains(interest.attributes.name.lowercased())
         }
-
+        
+        self.items.shuffle()
     }
     
     func uploadView() {

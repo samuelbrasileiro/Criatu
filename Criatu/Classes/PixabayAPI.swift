@@ -36,7 +36,7 @@ class PixabayAPI {
                     self.imagesData = searchResponse.hits
                     
                     for image in self.imagesData {
-                        image.tags += ", \(tagsSearched)"
+                        image.tags += ", \(tagsSearched.lowercased())"
                         
                         if let tags = self.getImageTags(id: image.id) {
                             image.tagsArray = tags
