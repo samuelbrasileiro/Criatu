@@ -35,7 +35,7 @@ struct ImageItemView: View {
                 Image(uiImage: image)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .overlay(RoundedRectangle(cornerRadius: 10).stroke(stroke, lineWidth: 5))
+                .overlay(RoundedRectangle(cornerRadius: 10).stroke(stroke, lineWidth: 8))
                 .cornerRadius(10)
             }
             else{
