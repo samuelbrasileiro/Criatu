@@ -32,9 +32,9 @@ struct SearchBarView: View {
                     })
                     let interest = Interest(id: "", name: self.bank.searchText, itemsIDs: [])
                     interest.isSelected = true
-                    bank.interests.append(interest)
+                    bank.interests.insert(interest, at: 0)
                     var interests = Interest.restore()
-                    interests?.append(interest)
+                    interests?.insert(interest, at: 0)
                     Interest.archive(interests: interests ?? [])
                     self.bank.searchText = ""
                 }).foregroundColor(.primary)
