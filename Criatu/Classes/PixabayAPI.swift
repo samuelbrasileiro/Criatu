@@ -77,11 +77,19 @@ class PixabayAPI {
             
             self.getImage(id: imageInfo.id, completionHandler: {image in
                 let imageItem = ImageItem(imageID: id, tagsArray: tags, image: image)
-                DispatchQueue.main.async {
-                    DiscoverBank.shared.items.append(imageItem)
-                }
+                if DiscoverBank.shared.items.count == 0{
+                    DispatchQueue.main.async {
+                        DiscoverBank.shared.items.append(imageItem)
+                    }
+                }else{
+                    DispatchQueue.main.async {
+                        DiscoverBank.shared.items.insert(imageItem, at: Int.random(in: 0..<DiscoverBank.shared.items.count))
+                    }
+                } 
+                
             })
         }
+
     }
     
     func getImage(id:Int, completionHandler: @escaping (UIImage?)->Void){
