@@ -18,73 +18,49 @@ struct DiscoverView: View {
             
             VStack{
                 SearchBarView(bank: bank)
-                if bank.isSearching && !bank.isDiscovering {
+                ZStack{
+                    ZStack(alignment: .bottom) {
+                        VStack {
+                            
+                            ScrollView(.horizontal, showsIndicators: false){
+                                LazyHStack{//list of USER'S INTERESTS
+                                    ForEach(0..<bank.interests.count, id: \.self){ index in
+                                        InterestView(item: bank.interests[index], delegate: bank)
+                                    }
+                                }.frame(height: 50)
+                                .padding(.leading)
+                            }
+                            LazyWaterfallGrid(data: bank.items, numberOfColumns: 2, horizontalSpacing: 8, verticalSpacing: 8, edgeInsets: EdgeInsets(top: 10, leading: 10, bottom: 75, trailing: 10)){ item in
+                                
+                                BasicItemView(item: item, delegate: bank)
+                                
+                                
+                            }.background(Color(.systemGray6))
+                        }
+                        Button(action: {
+                            self.bank.discoverStyle()
+                        }){
+                            Text("Combinar")
+                                .padding()
+                                .padding(.horizontal, 80)
+                                .background(bank.items.filter({$0.isSelected}).count == 0 ? Color(.systemGray3) : palette.main)
+                                .foregroundColor(Color(.systemBackground))
+                                .cornerRadius(15)
+                                .shadow(radius: 7)
+                            
+                            
+                        }
+                        .disabled(bank.items.filter({$0.isSelected}).count == 0)
+                        .offset(y: bank.isDiscovering ? 300 : 0)
+                        .padding(10)
+                    }
                     
-                    List {
-                        // Filtered list of ALL INTERESTS FROM FIREBASE
-                        ForEach((0..<bank.allInterests.count).filter{ bank.allInterests[$0].attributes.name.hasPrefix(bank.searchText) || bank.searchText == ""}, id:\.self) { index in
-                            if index < self.bank.allInterests.count{
-                                Button(action:{
-                                    UIApplication.shared.endEditing(true) // this must be placed before the other commands here
-                                    self.bank.searchText = ""
-                                    self.bank.isSearching = false
-                                    //check if this item is already in interest list
-                                    self.bank.addInterestToTop(interest: bank.allInterests[index])
-                                    
-                                }){
-                                    Text(bank.allInterests[index].attributes.name)
-                                    
-                                }
-                            }
-                        }
-                    }
-                    .resignKeyboardOnDragGesture()
-                }
-                else{
-                    ZStack{
-                        ZStack(alignment: .bottom) {
-                            VStack {
-                                
-                                ScrollView(.horizontal, showsIndicators: false){
-                                    LazyHStack{//list of USER'S INTERESTS
-                                        ForEach(0..<bank.interests.count, id: \.self){ index in
-                                            InterestView(item: bank.interests[index], delegate: bank)
-                                        }
-                                    }.frame(height: 50)
-                                    .padding(.leading)
-                                }
-                                LazyWaterfallGrid(data: bank.items, numberOfColumns: 2, horizontalSpacing: 8, verticalSpacing: 8, edgeInsets: EdgeInsets(top: 10, leading: 10, bottom: 75, trailing: 10)){ item in
-                                    
-                                    BasicItemView(item: item, delegate: bank)
-                                    
-                                    
-                                }.background(Color(.systemGray6))
-                            }
-                            Button(action: {
-                                self.bank.discoverStyle()
-                            }){
-                                Text("Combinar")
-                                    .padding()
-                                    .padding(.horizontal, 80)
-                                    .background(bank.items.filter({$0.isSelected}).count == 0 ? Color(.systemGray3) : palette.main)
-                                    .foregroundColor(Color(.systemBackground))
-                                    .cornerRadius(15)
-                                    .shadow(radius: 7)
-                                    
-                                
-                            }
-                            .disabled(bank.items.filter({$0.isSelected}).count == 0)
-                            .offset(y: bank.isDiscovering ? 300 : 0)
-                            .padding(10)
-                        }
-                        
-                        ProgressView()
-                            .progressViewStyle(CircularProgressViewStyle())
-                            .padding(30)
-                            .background(Color(.systemBackground))
-                            .cornerRadius(20)
-                            .opacity(self.bank.isDiscovering ? 1 : 0)
-                    }
+                    ProgressView()
+                        .progressViewStyle(CircularProgressViewStyle())
+                        .padding(30)
+                        .background(Color(.systemBackground))
+                        .cornerRadius(20)
+                        .opacity(self.bank.isDiscovering ? 1 : 0)
                 }
                 if let style = bank.discoveredStyle{
                     NavigationLink( destination: DiscoveredStyleView(style: style), isActive: $bank.didDiscoverNewStyle){

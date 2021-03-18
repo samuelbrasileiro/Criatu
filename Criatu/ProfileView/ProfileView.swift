@@ -220,21 +220,6 @@ struct ProfileView: View, OnboardingDelegate {
                         NavigationLink(destination: DynamicCircleView(delegate: self), isActive: $isSelectingInterest){
                             EmptyView()
                         }
-                        Button(action: {
-                            isSelectingInterest = true
-                        }){
-                            HStack{
-                                Text("Interesses")
-                                    .foregroundColor(.primary)
-                                Spacer()
-                                Image(systemName: "chevron.forward")
-                                    .foregroundColor(palette.main)
-                            }.padding()
-                        }
-                        
-                        Divider()
-                        
-                        
                         
                         Spacer()
                     }
@@ -250,7 +235,7 @@ struct ProfileView: View, OnboardingDelegate {
                 let center = UNUserNotificationCenter.current()
                 
                 center.getNotificationSettings{settings in
-                    if settings .authorizationStatus == .authorized{
+                    if settings.authorizationStatus == .authorized{
                         showNotification = true
                     }
                     else{

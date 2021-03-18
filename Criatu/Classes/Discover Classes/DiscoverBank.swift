@@ -62,19 +62,6 @@ class DiscoverBank: ObservableObject, Identifiable, DiscoverDelegate {
 
         }
     }
-
-    func getAllInterests(){
-        self.allInterests = []
-        FirebaseHandler.readAllCollection(.interests, dataType: [Interest.Database].self){ result in
-            if case .success(let attributes) = result{
-                for attribute in attributes{
-                    let interest = Interest(attributes: attribute)
-                    self.allInterests.append(interest)
-                }
-                self.objectWillChange.send()
-            }
-        }
-    }
     
     func discoverStyle(){
         self.isDiscovering = true
@@ -135,54 +122,20 @@ class DiscoverBank: ObservableObject, Identifiable, DiscoverDelegate {
             api.downloadImages()
         })
         
-        if var ids = interest.attributes.itemsIDs{
-            
-            ids.shuffle()
-            ids = [String](ids.prefix(4))
-            for id in ids{
-                FirebaseHandler.readCollection(.items, id: id, dataType: DiscoverItem.Database.self){ result in
-                    if case .success(let attributes) = result{
-                        if self.items.map({$0.attributes.id}).contains(id){
-                            return
-                        }
-                        if attributes.type == .music{
-                            let item = MusicItem(attributes: attributes)
-                            item.interestAssociatedID = interest.attributes.id
-                            self.items.insert(item, at: 0)
-                        }
-                    }
-                }
-            }
-        }
         
-        self.items.shuffle()
     }
     func didDisselectInterest(_ interest: Interest){
-        //Old itens filter
-        items = items.filter{ item in
-            return !(item.interestAssociatedID == interest.attributes.id)
-        }
         
         //New PixaBay itens filter
         items = items.filter { item in
             return !item.tagsArray.contains(interest.attributes.name.lowercased())
         }
         
-        self.items.shuffle()
     }
     
     func uploadView() {
         self.objectWillChange.send()
     }
     
-    func getItem(from id: String){
-        FirebaseHandler.readCollection(.items, id: id, dataType: DiscoverItem.Database.self){ result in
-            if case .success(let attribute) = result{
-                if attribute.type == .music{
-                    self.items.append(MusicItem(attributes: attribute))
-                }
-            }
-        }
-    }
     
 }

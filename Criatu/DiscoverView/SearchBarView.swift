@@ -20,12 +20,23 @@ struct SearchBarView: View {
                 Image(systemName: "magnifyingglass")
                 TextField("Como está sua vibe?", text: $bank.searchText, onEditingChanged: {
                     isEditing in
-                    if !self.bank.isSearching{
-                        self.bank.getAllInterests()
-                    }
+                    
                     self.bank.isSearching = true
                     
                     
+                }, onCommit:{
+                    
+                    let api = PixabayAPI()
+                    api.getData(tagsSearched: bank.searchText, completionHandler: {_ in
+                        api.downloadImages()
+                    })
+                    let interest = Interest(id: "", name: self.bank.searchText, itemsIDs: [])
+                    interest.isSelected = true
+                    bank.interests.insert(interest, at: 0)
+                    var interests = Interest.restore()
+                    interests?.insert(interest, at: 0)
+                    Interest.archive(interests: interests ?? [])
+                    self.bank.searchText = ""
                 }).foregroundColor(.primary)
                 
                 Button(action: {
