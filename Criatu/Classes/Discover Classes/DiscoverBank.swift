@@ -70,11 +70,18 @@ class DiscoverBank: ObservableObject, Identifiable, DiscoverDelegate {
         var similarityResults: [String : Float] = [:]
         
         let closets: [ClosetInterface] = [
-            ClosetInterface(id: "-MNOV-lGoNFf7Oa7WW1n", tags: TagsSet(["pizza", "pug", "mulher"])),
-            ClosetInterface(id: "-MNP6eErV2Or6qZsipfO", tags: TagsSet(["paris", "fantasia", "compondo"])),
-            ClosetInterface(id: "-MNYbEkkQHkxRK0YMVJo", tags: TagsSet(["gato", "pedra", "alta", "cavalo"])),
-            ClosetInterface(id: "-MNYbNl7yyEmDZ9hdZPK", tags: TagsSet(["frutas", "halteres", "fitness"])),
-            ClosetInterface(id: "-MNYbT6ljnhwJcLHv2Xn", tags: TagsSet(["frança", "cor", "frança", "égua"])),
+            ClosetInterface(id: "-MNOV-lGoNFf7Oa7WW1n", tags: TagsSet(["café", "bebida", "quente", "cappuccino", "pipoca", "entretenimento", "cinema", "balde", "doces", "gummies", "balas de goma","doçura", "amsterdam", "canal", "cidade", "red", "luzes", "distrito", "montanha", "flores", "paisagem", "natureza", "calçadão", "pier", "mar", "audiência", "concerto", "guitarra", "jazz", "saxofone", "dj turntable", "eletrônica","gato", "animal de estimação", "lambendo", "felino", "arara", "papagaio", "arara amarela", "colorido", "leão", "animal", "cabeça","juba","biblioteca","arquitetura","livros","design moderno","arquitetura moderna","walt disney center","sala de concertos","design","castelo", "belvedere vir","palácio", "baroque","fones", "fone", "fones de couvido", "flores", "buque de flores", "perfume", "cheiroso", "fragrância"])), //Criativo
+            
+            
+            ClosetInterface(id: "-MNP6eErV2Or6qZsipfO", tags: TagsSet(["framboesa", "baga", "verão","palácio", "londres", "parlamento", "inglaterra", "saxofone", "músicas", "concerto", "jazz","cisne", "par", "amor", "cisnes","baroque", "castelo", "belvedere vir", "palácio","garrafa", "perfume","rosas","fragrância"])),//Contemporâneo
+            
+            
+            ClosetInterface(id: "-MNYbEkkQHkxRK0YMVJo", tags: TagsSet(["whey","burger","hambúrguer","carne","hambúrguer","pizza","fast food","churrasco","dieta","grelhados","pier","mar","praia","litoral","Horizonte","montanha","flores","verde","palácio","viagens","guitar","rock","metal","guitarra","dj","eletrônica","balada","vida noturna","festa","dançar","música clássica","concerto","instrumentaos musicais","orquestra","gato","animal de estimação","lambendo","felino","vida selvagem","raposa","natureza","leão","selvagem","selva","juba","biblioteca","arquitetura","livros","design moderno","arquitetura moderna","monumento","construção","escultura","pilares","aço","pós moderno","concreto","design","fones","fones de ouvido","luneta","telescópio","paisagem","férias","observação","descoberta","diário","querido diário","sonhos","leitura"])),//Esportivo
+            
+            
+            ClosetInterface(id: "-MNYbNl7yyEmDZ9hdZPK", tags: TagsSet(["pizza", "fast food", "comida italiana", "framboesa", "red", "verão", "taça", "apetitoso", "maduro", "bolinhos", "ásia", "aperitivo", "tempero", "comida asiática", "pier", "mar", "praia", "litoral", "amsterdam", "canal", "cidade", "natureza", "praia", "itália", "luzes da cidade", "audiência", "concerto", "celebração", "banda", "luzes", "cantor", "audiência", "MPB", "mpb", "Música popular brasileira", "vida selvagem", "raposa", "natureza","leão","selvagem","selva","juba","pássaro","asas","plumagem","aves","penas","escultura","pilares","aço","pós moderno","concreto","design", "perfume","cheiroso","fragrância"])),//Moderno
+            
+            ClosetInterface(id: "-MNYbT6ljnhwJcLHv2Xn", tags: TagsSet(["pizza","alimentos","refeição","comida italiana","burguer","fast food","hambúrguer","cheeseburguer","café","bebida","quente","cappuccini","calçadão","pier","mar","praia","montanha","flores","paisagem","natureza","amsterdam","canal","distrito","red","luz","rock","concerto","guitarra","guitarrista","saxofone","músicas","concerto","jazz","rap","microfone","músico","raposa","fox","animal","vermelho","leão","juba","cabeça","pássaro","bagas","asas","neoclássico","arquitetura","administração","capital","moderno","biblioteca","design de interiores","baroque","castelo","belvedere vir","palácio","fone de ouvido","músicas","ouvir","estilo de vida","perfume","garrafa","rosas","fragrância","xícara","inverno","caneca"])),//Tradicional
         ]
         
         for item in selectedItems {
