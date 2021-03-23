@@ -8,7 +8,7 @@ import Foundation
 import UIKit
 
 class PixabayAPI {
-    var baseURL = "https://pixabay.com/api/?key=20490794-452a82acc640fcfc4130d0bb8&per_page=15&lang=pt&"
+    var baseURL = "https://pixabay.com/api/?key=20490794-452a82acc640fcfc4130d0bb8&per_page=10&lang=pt&"
     var imagesData: [Hit] = []
     
     func getData(tagsSearched:String,completionHandler: @escaping (Response) -> Void){
