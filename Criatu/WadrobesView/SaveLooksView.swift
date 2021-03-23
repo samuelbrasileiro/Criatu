@@ -23,9 +23,9 @@ struct SaveLooksView: View {
         
         ZStack {
             if(suggestionIndex < style.suggestions.count){
-            ZStack(alignment: .bottom) {
-                
-
+                ZStack(alignment: .bottom) {
+                    
+                    
                     
                     Image(uiImage: style.suggestions[suggestionIndex].image)
                         .resizable()
@@ -50,7 +50,7 @@ struct SaveLooksView: View {
                     }
                     .padding(.bottom, 480)
                     .padding(.leading, -160)
-                
+                    
                     HStack(spacing: 70) {
                         Button(action: {
                             
@@ -68,7 +68,6 @@ struct SaveLooksView: View {
                             
                             
                         }
-                        
                         Button(action: {
                             isLiked = true
                         }) {
@@ -81,22 +80,27 @@ struct SaveLooksView: View {
                             
                         }
                     }
-               
+                    
                 }
                 .padding(.bottom, 60)
-                    .blur(radius: isLiked ? 3.0 : 0)
-                    .disabled(isLiked)
+                .blur(radius: isLiked ? 3.0 : 0)
+                .disabled(isLiked)
             }
             else{
                 Text("Acabaram as sugestões de estilo \(style.attributes.name.lowercased()) por hoje. Volte mais tarde para mais!")
                     .foregroundColor(Color(.systemGray4))
-                .padding(100)
+                    .padding(100)
             }
+            Rectangle()
+                .opacity(0.001)
+                .disabled(false)
+                .edgesIgnoringSafeArea(.all)
+                .onTapGesture {
+                    isLiked.toggle()
+                }
             SaveItemAlertView(isPresented: $isLiked, style: style, suggestionIndex: suggestionIndex)
         }
-        
         .resingKeyboardOnTapGesture()
-        
     }
 }
 

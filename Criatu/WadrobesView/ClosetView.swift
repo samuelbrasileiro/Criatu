@@ -32,7 +32,6 @@ struct ClosetView: View {
                                 .scaledToFill()
                                 .frame(width: 100, height: 160)
                                 .clipped()
-                                
                                 .cornerRadius(20)
                             
                         }
